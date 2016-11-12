@@ -1,0 +1,47 @@
+
+
+
+$pie_width_sm: 22px;
+$pie_width: 88px;
+
+.easypiechart {
+    display: inline-block;
+    position: relative;
+    width: $pie_width;
+    height: $pie_width;
+    text-align: center;
+    margin: 5px auto; 
+
+     canvas {
+        position: absolute;
+        top: 5px;
+        left: 10px; 
+    }
+
+    .pie-percent {
+        display: inline-block;
+        line-height: $pie_width;
+        font-size: 20px;
+        font-weight: 400;
+        // color: #333; 
+        color: $bright;
+        position: absolute;
+        bottom: 12px;
+        left: 21%;
+        &:after {
+            content: '%';
+            margin-left: 0.1em;
+            font-size: .6em;
+        }
+    }
+
+    &.easypiechart-sm {
+        width: $pie_width_sm;
+        height: $pie_width_sm;
+        .pie-percent {
+            font-size: 28px;
+            line-height: $pie_width_sm;
+        }
+    }
+}
+

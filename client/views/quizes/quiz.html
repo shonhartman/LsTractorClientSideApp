@@ -1,0 +1,41 @@
+<div class="page" ng-controller="quizCtrl">
+
+<!--Video-->
+    <div class="col-md-12">
+        <div class="vid">
+        <iframe src="https://player.vimeo.com/video/180606688" width="640" height="469" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>        
+        </div>
+
+<!--TOGGLE COLLAPSE-->
+
+    <div class="panel-body ng-scope" data-ng-controller="CollapseDemoCtrl">
+        <button class="btn btn-primary" ng-click="isCollapsed = !isCollapsed">Take Quiz</button>
+        <div class="divider divider-md"></div>
+        <div collapse="isCollapsed" class="collapse" aria-expanded="false" aria-hidden="true" style="height: 0px;">
+<!--A Question Object should be pulled in here with an id that relates to a video-->
+            <section class="panel panel-default" id="callout-quiz">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-list-alt" style="margin-right: 10px;"></span>Quiz</strong></div>
+                <div class="panel-body">
+                    <h4>What is this Question?</h4>
+                    <!--<h4>{{ question }}</h4>-->
+                </div>
+            </section> 
+
+            <div class="callout callout-info" id="callout-quiz">
+                <p style:"float: left; clear: none;">Choose the correct answer below:</p>
+            </div>
+<!-- Answers -->
+            <div id="repeating-array" ng-controller="quizCtrl">
+                <section class="panel panel-default" id="callout-quiz" ng-repeat="answer in answers">
+                    <div class="panel-body">
+                        <button ng-click="choiceChosen()" class="btn-icon-lined btn-icon-round btn-icon-md  btn-gap-v btn-default" style="float: left;"><h3 style="margin-top: 7.5px;">{{ answer.letter }}</h3></button>
+                        <p style="margin: 20px 0 0 60px;">{{ answer.answer }}</p>
+                    </div>
+                </section>
+                <a href="/#/dashboard"><button type="button" ng-disabled="choice" class="btn btn-w-md btn-gap-v btn-primary">Next Question<span class="ti-arrow-right" style="float: right; margin: 5px 10px;"></span></button></a>
+            </div> <!-- End of Answers -->
+        </div> <!-- HIDDEN QUIZ -->
+    </div>
+	
+</div> <!--End of Page-->
+

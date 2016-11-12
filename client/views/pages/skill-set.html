@@ -1,0 +1,53 @@
+<div class="page page-profile">
+
+<!--Repeating Video Box-->
+    <div class="row" ng-controller="videoCtrl">
+        <div class="col-sm-3" ng-repeat="video in videos">
+            <div class="panel mini-box preview" id="video-box">
+    <!--Progress Chart-->
+                <span data-ng-controller="chartCtrl" class="btn-icon btn-icon-md btn-icon-lg-alt bg-dark">
+                    <div easypiechart options="easypiechart3.options" percent="easypiechart3.percent" class="easypiechart">
+                        <span class="pie-percent" ng-bind="easypiechart3.percent"></span>
+                    </div>
+                </span> <!--End Progress Chart-->
+                <p class="size-h2">{{ video.title }}</p>
+                <p class="text-muted">{{ video.author }}</p>
+                <p class="text-muted">{{ video.time }}</p>
+                <button class="btn btn-gap-v btn-primary" ng-click="open()">Watch</button>
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+
+<!--Test Button-->
+
+    <button class="btn btn-danger" ng-controller="videoCtrl" ng-click="getVideos()">Get Videos</button>
+    <button type="submit" ng-controller="videoCtrl" class="btn btn-primary btn-block btn-lg" ng-click="test()">HTTP Get Test</button>
+    <button type="submit" ng-controller="ModalDemoCtrl" class="btn btn-warning btn-block btn-lg" ng-click="open()">Add a Video</button>
+    <script type="text/ng-template" id="myModalContent.html">
+                        <div class="modal-header">
+                            <h3>Add a Video</h3>
+                        </div>
+                        <div class="modal-body">
+                          <input type="text" class="form-control" value="http://">
+                          <span class="help-block">Vimeo URL</span>
+                          <input type="text" class="form-control">
+                          <span class="help-block">Title</span>
+                          <input type="text" class="form-control">
+                          <span class="help-block">Author</span>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" ng-click="upload()">Upload</button>
+                            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                        </div>
+                    </script>
+
+<!--SUCESS TOASTR-->
+    <button class="btn btn-w-md btn-gap btn-success" ng-controller="NotifyCtrl" data-ng-click="notify('success')">success message</button>
+
+
+<h1>This is Skill Set</h1>
+
+</div> <!--Close Page Div-->
+
+

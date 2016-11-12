@@ -1,0 +1,45 @@
+.page-dashboard {
+    .panel-box {
+        position: relative;
+        border-radius: $border-radius-large;
+
+        .panel-top,
+        .panel-bottom {
+            height: 100px;
+            padding: 30px 15px;
+            font-size: 40px;
+            line-height: 1;
+        }
+
+        .panel-bottom {
+            border-top: 1px solid #dfdfdf;
+        }
+
+        .panel-info {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            margin-top: -12px;
+            text-align: center;
+
+            span {
+                height: 24px;
+                display: inline-block;
+                padding: 4px 10px;
+                text-transform: uppercase;
+                line-height: 14px;
+                background-color: #fff;
+                border: 1px solid #dfdfdf;
+                font-size: 11px;
+                color: $text-muted;
+                border-radius: 1em;
+            }
+        }
+    }
+
+    .table {
+        > tbody > tr > td {
+            vertical-align: middle;
+        }
+    }
+}

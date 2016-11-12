@@ -1,0 +1,73 @@
+.body-auth {
+    #content {
+        background-color: #515a63;
+    }
+}
+
+.page-signin,
+.page-signup,
+.page-forgot {
+    padding: 10px;
+
+    .auth-container {
+        max-width: 400px;
+        margin: auto;
+    }
+
+    .signin-header {
+        margin-top: 50px;
+        background-color: #84B7C7;
+        border-bottom: 10px solid darken(#84B7C7, 5%);
+        padding: 30px 12px;
+        border-radius: $border-radius-large $border-radius-large 0 0;
+        @media (min-width: $screen-sm) {
+            margin-top: 150px;
+        }
+
+        h1 {
+            margin: 0;
+            font-weight: 300;
+            color: $bright;
+            font-size: 32px;
+            a {
+                color: $bright;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .form-info {
+        background-color: #eaeaea;
+        padding: 30px 20px;
+        .form-group {
+            margin: 0 0 15px;
+        }
+        .form-group-last {
+            margin: 0;
+        }
+
+        .input-group-addon {
+            font-size: 18px;
+        }
+    }
+
+    .form-submit {
+        border-radius: 0 0 $border-radius-large $border-radius-large;
+        padding: 20px;
+        background-color: #fff;
+        .form-group {
+            margin: 0;
+        }
+    }   
+
+    .additional-info {
+        color: #ccc;
+        color: rgba(255,255,255,.6);
+        a {
+            color: #ccc;
+            color: rgba(255,255,255,.6);
+        }
+    }
+}
