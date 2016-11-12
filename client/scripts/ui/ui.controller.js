@@ -14,7 +14,7 @@
         .controller('TabsDemoCtrl', ['$scope', TabsDemoCtrl])
         .controller('BadgeCtrl', ['$scope', BadgeCtrl])
         .controller('quizCtrl', ['$scope', quizCtrl])
-        .controller('videoCtrl', ['$scope', '$http', '$interval', '$location', '$stateParams', videoCtrl])
+        .controller('videoCtrl', ['$scope', '$http', '$interval', '$location', videoCtrl])
         .controller('MapDemoCtrl', ['$scope', '$http', '$interval', MapDemoCtrl]);
 
 
@@ -161,49 +161,49 @@
 
 // Video Controller
 
-//     function videoCtrl($scope, $location, $http) {
-//         $scope.videos = [
-//             {
-//                 title: "1st Video Title",
-//                 author: "1st Video Author",
-//                 time: "2:22"
-//             },
-//             {
-//                 title: "2nd Video Title",
-//                 author: "2nd Video Author",
-//                 time: "4:00"
-//             },
-//             {
-//                 title: "3rd Video Title",
-//                 author: "3rd Video Author",
-//                 time: "5:38"
-//             }
-//         ];
-//         $scope.open = function() {
-//             location.href = '/#/quizes/quiz';            
-//         }   
-// }
+    function videoCtrl($scope, $location, $http) {
+        $scope.videos = [
+            {
+                title: "1st Video Title",
+                author: "1st Video Author",
+                time: "2:22"
+            },
+            {
+                title: "2nd Video Title",
+                author: "2nd Video Author",
+                time: "4:00"
+            },
+            {
+                title: "3rd Video Title",
+                author: "3rd Video Author",
+                time: "5:38"
+            }
+        ];
+        $scope.open = function() {
+            location.href = '/#/quizes/quiz';            
+        }   
+}
         
     
 
 //GET VIDEOS FUNCTION
 
-function videoCtrl ($scope, $http, $stateParams){
-    this._$http = $http;
-    this.title = title;
-    this.
-    $scope.postVideo = function() {
-        $http.post('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/profile/videos')
-        .then((response) => {
-            console.log(response);
-        })
-    }
-    $scope.getVideos = function() {
-        $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/profile/videos', {test:"hit"})
-        .then((response) => {
-            console.log(response);
-        })
-    }  
+// function videoCtrl ($scope, $http, $stateParams){
+//     this._$http = $http;
+//     this.title = title;
+//     this.
+//     $scope.postVideo = function() {
+//         $http.post('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/profile/videos')
+//         .then((response) => {
+//             console.log(response);
+//         })
+//     }
+//     $scope.getVideos = function() {
+//         $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/profile/videos', {test:"hit"})
+//         .then((response) => {
+//             console.log(response);
+//         })
+//     }  
     // $scope.getVideos = function() {
     //     console.log("getting Videos");
     //     $http.get('http://headers.jsontest.com/')
@@ -211,7 +211,7 @@ function videoCtrl ($scope, $http, $stateParams){
     //         console.log(response);
     //     })
     // }  
-};
+// };
 
 
 
