@@ -188,7 +188,7 @@
 
 //GET VIDEOS FUNCTION
 
-// function videoCtrl ($scope, $http, $stateParams){
+// function videoCtrl ($scope, $http){
 //     this._$http = $http;
 //     this.title = title;
 //     this.
@@ -204,6 +204,8 @@
 //             console.log(response);
 //         })
 //     }  
+
+//OG GET TEST
     // $scope.getVideos = function() {
     //     console.log("getting Videos");
     //     $http.get('http://headers.jsontest.com/')
@@ -211,7 +213,7 @@
     //         console.log(response);
     //     })
     // }  
-// };
+};
 
 
 

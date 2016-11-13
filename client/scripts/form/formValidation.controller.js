@@ -42,43 +42,6 @@
         };
     }
 
-    function signinCtrl($scope) {
-        var original;
-
-        $scope.user = {
-            firstName: '',
-            lastName: '',
-            email: '',
-            password: '',
-            dateOfBirth: '',
-            phoneNumber: '',
-            administrationLevel: ''
-
-        };
-
-        $scope.showInfoOnSubmit = false;
-
-        original = angular.copy($scope.user);
-
-        $scope.revert = function() {
-            $scope.user = angular.copy(original);
-            return $scope.form_signin.$setPristine();
-        };
-
-        $scope.canRevert = function() {
-            return !angular.equals($scope.user, original) || !$scope.form_signin.$pristine;
-        };
-
-        $scope.canSubmit = function() {
-            return $scope.form_signin.$valid && !angular.equals($scope.user, original);
-        };
-
-        $scope.submitForm = function() {
-            $scope.showInfoOnSubmit = true;
-            return $scope.revert();
-        };
-    }
-
     function signupCtrl($scope) {
         var original;
 
