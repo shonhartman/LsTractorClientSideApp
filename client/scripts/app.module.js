@@ -10,11 +10,9 @@
         'ui.bootstrap',
         'easypiechart',
         'ui.tree',
-        'ngMap',
         'ngTagsInput',
         'textAngular',
         'angular-loading-bar',
-        'ui.calendar',
         'duScroll',
 
         // Custom modules
@@ -24,11 +22,7 @@
         'app.ui',
         'app.ui.form',
         'app.ui.form.validation',
-        'app.ui.map',
-        'app.page',
-        'app.table',
-        'app.task',
-        'app.calendar'
+        'app.page'
     ]);
 
 })();

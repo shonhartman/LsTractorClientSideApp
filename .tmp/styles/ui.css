@@ -4395,82 +4395,8 @@ img.img80_80 {
   border-top: 2px solid #ED848F;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/flags\/\*\.png}line{font-family:\00003120}}
-.flags-sprite, .flags-american, .flags-china, .flags-france, .flags-germany, .flags-italy, .flags-japan, .flags-korea, .flags-portugal, .flags-russia, .flags-spain {
-  background-image: url('ui/images/flags-s9e6bfd0b60.png');
-  background-repeat: no-repeat;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/2\.0\.0\/gems\/compass-core-1\.0\.3\/stylesheets\/compass\/utilities\/sprites\/_base\.scss}line{font-family:\0000384}}
-.flags-american {
-  background-position: 0 0;
-  height: 21px;
-  width: 32px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/2\.0\.0\/gems\/compass-core-1\.0\.3\/stylesheets\/compass\/utilities\/sprites\/_base\.scss}line{font-family:\0000384}}
-.flags-china {
-  background-position: 0 -21px;
-  height: 21px;
-  width: 32px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/2\.0\.0\/gems\/compass-core-1\.0\.3\/stylesheets\/compass\/utilities\/sprites\/_base\.scss}line{font-family:\0000384}}
-.flags-france {
-  background-position: 0 -42px;
-  height: 21px;
-  width: 32px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/2\.0\.0\/gems\/compass-core-1\.0\.3\/stylesheets\/compass\/utilities\/sprites\/_base\.scss}line{font-family:\0000384}}
-.flags-germany {
-  background-position: 0 -63px;
-  height: 21px;
-  width: 32px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/2\.0\.0\/gems\/compass-core-1\.0\.3\/stylesheets\/compass\/utilities\/sprites\/_base\.scss}line{font-family:\0000384}}
-.flags-italy {
-  background-position: 0 -84px;
-  height: 21px;
-  width: 32px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/2\.0\.0\/gems\/compass-core-1\.0\.3\/stylesheets\/compass\/utilities\/sprites\/_base\.scss}line{font-family:\0000384}}
-.flags-japan {
-  background-position: 0 -105px;
-  height: 21px;
-  width: 32px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/2\.0\.0\/gems\/compass-core-1\.0\.3\/stylesheets\/compass\/utilities\/sprites\/_base\.scss}line{font-family:\0000384}}
-.flags-korea {
-  background-position: 0 -126px;
-  height: 21px;
-  width: 32px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/2\.0\.0\/gems\/compass-core-1\.0\.3\/stylesheets\/compass\/utilities\/sprites\/_base\.scss}line{font-family:\0000384}}
-.flags-portugal {
-  background-position: 0 -147px;
-  height: 21px;
-  width: 32px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/2\.0\.0\/gems\/compass-core-1\.0\.3\/stylesheets\/compass\/utilities\/sprites\/_base\.scss}line{font-family:\0000384}}
-.flags-russia {
-  background-position: 0 -168px;
-  height: 21px;
-  width: 32px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/2\.0\.0\/gems\/compass-core-1\.0\.3\/stylesheets\/compass\/utilities\/sprites\/_base\.scss}line{font-family:\0000384}}
-.flags-spain {
-  background-position: 0 -189px;
-  height: 21px;
-  width: 32px;
-}
-
+/*@import "flags/*.png";
+@include all-flags-sprites(true);*/
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_timeline\.scss}line{font-family:\000033}}
 .ui-timline-container {
   padding: 15px;

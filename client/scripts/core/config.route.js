@@ -7,13 +7,9 @@
 
             routes = [
                 'dashboard',
-                'ui/typography', 'ui/buttons', 'ui/icons', 'ui/grids', 'ui/widgets', 'ui/components', 'ui/boxes', 'ui/timeline', 'ui/nested-lists', 'ui/pricing-tables', 'ui/maps',
-                'tables/static', 'tables/dynamic', 'tables/responsive',
                 'forms/elements', 'forms/layouts', 'forms/validation', 'forms/wizard',
                 'charts/charts', 'charts/flot',
-                'pages/404', 'pages/500', 'pages/blank', 'pages/forgot-password', 'pages/invoice', 'pages/lock-screen', 'pages/profile', 'pages/invoice', 'pages/signin', 'pages/signup', 'pages/skill-set',
-                'mail/compose', 'mail/inbox', 'mail/single',
-                'app/tasks', 'app/calendar', 
+                'pages/404', 'pages/500', 'pages/blank', 'pages/forgot-password', 'pages/lock-screen', 'pages/profile', 'pages/signin', 'pages/signup', 'pages/skill-set',
                 'quizes/quiz', 'quizes/quiz-logic-test'
             ]
 

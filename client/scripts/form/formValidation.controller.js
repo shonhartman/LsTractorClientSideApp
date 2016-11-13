@@ -3,7 +3,7 @@
 
     angular.module('app.ui.form.validation')
         .controller('formConstraintsCtrl', ['$scope', formConstraintsCtrl])
-        .controller('signinCtrl', ['$scope', signinCtrl])
+        // .controller('signinCtrl', ['$scope', signinCtrl])
         .controller('signupCtrl', ['$scope', signupCtrl]);
 
     function formConstraintsCtrl($scope) {
