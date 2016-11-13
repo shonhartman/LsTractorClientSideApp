@@ -13,10 +13,63 @@
         .controller('PaginationDemoCtrl', ['$scope', PaginationDemoCtrl])
         .controller('TabsDemoCtrl', ['$scope', TabsDemoCtrl])
         .controller('BadgeCtrl', ['$scope', BadgeCtrl])
-        .controller('quizCtrl', ['$scope', quizCtrl])
-        .controller('videoCtrl', ['$scope', '$http', '$interval', '$location', videoCtrl])
-        .controller('MapDemoCtrl', ['$scope', '$http', '$interval', MapDemoCtrl]);
+        .controller('quizCtrl', ['$cookies', '$scope', '$http', '$routeParams', '$sce', quizCtrl])
+        .controller('videoCtrl', ['$scope', '$routeParams', '$location', '$http', videoCtrl])
+        .controller('MapDemoCtrl', ['$scope', '$http', '$interval', MapDemoCtrl])
+        .controller('dashboardCtrl', ['$scope', '$http', dashboardCtrl])
+        .controller('employeeCtrl', ['$scope', '$http', '$routeParams', employeeCtrl])
+        .controller('skillSetCtrl', ['$scope', '$http', skillSetCtrl]);
 
+    function employeeCtrl($scope, $http, $routeParams) {
+        $scope.results = [];
+
+        // TODO - Modify call to new location for backend endpoint that returns user's status'
+        $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos/')
+            .then(function(response) {
+                $scope.videos = [];
+                response.data._embedded.videos.forEach(function(video) {
+                    var splitUrl = video._links.self.href.split("/");
+                    video.id = splitUrl[splitUrl.length - 1];
+                    $scope.videos.push(video);            
+                });
+            });
+
+        $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/appUsers/' + $routeParams.id)
+            .then(function(response) {
+                $scope.employee = response.data;
+                return $http.get($scope.employee._links.listOfVideoResult.href);                                         
+            });
+    }
+
+    function dashboardCtrl($scope, $http) {
+        $scope.role = 5;
+        $scope.dealership = null;
+        $scope.dealerships = [];
+
+        $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/dealerships')
+            .then(function(response) {
+                var dealerships = response.data._embedded.dealerships;
+                dealerships.forEach(function (dealership) {
+                    $http.get(dealership._links.listOfAppUser.href).then(function (response) {
+                        var employees = [];
+                        response.data._embedded.appUsers.forEach(function(employee) {
+                            var splitUrl = employee._links.self.href.split("/");
+                            employee.id = splitUrl[splitUrl.length - 1];
+                            employees.push(employee);
+                        });
+                        
+                        dealership.employees = employees;
+                    })
+                    
+                });
+
+
+                $scope.dealerships = dealerships;
+                
+                // TODO - This should be from the user! Users have a dealership
+                $scope.dealership = $scope.dealerships[0]
+            });        
+    }
 
     function LoaderCtrl($scope, cfpLoadingBar) {
         $scope.start = function() {
@@ -161,26 +214,38 @@
 
 // Video Controller
 
-    function videoCtrl($scope, $location, $http) {
-        $scope.videos = [
-            {
-                title: "1st Video Title",
-                author: "1st Video Author",
-                time: "2:22"
-            },
-            {
-                title: "2nd Video Title",
-                author: "2nd Video Author",
-                time: "4:00"
-            },
-            {
-                title: "3rd Video Title",
-                author: "3rd Video Author",
-                time: "5:38"
-            }
-        ];
-        $scope.open = function() {
-            location.href = '/#/quizes/quiz';            
+    function skillSetCtrl($scope, $http) {
+        $scope.skillsets = [];
+
+        $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/skillSets')
+            .then(function(response) {
+                $scope.skillsets = [];
+                response.data._embedded.skillSets.forEach(function(skillset) {
+                    var splitUrl = skillset._links.self.href.split("/");
+                    skillset.id = splitUrl[splitUrl.length - 1];
+                    $scope.skillsets.push(skillset);
+                });
+            });
+
+        console.log('in right controller');
+    }
+
+    function videoCtrl($scope, $routeParams, $location, $http) {
+        var skillSet = $routeParams.id;
+        $scope.videos = [];
+
+        $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/skillSets/' + skillSet + '/listOfVideo')
+            .then(function(response) {
+                $scope.videos = [];
+                response.data._embedded.videos.forEach(function(video) {
+                    var splitUrl = video._links.self.href.split("/");
+                    video.id = splitUrl[splitUrl.length - 1];
+                    $scope.videos.push(video);
+                });
+            });
+
+        $scope.open = function(id) {
+            location.href = '/#/quizes/quiz/' + id;            
         }   
 }
         
@@ -198,7 +263,7 @@
 //             console.log(response);
 //         })
 //     }
-//     $scope.getVideos = function() {
+//     s$scope.getVideos = function() {
 //         $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/profile/videos', {test:"hit"})
 //         .then((response) => {
 //             console.log(response);
@@ -253,43 +318,115 @@
     // }
 
 // TEST QUIZ CONTROL LOGIC
-        function quizCtrl($scope) {
-            var myVariable = true;
-            $scope.answers = [{
-                letter: "A",
-                answer: "1st Possible Answer",
-            }, {
-                letter: "B",
-                answer: "2nd Possible Answer",
-            }, {
-                letter: "C",
-                answer: "3rd Possible Answer",
-            }];
-            $scope.start = function() {
-                var id = [
-                {
-                    question: "What is the answer?",
-                    options: ["First Answer", "Second Answer", "Third Answer"],
-                    answer: 2
-                },
-                {
-                    question: "What is this second answer?",
-                    options: ["Another Answer", "Yet Another Answer", "Still Another Answer"],
-                    answer: 3
+        function quizCtrl($cookies, $scope, $http, $routeParams, $sce) {
+            $scope.video = null;
+            $scope.videoUrl = null;
+            $scope.questions = [];
+            $scope.answers = [];
+            $scope.timeWatched = 0;
+            $scope.disableQuiz = true;
+
+            window.vimeoPlayerLoaded = function() {
+                var iframe = document.querySelector('iframe');
+                var player = new Vimeo.Player(iframe);
+
+                player.getVideoTitle().then(function(title) {
+                    console.log('title:', title);
+                });
+
+                player.on('timeupdate', vimeoPlayProgressEvent);
+            }
+
+            window.vimeoPlayProgressEvent = function(data) {
+                if (data.seconds > $scope.timeWatched + 10) {
+                    $http.post('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videoResults', {
+                        user: $cookies.get('userId'),
+                        video: "http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos/" + $routeParams.id,
+                        view_amount: data.seconds 
+                    });
+
+                    $scope.timeWatched = data.seconds;
                 }
-                ];
-                console.log("starting");
-                $scope.id = 0;
-                console.log(id);
-                $scope.inProgress = true;
-                $scope.getQuestion();
+
+                if (data.percent >= .8) {
+                    $scope.disableQuiz = false;
+                }
             }
-            $scope.getQuestion = function() {
-                console.log("getting question");
+
+
+            $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos/' + $routeParams.id)
+                .then(function(response) {
+                    $scope.video = response.data;
+                    $scope.videoUrl = $sce.trustAsResourceUrl($scope.video.url);
+
+                    // TODO - This should filter by quiz_id, however the hell you filter.
+                    var quiz_id = 13; // should be $scope.video.quiz_id
+                    return $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/quizzes/' + quiz_id + '/listOfQuestion');
+                })
+                .then(function (response) {
+                    response.data._embedded.questions.forEach(function(question) {
+                        var splitUrl = question._links.self.href.split("/");
+                        question.id = splitUrl[splitUrl.length - 1];
+                        question.answers = [];
+                        $scope.questions.push(question);
+                    });
+
+                    $scope.questions.forEach(function(question) {
+                        $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/questions/' + question.id + '/listOfAnswer')
+                            .then(function (response) {
+                                question.answers = response.data._embedded.answers;
+                            });
+                    });
+                });
+
+            $scope.letterForIndex = function (index) {
+                return String.fromCharCode(97 + index); 
             }
-            $scope.checkAnswer = function() {
-                console.log("checking the answer");
+
+            $scope.activeQuestion = 0;
+
+            $scope.lastQuestion = function() {
+                return $scope.questions.length === $scope.activeQuestion + 1;
             }
+
+            $scope.setAnswer = function(answer) {
+                $scope.answers[$scope.activeQuestion] = answer;
+            }
+
+            $scope.nextQuestion = function() {
+                if ($scope.answers[$scope.activeQuestion]) {
+                    console.log($scope.answers[$scope.activeQuestion]);
+                    $scope.activeQuestion += 1;
+                } else {
+                    alert("You must choose an answer.");
+                }
+
+            }
+
+            $scope.finishQuiz = function() {
+                var correct = 0;
+
+                $scope.answers.forEach(function (answer) {
+                    if (answer.isCorrect) {
+                        correct += 1;
+                    }
+                });
+
+                // TODO - Use quiz id off of video
+                // TODO - Use user id of logged in user
+                var score = (correct / $scope.questions.length) * 100;
+                $http.post('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/quizResults', {
+                    quiz: "http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/quizzes/13",
+                    user: $cookies.get('userId'),
+                    score: score
+                })
+                .then(function (response) {
+                    alert("You scored " + score + "%! Do something here");
+                });
+
+                
+            }
+
         }
 
 

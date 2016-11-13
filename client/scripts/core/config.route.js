@@ -9,8 +9,8 @@
                 'dashboard',
                 'forms/elements', 'forms/layouts', 'forms/validation', 'forms/wizard',
                 'charts/charts', 'charts/flot',
-                'pages/404', 'pages/500', 'pages/blank', 'pages/forgot-password', 'pages/lock-screen', 'pages/profile', 'pages/signin', 'pages/signup', 'pages/skill-set',
-                'quizes/quiz', 'quizes/quiz-logic-test'
+                'pages/404', 'pages/500', 'pages/blank', 'pages/forgot-password', 'pages/lock-screen', 'pages/profile', 'pages/signin', 'pages/signup', 'pages/skill-set', 'pages/videos',
+                'quizes/quiz-logic-test'
             ]
 
             setRoutes = function(route) {
@@ -28,6 +28,9 @@
             });
 
             $routeProvider
+                .when('/employees/:id', { templateUrl: 'views/employee.html' })
+                .when('/quizes/quiz/:id', { templateUrl: 'views/quizes/quiz.html' })
+                .when('/pages/skill-set-details/:id', { templateUrl: 'views/pages/skill-set-details.html' })
                 .when('/', {redirectTo: 'pages/signin'})
                 .when('/404', {templateUrl: 'views/pages/404.html'})
                 .otherwise({ redirectTo: '/404'});

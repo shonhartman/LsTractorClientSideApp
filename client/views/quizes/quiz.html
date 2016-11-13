@@ -1,22 +1,27 @@
 <div class="page" ng-controller="quizCtrl">
 
 <!--Video-->
+{{ video.title }}
+{{ video.author }}
+
     <div class="col-md-12">
         <div class="vid">
-        <iframe src="https://player.vimeo.com/video/180606688" width="640" height="469" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>        
+        <iframe onLoad="vimeoPlayerLoaded()" ng-src="{{ videoUrl }}" width="640" height="469" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>        
         </div>
 
 <!--TOGGLE COLLAPSE-->
-
     <div class="panel-body ng-scope" data-ng-controller="CollapseDemoCtrl">
-        <button class="btn btn-primary" ng-click="isCollapsed = !isCollapsed">Take Quiz</button>
+        <button ng-disabled="disableQuiz" class="btn btn-primary" ng-click="isCollapsed = !isCollapsed">Take Quiz</button>
+        <span ng-if="disableQuiz">You must watch 80% of the video something something</span>
         <div class="divider divider-md"></div>
         <div collapse="isCollapsed" class="collapse" aria-expanded="false" aria-hidden="true" style="height: 0px;">
 <!--A Question Object should be pulled in here with an id that relates to a video-->
+<div ng-repeat="question in questions" ng-if="$index === activeQuestion">
             <section class="panel panel-default" id="callout-quiz">
                 <div class="panel-heading"><strong><span class="glyphicon glyphicon-list-alt" style="margin-right: 10px;"></span>Quiz</strong></div>
                 <div class="panel-body">
-                    <h4>What is this Question?</h4>
+                    <h4>Question {{ activeQuestion + 1 }} out of {{ questions.length }}</h4>
+                    <h4>{{ question.questionText }}</h4>
                     <!--<h4>{{ question }}</h4>-->
                 </div>
             </section> 
@@ -25,16 +30,18 @@
                 <p style:"float: left; clear: none;">Choose the correct answer below:</p>
             </div>
 <!-- Answers -->
-            <div id="repeating-array" ng-controller="quizCtrl">
-                <section class="panel panel-default" id="callout-quiz" ng-repeat="answer in answers">
+            <div id="repeating-array">
+                <section class="panel panel-default" id="callout-quiz" ng-repeat="answer in question.answers">
                     <div class="panel-body">
-                        <button ng-click="choiceChosen()" class="btn-icon-lined btn-icon-round btn-icon-md  btn-gap-v btn-default" style="float: left;"><h3 style="margin-top: 7.5px;">{{ answer.letter }}</h3></button>
-                        <p style="margin: 20px 0 0 60px;">{{ answer.answer }}</p>
+                        <button ng-click="setAnswer(answer)" class="btn-icon-lined btn-icon-round btn-icon-md  btn-gap-v btn-default" style="float: left;"><h3 style="margin-top: 7.5px;">{{ letterForIndex($index) }}</h3></button>
+                        <p style="margin: 20px 0 0 60px;">{{ answer.answerText }}</p>
                     </div>
                 </section>
-                <a href="/#/dashboard"><button type="button" ng-disabled="choice" class="btn btn-w-md btn-gap-v btn-primary">Next Question<span class="ti-arrow-right" style="float: right; margin: 5px 10px;"></span></button></a>
+                <button ng-if="!lastQuestion()" type="button" class="btn btn-w-md btn-gap-v btn-primary" ng-click="nextQuestion()">Next Question<span class="ti-arrow-right" style="float: right; margin: 5px 10px;"></span></button>
+                <button ng-if="lastQuestion()" type="button" class="btn btn-w-md btn-gap-v btn-primary" ng-click="finishQuiz()">Finish Quiz<span class="ti-arrow-right" style="float: right; margin: 5px 10px;"></span></button>
             </div> <!-- End of Answers -->
         </div> <!-- HIDDEN QUIZ -->
+        </div>
     </div>
 	
 </div> <!--End of Page-->
