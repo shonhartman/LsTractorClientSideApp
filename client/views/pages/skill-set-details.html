@@ -29,11 +29,11 @@
                             <h3>Add a Video</h3>
                         </div>
                         <div class="modal-body">
-                          <input type="text" class="form-control" value="http://">
+                          <input type="text" class="form-control" ng-model="videoUrlData" value="http://">
                           <span class="help-block">Vimeo URL</span>
-                          <input type="text" class="form-control">
+                          <input type="text" class="form-control" ng-model="videoTitle">
                           <span class="help-block">Title</span>
-                          <input type="text" class="form-control">
+                          <input type="text" class="form-control" ng-model="videoAuthor">
                           <span class="help-block">Author</span>
                         </div>
                         <div class="modal-footer">

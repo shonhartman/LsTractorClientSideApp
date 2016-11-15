@@ -226,6 +226,9 @@
                     $scope.skillsets.push(skillset);
                 });
             });
+        $scope.goToSkillSet = function () {
+            location.href = '#/pages/skill-set-details/{{ skillset.id }}';  
+        }
 
         console.log('in right controller');
     }
@@ -234,15 +237,15 @@
         var skillSet = $routeParams.id;
         $scope.videos = [];
 
-        $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/skillSets/' + skillSet + '/listOfVideo')
-            .then(function(response) {
-                $scope.videos = [];
-                response.data._embedded.videos.forEach(function(video) {
-                    var splitUrl = video._links.self.href.split("/");
-                    video.id = splitUrl[splitUrl.length - 1];
-                    $scope.videos.push(video);
-                });
-            });
+               $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos/')
+                   .then(function (response) {
+                       $scope.videos = [];
+                       response.data._embedded.videos.forEach(function (video) {
+                           var splitUrl = video._links.self.href.split("/");
+                           video.id = splitUrl[splitUrl.length - 1];
+                           $scope.videos.push(video);
+                       });
+                   });
 
         $scope.open = function(id) {
             location.href = '/#/quizes/quiz/' + id;            
@@ -250,72 +253,6 @@
 }
         
     
-
-//GET VIDEOS FUNCTION
-
-// function videoCtrl ($scope, $http){
-//     this._$http = $http;
-//     this.title = title;
-//     this.
-//     $scope.postVideo = function() {
-//         $http.post('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/profile/videos')
-//         .then((response) => {
-//             console.log(response);
-//         })
-//     }
-//     s$scope.getVideos = function() {
-//         $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/profile/videos', {test:"hit"})
-//         .then((response) => {
-//             console.log(response);
-//         })
-//     }  
-
-//OG GET TEST
-    // $scope.getVideos = function() {
-    //     console.log("getting Videos");
-    //     $http.get('http://headers.jsontest.com/')
-    //     .then((response) => {
-    //         console.log(response);
-    //     })
-    // }  
-// };
-
-
-
-
-//JSON TEST JQUERY
-//  function jsonTest() {
-//      var getVideos = "/video.json";
-//      $.getJSON (getVideos, {
-//        console.log("JSON Data:");
-//    })
-// }
-  
-
-
-
-// Quiz Controller
-    // function quizCtrl($scope) {
-    //     var myVariable = true;
-    //     $scope.answers = [
-    //         {
-    //             letter: "A",
-    //             answer: "1st Possible Answer",
-    //         },
-    //         {
-    //             letter: "B",
-    //             answer: "2nd Possible Answer",
-    //         },
-    //         {
-    //             letter: "C",
-    //             answer: "3rd Possible Answer",
-    //         }
-    //     ];
-    //     $scope.choice = true;
-    //     $scope.choiceChosen = function() {
-    //         $scope.choice = $scope.choice === false;
-    //     }
-    // }
 
 // TEST QUIZ CONTROL LOGIC
         function quizCtrl($cookies, $scope, $http, $routeParams, $sce) {
@@ -359,7 +296,7 @@
                     $scope.video = response.data;
                     $scope.videoUrl = $sce.trustAsResourceUrl($scope.video.url);
 
-                    // TODO - This should filter by quiz_id, however the hell you filter.
+                    // TODO - This should filter by quiz_id
                     var quiz_id = 13; // should be $scope.video.quiz_id
                     return $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/quizzes/' + quiz_id + '/listOfQuestion');
                 })
@@ -465,21 +402,21 @@
             $modalInstance.dismiss("cancel");
         };
 
-        $scope.upload = function(type) {
-            console.log("UPLOAD FUNCTION");
-            //POST TO DATABASE
-            $scope.postVideo = function () {
+        $scope.upload = function (video) {
                 console.log("Posting Videos");
-                $http.post('http://headers.jsontest.com/')
-                    .then((response) => {
+                $http.post('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos', {
+                    "video_url" : $scope.videoUrlData,
+                    "title" : $scope.videoTitle,
+                    "author" : $scope.videoAuthor
+                })
+                    .then(function (response) {
                         console.log(response);
-                    })
-                    .catch((error) => {
-                        console.log(error);
-                    })
+                    });
             }
+        }
+    
             //CLOSE THE Modal
-            $modalInstance.close('success');
+        $modalInstance.close('success');
             //SHOW SUCCESS MESSAGE
             switch ('success') {
                 case 'info':
@@ -491,8 +428,9 @@
                 case 'error':
                     return logger.logError("Oh snap! Change a few things up and try submitting again.");
             }
-        }
-    }
+        
+    
+
 
 //BADGE CONTROLLER
     function BadgeCtrl($scope) {

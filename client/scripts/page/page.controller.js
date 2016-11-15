@@ -18,26 +18,17 @@
                 });
             });
 
-
-            $scope.test = function () {
-                $http.get('http://tractorquizapp.azurewebsites.net/MainController/Test', { test:"Test String" })
-                .success(function(data) {
-                    console.log(data);
-                })
-            }
-
 // Technican - 4
 // Dealership Owner - 5
 // Super Admin - 6
 
+//TODO replace with real user info
             $scope.login = function() {
                 $cookies.put('userId', 'REPLACE-ME-WITH-REAL-USER-INFO');
                 $location.url('/dashboard')
             }
 
-//SAVE USER TO DATABASE
-
-// THIS IS WHAT I IMAGINE IT TO BE
+//SAVES USER TO DATABASE
             $scope.signup = function() {
                 console.log($scope.formData);
 
