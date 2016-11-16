@@ -262,7 +262,7 @@
             $scope.answers = [];
             $scope.timeWatched = 0;
             $scope.disableQuiz = true;
-
+// Get Title & Progress off of a Video
             window.vimeoPlayerLoaded = function() {
                 var iframe = document.querySelector('iframe');
                 var player = new Vimeo.Player(iframe);
@@ -273,7 +273,7 @@
 
                 player.on('timeupdate', vimeoPlayProgressEvent);
             }
-
+// Track Individual Video Progress
             window.vimeoPlayProgressEvent = function(data) {
                 if (data.seconds > $scope.timeWatched + 10) {
                     $http.post('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videoResults', {
@@ -290,7 +290,7 @@
                 }
             }
 
-
+// Get Videos & Questions
             $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos/' + $routeParams.id)
                 .then(function(response) {
                     $scope.video = response.data;
@@ -316,6 +316,31 @@
                     });
                 });
 
+// Post a new Video
+                $http.post('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos/' + $routeParams.id)
+                .then(function(response) {
+                    
+
+                    // TODO - This should filter by quiz_id
+                    var quiz_id = 13; // should be $scope.video.quiz_id
+                    return $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/quizzes/' + quiz_id + '/listOfQuestion');
+                })
+                .then(function (response) {
+                    response.data._embedded.questions.forEach(function(question) {
+                        var splitUrl = question._links.self.href.split("/");
+                        question.id = splitUrl[splitUrl.length - 1];
+                        question.answers = [];
+                        $scope.questions.push(question);
+                    });
+
+                    $scope.questions.forEach(function(question) {
+                        $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/questions/' + question.id + '/listOfAnswer')
+                            .then(function (response) {
+                                question.answers = response.data._embedded.answers;
+                            });
+                    });
+                });
+// Changes index number to a letter 
             $scope.letterForIndex = function (index) {
                 return String.fromCharCode(97 + index); 
             }
@@ -405,9 +430,10 @@
         $scope.upload = function (video) {
                 console.log("Posting Videos");
                 $http.post('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos', {
-                    "video_url" : $scope.videoUrlData,
+
                     "title" : $scope.videoTitle,
-                    "author" : $scope.videoAuthor
+                    "author" : $scope.videoAuthor,
+                    "url" : $scope.videoUrlData
                 })
                     .then(function (response) {
                         console.log(response);
@@ -473,7 +499,7 @@
 
     }
 
-        function PaginationDemoCtrl($scope) {
+     function PaginationDemoCtrl($scope) {
         $scope.totalItems = 64;
 
         $scope.currentPage = 4;
