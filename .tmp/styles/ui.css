@@ -4097,42 +4097,43 @@ img.img80_80 {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003150}}
 #video-box {
   margin-top: 20px;
+  min-height: 270px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003155}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003156}}
 .panel-profile {
   border: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003158}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003159}}
 .panel-profile .profile {
   margin: 5px 15px 5px 5px;
   border-radius: 50%;
   padding: 5px;
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003165}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003166}}
 .panel-profile .profile img {
   border-radius: 50%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003170}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003171}}
 .panel-profile .list-group > li > i {
   margin-right: 10px;
   font-size: 16px;
   color: #777777;
   table-layout: fixed;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003177}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003178}}
 .panel-profile .list-justified-container {
   padding: 15px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003181}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003182}}
 .panel-profile ul.list-justified {
   display: table;
   width: 100%;
   list-style: none;
   padding: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003187}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003188}}
 .panel-profile ul.list-justified > li {
   float: none;
   display: table-cell;
@@ -4140,11 +4141,11 @@ img.img80_80 {
   width: 1%;
   border-right: 1px solid #eeeeee;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003193}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003194}}
 .panel-profile ul.list-justified > li:last-child {
   border: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003197}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_panels\.scss}line{font-family:\00003198}}
 .panel-profile ul.list-justified > li p {
   margin: 0;
 }

@@ -319,7 +319,6 @@
 // Post a new Video
                 $http.post('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos/' + $routeParams.id)
                 .then(function(response) {
-                    
 
                     // TODO - This should filter by quiz_id
                     var quiz_id = 13; // should be $scope.video.quiz_id
