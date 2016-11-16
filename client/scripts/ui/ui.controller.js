@@ -16,7 +16,7 @@
         .controller('quizCtrl', ['$cookies', '$scope', '$http', '$routeParams', '$sce', quizCtrl])
         .controller('videoCtrl', ['$scope', '$routeParams', '$location', '$http', videoCtrl])
         .controller('MapDemoCtrl', ['$scope', '$http', '$interval', MapDemoCtrl])
-        .controller('dashboardCtrl', ['$scope', '$http', dashboardCtrl])
+        .controller('dashboardCtrl', ['$cookies', '$scope', '$http', dashboardCtrl])
         .controller('employeeCtrl', ['$scope', '$http', '$routeParams', employeeCtrl])
         .controller('skillSetCtrl', ['$scope', '$http', skillSetCtrl]);
 
@@ -41,10 +41,29 @@
             });
     }
 
-    function dashboardCtrl($scope, $http) {
+    function dashboardCtrl($cookies, $scope, $http) {
         $scope.role = 5;
         $scope.dealership = null;
         $scope.dealerships = [];
+
+        var loggedInUserId = $cookies.get('userId');
+
+        if (loggedInUserId) {
+            $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/appUsers')
+                .then(function (response) {
+                    var users = response.data._embedded.appUsers;
+
+                    var user = users.find(function (user) {
+                        var userId = user._links.self.href.split('/').pop();
+                        return userId === loggedInUserId;
+                    });
+
+                    if(user) {
+                        $scope.role = user.roleId;
+                        console.log('Updating user role to: ' + user.roleId);
+                    }
+                });
+        }
 
         $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/dealerships')
             .then(function(response) {

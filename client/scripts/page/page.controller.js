@@ -22,21 +22,20 @@
         // Dealership Owner - 5
         // Super Admin - 6
 
-        //TODO replace with real user info
         $scope.login = function () {
+
+            if (!$scope.formData) {
+                return;
+            }            
 
             $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/appUsers')
                 .then(function (response) {
-
-                    if (!$scope.formData) {
-                        return;
-                    }
 
                     var users = response.data._embedded.appUsers;
                     var username = $scope.formData.hasOwnProperty('Username') ? $scope.formData.Username : '';
                     var password = $scope.formData.hasOwnProperty('Password') ? $scope.formData.Password : '';
 
-                    var user = users.find(function (user, index, obj) {
+                    var user = users.find(function (user) {
                         return user.email === username && user.password === password;
                     });
 
