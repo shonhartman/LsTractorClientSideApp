@@ -1,0 +1,63 @@
+<div class="page page-profile" ng-controller="TestCtrl">
+
+    <!--<div ng-repeat="appUser in appUsers">
+        <h3>{{ appUser.firstName }} {{ appUser.lastName }}</h3>
+        <p>{{ appUser.roleId }}</p>
+        <p>{{ appUser.id }}</p>
+    </div>
+
+    <button ng-click="postData()">Create Data</button>-->
+    <button ng-click="readData()">Read Data</button>
+    <!--<button ng-click="updateData()">Update Data</button>
+    <button ng-click="deleteData()">Delete Data</button>-->
+
+
+<!--Dealership Owner/Employee Table-->
+        <div class="panel panel-default">
+            <div class="panel-body table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Employee</th>
+                            <th popover="How are my employees doing" popover-trigger="mouseenter">Progress</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- TODO How do we account for dealership number? -->
+                        <tr ng-repeat="appUser in appUsers">
+                            <td><a href="#/employees/{{ employee.id }}">{{ appUser.firstName }} {{ appUser.lastName }}</a></td>
+                            <td>
+                                <progressbar class="progressbar-xs no-margin" value="35"></progressbar>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    </div><!-- /Dealership/Employee Table -->
+
+    </div>
+
+
+            <!--<div class="panel panel-default">
+            <div class="panel-body table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Employee</th>
+                            <th popover="How are my employees doing" popover-trigger="mouseenter">Progress</th>
+                        </tr>
+                    </thead>
+                    <tbody>-->
+                        <!-- TODO How do we account for dealership number? -->
+                        <!--<tr ng-repeat="employee in dealership.employees">
+                            <td><a href="#/employees/{{ employee.id }}">{{ employee.firstName }} {{ employee.lastName }}</a></td>
+                            <td>
+                                <progressbar class="progressbar-xs no-margin" value="55"></progressbar>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>-->
+
+
+

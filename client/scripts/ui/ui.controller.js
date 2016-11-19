@@ -18,7 +18,14 @@
         .controller('MapDemoCtrl', ['$scope', '$http', '$interval', MapDemoCtrl])
         .controller('dashboardCtrl', ['$cookies', '$scope', '$http', dashboardCtrl])
         .controller('employeeCtrl', ['$scope', '$http', '$routeParams', employeeCtrl])
-        .controller('skillSetCtrl', ['$scope', '$http', skillSetCtrl]);
+        .controller('skillSetCtrl', ['$scope', '$http', skillSetCtrl])   
+        .controller('TestCtrl', ['$scope', '$http', TestCtrl]);    
+
+    function TestCtrl($scope, $http) {
+        console.log("Test is back");
+    }
+
+
 
     function employeeCtrl($scope, $http, $routeParams) {
         $scope.results = [];
@@ -54,7 +61,7 @@
                     var users = response.data._embedded.appUsers;
 
                     var user = users.find(function (user) {
-                        var userId = user._links.self.href.split('/').pop();
+                        var userId = user._links.self.href.split('/').pop(); //QA : Why do we pop this time?
                         return userId === loggedInUserId;
                     });
 

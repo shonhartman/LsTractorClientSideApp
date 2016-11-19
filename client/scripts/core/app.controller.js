@@ -12,7 +12,7 @@
 
         $scope.main = {
             brand: 'LS Tractor',
-            name: 'Carl',
+            name: 'Shaun',
             year: year
         };
 

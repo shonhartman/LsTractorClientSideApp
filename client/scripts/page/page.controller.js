@@ -2,10 +2,10 @@
     'use strict';
 
     angular.module('app.page')
-        .controller('authCtrl', ['$cookies', '$scope', '$window', '$location', '$http', authCtrl])
+        .controller('authCtrl', ['$cookies', '$scope', '$window', '$location', '$http', '$routeParams', authCtrl])
 
     //AUTH CONTROLLER
-    function authCtrl($cookies, $scope, $window, $location, $http) {
+    function authCtrl($cookies, $scope, $window, $location, $http, $routeParams) {
         $scope.dealerships = [];
 
         $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/dealerships')
@@ -22,6 +22,7 @@
         // Dealership Owner - 5
         // Super Admin - 6
 
+       //LOGIN FUNCTION
         $scope.login = function () {
 
             if (!$scope.formData) {
@@ -61,12 +62,27 @@
                     "email": $scope.formData.Email,
                     "birthDate": $scope.formData.BirthDate,
                     "password": $scope.formData.Password,
-                    "phoneNumber": $scope.formData.PhoneNumber,
-                    "roleId": $scope.formData.Role,
-                    "dealership": $scope.formData.Dealership
+                    "phoneNumber": $scope.formData.PhoneNumber
+
                 })
                 .then(function (response) {
                     console.log("Successful Sign Up");
+                    console.log(response);
+                });
+                $http.post('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/Roles' + $routeParams.id,
+                {
+                    "roleId": $scope.formData.Role
+                })
+                .then(function (response) {
+                    console.log("Successful Role ID");
+                    console.log(response);
+                });
+                $http.post('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/dealerships' + $routeParams.id,
+                {
+                    "dealership": $scope.formData.Dealership
+                })
+                .then(function (response) {
+                    console.log("Successful Dealership ID");
                     console.log(response);
                 });
         }
