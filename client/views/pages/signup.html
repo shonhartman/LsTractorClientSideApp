@@ -88,16 +88,16 @@
                                     <dt style="margin: 10px 0 10px 0;">Dealership</dt>
                                         <dd>
                                             <select ng-model="formData.Dealership">
-                                                <option ng-repeat="dealership in dealerships" value="{{ dealership.id }}">{{ dealership.name }}</option>
+                                                <option ng-repeat="dealership in dealerships" value="{{ dealership._links.self.href }}">{{ dealership.name }}</option>
                                             </select>
                                         </dd>                                    
                                 </section>
                             <section class="panel panel-default" style="margin-top: 20px;">
                                     <dt style="margin: 10px 0 10px 0;">Administration Level</dt>
-                                        <dd ng-model="formData.Role">
-                                            <label class="ui-radio"><input name="radio1" type="radio" value="4"><span>Technician</span></label>
-                                            <label class="ui-radio"><input name="radio1" type="radio" value="5" checked=""><span>Dealership Owner</span></label>
-                                            <label class="ui-radio"><input name="radio1" type="radio" value="6"><span>Super Administrator</span></label>
+                                        <dd>
+                                            <label class="ui-radio"><input ng-model="formData.Role" name="radio1" type="radio" value="4"><span>Technician</span></label>
+                                            <label class="ui-radio"><input ng-model="formData.Role" name="radio1" type="radio" value="5" checked=""><span>Dealership Owner</span></label>
+                                            <label class="ui-radio"><input ng-model="formData.Role" name="radio1" type="radio" value="6"><span>Super Administrator</span></label>
                                         </dd>                                    
                                 </section>
                             </div>

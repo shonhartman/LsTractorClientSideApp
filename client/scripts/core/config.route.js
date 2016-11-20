@@ -8,8 +8,7 @@
             routes = [
                 'charts/charts', 'charts/flot',
                 'dashboard', 
-                'forms/elements', 'forms/layouts', 'forms/validation', 'forms/wizard',
-                'pages/404', 'pages/500', 'pages/blank', 'pages/forgot-password', 'pages/lock-screen', 'pages/profile', 'pages/signin', 'pages/signup', 'pages/skill-set', 'pages/videos',
+                'pages/404', 'pages/500', 'pages/blank', 'pages/forgot-password', 'pages/lock-screen', 'pages/signin', 'pages/signup', 'pages/skill-set', 'pages/videos',
                 'quizes/quiz-logic-test', 
                 'test-view'
             ]

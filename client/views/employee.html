@@ -1,4 +1,4 @@
-<div class="page page-dashboard" ng-controller="employeeCtrl">
+<div class="page page-dashboard" ng-controller="EmployeeCtrl">
 
 {{ employee.firstName }} {{ employee.lastName }}
 
@@ -16,8 +16,8 @@
             <tbody>
                 <tr ng-repeat="video in videos">
                     <td>{{ video.title }}</td>
-                    <td>{{ video.progress }}</td>
-                    <td>{{ video.isComplete )}}</td>
+                    <td>{{ videoProgress(video.progress) }}</td>
+                    <td>{{ videoComplete(video.isComplete) }}</td>
                 </tr>
             </tbody>
         </table>

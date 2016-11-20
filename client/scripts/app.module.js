@@ -18,10 +18,14 @@
         
         // Custom modules
         'app.chart',
+        'app.dashboard',
+        'app.modal',
         'app.nav',
         'app.page',
+        'app.quiz',
         'app.ui',
         'app.ui.form.validation',
+        'app.video'
         
     ]);
 

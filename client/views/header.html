@@ -1,4 +1,4 @@
-<header class="top-header clearfix">
+<header class="top-header clearfix" ng-controller="headerCtrl">
 
     <!-- Logo -->
     <div class="logo"
@@ -70,7 +70,7 @@
                 </ul>
             </li>
             <li class="dropdown langs text-normal">
-                <a href="javascript:;" class="active-flag" dropdown-toggle ng-disabled="disabled">
+                <a href="#" ng-click="logout()" class="active-flag" dropdown-toggle>
                     <p>Log Out</p>
                 </a>
             </li>

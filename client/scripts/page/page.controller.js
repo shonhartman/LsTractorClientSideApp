@@ -3,6 +3,14 @@
 
     angular.module('app.page')
         .controller('authCtrl', ['$cookies', '$scope', '$window', '$location', '$http', '$routeParams', authCtrl])
+        .controller('headerCtrl', ['$scope', '$cookies', '$location', headerCtrl]);
+
+    function headerCtrl($scope, $cookies, $location) {
+        $scope.logout = function () {
+            $cookies.remove('user');
+            $location.url('pages/signin');
+        }
+    }
 
     //AUTH CONTROLLER
     function authCtrl($cookies, $scope, $window, $location, $http, $routeParams) {
@@ -10,12 +18,7 @@
 
         $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/dealerships')
             .then(function (response) {
-                $scope.dealerships = [];
-                response.data._embedded.dealerships.forEach(function (dealership) {
-                    var splitUrl = dealership._links.self.href.split("/");
-                    dealership.id = splitUrl[splitUrl.length - 1];
-                    $scope.dealerships.push(dealership);
-                });
+                $scope.dealerships = response.data._embedded.dealerships;
             });
 
         // Technican - 4
@@ -44,8 +47,7 @@
                         return;
                     }
 
-                    var userId = user._links.self.href.split('/').pop();
-                    $cookies.put('userId', userId);
+                    $cookies.put('user', angular.toJson(user));
                     $location.url('/dashboard');
                 });
         }
@@ -62,28 +64,14 @@
                     "email": $scope.formData.Email,
                     "birthDate": $scope.formData.BirthDate,
                     "password": $scope.formData.Password,
-                    "phoneNumber": $scope.formData.PhoneNumber
+                    "phoneNumber": $scope.formData.PhoneNumber,
+                    "dealership": $scope.formData.Dealership,
+                    "userRole": 'http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/userRoles/' + $scope.formData.Role
 
                 })
                 .then(function (response) {
-                    console.log("Successful Sign Up");
-                    console.log(response);
-                });
-                $http.post('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/Roles' + $routeParams.id,
-                {
-                    "roleId": $scope.formData.Role
-                })
-                .then(function (response) {
-                    console.log("Successful Role ID");
-                    console.log(response);
-                });
-                $http.post('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/dealerships' + $routeParams.id,
-                {
-                    "dealership": $scope.formData.Dealership
-                })
-                .then(function (response) {
-                    console.log("Successful Dealership ID");
-                    console.log(response);
+                    $cookies.put('user', angular.toJson(response.data));
+                    $location.url('/dashboard');
                 });
         }
     }
