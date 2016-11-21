@@ -8,7 +8,8 @@
     function headerCtrl($scope, $cookies, $location) {
         $scope.logout = function () {
             $cookies.remove('user');
-            $location.url('pages/signin');
+            $location.url('/');
+            console.log("sorry to remove your cookie");
         }
     }
 

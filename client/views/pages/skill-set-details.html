@@ -42,26 +42,28 @@
 
 <!--Add Video Button-->
 
-    <button type="submit" ng-controller="ModalDemoCtrl" class="btn btn-primary btn-block btn-lg" ng-click="open()">Add a Video</button>
-    <script type="text/ng-template" id="myModalContent.html">
-                        <div class="modal-header">
-                            <h3>Add a Video</h3>
-                        </div>
-                        <div class="modal-body">
-                          <input type="text" class="form-control" ng-model="videoUrlData" value="http://">
-                          <span class="help-block">Vimeo URL</span>
-                          <input type="text" class="form-control" ng-model="videoTitle">
-                          <span class="help-block">Title</span>
-                          <input type="text" class="form-control" ng-model="videoAuthor">
-                          <span class="help-block">Instructor</span>
-                          <input type="text" class="form-control" ng-model="skillSet">
-                          <span class="help-block">Skill Set</span>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-primary" ng-click="upload()">Upload</button>
-                            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
-                        </div>
-                    </script>
+    <!--<div ng-if="roleId === 6">-->
+        <button type="submit" ng-controller="ModalDemoCtrl" class="btn btn-primary btn-block btn-lg" ng-click="open()">Add a Video</button>
+        <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+                <h3>Add a Video</h3>
+        </div>
+        <div class="modal-body">
+                <input type="text" class="form-control" ng-model="videoUrlData" value="http://">
+                <span class="help-block">Vimeo URL</span>
+                <input type="text" class="form-control" ng-model="videoTitle">
+                <span class="help-block">Title</span>
+                <input type="text" class="form-control" ng-model="videoAuthor">
+                <span class="help-block">Instructor</span>
+                <input type="text" class="form-control" ng-model="skillSet">
+                <span class="help-block">Skill Set</span>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" ng-click="upload()">Upload</button>
+                <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+            </div>
+        </script>
+    <!--</div>-->
 
 <!--Delete Video Button-->
 

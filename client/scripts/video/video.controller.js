@@ -40,7 +40,7 @@
                         var splitUrl = skillset._links.self.href.split("/");
                         skillset.id = splitUrl[splitUrl.length - 1];
                         $scope.skillsets.push(skillset);
-                        console.log(skillset);
+                        // console.log(skillset);
                     });
                 });
             $scope.goToSkillSet = function () {

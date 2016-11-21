@@ -2,9 +2,9 @@
     'use strict';
 
     angular.module('app.quiz')
-         .controller('QuizCtrl', ['$cookies', '$scope', '$http', '$routeParams', '$sce', QuizCtrl]);
+         .controller('QuizCtrl', ['$cookies', '$scope', '$http', '$routeParams', '$sce', '$location', QuizCtrl]);
 
-        function QuizCtrl($cookies, $scope, $http, $routeParams, $sce) {
+        function QuizCtrl($cookies, $scope, $http, $routeParams, $sce, $location) {
             $scope.video = null;
             $scope.videoUrl = null;
             $scope.questions = [];
@@ -35,12 +35,14 @@
                         viewAmount: data.seconds 
                     });
 
+
                     $scope.timeWatched = data.seconds;
                 }
                 
                 if (data.percent >= .8) {
                     $scope.disableQuiz = false;
                 }
+                // console.log($scope.timeWatched);
             }
 
 // Get Videos & Questions
@@ -129,14 +131,15 @@
                 });
 
                 var score = (correct / $scope.questions.length) * 100;
+                
                 if (score > 99) {
                     // TODO - When we have $scope.videoResult
-                    // $http.put($scope.videoResult._links.self.href, {
-                    //     appUser: $scope.user._links.self.href,
-                    //     video: "http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos/" + $routeParams.id,
-                    //     viewAmount: $scope.videoResult.viewAmount,                                                 
-                    //     isComplete: true
-                    // });
+                    $http.put($scope.videoResult._links.self.href, {
+                        appUser: $scope.user._links.self.href,
+                        video: "http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos/" + $routeParams.id,
+                        viewAmount: $scope.videoResult.viewAmount,                                                 
+                        isComplete: true
+                    });   
                 }   
 
                 $http.post('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/quizResults', {
@@ -145,7 +148,9 @@
                     score: score
                 })
                 .then(function (response) {
-                    alert("You scored " + score + "%! Do something here");
+                    alert("You scored " + score + "%!");
+                    $location.url('/dashboard');
+                    // console.log(response);
                 });   
             }
         }
