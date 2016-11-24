@@ -61,16 +61,16 @@
 
         $scope.upload = function (video) {
 
-            // $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/skillSets/' + $routeParams.id + '/listOfVideo')
-            //     .then(function (response) {
-            //         $scope.videos = [];
-            //         response.data._embedded.videos.forEach(function (video) {
-            //             var splitUrl = video._links.self.href.split("/");
-            //             video.id = splitUrl[splitUrl.length - 1];
-            //             $scope.videos.push(video);
-            //         });
-            //         console.log($scope.videoResults);
-            //     });
+            $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/skillSets/' + $routeParams.id + '/listOfVideo')
+                .then(function (response) {
+                    $scope.videos = [];
+                    response.data._embedded.videos.forEach(function (video) {
+                        var splitUrl = video._links.self.href.split("/");
+                        video.id = splitUrl[splitUrl.length - 1];
+                        $scope.videos.push(video);
+                    });
+                    console.log($scope.videoResults);
+                });
                 $http.post('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos', {
                    
                     "title" : $scope.videoTitle,

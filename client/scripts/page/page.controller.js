@@ -36,12 +36,15 @@
             $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/appUsers')
                 .then(function (response) {
 
+
                     var users = response.data._embedded.appUsers;
                     var username = $scope.formData.hasOwnProperty('Username') ? $scope.formData.Username : '';
                     var password = $scope.formData.hasOwnProperty('Password') ? $scope.formData.Password : '';
 
                     var user = users.find(function (user) {
-                        return user.email === username && user.password === password;
+                        // return user.email === username && user.password === password;
+                        console.log(user.password);
+
                     });
 
                     if (!user) {

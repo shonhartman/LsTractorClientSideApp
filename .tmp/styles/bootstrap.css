@@ -1,4 +1,16 @@
 @charset "UTF-8";
+/*$gray-darker:            lighten($gray-base, 13.5%) !default; // #222*/
+/*$gray-dark:              lighten($gray-base, 20%) !default;   // #333*/
+/*$gray:                   lighten($gray-base, 33.5%) !default; // #555*/
+/*$gray-light:             lighten($gray-base, 46.7%) !default; // #777*/
+/*$gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee*/
+/*$gray-base:              #00132c !default;*/
+/*$brand-primary:         #7992BF !default;*/
+/*$brand-info:            #6BD5C3 !default;*/
+/*$brand-warning:         #ECD48B !default;*/
+/*$brand-danger:          #ED848F !default;*/
+/*$brand-success:         #A9DC8E !default;*/
+/*$brand-info-alt:        #da84f5!default;*/
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_normalize\.scss}line{font-family:\000039}}
 html {
@@ -1429,12 +1441,12 @@ textarea {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_scaffolding\.scss}line{font-family:\0000348}}
 a {
-  color: #7992BF;
+  color: #45B3FF;
   text-decoration: none;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_scaffolding\.scss}line{font-family:\0000352}}
 a:hover, a:focus {
-  color: #4c6a9f;
+  color: #0092f8;
   text-decoration: underline;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_scaffolding\.scss}line{font-family:\0000358}}
@@ -1693,12 +1705,12 @@ mark,
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_text-emphasis\.scss}line{font-family:\000035}}
 .text-primary {
-  color: #7992BF;
+  color: #45B3FF;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_text-emphasis\.scss}line{font-family:\000038}}
 a.text-primary:hover {
-  color: #5676af;
+  color: #129eff;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_text-emphasis\.scss}line{font-family:\000035}}
@@ -1748,12 +1760,12 @@ a.text-danger:hover {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_background-variant\.scss}line{font-family:\000035}}
 .bg-primary {
-  background-color: #7992BF;
+  background-color: #45B3FF;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_background-variant\.scss}line{font-family:\000038}}
 a.bg-primary:hover {
-  background-color: #5676af;
+  background-color: #129eff;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_background-variant\.scss}line{font-family:\000035}}
@@ -4420,14 +4432,14 @@ select[multiple].input-lg,
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_buttons\.scss}line{font-family:\0000363}}
 .btn-primary {
   color: #fff;
-  background-color: #7992BF;
-  border-color: #6884b7;
+  background-color: #45B3FF;
+  border-color: #2ca9ff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000311}}
 .btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: #5676af;
-  border-color: #496598;
+  background-color: #129eff;
+  border-color: #008ced;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000321}}
 .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
@@ -4435,12 +4447,12 @@ select[multiple].input-lg,
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000329}}
 .btn-primary.disabled, .btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled.focus, .btn-primary.disabled:active, .btn-primary.disabled.active, .btn-primary[disabled], .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled].focus, .btn-primary[disabled]:active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary.focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary.active {
-  background-color: #7992BF;
-  border-color: #6884b7;
+  background-color: #45B3FF;
+  border-color: #2ca9ff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000340}}
 .btn-primary .badge {
-  color: #7992BF;
+  color: #45B3FF;
   background-color: #fff;
 }
 
@@ -4474,14 +4486,14 @@ select[multiple].input-lg,
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_buttons\.scss}line{font-family:\0000371}}
 .btn-info {
   color: #fff;
-  background-color: #6BD5C3;
-  border-color: #57cfbb;
+  background-color: #17edb9;
+  border-color: #11daa9;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000311}}
 .btn-info:hover, .btn-info:focus, .btn-info.focus, .btn-info:active, .btn-info.active, .open > .btn-info.dropdown-toggle {
   color: #fff;
-  background-color: #43cab3;
-  border-color: #34b6a0;
+  background-color: #0fc296;
+  border-color: #0ca17d;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000321}}
 .btn-info:active, .btn-info.active, .open > .btn-info.dropdown-toggle {
@@ -4489,26 +4501,26 @@ select[multiple].input-lg,
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000329}}
 .btn-info.disabled, .btn-info.disabled:hover, .btn-info.disabled:focus, .btn-info.disabled.focus, .btn-info.disabled:active, .btn-info.disabled.active, .btn-info[disabled], .btn-info[disabled]:hover, .btn-info[disabled]:focus, .btn-info[disabled].focus, .btn-info[disabled]:active, .btn-info[disabled].active, fieldset[disabled] .btn-info, fieldset[disabled] .btn-info:hover, fieldset[disabled] .btn-info:focus, fieldset[disabled] .btn-info.focus, fieldset[disabled] .btn-info:active, fieldset[disabled] .btn-info.active {
-  background-color: #6BD5C3;
-  border-color: #57cfbb;
+  background-color: #17edb9;
+  border-color: #11daa9;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000340}}
 .btn-info .badge {
-  color: #6BD5C3;
+  color: #17edb9;
   background-color: #fff;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_buttons\.scss}line{font-family:\0000375}}
 .btn-warning {
   color: #fff;
-  background-color: #ECD48B;
-  border-color: #e8cc75;
+  background-color: #ead118;
+  border-color: #d5be13;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000311}}
 .btn-warning:hover, .btn-warning:focus, .btn-warning.focus, .btn-warning:active, .btn-warning.active, .open > .btn-warning.dropdown-toggle {
   color: #fff;
-  background-color: #e5c45f;
-  border-color: #e0b841;
+  background-color: #bea911;
+  border-color: #9d8c0e;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000321}}
 .btn-warning:active, .btn-warning.active, .open > .btn-warning.dropdown-toggle {
@@ -4516,26 +4528,26 @@ select[multiple].input-lg,
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000329}}
 .btn-warning.disabled, .btn-warning.disabled:hover, .btn-warning.disabled:focus, .btn-warning.disabled.focus, .btn-warning.disabled:active, .btn-warning.disabled.active, .btn-warning[disabled], .btn-warning[disabled]:hover, .btn-warning[disabled]:focus, .btn-warning[disabled].focus, .btn-warning[disabled]:active, .btn-warning[disabled].active, fieldset[disabled] .btn-warning, fieldset[disabled] .btn-warning:hover, fieldset[disabled] .btn-warning:focus, fieldset[disabled] .btn-warning.focus, fieldset[disabled] .btn-warning:active, fieldset[disabled] .btn-warning.active {
-  background-color: #ECD48B;
-  border-color: #e8cc75;
+  background-color: #ead118;
+  border-color: #d5be13;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000340}}
 .btn-warning .badge {
-  color: #ECD48B;
+  color: #ead118;
   background-color: #fff;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_buttons\.scss}line{font-family:\0000379}}
 .btn-danger {
   color: #fff;
-  background-color: #ED848F;
-  border-color: #ea6e7b;
+  background-color: #ED174B;
+  border-color: #da1142;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000311}}
 .btn-danger:hover, .btn-danger:focus, .btn-danger.focus, .btn-danger:active, .btn-danger.active, .open > .btn-danger.dropdown-toggle {
   color: #fff;
-  background-color: #e65866;
-  border-color: #e2384a;
+  background-color: #c20f3b;
+  border-color: #a10c31;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000321}}
 .btn-danger:active, .btn-danger.active, .open > .btn-danger.dropdown-toggle {
@@ -4543,18 +4555,18 @@ select[multiple].input-lg,
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000329}}
 .btn-danger.disabled, .btn-danger.disabled:hover, .btn-danger.disabled:focus, .btn-danger.disabled.focus, .btn-danger.disabled:active, .btn-danger.disabled.active, .btn-danger[disabled], .btn-danger[disabled]:hover, .btn-danger[disabled]:focus, .btn-danger[disabled].focus, .btn-danger[disabled]:active, .btn-danger[disabled].active, fieldset[disabled] .btn-danger, fieldset[disabled] .btn-danger:hover, fieldset[disabled] .btn-danger:focus, fieldset[disabled] .btn-danger.focus, fieldset[disabled] .btn-danger:active, fieldset[disabled] .btn-danger.active {
-  background-color: #ED848F;
-  border-color: #ea6e7b;
+  background-color: #ED174B;
+  border-color: #da1142;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000340}}
 .btn-danger .badge {
-  color: #ED848F;
+  color: #ED174B;
   background-color: #fff;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_buttons\.scss}line{font-family:\0000388}}
 .btn-link {
-  color: #7992BF;
+  color: #45B3FF;
   font-weight: normal;
   border-radius: 0;
 }
@@ -4570,7 +4582,7 @@ select[multiple].input-lg,
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_buttons\.scss}line{font-family:\00003107}}
 .btn-link:hover, .btn-link:focus {
-  color: #4c6a9f;
+  color: #0092f8;
   text-decoration: underline;
   background-color: transparent;
 }
@@ -4739,7 +4751,7 @@ tbody.collapse.in {
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
   text-decoration: none;
   color: #fff;
-  background-color: #7992BF;
+  background-color: #45B3FF;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_dropdowns\.scss}line{font-family:\0000386}}
@@ -4747,7 +4759,7 @@ tbody.collapse.in {
   color: #fff;
   text-decoration: none;
   outline: 0;
-  background-color: #7992BF;
+  background-color: #45B3FF;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_dropdowns\.scss}line{font-family:\00003101}}
@@ -5270,7 +5282,7 @@ tbody.collapse.in {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_navs\.scss}line{font-family:\0000346}}
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
   background-color: #eeeeee;
-  border-color: #7992BF;
+  border-color: #45B3FF;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_navs\.scss}line{font-family:\0000359}}
 .nav .nav-divider {
@@ -5328,7 +5340,7 @@ tbody.collapse.in {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_navs\.scss}line{font-family:\00003131}}
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
   color: #fff;
-  background-color: #7992BF;
+  background-color: #45B3FF;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_navs\.scss}line{font-family:\00003144}}
@@ -6133,8 +6145,8 @@ tbody.collapse.in {
 .pagination > .active > span:focus {
   z-index: 2;
   color: #fff;
-  background-color: #7992BF;
-  border-color: #7992BF;
+  background-color: #45B3FF;
+  border-color: #45B3FF;
   cursor: default;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_pagination\.scss}line{font-family:\0000363}}
@@ -6284,11 +6296,11 @@ a.label:hover, a.label:focus {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_labels\.scss}line{font-family:\0000348}}
 .label-primary {
-  background-color: #7992BF;
+  background-color: #45B3FF;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_labels\.scss}line{font-family:\000037}}
 .label-primary[href]:hover, .label-primary[href]:focus {
-  background-color: #5676af;
+  background-color: #129eff;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_labels\.scss}line{font-family:\0000352}}
@@ -6302,29 +6314,29 @@ a.label:hover, a.label:focus {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_labels\.scss}line{font-family:\0000356}}
 .label-info {
-  background-color: #6BD5C3;
+  background-color: #17edb9;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_labels\.scss}line{font-family:\000037}}
 .label-info[href]:hover, .label-info[href]:focus {
-  background-color: #43cab3;
+  background-color: #0fc296;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_labels\.scss}line{font-family:\0000360}}
 .label-warning {
-  background-color: #ECD48B;
+  background-color: #ead118;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_labels\.scss}line{font-family:\000037}}
 .label-warning[href]:hover, .label-warning[href]:focus {
-  background-color: #e5c45f;
+  background-color: #bea911;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_labels\.scss}line{font-family:\0000364}}
 .label-danger {
-  background-color: #ED848F;
+  background-color: #ED174B;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_labels\.scss}line{font-family:\000037}}
 .label-danger[href]:hover, .label-danger[href]:focus {
-  background-color: #e65866;
+  background-color: #c20f3b;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_badges\.scss}line{font-family:\000037}}
@@ -6358,7 +6370,7 @@ a.label:hover, a.label:focus {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_badges\.scss}line{font-family:\0000339}}
 a.list-group-item.active > .badge, .nav-pills > .active > a > .badge {
-  color: #7992BF;
+  color: #45B3FF;
   background-color: #fff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_badges\.scss}line{font-family:\0000344}}
@@ -6452,7 +6464,7 @@ a.badge:hover, a.badge:focus {
 a.thumbnail:hover,
 a.thumbnail:focus,
 a.thumbnail.active {
-  border-color: #7992BF;
+  border-color: #45B3FF;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_alerts\.scss}line{font-family:\000039}}
@@ -6591,7 +6603,7 @@ a.thumbnail.active {
   line-height: 20px;
   color: #fff;
   text-align: center;
-  background-color: #7992BF;
+  background-color: #45B3FF;
   -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   -webkit-transition: width 0.6s ease;
@@ -6629,7 +6641,7 @@ a.thumbnail.active {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_progress-bars\.scss}line{font-family:\0000377}}
 .progress-bar-info {
-  background-color: #6BD5C3;
+  background-color: #17edb9;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_progress-bar\.scss}line{font-family:\000037}}
 .progress-striped .progress-bar-info {
@@ -6640,7 +6652,7 @@ a.thumbnail.active {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_progress-bars\.scss}line{font-family:\0000381}}
 .progress-bar-warning {
-  background-color: #ECD48B;
+  background-color: #ead118;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_progress-bar\.scss}line{font-family:\000037}}
 .progress-striped .progress-bar-warning {
@@ -6651,7 +6663,7 @@ a.thumbnail.active {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_progress-bars\.scss}line{font-family:\0000385}}
 .progress-bar-danger {
-  background-color: #ED848F;
+  background-color: #ED174B;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_progress-bar\.scss}line{font-family:\000037}}
 .progress-striped .progress-bar-danger {
@@ -6779,8 +6791,8 @@ a.list-group-item:hover, a.list-group-item:focus {
 .list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
   z-index: 2;
   color: #fff;
-  background-color: #7992BF;
-  border-color: #7992BF;
+  background-color: #45B3FF;
+  border-color: #45B3FF;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_list-group\.scss}line{font-family:\0000398}}
 .list-group-item.active .list-group-item-heading,
@@ -7223,26 +7235,26 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_panels\.scss}line{font-family:\00003247}}
 .panel-primary {
-  border-color: #7992BF;
+  border-color: #45B3FF;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_panels\.scss}line{font-family:\000036}}
 .panel-primary > .panel-heading {
   color: #fff;
-  background-color: #7992BF;
-  border-color: #7992BF;
+  background-color: #45B3FF;
+  border-color: #45B3FF;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_panels\.scss}line{font-family:\0000311}}
 .panel-primary > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: #7992BF;
+  border-top-color: #45B3FF;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_panels\.scss}line{font-family:\0000314}}
 .panel-primary > .panel-heading .badge {
-  color: #7992BF;
+  color: #45B3FF;
   background-color: #fff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_panels\.scss}line{font-family:\0000320}}
 .panel-primary > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: #7992BF;
+  border-bottom-color: #45B3FF;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_panels\.scss}line{font-family:\00003250}}
@@ -7730,10 +7742,10 @@ button.close {
   font-weight: normal;
   line-height: 1.5385;
   text-align: left;
-  background-color: #1F2837;
+  background-color: #00132c;
   background-clip: padding-box;
-  border: 1px solid #1F2837;
-  border: 1px solid #1F2837;
+  border: 1px solid #00132c;
+  border: 1px solid #00132c;
   border-radius: 6px;
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -7761,8 +7773,8 @@ button.close {
   margin: 0;
   padding: 8px 14px;
   font-size: 13px;
-  background-color: #1F2837;
-  border-bottom: 1px solid #161c27;
+  background-color: #00132c;
+  border-bottom: 1px solid #000813;
   border-radius: 5px 5px 0 0;
 }
 
@@ -7797,8 +7809,8 @@ button.close {
   left: 50%;
   margin-left: -11px;
   border-bottom-width: 0;
-  border-top-color: #1F2837;
-  border-top-color: #1F2837;
+  border-top-color: #00132c;
+  border-top-color: #00132c;
   bottom: -11px;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_popovers\.scss}line{font-family:\0000380}}
@@ -7807,7 +7819,7 @@ button.close {
   bottom: 1px;
   margin-left: -10px;
   border-bottom-width: 0;
-  border-top-color: #1F2837;
+  border-top-color: #00132c;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_popovers\.scss}line{font-family:\0000388}}
 .popover.right > .arrow {
@@ -7815,8 +7827,8 @@ button.close {
   left: -11px;
   margin-top: -11px;
   border-left-width: 0;
-  border-right-color: #1F2837;
-  border-right-color: #1F2837;
+  border-right-color: #00132c;
+  border-right-color: #00132c;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_popovers\.scss}line{font-family:\0000395}}
 .popover.right > .arrow:after {
@@ -7824,15 +7836,15 @@ button.close {
   left: 1px;
   bottom: -10px;
   border-left-width: 0;
-  border-right-color: #1F2837;
+  border-right-color: #00132c;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_popovers\.scss}line{font-family:\00003103}}
 .popover.bottom > .arrow {
   left: 50%;
   margin-left: -11px;
   border-top-width: 0;
-  border-bottom-color: #1F2837;
-  border-bottom-color: #1F2837;
+  border-bottom-color: #00132c;
+  border-bottom-color: #00132c;
   top: -11px;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_popovers\.scss}line{font-family:\00003110}}
@@ -7841,7 +7853,7 @@ button.close {
   top: 1px;
   margin-left: -10px;
   border-top-width: 0;
-  border-bottom-color: #1F2837;
+  border-bottom-color: #00132c;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_popovers\.scss}line{font-family:\00003119}}
 .popover.left > .arrow {
@@ -7849,15 +7861,15 @@ button.close {
   right: -11px;
   margin-top: -11px;
   border-right-width: 0;
-  border-left-color: #1F2837;
-  border-left-color: #1F2837;
+  border-left-color: #00132c;
+  border-left-color: #00132c;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_popovers\.scss}line{font-family:\00003126}}
 .popover.left > .arrow:after {
   content: " ";
   right: 1px;
   border-right-width: 0;
-  border-left-color: #1F2837;
+  border-left-color: #00132c;
   bottom: -10px;
 }
 

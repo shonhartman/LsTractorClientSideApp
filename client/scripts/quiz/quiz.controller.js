@@ -134,12 +134,20 @@
                 
                 if (score > 99) {
                     // TODO - When we have $scope.videoResult
-                    $http.put($scope.videoResult._links.self.href, {
-                        appUser: $scope.user._links.self.href,
-                        video: "http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos/" + $routeParams.id,
-                        viewAmount: $scope.videoResult.viewAmount,                                                 
-                        isComplete: true
-                    });   
+                    // $http.put($scope.videoResult._links.self.href, {
+                    //     appUser: $scope.user._links.self.href,
+                    //     video: "http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos/" + $routeParams.id,
+                    //     viewAmount: $scope.videoResult.viewAmount,                                                 
+                    //     isComplete: true
+                    // });   
+                    var data =  {
+                       appUser: $scope.user._links.self.href,
+                       video: "http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos/" + $routeParams.id,
+                       viewAmount: $scope.videoResult.viewAmount,                                                 
+                       isComplete: true
+                   };
+                    console.log(data);
+                    $http.put($scope.videoResult._links.self.href, data)
                 }   
 
                 $http.post('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/quizResults', {
@@ -155,4 +163,6 @@
             }
         }
 })();       
+      
+
       

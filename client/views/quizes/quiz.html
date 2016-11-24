@@ -1,8 +1,8 @@
 <div class="page" ng-controller="QuizCtrl">
 
 <!--Video-->
-{{ video.title }}
-{{ video.author }}
+<h3>{{ video.title }}</h3>
+<p>{{ video.author }}</p>
 
     <div class="col-md-12">
         <div class="vid">
@@ -12,7 +12,7 @@
 <!--TOGGLE COLLAPSE-->
     <div class="panel-body ng-scope" data-ng-controller="CollapseDemoCtrl">
         <button ng-disabled="disableQuiz" class="btn btn-primary" ng-click="isCollapsed = !isCollapsed">Take Quiz</button>
-        <span ng-if="disableQuiz">You must watch 80% of the video something something</span>
+        <span ng-if="disableQuiz">Please watch the video then take the quiz</span>
         <div class="divider divider-md"></div>
         <div collapse="isCollapsed" class="collapse" aria-expanded="false" aria-hidden="true" style="height: 0px;">
 <!--A Question Object should be pulled in here with an id that relates to a video-->

@@ -13,18 +13,32 @@ $bootstrap-sass-asset-helper: (twbs-font-path("") != unquote('twbs-font-path("")
 //## Gray and brand colors for use across Bootstrap.
 
 $gray-base:              #000 !default;
+/*$gray-darker:            lighten($gray-base, 13.5%) !default; // #222*/
+/*$gray-dark:              lighten($gray-base, 20%) !default;   // #333*/
+/*$gray:                   lighten($gray-base, 33.5%) !default; // #555*/
+/*$gray-light:             lighten($gray-base, 46.7%) !default; // #777*/
+/*$gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee*/
+
+/*$gray-base:              #00132c !default;*/
 $gray-darker:            lighten($gray-base, 13.5%) !default; // #222
 $gray-dark:              lighten($gray-base, 20%) !default;   // #333
 $gray:                   lighten($gray-base, 33.5%) !default; // #555
 $gray-light:             lighten($gray-base, 46.7%) !default; // #777
 $gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
 
-$brand-primary:         #7992BF !default;
+/*$brand-primary:         #7992BF !default;*/
 $brand-success:         #A9DC8E !default;
-$brand-info:            #6BD5C3 !default;
+/*$brand-info:            #6BD5C3 !default;*/
 $brand-info-alt:        #A085E4 !default;
-$brand-warning:         #ECD48B !default;
-$brand-danger:          #ED848F !default;
+/*$brand-warning:         #ECD48B !default;*/
+/*$brand-danger:          #ED848F !default;*/
+
+$brand-primary:         #45B3FF!default;
+/*$brand-success:         #A9DC8E !default;*/
+$brand-info:            #17edb9 !default;
+/*$brand-info-alt:        #da84f5!default;*/
+$brand-warning:         #ead118 !default;
+$brand-danger:          #ED174B !default;
 
 $color-orange:          #AB7967;
 $color-violet:          $brand-info-alt;
@@ -32,13 +46,13 @@ $color-violet:          $brand-info-alt;
 // $skin-darker:           #
 // $skin-dark:             #;
 $skin:                  $brand-primary;
-$skin-light:            #7FABD2;
+$skin-light:            #b4d4fe;
 // $skin-lighter:          #
 // $skin-bright:           #
-$dark:                  #1F2837;
-$dark-light:            #32323A;
-$dark-lighter:          #9EA4AA;
-$bright:                #f9f9f9;
+$dark:                  #00132c;
+$dark-light:            #011e45;
+$dark-lighter:          #a1c8fe;
+$bright:                #f5f7ff;
 $reverse:               #fff;
 
 $state-default-bg:              #f6f6f6; // also: pagination bg

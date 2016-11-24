@@ -1,0 +1,131 @@
+THE NEW LOGIN CALL
+
+Its there, just not returned for security
+You have to use the /login endpoint to get the user I'd, then you can get the user info
+
+in addition, password is not being set on appUsers request anymore
+
+This is the new login call
+
+==============================================================================
+
+http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/login
+post this json to get back a login response object 
+{
+"email" : "edward.briggler@gmail.com",
+"password" : "what-the-what"
+}
+will yield this in return
+{
+ "ok": true,
+ "userId": 1649
+}
+if wrong password, it returns this
+{
+ "ok": false
+}
+
+==============================================================================
+
+THE QUIZ RESULTS ISSUE
+
+==============================================================================
+
+could do...
+var data =  {
+                       appUser: $scope.user._links.self.href,
+                       video: "http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos/" + $routeParams.id,
+                       viewAmount: $scope.videoResult.viewAmount,                                                 
+                       isComplete: true
+                   };
+then console.log(data);
+$http.put($scope.videoResult._links.self.href, data)
+
+==============================================================================
+
+Q : Well, it's a different error! Could not read viewAmount of null
+A : this worked via postman
+{
+  "appUser": "http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/appUsers/1649",
+  "video": "http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos/5",
+  "viewAmount": 50,                                                 
+  "isComplete": true
+}
+there ya go
+i bet that's it
+
+==============================================================================
+
+
+Q: So, why is my viewAmount null?
+A: $scope.videoResult.viewAmount
+it was probably null initially
+
+The data is only showing nulls...
+might need to see what's setting it upstream
+can you create interfaces like in typscript?
+or on angular 1?
+
+==============================================================================
+
+This is how you add a question to a quiz
+POST ===> questions
+
+{
+    "questionText" : "Choose the ICON to open the diagnostic tool for the LS XU5065 tractor.",
+    "quiz" : "http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/quizzes/2292"
+}
+
+==============================================================================
+
+This is how you add an answer to a question
+POST ===> answers
+
+{
+    "answerText": "Single piston high pressure pump",
+    "isCorrect": false,
+    "question" : "http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/questions/1796"
+}
+
+?????????????????????????
+Link quiz to video
+{
+"quiz": "http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/quizzes/2292"
+} NO
+{
+    "name" : "Fall Campfire Quiz",
+    "reqNumCorrect" : "",
+    "video" : "http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos/1687" 
+}
+
+Link video to quiz
+{
+    "video" : "http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos/1687"
+} NO
+
+===> Quizzes
+{
+    "name" : "quiz name",
+    "video" : "http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos/1687"
+} NO
+
+{
+    "name" : "Fall Campfire Quiz",
+    "reqNumCorrect" : "",
+    "video" : "http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos/1687" 
+} NO
+
+Let's try to add a new video to an existing quiz
+=====> /videos
+
+{
+    "title" : "Video Title",
+    "author" : "Video Author",
+    "url" : "http://url/vimeo.player",
+    "skillSet" : "http//url/skillSet/1789",
+    "quiz" : "http://url/1791"
+} YES !!! But, it adds to the list of videos so WTF there? How do I delete videos?!
+
+This totally fucking works!!!
+
+

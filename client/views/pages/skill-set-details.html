@@ -1,10 +1,14 @@
 <div class="page page-profile" ng-controller="VideoCtrl">
 
-    <h1>{{ skillSet.name }}</h1>
+
+    <header class="mail-header">
+         <h1>{{ skillSet.name }}</h1>
+    </header>
+   
 
 <!--Repeating Video Box-->
     <div class="row">
-        <div class="col-sm-3" ng-repeat="video in videos">
+        <div class="col-lg-5 col-sm-6" ng-repeat="video in videos">
             <div class="panel mini-box preview" id="video-box">
     <!--Progress Chart-->
                 <span data-ng-controller="chartCtrl" class="btn-icon btn-icon-md btn-icon-lg-alt bg-dark">
@@ -12,11 +16,11 @@
                         <span class="pie-percent" ng-bind="easypiechart3.percent"></span>
                     </div>
                 </span> <!--End Progress Chart-->
-                <p class="size-h4">{{ video.title }}</p>
-                <p class="text-muted">{{ video.author }}</p>
-                <p class="text-muted">{{ video.time }}</p>
+                <p class="size-h4" style="color:#f5f7ff">{{ video.title }}</p>
+                <p class="text-info" style="color:#f5f7ff">{{ video.author }}</p>
+                <p class="text-danger">{{ video.time }}</p>
                 <button class="btn btn-gap-v btn-primary" ng-click="open(video.id)">Watch</button>
-                <button class="btn btn-gap-v btn-warning" ng-click="edit(video)">Edit</button>
+                <!--<button class="btn btn-gap-v btn-warning" ng-click="edit(video)">Edit</button>-->
                 <script type="text/ng-template" id="myEditModal.html">
                         <div class="modal-header">
                             <h3>Editing {{ video.title }}</h3>
@@ -43,7 +47,7 @@
 <!--Add Video Button-->
 
     <!--<div ng-if="roleId === 6">-->
-        <button type="submit" ng-controller="ModalDemoCtrl" class="btn btn-primary btn-block btn-lg" ng-click="open()">Add a Video</button>
+        <!--<button type="submit" ng-controller="ModalDemoCtrl" class="btn btn-primary btn-block btn-lg" ng-click="open()">Add a Video</button>
         <script type="text/ng-template" id="myModalContent.html">
         <div class="modal-header">
                 <h3>Add a Video</h3>
@@ -62,12 +66,12 @@
                 <button class="btn btn-primary" ng-click="upload()">Upload</button>
                 <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
             </div>
-        </script>
+        </script>-->
     <!--</div>-->
 
 <!--Delete Video Button-->
 
-    <button type="submit" ng-controller="SkillSetCtrl" class="btn btn-danger btn-block btn-lg" ng-click="deleteSkillSet()">Delete This Skill Set</button>
+    <!--<button type="submit" ng-controller="SkillSetCtrl" class="btn btn-danger btn-block btn-lg" ng-click="deleteSkillSet()">Delete This Skill Set</button>-->
 
 </div> <!--Close Page Div-->
 

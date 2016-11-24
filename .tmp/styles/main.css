@@ -1,3 +1,15 @@
+/*$gray-darker:            lighten($gray-base, 13.5%) !default; // #222*/
+/*$gray-dark:              lighten($gray-base, 20%) !default;   // #333*/
+/*$gray:                   lighten($gray-base, 33.5%) !default; // #555*/
+/*$gray-light:             lighten($gray-base, 46.7%) !default; // #777*/
+/*$gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee*/
+/*$gray-base:              #00132c !default;*/
+/*$brand-primary:         #7992BF !default;*/
+/*$brand-info:            #6BD5C3 !default;*/
+/*$brand-warning:         #ECD48B !default;*/
+/*$brand-danger:          #ED848F !default;*/
+/*$brand-success:         #A9DC8E !default;*/
+/*$brand-info-alt:        #da84f5!default;*/
 @media print {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/global\/_shared\.scss}line{font-family:\000032}}
   .no-print {
@@ -110,7 +122,7 @@
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/plugins\/_bootstrap-slider\.scss}line{font-family:\00003101}}
 .slider-selection {
   position: absolute;
-  background-color: #7992BF;
+  background-color: #45B3FF;
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -231,7 +243,7 @@ table.responsive {
   line-height: 88px;
   font-size: 20px;
   font-weight: 400;
-  color: #f9f9f9;
+  color: #f5f7ff;
   position: absolute;
   bottom: 12px;
   left: 21%;
@@ -434,17 +446,17 @@ button.toast-close-button {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/plugins\/_toastr\.scss}line{font-family:\00003151}}
 .toast-error {
-  background-color: #e8606f;
+  background-color: #cb103d;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/plugins\/_toastr\.scss}line{font-family:\00003154}}
 .toast-info {
-  background-color: #4bccb6;
+  background-color: #10cb9e;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/plugins\/_toastr\.scss}line{font-family:\00003157}}
 .toast-warning {
-  background-color: #e6c768;
+  background-color: #c7b212;
 }
 
 /*Responsive Design*/
@@ -620,7 +632,7 @@ button.toast-close-button {
 .wizard > .steps .current a,
 .wizard > .steps .current a:hover,
 .wizard > .steps .current a:active {
-  background: #7992BF;
+  background: #45B3FF;
   color: #fff;
   cursor: default;
 }
@@ -629,7 +641,7 @@ button.toast-close-button {
 .wizard > .steps .done a,
 .wizard > .steps .done a:hover,
 .wizard > .steps .done a:active {
-  background: #7992BF;
+  background: #45B3FF;
   color: #fff;
   opacity: .6;
 }
@@ -638,7 +650,7 @@ button.toast-close-button {
 .wizard > .steps .error a,
 .wizard > .steps .error a:hover,
 .wizard > .steps .error a:active {
-  background: #ED848F;
+  background: #ED174B;
   color: #fff;
 }
 
@@ -749,7 +761,7 @@ button.toast-close-button {
 .wizard > .actions a,
 .wizard > .actions a:hover,
 .wizard > .actions a:active {
-  background: #7992BF;
+  background: #45B3FF;
   color: #fff;
   display: block;
   padding: 0.5em 1em;
@@ -1016,7 +1028,7 @@ button.toast-close-button {
   position: absolute;
   display: none;
   border-radius: 2px;
-  background: #1F2837;
+  background: #00132c;
   color: #fff;
   font-size: 12px;
   padding: 6px;
@@ -1090,7 +1102,7 @@ button.toast-close-button {
   margin: 2px;
   padding: 6px 8px;
   border-radius: 4px;
-  background-color: #7992BF;
+  background-color: #45B3FF;
   color: #fff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/plugins\/_ng-tags-input\.scss}line{font-family:\0000346}}
@@ -1106,7 +1118,7 @@ button.toast-close-button {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/plugins\/_ng-tags-input\.scss}line{font-family:\0000356}}
 .ui-tags-input .tags .tag-item .remove-button:active {
-  color: #ED848F;
+  color: #ED174B;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/plugins\/_ng-tags-input\.scss}line{font-family:\0000359}}
 .ui-tags-input .tags .input {
@@ -1120,7 +1132,7 @@ button.toast-close-button {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/plugins\/_ng-tags-input\.scss}line{font-family:\0000369}}
 .ui-tags-input .tags .input.invalid-tag {
-  color: #ED848F;
+  color: #ED174B;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/plugins\/_ng-tags-input\.scss}line{font-family:\0000372}}
 .ui-tags-input .tags .input::-ms-clear {
@@ -1149,7 +1161,7 @@ button.toast-close-button {
   cursor: pointer;
   white-space: nowrap;
   text-overflow: ellipsis;
-  color: #1F2837;
+  color: #00132c;
   background-color: #fff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/plugins\/_ng-tags-input\.scss}line{font-family:\0000399}}
@@ -1164,7 +1176,7 @@ button.toast-close-button {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/plugins\/_ng-tags-input\.scss}line{font-family:\00003107}}
 .ui-tags-input .autocomplete .suggestion-item em {
-  color: #1F2837;
+  color: #00132c;
   background-color: white;
 }
 
@@ -1208,7 +1220,7 @@ button.toast-close-button {
   -moz-transition: width 350ms;
   -o-transition: width 350ms;
   transition: width 350ms;
-  background-color: #7992BF;
+  background-color: #45B3FF;
   position: fixed;
   z-index: 10002;
   top: 0;
@@ -1228,7 +1240,7 @@ button.toast-close-button {
   top: 0;
   height: 2px;
   opacity: .45;
-  box-shadow: #7992BF 1px 0 6px 1px;
+  box-shadow: #45B3FF 1px 0 6px 1px;
   -moz-border-radius: 100%;
   -webkit-border-radius: 100%;
   border-radius: 100%;
@@ -1248,8 +1260,8 @@ button.toast-close-button {
   width: 14px;
   height: 14px;
   border: solid 2px transparent;
-  border-top-color: #7992BF;
-  border-left-color: #7992BF;
+  border-top-color: #45B3FF;
+  border-left-color: #45B3FF;
   border-radius: 10px;
   -webkit-animation: loading-bar-spinner 400ms linear infinite;
   -moz-animation: loading-bar-spinner 400ms linear infinite;
@@ -1774,7 +1786,7 @@ temporary rendered events).
   /* default BORDER color */
   border-style: solid;
   /* default BORDER color */
-  border-color: #6BD5C3;
+  border-color: #17edb9;
   /* default BORDER color */
   border-radius: 4px;
   background-color: #fff;
@@ -1788,12 +1800,12 @@ temporary rendered events).
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/plugins\/_fullcalendar\.scss}line{font-family:\00003418}}
 .fc-event.fc-event-warning {
-  border-color: #ECD48B;
+  border-color: #ead118;
   /* default BORDER color */
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/plugins\/_fullcalendar\.scss}line{font-family:\00003421}}
 .fc-event.fc-event-danger {
-  border-color: #ED848F;
+  border-color: #ED174B;
   /* default BORDER color */
 }
 
@@ -2479,14 +2491,14 @@ be a descendant of the grid when it is being dragged.
   position: relative;
   width: 100%;
   height: 100%;
-  background-color: #f9f9f9;
+  background-color: #f5f7ff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/pages\/_error\.scss}line{font-family:\0000321}}
 .page-err .err-container {
   width: 100%;
   height: 75%;
-  background-color: #7992BF;
-  border-bottom: 1px solid #6884b7;
+  background-color: #45B3FF;
+  border-bottom: 1px solid #2ca9ff;
   padding: 45px 0 0;
 }
 @media (min-width: 768px) {
@@ -2498,7 +2510,7 @@ be a descendant of the grid when it is being dragged.
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/pages\/_error\.scss}line{font-family:\0000332}}
 .page-err .err-status h1 {
   margin: 0 0 -45px;
-  color: #f9f9f9;
+  color: #f5f7ff;
   font-size: 100px;
   font-weight: normal;
 }
@@ -2510,7 +2522,7 @@ be a descendant of the grid when it is being dragged.
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/pages\/_error\.scss}line{font-family:\0000342}}
 .page-err .err-message {
-  background-color: #7992BF;
+  background-color: #45B3FF;
   padding: 24px;
   text-transform: uppercase;
 }
@@ -2540,12 +2552,12 @@ be a descendant of the grid when it is being dragged.
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/pages\/_error\.scss}line{font-family:\0000367}}
 .page-err .btn-goback:hover, .page-err .btn-goback:focus, .page-err .btn-goback:active, .page-err .btn-goback.active {
-  color: #7992BF;
+  color: #45B3FF;
   background-color: #fff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/pages\/_error\.scss}line{font-family:\0000375}}
 .open .page-err .btn-goback.dropdown-toggle {
-  color: #7992BF;
+  color: #45B3FF;
   background-color: #fff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/pages\/_error\.scss}line{font-family:\0000382}}
@@ -2605,7 +2617,7 @@ be a descendant of the grid when it is being dragged.
   padding: 0 20px;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
-  color: #7992BF;
+  color: #45B3FF;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/pages\/_lock-screen\.scss}line{font-family:\0000368}}
 .page-lock .lock-box .lock-img img {
@@ -2637,7 +2649,7 @@ be a descendant of the grid when it is being dragged.
   margin-top: 50px;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
-  color: #7992BF;
+  color: #45B3FF;
 }
 @media screen and (min-width: 768px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/pages\/_lock-screen\.scss}line{font-family:\0000385}}
@@ -2848,14 +2860,14 @@ be a descendant of the grid when it is being dragged.
 .page-forgot .signin-header h1 {
   margin: 0;
   font-weight: 300;
-  color: #f9f9f9;
+  color: #f5f7ff;
   font-size: 32px;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/pages\/_auth\.scss}line{font-family:\0000332}}
 .page-signin .signin-header h1 a,
 .page-signup .signin-header h1 a,
 .page-forgot .signin-header h1 a {
-  color: #f9f9f9;
+  color: #f5f7ff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/pages\/_auth\.scss}line{font-family:\0000334}}
 .page-signin .signin-header h1 a:hover,
@@ -2926,13 +2938,19 @@ be a descendant of the grid when it is being dragged.
   position: relative;
   top: 0;
   margin: 0 -15px 15px;
+  padding: 0px 30px 90px;
   padding: 0px 30px 30px;
-  background: #E0D7C8;
+  /*background: url('http://i.imgur.com/6Ekd2e7.jpg') no-repeat center center fixed;*/
+  /*background: $gray-light;*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/pages\/_profile\.scss}line{font-family:\0000350}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/pages\/_profile\.scss}line{font-family:\0000319}}
+.page-profile .profile-header h1 {
+  text-transform: uppercase;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/pages\/_profile\.scss}line{font-family:\0000357}}
 .page-profile img.media-object {
   border-radius: 4px;
 }
@@ -3007,7 +3025,7 @@ be a descendant of the grid when it is being dragged.
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/pages\/_ui\.scss}line{font-family:\0000343}}
 .themify-icons .icon-container:hover .icon-name {
-  color: #1F2837;
+  color: #00132c;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/pages\/_ui\.scss}line{font-family:\0000347}}
 .themify-icons .icon-container:hover [class^="ti-"],
@@ -3057,7 +3075,7 @@ be a descendant of the grid when it is being dragged.
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/pages\/_ui\.scss}line{font-family:\0000394}}
 .weather-icons .example:hover .class {
-  color: #1F2837;
+  color: #00132c;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/pages\/_ui\.scss}line{font-family:\0000398}}
 .weather-icons .example:hover .wi {
@@ -3571,11 +3589,11 @@ html {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-horizontal\.scss}line{font-family:\0000397}}
   .nav-horizontal .nav > li.active > a {
     background-color: transparent;
-    color: #7992BF;
+    color: #45B3FF;
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-horizontal\.scss}line{font-family:\00003101}}
   .nav-horizontal .nav > li.active > .icon-has-ul-h {
-    color: #7992BF;
+    color: #45B3FF;
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-horizontal\.scss}line{font-family:\00003104}}
   .nav-horizontal .nav > li > a {
@@ -3633,7 +3651,7 @@ html {
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-horizontal\.scss}line{font-family:\00003161}}
   .nav-horizontal .nav > li > ul li:hover > a, .nav-horizontal .nav > li > ul li.active > a {
-    color: #7992BF;
+    color: #45B3FF;
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-horizontal\.scss}line{font-family:\00003171}}
   .nav-horizontal .nav > li > ul li > a {
@@ -3754,20 +3772,20 @@ html {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-color\.scss}line{font-family:\0000333}}
 .nav-container.bg-white .nav > li:hover > a {
   background-color: transparent;
-  color: #7992BF;
+  color: #45B3FF;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-color\.scss}line{font-family:\0000337}}
 .nav-container.bg-white .nav > li:hover > .icon-has-ul,
 .nav-container.bg-white .nav > li:hover > .icon-has-ul-h {
-  color: #7992BF;
+  color: #45B3FF;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-color\.scss}line{font-family:\0000341}}
 .nav-container.bg-white .nav > li.active > a {
-  color: #7992BF;
+  color: #45B3FF;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-color\.scss}line{font-family:\0000345}}
 .nav-container.bg-white .nav > li.active > .icon-has-ul {
-  color: #7992BF;
+  color: #45B3FF;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-color\.scss}line{font-family:\0000349}}
 .nav-container.bg-white .nav > li > a:focus {
@@ -3779,21 +3797,21 @@ html {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-color\.scss}line{font-family:\0000361}}
 .nav-container.bg-white .nav ul > li:hover > a, .nav-container.bg-white .nav ul > li.active > a {
-  color: #7992BF;
+  color: #45B3FF;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-color\.scss}line{font-family:\0000380}}
 .nav-container.bg-white.nav-vertical .nav > li.open > a {
   background-color: #f6f6f6;
-  color: #7992BF;
+  color: #45B3FF;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-color\.scss}line{font-family:\0000384}}
 .nav-container.bg-white.nav-vertical .nav > li.open > .icon-has-ul,
 .nav-container.bg-white.nav-vertical .nav > li.open > .icon-has-ul-h {
-  color: #7992BF;
+  color: #45B3FF;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-color\.scss}line{font-family:\0000392}}
 .nav-container.bg-dark {
-  background-color: #1F2837;
+  background-color: #00132c;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-color\.scss}line{font-family:\0000394}}
 .nav-container.bg-dark:before {
@@ -3810,7 +3828,7 @@ html {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-color\.scss}line{font-family:\00003108}}
 .nav-container.bg-dark .nav .divider {
-  border-color: #161c27;
+  border-color: #000813;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-color\.scss}line{font-family:\00003115}}
 .nav-container.bg-dark .nav > li:hover > a {
@@ -3836,7 +3854,7 @@ html {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-color\.scss}line{font-family:\00003136}}
 .nav-container.bg-dark .nav ul {
-  background-color: #19212d;
+  background-color: #000c1d;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-color\.scss}line{font-family:\00003142}}
 .nav-container.bg-dark .nav ul > li:hover > a, .nav-container.bg-dark .nav ul > li.active > a {
@@ -3844,7 +3862,7 @@ html {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-color\.scss}line{font-family:\00003157}}
 .nav-container.bg-dark.nav-vertical .nav > li.open > a {
-  background-color: #19212d;
+  background-color: #000c1d;
   color: rgba(255, 255, 255, 0.8);
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-color\.scss}line{font-family:\00003161}}
@@ -3856,11 +3874,11 @@ html {
 @media (max-width: 991px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-color\.scss}line{font-family:\00003180}}
   .nav-horizontal .nav > li.open > a {
-    color: #7992BF;
+    color: #45B3FF;
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-color\.scss}line{font-family:\00003184}}
   .nav-horizontal .nav > li.open > i {
-    color: #7992BF;
+    color: #45B3FF;
   }
 }
 @media (min-width: 768px) {
@@ -3952,7 +3970,7 @@ html {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_header\.scss}line{font-family:\0000394}}
 .header-container > .top-header .menu-button:hover {
   cursor: pointer;
-  background-color: #5676af;
+  background-color: #129eff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_header\.scss}line{font-family:\0000399}}
 .header-container > .top-header .menu-button .icon-bar {
@@ -4107,7 +4125,7 @@ html {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_header\.scss}line{font-family:\00003224}}
 .header-container > .top-header .top-nav .nav-left > li ul.dropdown-menu a:hover,
 .header-container > .top-header .top-nav .nav-right > li ul.dropdown-menu a:hover {
-  background-color: #7992BF;
+  background-color: #45B3FF;
   color: #fff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_header\.scss}line{font-family:\00003229}}
@@ -4257,29 +4275,29 @@ html {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_header\.scss}line{font-family:\00003393}}
 .header-container.bg-dark {
-  color: #f9f9f9;
+  color: #f5f7ff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_header\.scss}line{font-family:\00003396}}
 .header-container.bg-dark .input-group-addon,
 .header-container.bg-dark a {
-  color: #f9f9f9;
+  color: #f5f7ff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_header\.scss}line{font-family:\00003399}}
 .header-container.bg-dark .input-group-addon:hover,
 .header-container.bg-dark a:hover {
-  color: #f9f9f9;
+  color: #f5f7ff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_header\.scss}line{font-family:\00003404}}
 .header-container.bg-primary, .header-container.bg-success, .header-container.bg-info, .header-container.bg-info-alt, .header-container.bg-warning, .header-container.bg-danger {
-  color: #f9f9f9;
+  color: #f5f7ff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_header\.scss}line{font-family:\00003411}}
 .header-container.bg-primary a, .header-container.bg-success a, .header-container.bg-info a, .header-container.bg-info-alt a, .header-container.bg-warning a, .header-container.bg-danger a {
-  color: #f9f9f9;
+  color: #f5f7ff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_header\.scss}line{font-family:\00003413}}
 .header-container.bg-primary a:hover, .header-container.bg-success a:hover, .header-container.bg-info a:hover, .header-container.bg-info-alt a:hover, .header-container.bg-warning a:hover, .header-container.bg-danger a:hover {
-  color: #f9f9f9;
+  color: #f5f7ff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_header\.scss}line{font-family:\00003418}}
 .header-container.bg-primary .input-group-addon, .header-container.bg-success .input-group-addon, .header-container.bg-info .input-group-addon, .header-container.bg-info-alt .input-group-addon, .header-container.bg-warning .input-group-addon, .header-container.bg-danger .input-group-addon {
@@ -4317,15 +4335,15 @@ html {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_header\.scss}line{font-family:\00003436}}
 .header-container > .top-header .logo.bg-white {
-  color: #1F2837;
+  color: #00132c;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_header\.scss}line{font-family:\00003438}}
 .header-container > .top-header .logo.bg-white a {
-  color: #1F2837;
+  color: #00132c;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_header\.scss}line{font-family:\00003440}}
 .header-container > .top-header .logo.bg-white a:hover {
-  color: #1F2837;
+  color: #00132c;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_header\.scss}line{font-family:\00003446}}
 .header-container > .top-header .logo.bg-white + .menu-button .icon-bar {
@@ -4337,15 +4355,15 @@ html {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_header\.scss}line{font-family:\00003458}}
 .header-container > .top-header .logo.bg-dark, .header-container > .top-header .logo.bg-primary, .header-container > .top-header .logo.bg-success, .header-container > .top-header .logo.bg-info, .header-container > .top-header .logo.bg-info-alt, .header-container > .top-header .logo.bg-warning, .header-container > .top-header .logo.bg-danger {
-  color: #f9f9f9;
+  color: #f5f7ff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_header\.scss}line{font-family:\00003466}}
 .header-container > .top-header .logo.bg-dark a, .header-container > .top-header .logo.bg-primary a, .header-container > .top-header .logo.bg-success a, .header-container > .top-header .logo.bg-info a, .header-container > .top-header .logo.bg-info-alt a, .header-container > .top-header .logo.bg-warning a, .header-container > .top-header .logo.bg-danger a {
-  color: #f9f9f9;
+  color: #f5f7ff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_header\.scss}line{font-family:\00003468}}
 .header-container > .top-header .logo.bg-dark a:hover, .header-container > .top-header .logo.bg-primary a:hover, .header-container > .top-header .logo.bg-success a:hover, .header-container > .top-header .logo.bg-info a:hover, .header-container > .top-header .logo.bg-info-alt a:hover, .header-container > .top-header .logo.bg-warning a:hover, .header-container > .top-header .logo.bg-danger a:hover {
-  color: #f9f9f9;
+  color: #f5f7ff;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/layout\/_body\.scss}line{font-family:\000031}}
