@@ -74,7 +74,7 @@
                      console.log($scope.userId);
             });
                     
-                    // $cookies.put('user', angular.toJson(user));
+                    // $cookies.put('user', angular.toJson(user)); ////Sets the cookie to track user state
                     // $location.url('/dashboard');
                 
         }
