@@ -7,13 +7,14 @@
 
 
     function DashboardCtrl($cookies, $scope, $http) {
-        $scope.user = angular.fromJson($cookies.get('user'));
 
-        if (!$scope.user) {
+        var user = angular.fromJson($cookies.get('user'));
+
+        if (!user || !user.roleId) {
             return;
         }
 
-        $scope.roleId = $scope.user.roleId;
+        $scope.roleId = user.roleId;
         $scope.dealership = null;
         $scope.dealerships = [];
         $scope.totalVideos = 0;
