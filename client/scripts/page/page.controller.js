@@ -16,7 +16,6 @@
     //AUTH CONTROLLER
     function authCtrl($cookies, $scope, $window, $location, $http, $routeParams) {
         $scope.dealerships = [];
-        $scope.userId = 0;
 
         $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/dealerships')
             .then(function (response) {
@@ -48,7 +47,10 @@
                     } else {
 
                         var userId = response.data.userId;
-                        $scope.userId = userId;
+
+                        if (!userId) {
+                            return;
+                        }
 
                         // now do a request for the user info and save it to cookie
                         $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/appUsers/' + userId)
