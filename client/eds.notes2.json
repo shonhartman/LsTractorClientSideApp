@@ -1,13 +1,11 @@
 THE NEW LOGIN CALL
 
 Its there, just not returned for security
-You have to use the /login endpoint to get the user I'd, then you can get the user info
+You have to use the /login endpoint to get the user ID, then you can get the user info
 
 in addition, password is not being set on appUsers request anymore
 
-This is the new login call
-
-==============================================================================
+This is the new login call :
 
 http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/login
 post this json to get back a login response object 
@@ -66,7 +64,13 @@ might need to see what's setting it upstream
 can you create interfaces like in typscript?
 or on angular 1?
 
+
+
+
 ==============================================================================
+ADDING QUESTIONS & ANSWERS
+==============================================================================
+
 
 This is how you add a question to a quiz
 POST ===> questions
@@ -124,8 +128,19 @@ Let's try to add a new video to an existing quiz
     "url" : "http://url/vimeo.player",
     "skillSet" : "http//url/skillSet/1789",
     "quiz" : "http://url/1791"
-} YES !!! But, it adds to the list of videos so WTF there? How do I delete videos?!
-
-This totally fucking works!!!
+} YES !!! But, it adds to the list of videos. How do I delete videos?! How do I deleta any related data?
 
 
+
+==============================================================================
+TRACKING RESULTS
+==============================================================================
+
+Barket says : you have to set $scope.videoResult
+he was going to add a way for you to get a videoResult based on video and user
+at the top of that file you need to make that call for your user in your cookies and the video you're looking at
+you've got both of those
+if the videoresult comes back null, you make one
+isComplete is false, time watched is 0
+if it exists, you just set it
+then you put to update it when time moves or when they finish the quiz there at the end

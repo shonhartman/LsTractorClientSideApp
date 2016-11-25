@@ -7,7 +7,7 @@
     function chartCtrl($scope) {
 
         //TODO ==> Bind data from video progress
-
+        console.log("Let's bind the data from the timeWatched variable")
         $scope.easypiechart3 = {
             percent: 45,
             options: {
