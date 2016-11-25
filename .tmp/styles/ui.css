@@ -2108,6 +2108,7 @@ input.input-danger:focus {
   border-style: solid;
   border-color: #626262;
   color: #626262;
+  outline: none;
   height: 35px;
   width: 35px;
   line-height: 35px;
@@ -2132,67 +2133,74 @@ input.input-danger:focus {
 .btn-icon-lined.btn-icon-lined.btn-icon-thin i {
   line-height: 33px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003399}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003400}}
 .btn-icon-lined.btn-icon-thin {
   border-width: 1px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003402}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003403}}
 .btn-icon-lined:hover {
-  background-color: #fff;
-  color: #fff;
+  background-color: #eeeeee;
+  color: #45B3FF;
+  border-color: #45B3FF;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003408}}
+.btn-icon-lined:focus {
+  background-color: #45B3FF;
+  color: #fff;
+  border-color: #45B3FF;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003415}}
 .btn-icon-lined.btn-default-light {
   color: #bbb;
   border: 2px solid #bbb;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003412}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003419}}
 .btn-icon-lined.btn-default-light:hover {
   color: #bbb;
   border: 2px solid #bbb;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003417}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003424}}
 .btn-icon-lined.btn-default {
   color: #777777;
   border-color: #777777;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003421}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003428}}
 .btn-icon-lined.btn-default:hover {
   color: #777777;
   border-color: #777777;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003426}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003433}}
 .btn-icon-lined.btn-primary {
   color: #45B3FF;
   border-color: #45B3FF;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003430}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003437}}
 .btn-icon-lined.btn-success {
   color: #A9DC8E;
   border-color: #A9DC8E;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003434}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003441}}
 .btn-icon-lined.btn-info {
   color: #17edb9;
   border-color: #17edb9;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003438}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003445}}
 .btn-icon-lined.btn-warning {
   color: #ead118;
   border-color: #ead118;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003442}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003449}}
 .btn-icon-lined.btn-danger {
   color: #ED174B;
   border-color: #ED174B;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003447}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003454}}
 .btn-icon-round {
   border-radius: 50%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003450}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003457}}
 .btn-icon-sm {
   height: 30px;
   width: 30px;
@@ -2219,7 +2227,7 @@ input.input-danger:focus {
   line-height: 28px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003453}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003460}}
 .btn-icon-md {
   font-size: 18px;
   height: 45px;
@@ -2247,7 +2255,7 @@ input.input-danger:focus {
   line-height: 43px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003457}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003464}}
 .btn-icon-lg {
   height: 65px;
   width: 65px;
@@ -2274,7 +2282,7 @@ input.input-danger:focus {
   line-height: 63px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003460}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003467}}
 .btn-icon-lg-alt {
   height: 70px;
   width: 70px;
@@ -2301,7 +2309,7 @@ input.input-danger:focus {
   line-height: 68px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003463}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003470}}
 .btn-icon-xl {
   height: 80px;
   width: 80px;
@@ -2328,7 +2336,7 @@ input.input-danger:focus {
   line-height: 78px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003469}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003476}}
 .btn-twitter {
   color: #fff;
   background-color: #00c7f7;
@@ -2342,7 +2350,7 @@ input.input-danger:focus {
   border-color: #0096ba;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003470}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003477}}
 .btn-facebook {
   color: #fff;
   background-color: #335397;
@@ -2356,7 +2364,7 @@ input.input-danger:focus {
   border-color: #243a69;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003471}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003478}}
 .btn-gplus,
 .btn-google-plus {
   color: #fff;
@@ -2372,7 +2380,7 @@ input.input-danger:focus {
   border-color: #b8301f;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003473}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003480}}
 .btn-instagram {
   color: #fff;
   background-color: #82685A;
@@ -2386,7 +2394,7 @@ input.input-danger:focus {
   border-color: #5e4b41;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003474}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003481}}
 .btn-vimeo {
   color: #fff;
   background-color: #63879C;
@@ -2400,7 +2408,7 @@ input.input-danger:focus {
   border-color: #4b6777;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003475}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003482}}
 .btn-flickr {
   color: #fff;
   background-color: #0061DB;
@@ -2414,7 +2422,7 @@ input.input-danger:focus {
   border-color: #00469e;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003476}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003483}}
 .btn-github {
   color: #fff;
   background-color: #3B3B3B;
@@ -2428,7 +2436,7 @@ input.input-danger:focus {
   border-color: #1c1c1c;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003477}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003484}}
 .btn-pinterest {
   color: #fff;
   background-color: #D73532;
@@ -2442,7 +2450,7 @@ input.input-danger:focus {
   border-color: #ab2421;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003478}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003485}}
 .btn-tumblr {
   color: #fff;
   background-color: #586980;
@@ -2456,7 +2464,7 @@ input.input-danger:focus {
   border-color: #3f4b5c;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003479}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003486}}
 .btn-linkedin {
   color: #fff;
   background-color: #018FAF;
@@ -2470,7 +2478,7 @@ input.input-danger:focus {
   border-color: #015d72;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003480}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003487}}
 .btn-dribbble {
   color: #fff;
   background-color: #EA73A0;
@@ -2484,7 +2492,7 @@ input.input-danger:focus {
   border-color: #e23e7c;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003481}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003488}}
 .btn-stumbleupon {
   color: #fff;
   background-color: #EA4B24;
@@ -2498,7 +2506,7 @@ input.input-danger:focus {
   border-color: #bf3412;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003482}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003489}}
 .btn-lastfm {
   color: #fff;
   background-color: #B80638;
@@ -2512,7 +2520,7 @@ input.input-danger:focus {
   border-color: #7d0426;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003483}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003490}}
 .btn-evernote {
   color: #fff;
   background-color: #3BAB27;
@@ -2526,7 +2534,7 @@ input.input-danger:focus {
   border-color: #2a791c;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003484}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003491}}
 .btn-skype {
   color: #fff;
   background-color: #00B0F6;
@@ -2540,7 +2548,7 @@ input.input-danger:focus {
   border-color: #0084b9;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003485}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003492}}
 .btn-soundcloud {
   color: #fff;
   background-color: #0066FF;
@@ -2554,7 +2562,7 @@ input.input-danger:focus {
   border-color: #004ec2;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003486}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003493}}
 .btn-behance {
   color: #fff;
   background-color: #B80638;
@@ -2568,7 +2576,7 @@ input.input-danger:focus {
   border-color: #7d0426;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003487}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003494}}
 .btn-rss {
   color: #fff;
   background-color: #F79638;
@@ -2582,7 +2590,7 @@ input.input-danger:focus {
   border-color: #e87709;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003488}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003495}}
 .btn-youtube {
   color: #fff;
   background-color: #CC181E;
@@ -2596,7 +2604,7 @@ input.input-danger:focus {
   border-color: #951216;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003492}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003499}}
 .btn-metro {
   position: relative;
   padding: 0;
@@ -2606,12 +2614,12 @@ input.input-danger:focus {
   font-size: 21px;
   text-align: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003501}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003508}}
 .btn-metro i {
   font-size: 48px;
   line-height: 180px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003506}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003513}}
 .btn-metro span {
   position: absolute;
   left: 15px;

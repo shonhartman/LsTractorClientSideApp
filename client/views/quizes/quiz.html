@@ -33,7 +33,7 @@
             <div id="repeating-array">
                 <section class="panel panel-default" id="callout-quiz" ng-repeat="answer in question.answers">
                     <div class="panel-body">
-                        <button ng-click="setAnswer(answer)" class="btn-icon-lined btn-icon-round btn-icon-md  btn-gap-v btn-default" style="float: left;"><h3 style="margin-top: 7.25px;">{{ letterForIndex($index) }}</h3></button>
+                        <button ng-click="setAnswer(answer)" class="btn-icon-lined btn-icon-round" style="float: left;"><h3 style="margin-top: 1.5px;">{{ letterForIndex($index) }}</h3></button>
                         <p style="margin: 20px 0 0 60px;">{{ answer.answerText }}</p>
                     </div>
                 </section>

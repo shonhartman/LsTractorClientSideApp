@@ -395,13 +395,20 @@ $btn_arrow_width:     8px;
     border-style: solid;
     border-color: $text-color;
     color: $text-color;
+    outline: none;
     @include button-icon-variant(35px);
     &.btn-icon-thin {
         border-width: 1px;
     }
     &:hover {
-        background-color: $reverse;
+        background-color: $gray-lighter;
+        color: $brand-primary;
+        border-color: $brand-primary;
+    }
+    &:focus {
+        background-color: $brand-primary;
         color: $reverse;
+        border-color: $brand-primary;
     }
 
     // 
