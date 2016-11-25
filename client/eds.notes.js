@@ -114,7 +114,7 @@ Accept : application/schema+json
 //listOf* are not needed
 //same goes with dealership
 
-//PROGRESS BAR
+//PROGRESS BAR ================================================================================================
 //ok i got your percentage working
 //its some javascript
 //just one rest call 
@@ -178,4 +178,4 @@ $(document).ready(function () {
 "isComplete" : false
 }
 //stuff like that
-//you can make some records pretty easily
+//you can make some records pretty easily ======================================================================
