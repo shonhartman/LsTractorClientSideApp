@@ -27,38 +27,7 @@
         // Dealership Owner - 5
         // Super Admin - 6
 
-        //OLD LOGIN FUNCTION
-        // $scope.login = function () {
-
-        //     if (!$scope.formData) {
-        //         return;
-        //     }
-
-        //     $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/appUsers')
-        //         .then(function (response) {
-
-
-        //             var users = response.data._embedded.appUsers;
-        //             var username = $scope.formData.hasOwnProperty('Username') ? $scope.formData.Username : '';
-        //             var password = $scope.formData.hasOwnProperty('Password') ? $scope.formData.Password : '';
-
-        //             var user = users.find(function (user) {
-        //                 return user.email === username && user.password === password;
-        //             });
-
-        //             console.log(users);
-
-        //             if (!user) {
-        //                 return;
-        //             }
-
-        //             $cookies.put('user', angular.toJson(user));
-        //             console.log(user);
-        //             $location.url('/dashboard');
-        //         });
-        // }
-
-        //NEW LOGIN FUNCTION
+        //LOGIN FUNCTION
         $scope.login = function () {
 
             if (!$scope.formData) {
@@ -66,22 +35,10 @@
             }
 
             $http.post('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/login', {
-<<<<<<< HEAD
+
                 "email" : $scope.formData.Username,
                 "password" : $scope.formData.Password
             })
-            .then(function(response) {
-                    $scope.userId = response.data.userId;
-                     console.log($scope.userId);
-            });
-                    
-                    // $cookies.put('user', angular.toJson(user)); ////Sets the cookie to track user state
-                    // $location.url('/dashboard');
-                
-=======
-                    "email": $scope.formData.Username,
-                    "password": $scope.formData.Password
-                })
                 .then(function (response) {
 
                     if (!response.data.ok) {
@@ -108,14 +65,12 @@
                             });
                     }
                 });
->>>>>>> 41425407533a7ae11640e2d1eb2d41c36593a60b
         }
 
         //SAVES USER TO DATABASE
         $scope.signup = function () {
             console.log($scope.formData);
 
-            // $location.url('/dashboard')
             $http.post('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/appUsers', {
                     "firstName": $scope.formData.FirstName,
                     "lastName": $scope.formData.LastName,
