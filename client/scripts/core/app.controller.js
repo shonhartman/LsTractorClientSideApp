@@ -2,20 +2,21 @@
     'use strict';
 
     angular.module('app')
-        .controller('AppCtrl', [ '$scope', '$rootScope', '$route', '$document', AppCtrl]); // overall control
+        .controller('AppCtrl', [ '$cookies', '$scope', '$rootScope', '$route', '$document', AppCtrl]); // overall control
 
-       
-    function AppCtrl($scope, $rootScope, $route, $document) {
+
+    function AppCtrl($cookies, $scope, $rootScope, $route, $document) {
 
         var date = new Date();
         var year = date.getFullYear();
+        var user = angular.fromJson($cookies.get('user'));
+        var userName = user ? user.firstName + ' ' + user.lastName : '';
 
         $scope.main = {
             brand: 'LS Tractor',
-            name: 'Shaun',
+            name: userName,
             year: year
         };
-
 
         $scope.pageTransitionOpts = [
             {
@@ -79,4 +80,4 @@
         });
     }
 
-})(); 
+})();
