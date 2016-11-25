@@ -2820,7 +2820,7 @@ be a descendant of the grid when it is being dragged.
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/pages\/_auth\.scss}line{font-family:\000032}}
 .body-auth #content {
-  background-color: #515a63;
+  background-color: #1f2837;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/pages\/_auth\.scss}line{font-family:\000037}}
@@ -2841,8 +2841,8 @@ be a descendant of the grid when it is being dragged.
 .page-signup .signin-header,
 .page-forgot .signin-header {
   margin-top: 50px;
-  background-color: #84B7C7;
-  border-bottom: 10px solid #72adbf;
+  background-color: #005b96;
+  border-bottom: 10px solid #004c7d;
   padding: 30px 12px;
   border-radius: 6px 6px 0 0;
 }
