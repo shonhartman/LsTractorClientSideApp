@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('app.page')
-        .controller('authCtrl', ['$cookies', '$scope', '$window', '$location', '$http', '$routeParams', authCtrl])
+        .controller('authCtrl', ['$q', '$cookies', '$scope', '$window', '$location', '$http', '$routeParams', authCtrl])
         .controller('headerCtrl', ['$scope', '$cookies', '$location', headerCtrl]);
 
     function headerCtrl($scope, $cookies, $location) {
@@ -14,7 +14,7 @@
     }
 
     //AUTH CONTROLLER
-    function authCtrl($cookies, $scope, $window, $location, $http, $routeParams) {
+    function authCtrl($q, $cookies, $scope, $window, $location, $http, $routeParams) {
         $scope.dealerships = [];
 
         $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/dealerships')
@@ -34,17 +34,12 @@
             }
 
             $http.post('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/login', {
-
-                "email" : $scope.formData.Username,
-                "password" : $scope.formData.Password
-            })
+                    "email": $scope.formData.Username,
+                    "password": $scope.formData.Password
+                })
                 .then(function (response) {
 
-                    if (!response.data.ok) {
-
-                        // authentication failed - need to show login error message
-
-                    } else {
+                    if (response.data && response.data.ok) {
 
                         var userId = response.data.userId;
 
@@ -53,19 +48,21 @@
                         }
 
                         // now do a request for the user info and save it to cookie
-                        $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/appUsers/' + userId)
-                            .then(function (response) {
-
-                                var user = response.data;
-
-                                if (!user) {
-                                    return;
-                                }
-
-                                $cookies.put('user', angular.toJson(user));
-                                $location.url('/dashboard');
-                            });
+                        return $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/appUsers/' + userId)
                     }
+                }, function (response) {
+                    // authentication failed - need to show login error message
+                    console.log('Login error...');
+                    return $q.reject();
+                })
+                .then(function (response) {
+
+                    if (!response || !response.data) {
+                        return;
+                    }
+
+                    $cookies.put('user', angular.toJson(response.data));
+                    $location.url('/dashboard');
                 });
         }
 
