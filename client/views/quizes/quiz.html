@@ -10,9 +10,10 @@
     </div>
 
 <!--TOGGLE COLLAPSE-->
-    <div class="panel-body ng-scope" data-ng-controller="CollapseDemoCtrl">
+    <div ng-if="quiz" class="panel-body ng-scope" data-ng-controller="CollapseDemoCtrl">
+        <!--<h1 ng-if="!quiz">Quiz</h1>-->
         <button ng-disabled="disableQuiz" class="btn btn-primary" ng-click="isCollapsed = !isCollapsed">Take Quiz</button>
-        <span ng-if="disableQuiz">Please watch the video then take the quiz</span>
+        <span>Please watch the video then take the quiz</span>
         <div class="divider divider-md"></div>
         <div collapse="isCollapsed" class="collapse" aria-expanded="false" aria-hidden="true" style="height: 0px;">
 <!--A Question Object should be pulled in here with an id that relates to a video-->
@@ -43,6 +44,8 @@
         </div> <!-- HIDDEN QUIZ -->
         </div>
     </div>
+    <button ng-if="!quiz && !disableQuiz">Finish</button>
+
 	
 </div> <!--End of Page-->
 

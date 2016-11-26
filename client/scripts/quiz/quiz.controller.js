@@ -55,7 +55,8 @@
                 })
                 .then(function (response) {
                     $scope.quiz = response.data;
-                    return $http.get($scope.quiz._links.listOfQuestion.href);                
+                    return $http.get($scope.quiz._links.listOfQuestion.href);    
+
                 })
                 .then(function (response) {
                     response.data._embedded.questions.forEach(function(question) {
