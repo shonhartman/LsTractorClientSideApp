@@ -38,29 +38,15 @@
                     "password": $scope.formData.Password
                 })
                 .then(function (response) {
-
-                    if (response.data && response.data.ok) {
-
-                        var userId = response.data.userId;
-
-                        if (!userId) {
-                            return;
-                        }
-
-                        // now do a request for the user info and save it to cookie
-                        return $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/appUsers/' + userId)
-                    }
+                    // request user details
+                    return $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/appUsers/' + response.data.userId);
                 }, function (response) {
                     // authentication failed - need to show login error message
                     console.log('Login error...');
                     return $q.reject();
                 })
                 .then(function (response) {
-
-                    if (!response || !response.data) {
-                        return;
-                    }
-
+                    // save user to cookie
                     $cookies.put('user', angular.toJson(response.data));
                     $location.url('/dashboard');
                 });
