@@ -42,7 +42,7 @@
             }
 
             if ($scope.roleId === 5) {
-                $http.get($scope.user._links.dealership.href)
+                $http.get(user._links.dealership.href)
                     .then(function (response) {
                         $scope.dealership = response.data;
                         return $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos');
