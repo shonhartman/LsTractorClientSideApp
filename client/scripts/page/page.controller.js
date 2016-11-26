@@ -80,6 +80,7 @@
                     "birthDate": $scope.formData.BirthDate,
                     "password": $scope.formData.Password,
                     "phoneNumber": $scope.formData.PhoneNumber,
+                    "roleId": parseInt($scope.formData.Role, 10),
                     "dealership": $scope.formData.Dealership,
                     "userRole": 'http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/userRoles/' + $scope.formData.Role
 
