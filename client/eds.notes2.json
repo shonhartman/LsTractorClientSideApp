@@ -153,3 +153,21 @@ if the videoresult comes back null, you make one
 isComplete is false, time watched is 0
 if it exists, you just set it
 then you put to update it when time moves or when they finish the quiz there at the end
+
+==============================================================================
+DEALERSHIP ASSOCIATION
+==============================================================================
+
+This is how to post a dealership owner to a dealership
+POST ===> appUsers
+
+{
+        "firstName": "William",
+        "lastName": "Fowler",
+        "email": "231materials@comcast.net",
+        "birthDate": "1983-11-19",
+        "phoneNumber": "410-535-7666",
+        "roleId": 5,
+}
+
+Password : 231

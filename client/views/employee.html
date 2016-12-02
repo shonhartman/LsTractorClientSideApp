@@ -1,9 +1,9 @@
 <div class="page page-dashboard" ng-controller="EmployeeCtrl">
 
-{{ employee.firstName }} {{ employee.lastName }}
+<p>{{ employee.firstName }} {{ employee.lastName }}</p>
 
 <!--Dealership/Employee Table-->
-<div class="panel panel-default">
+<!--<div class="panel panel-default">
     <div class="panel-body table-responsive">
         <table class="table">
             <thead>
@@ -21,8 +21,64 @@
                 </tr>
             </tbody>
         </table>
+    </div>-->
+<!-- </div>  /Dealership/Employee Table --> 
+
+<div class="panel panel-default" style="width:49%;">
+    <div class="panel-body table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Video</th>
+                    <th>Progress</th>
+                    <th>Complete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Engine Test</td>
+                    <td>100%</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Engine Data</td>
+                    <td>100%</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Diagnostic Program</td>
+                    <td>100%</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Diagnostics</td>
+                    <td>100%</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Forcing Regeneration</td>
+                    <td>50%</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td>Walkaround</td>
+                    <td>100%</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Electronic Service Tool D</td>
+                    <td>0%</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td>Transmission Diagnostics</td>
+                    <td>0%</td>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-</div> <!-- /Dealership/Employee Table --> 
+</div>
 
 <!--Badges-->
         <div class="row" ng-controller="BadgeCtrl">
@@ -33,10 +89,9 @@
                     <span class="ti-star color-success"></span>
                 </div>
                 <div class="panel-info">
-                    <span data-translate="PHASE 1 DIAGNOSTICS"></span>
+                    <span>LS ENGINES TIER 4 SYSTEM</span>
                 </div>
                 <div class="panel-bottom bg-light">
-                    <!--<span>100 <span class="size-h4">%</span></span>-->
                     <span class="ti-cup color-warning"></span>
 
                 </div>
@@ -48,23 +103,23 @@
                     <i class="ti-stats-up color-info"></i>
                 </div>
                 <div class="panel-info">
-                    <span data-translate="PHASE 2 DIAGNOSTICS"></span>
+                    <span>ISM INDIRECT INJECTION DIESELS</span>
                 </div>
                 <div class="panel-bottom bg-light">
-                    <span>22 <span class="size-h4">%</span></span>
+                    <span>75 <span class="size-h4">%</span></span>
                 </div>
             </div>
         </div>
         <div class="col-lg-3 col-xsm-6">
             <div class="panel panel-box">
                 <div class="panel-top">
-                    <i class="ti-stats-up color-info"></i>
+                    <span class="ti-star color-success"></span>
                 </div>
                 <div class="panel-info">
-                    <span data-translate="PHASE 3 DIAGNOSTICS"></span>
+                    <span>XR SHIBAURU ENGINE</span>
                 </div>
                 <div class="panel-bottom bg-light">
-                    <span>37 <span class="size-h4">%</span></span>
+                    <span class="ti-cup color-warning"></span>
                 </div>
             </div>
         </div>
@@ -74,7 +129,7 @@
                     <i class="ti-key" style="color:#7992BF"></i>
                 </div>
                 <div class="panel-info">
-                    <span data-translate="PHASE 4 DIAGNOSTICS"></span>
+                    <span>GENERAL</span>
                 </div>
                 <div class="panel-bottom bg-light">
                     <!--<span>21 <span class="size-h4">%</span></span>-->
