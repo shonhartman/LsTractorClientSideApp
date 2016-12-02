@@ -40,6 +40,7 @@
                 .then(function (response) {
                     // request user details
                     return $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/appUsers/' + response.data.userId);
+
                 }, function (response) {
                     // authentication failed - need to show login error message
                     console.log('Login error...');

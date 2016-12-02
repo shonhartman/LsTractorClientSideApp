@@ -5,10 +5,14 @@
 
         .panel-top,
         .panel-bottom {
-            height: 100px;
-            padding: 30px 15px;
-            font-size: 40px;
+            height: 200px;
+            padding: 69px 15px;
+            font-size: 55px;
             line-height: 1;
+
+            /*span {
+                font-size: 14px;
+            }*/
         }
 
         .panel-bottom {
@@ -18,22 +22,24 @@
         .panel-info {
             position: absolute;
             width: 100%;
-            top: 50%;
+            top: 46%;
             margin-top: -12px;
             text-align: center;
 
             span {
-                height: 24px;
+                height: 48px;
                 display: inline-block;
-                padding: 4px 10px;
+                padding: 16px 10px;
                 text-transform: uppercase;
                 line-height: 14px;
                 background-color: #fff;
                 border: 1px solid #dfdfdf;
-                font-size: 11px;
+                font-size: 14px;
                 color: $text-muted;
-                border-radius: 1em;
+                border-radius: 2em;
+                &:hover {color: $brand-primary;}
             }
+            
         }
     }
 

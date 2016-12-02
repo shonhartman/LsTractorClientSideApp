@@ -1,7 +1,7 @@
 <div class="page" ng-controller="QuizCtrl">
 
 <!--Video-->
-<h3>{{ video.title }}</h3>
+<h3 style="text-transform:uppercase;">{{ video.title }}</h3>
 <p>{{ video.author }}</p>
 
     <div class="col-md-12">
@@ -17,7 +17,7 @@
         <div class="divider divider-md"></div>
         <div collapse="isCollapsed" class="collapse" aria-expanded="false" aria-hidden="true" style="height: 0px;">
 <!--A Question Object should be pulled in here with an id that relates to a video-->
-<div ng-repeat="question in questions" ng-if="$index === activeQuestion">
+    <div ng-repeat="question in questions" ng-if="$index === activeQuestion">
             <section class="panel panel-default" id="callout-quiz">
                 <div class="panel-heading"><strong><span class="glyphicon glyphicon-list-alt" style="margin-right: 10px;"></span>Quiz</strong></div>
                 <div class="panel-body">
@@ -41,10 +41,10 @@
                 <button ng-if="!lastQuestion()" type="button" class="btn btn-w-md btn-gap-v btn-primary" ng-click="nextQuestion()">Next Question<span class="ti-arrow-right" style="float: right; margin: 5px 10px;"></span></button>
                 <button ng-if="lastQuestion()" type="button" class="btn btn-w-md btn-gap-v btn-primary" ng-click="finishQuiz()">Finish Quiz<span class="ti-arrow-right" style="float: right; margin: 5px 10px;"></span></button>
             </div> <!-- End of Answers -->
-        </div> <!-- HIDDEN QUIZ -->
+    </div> <!-- HIDDEN QUIZ -->
         </div>
     </div>
-    <button ng-if="!quiz && !disableQuiz">Finish</button>
+    <button class="btn btn-primary" ng-if="!quiz && !disableQuiz" ng-click="finishQuiz()">Finish</button>
 
 	
 </div> <!--End of Page-->

@@ -1,6 +1,10 @@
 body {
     // background: url('../images/bg-pattern/logo_x_pattern.png') repeat #fff;
     background: $main_container_bg;
+
+    .container {
+        width: 120%;
+    }
 }
 
 // fullscreen, hide header and sidebar
@@ -38,4 +42,8 @@ body {
     .app-footer {
         display: none;
     }
+}
+
+h1 {
+    text-transform: uppercase;
 }
