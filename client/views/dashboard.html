@@ -62,7 +62,9 @@
                 <a style="text-decoration: none;" href="#/pages/skill-set-details/{{ skillset.id }}">
                     <div class="panel panel-box" style="margin-top:20%;" ng-click="goToSkillSet()">
                         <div class="panel-top">
-                            <span class="ti-star color-success"></span>
+                            <span ng-show="skillset.status == 1" class="ti-key color-warning"></span>
+                            <span ng-show="skillset.status == 2" class="ti-stats-up color-info"></span>
+                            <span ng-show="skillset.status == 3" class="ti-star color-success"></span>
                         </div>
                         <div class="panel-info">
                             <span>{{ skillset.name }}</span>
