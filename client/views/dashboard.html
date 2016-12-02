@@ -1,8 +1,9 @@
 <div class="page page-dashboard" ng-controller="DashboardCtrl">
 
-    <!-- Popover --><!-- <button popover="On mouse enter!" popover-trigger="mouseenter" class="btn btn-w-lg btn-primary btn-gap">Popover on Mouseenter</button> -->
+    <!-- Popover -->
+    <!-- <button popover="On mouse enter!" popover-trigger="mouseenter" class="btn btn-w-lg btn-primary btn-gap">Popover on Mouseenter</button> -->
 
-<!--Super Admin Table-->
+    <!--Super Admin Table-->
     <div ng-if="roleId == 6">
         <div class="panel panel-default">
             <div class="panel-body table-responsive">
@@ -17,7 +18,9 @@
                         <tr ng-repeat="dealership in dealerships">
                             <td>{{ dealership.name }}</td>
                             <!--TODO ==> BIND PROGRESS BAR TO DATA-->
-                            <td><progressbar class="progressbar-xs no-margin" value="55"></progressbar></td>
+                            <td>
+                                <progressbar class="progressbar-xs no-margin" value="55"></progressbar>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -25,7 +28,7 @@
         </div>
     </div><!-- Super Admin Table Table -->
 
-<!--Dealership Owner/Employee Table-->
+    <!--Dealership Owner/Employee Table-->
     <div ng-if="roleId == 5">
         <div class="panel panel-default">
             <div class="panel-body table-responsive">
@@ -50,10 +53,10 @@
         </div>
     </div><!-- /Dealership/Employee Table -->
 
-<!--Employee View-->
+    <!--Employee View-->
     <div ng-if="roleId == 4">
-
         <!--DYNAMIC DATA-->
+<<<<<<< HEAD
 <h1>Skillsets</h1>
  <div class="row" ng-controller="SkillSetCtrl">
  <div class="col-lg-3 col-xsm-6" ng-repeat="skillset in skillsets">
@@ -73,10 +76,30 @@
      </a>
 </div>
 </div> <!-- End DYNAMIC DATA -->
+=======
+        <div class="row" ng-controller="SkillSetCtrl">
+            <div class="col-lg-3 col-xsm-6" ng-repeat="skillset in skillsets">
+                <a style="text-decoration: none;" href="#/pages/skill-set-details/{{ skillset.id }}">
+                    <div class="panel panel-box" ng-click="goToSkillSet()">
+                        <div class="panel-top">
+                            <span class="ti-star color-success"></span>
+                        </div>
+                        <div class="panel-info">
+                            <span>{{ skillset.name }}</span>
+                        </div>
+                        <div class="panel-bottom bg-light">
+                            <!--<span>100 <span class="size-h4">%</span></span>-->
+                            <span class="ti-cup color-warning"></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div><!-- End DYNAMIC DATA -->
+>>>>>>> 5ded596d3b6e8ed7e5e52481bc89c1e160d7a8a4
 
         <!--<div class="row" ng-controller="BadgeCtrl">-->
-            <!-- Skill Sets -->
-            <!--<div class="col-lg-3 col-xsm-6" popover="You completed this one!" popover-trigger="mouseenter">
+        <!-- Skill Sets -->
+        <!--<div class="col-lg-3 col-xsm-6" popover="You completed this one!" popover-trigger="mouseenter">
                 <div class="panel panel-box" ng-click="goToSkillSet()">
                     <div class="panel-top">
                         <span class="ti-star color-success"></span>
@@ -129,5 +152,7 @@
                 </div>
             </div>
         </div>-->
-    <!-- </div> end of Employee View -->
+
+    </div><!-- end of Employee View -->
+
 </div>
