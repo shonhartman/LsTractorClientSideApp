@@ -136,6 +136,15 @@ Let's try to add a new video to an existing quiz
 TRACKING RESULTS
 ==============================================================================
 
+This is how to post video results
+POST ===> videoResults
+
+{
+    "viewAmount": "100",
+    "isComplete": true,
+    "appUser" : "http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/appUsers/1824"
+}
+
 Barket says : you have to set $scope.videoResult
 he was going to add a way for you to get a videoResult based on video and user
 at the top of that file you need to make that call for your user in your cookies and the video you're looking at
