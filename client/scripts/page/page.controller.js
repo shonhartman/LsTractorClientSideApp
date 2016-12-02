@@ -61,18 +61,6 @@
 
             $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/appUsers')
                 .then(function (response) {
-                    // request user details
-                    return $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/appUsers/' + response.data.userId);
-
-                }, function (response) {
-                    // authentication failed - need to show login error message
-                    console.log('Login error...');
-                    return $q.reject();
-                })
-                .then(function (response) {
-                    // save user to cookie
-                    $cookies.put('user', angular.toJson(response.data));
-                    $location.url('/dashboard');
 
                     var users = response.data._embedded.appUsers;
 
