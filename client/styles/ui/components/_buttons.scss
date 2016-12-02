@@ -2,7 +2,7 @@
 // mixin
 @mixin button-line-variant($color, $background, $border) {
     color: $text-color;
-    background-color: transparent; 
+    background-color: transparent;
     border-color: $border;
 
     &:hover,
@@ -33,7 +33,7 @@
             line-height: ($size - 2px);
             i { line-height: ($size - 2px); }
         }
-    }    
+    }
 }
 
 @mixin social-button-variant($background, $border) {
@@ -44,8 +44,8 @@
         color: $reverse;
         text-decoration: none;
         background-color: darken($background, 8%);
-        border-color: darken($border, 12%)        
-    }    
+        border-color: darken($border, 12%)
+    }
 }
 
 // add to default button
@@ -79,7 +79,7 @@
     @include button-line-variant($btn-dark-color, $btn-dark-bg, $btn-dark-border);
 }
 
-// 
+//
 .btn-direction {
     position: relative;
     border: 0;
@@ -240,7 +240,7 @@ $btn_arrow_width:     8px;
         &:before {
             border-bottom: $btn_arrow_width solid darken($btn-default-bg, 10%);
         }
-    }  
+    }
 
     // Color
     &.btn-primary {
@@ -292,7 +292,7 @@ $btn_arrow_width:     8px;
                 border-bottom: $btn_arrow_width solid darken($btn-danger-bg, 10%);
             }
         }
-    }  
+    }
 }
 .btn-down {
     &:before {
@@ -309,7 +309,7 @@ $btn_arrow_width:     8px;
         &:before {
             border-top: $btn_arrow_width solid darken($btn-default-bg, 10%);
         }
-    }  
+    }
 
     // Color
     &.btn-primary {
@@ -361,7 +361,7 @@ $btn_arrow_width:     8px;
                 border-top: $btn_arrow_width solid darken($btn-danger-bg, 10%);
             }
         }
-    }  
+    }
 }
 
 //
@@ -370,13 +370,13 @@ $btn_arrow_width:     8px;
 .btn-w-md { min-width: 120px; }
 .btn-w-lg { min-width: 150px; }
 
-// 
+//
 .btn-round { border-radius: 2em; }
 .btn-gap { margin: 5px; }
 .btn-gap-h { margin: 0 5px; }
 .btn-gap-v { margin: 5px 0 5px; }
 
-// 
+//
 .btn-icon {
     display: inline-block;
     text-align: center;
@@ -405,13 +405,13 @@ $btn_arrow_width:     8px;
         color: $brand-primary;
         border-color: $brand-primary;
     }
-    &:focus {
+    &:focus, &.active {
         background-color: $brand-primary;
         color: $reverse;
         border-color: $brand-primary;
     }
 
-    // 
+    //
     &.btn-default-light {
         color: #bbb;
         border: 2px solid #bbb;
@@ -449,7 +449,7 @@ $btn_arrow_width:     8px;
     &.btn-danger {
         color: $brand-danger;
         border-color: $brand-danger;
-    }  
+    }
 }
 .btn-icon-round {
     border-radius: 50%;
