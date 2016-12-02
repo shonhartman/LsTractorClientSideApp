@@ -61,7 +61,6 @@
 
             $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/appUsers')
                 .then(function (response) {
-<<<<<<< HEAD
                     // request user details
                     return $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/appUsers/' + response.data.userId);
 
@@ -74,7 +73,6 @@
                     // save user to cookie
                     $cookies.put('user', angular.toJson(response.data));
                     $location.url('/dashboard');
-=======
 
                     var users = response.data._embedded.appUsers;
 
@@ -91,7 +89,6 @@
                         $cookies.put('user', angular.toJson(userToLogIn));
                         $location.url('/dashboard');
                     }
->>>>>>> 5ded596d3b6e8ed7e5e52481bc89c1e160d7a8a4
                 });
         }
 
