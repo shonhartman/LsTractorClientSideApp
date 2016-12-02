@@ -65,7 +65,7 @@
                         })
                         .then(function (response) {
 
-                            //3. get count of completed videos that exist in skillset
+                            //3. get list of user video results that are marked as complete
                             var userCompletedVideoResults = response.data._embedded.videoResults.filter(function (video) {
                                 return video.isComplete;
                             });
@@ -80,7 +80,7 @@
                                     //now, get the ids of completed videos
                                     var videoCompletedID = response.data._links.self.href.split('/').pop();
 
-                                    //4. set skillset status
+                                    //keep count of videos completed for the current skillset
                                     if (skillsetVideoIDs.indexOf(videoCompletedID) >= 0) {
                                         videosInSkillCompletedCount++;
                                     }
