@@ -23,6 +23,7 @@
         'app.nav',
         'app.page',
         'app.quiz',
+        'app.table',
         'app.ui',
         'app.ui.form.validation',
         'app.video'

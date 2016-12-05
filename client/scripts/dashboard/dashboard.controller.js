@@ -31,6 +31,7 @@
                     return (complete / total) * 100;
                 });
         }
+        
 
         $scope.populateData = function () {
             // Technican - 4
@@ -38,11 +39,11 @@
             // Super Admin - 6
 
             if ($scope.roleId === 4) {
-
+                //Do nothing? return perhaps?
             }
 
             if ($scope.roleId === 5) {
-                $http.get(user._links.dealership.href)
+                $http.get(user._links.dealership.href)// This is the check to see which dealership an owner belongs to
                     .then(function (response) {
                         $scope.dealership = response.data;
                         return $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos');
@@ -65,10 +66,11 @@
             }
 
             if ($scope.roleId === 6) {
-
+                //WHAT SHOULD WE DO WITH SUPER ADMIN
             }
 
         }
+        
 
         $scope.populateData();
 
