@@ -2144,7 +2144,7 @@ input.input-danger:focus {
   border-color: #45B3FF;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003408}}
-.btn-icon-lined:focus {
+.btn-icon-lined:focus, .btn-icon-lined.active {
   background-color: #45B3FF;
   color: #fff;
   border-color: #45B3FF;
@@ -3706,6 +3706,7 @@ img.img80_80 {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_list-group\.scss}line{font-family:\0000321}}
 .list-info li label {
   width: 100px;
+  margin-right: 33%;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_mail\.scss}line{font-family:\000033}}
@@ -4427,7 +4428,7 @@ img.img80_80 {
 @include all-flags-sprites(true);*/
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_timeline\.scss}line{font-family:\000033}}
 .ui-timline-container {
-  padding: 15px;
+  padding: 15px 12.5%;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_timeline\.scss}line{font-family:\0000311}}
@@ -4587,7 +4588,7 @@ img.img80_80 {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_timeline\.scss}line{font-family:\00003152}}
 .ui-timeline .tl-item .tl-body .tl-content {
   position: relative;
-  padding: 15px;
+  padding: 15px 12%;
   border-radius: 4px;
   background-color: rgba(255, 255, 255, 0.9);
 }

@@ -6,8 +6,8 @@
             var routes, setRoutes;
 
             routes = [
-                'charts/charts', 'charts/flot',
-                'dashboard', 'dealership-list', 'failing-view', 'passing-view',
+                'charts/charts', 'charts/flot', 'closure', 'certificates',
+                'dashboard', 'dealership-list', 'failing-view', 'passing-view', 'profile', 'transfer',
                 'pages/404', 'pages/500', 'pages/blank', 'pages/forgot-password', 'pages/lock-screen', 'pages/signin', 'pages/signup', 'pages/skill-set', 'pages/videos',
                 'quizes/quiz-logic-test', 
                 'test-view'

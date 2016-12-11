@@ -2955,15 +2955,23 @@ be a descendant of the grid when it is being dragged.
   padding: 0px 30px 30px;
   /*background: url('http://i.imgur.com/6Ekd2e7.jpg') no-repeat center center fixed;*/
   /*background: $gray-light;*/
-  -webkit-background-size: cover;
+  /*-webkit-background-size: cover;
   -moz-background-size: cover;
-  background-size: cover;
+  background-size: cover;*/
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/pages\/_profile\.scss}line{font-family:\0000319}}
 .page-profile .profile-header h1 {
   text-transform: uppercase;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/pages\/_profile\.scss}line{font-family:\0000357}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/pages\/_profile\.scss}line{font-family:\0000323}}
+.page-profile .profile-margin {
+  margin: 50px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/pages\/_profile\.scss}line{font-family:\0000327}}
+.page-profile .profile-line-extension {
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/pages\/_profile\.scss}line{font-family:\0000365}}
 .page-profile img.media-object {
   border-radius: 4px;
 }

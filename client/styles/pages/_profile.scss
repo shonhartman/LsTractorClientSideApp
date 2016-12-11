@@ -9,15 +9,23 @@
         padding: 0px 30px 30px;
         /*background: url('http://i.imgur.com/6Ekd2e7.jpg') no-repeat center center fixed;*/
         /*background: $gray-light;*/
-        -webkit-background-size: cover;
+        /*-webkit-background-size: cover;
         -moz-background-size: cover;
-        background-size: cover;
+        background-size: cover;*/
 
             
     }
 
     .profile-header h1 {
         text-transform: uppercase;
+    }
+
+    .profile-margin {
+        margin: 50px;
+    }
+
+    .profile-line-extension {
+        width: 100%;
     }
 
 
