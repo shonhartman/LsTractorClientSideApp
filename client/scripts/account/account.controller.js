@@ -7,6 +7,9 @@
     //ACCOUNT CONTROLLER
     function accountCtrl($q, $cookies, $scope, $window, $location, $http, $routeParams) {
 
+        //GET ACCOUNT
+        $scope.currentAccount = angular.fromJson($cookies.get('user'));
+
         //SIGN IN
         $scope.login = function () {
 
