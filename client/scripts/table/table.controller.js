@@ -4,6 +4,7 @@
     angular.module('app.table')
         .controller('tableCtrl', ['$scope', '$filter', tableCtrl]);
 
+//TODO : Get Dealerships
     function tableCtrl($scope, $filter) {
         var init;
 

@@ -29,9 +29,9 @@
             window.vimeoPlayProgressEvent = function(data) {
 
                 if (data.seconds > $scope.timeWatched + 10) {
-                    $http.post('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videoResults', {
-                        appUser: $scope.user._links.self.href,
-                        video: "http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos/" + $routeParams.id,
+                    $http.post('http://lstractorquizapi.azurewebsites.net//videoResults', {
+                        appUser: $scope.user._links.self.href, //??
+                        video: "http://lstractorquizapi.azurewebsites.net/Videos?", //??
                         viewAmount: data.seconds 
                     });
 
@@ -46,7 +46,7 @@
             }
 
 // Get Videos & Questions
-            $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos/' + $routeParams.id)
+            $http.get('http://lstractorquizapi.azurewebsites.net/api/Videos?')
                 .then(function(response) {
                     $scope.video = response.data;
                     $scope.videoUrl = $sce.trustAsResourceUrl($scope.video.url);
@@ -65,38 +65,51 @@
                         question.answers = [];
                         $scope.questions.push(question);
                     });
-
+//GET QUIZ DETAILS BY ID
                     $scope.questions.forEach(function(question) {
-                        $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/questions/' + question.id + '/listOfAnswer')
+                        $http.get('http://lstractorquizapi.azurewebsites.net/api/Quizzes?quizId={quizId}/Questions')
                             .then(function (response) {
                                 question.answers = response.data._embedded.answers;
                             });
                     });
                 });
+//CREATE A NEW QUIZ
 
-// Post a new Video
-                // $http.post('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos/' + $routeParams.id)
-                // .then(function(response) {
+            $scope.createQuiz = function () {
+                $http.post('http//lstractorquizapi.azurewebsites.net/api/Quizzes')
+                    .then(function (response) {
+                        response.data._embedded.questions.forEach(function (question) {
+                            var splitUrl = question._links.self.href.split("/");
+                            question.id = splitUrl[splitUrl.length - 1];
+                            question.answers = [];
+                            $scope.questions.push(question);
+                        });
 
-                //     // TODO - This should filter by quiz_id
-                //     var quiz_id = 13; // should be $scope.video.quiz_id
-                //     return $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/quizzes/' + quiz_id + '/listOfQuestion');
-                // })
-                // .then(function (response) {
-                //     response.data._embedded.questions.forEach(function(question) {
-                //         var splitUrl = question._links.self.href.split("/");
-                //         question.id = splitUrl[splitUrl.length - 1];
-                //         question.answers = [];
-                //         $scope.questions.push(question);
-                //     });
+                        $scope.questions.forEach(function (question) {
+                            $http.get('http://lstractorquizapi.azurewebsites.net/Questions/')
+                                .then(function (response) {
+                                    question.answers = response.data._embedded.answers;
+                                })
+                                .then(function (response) {
 
-                //     $scope.questions.forEach(function(question) {
-                //         $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/questions/' + question.id + '/listOfAnswer')
-                //             .then(function (response) {
-                //                 question.answers = response.data._embedded.answers;
-                //             });
-                //     });
-                // });
+                                    // TODO - This should filter by quiz_id
+                                    var quiz_id = 13; // should be $scope.video.quiz_id
+                                    return $http.get('http://lstractorquizapi.azurewebsites.net/Quizzes{id}');
+                                })
+                        });
+                    });
+            } 
+
+//DELETE A QUIZ BY ID 
+
+    $scope.deleteQuiz = function () {
+            $http.delete('http://lstractorquizapi.azurewebsites.net/api/Quizzes?quizId={quizId}')
+                .then(function (response) {
+                    logger.logSuccess("Well done! You successfully deleted{{quiz.name}}.");
+                    $location.url("/#/skill-set.id");
+                });
+        }
+             
 // Changes index number to a letter 
             $scope.letterForIndex = function (index) {
                 return String.fromCharCode(97 + index); 
@@ -143,23 +156,22 @@
                     // });   
                     var data =  {
                        appUser: $scope.user._links.self.href,
-                       video: "http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos/" + $routeParams.id,
+                       video: "http://lstractorquizapi.azurewebsites.net/Videos{id}",
                        viewAmount: $scope.videoResult.viewAmount,                                                 
                        isComplete: true
                    };
                     console.log(data);
                     $http.put($scope.videoResult._links.self.href, data)
                 }   
-
-                $http.post('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/quizResults', {
+//SUBMIT QUIZ RESULTS FOR GRADING
+                $http.post('http://lstractorquizapi.azurewebsites.net/api/Quizzes?userId={userId}', {
                     quiz: $scope.quiz._links.self.href,
                     appUser: $scope.user._links.self.href,
-                    score: score
+                    score: score//I imagine this will all change to new endpoints??
                 })
                 .then(function (response) {
                     alert("You scored " + score + "%!");
                     $location.url('/dashboard');
-                    // console.log(response);
                 });   
             }
         }

@@ -59,9 +59,10 @@
             $modalInstance.dismiss("cancel");
         };
 
+//CREATE NEW VIDEO
         $scope.upload = function (video) {
 
-            $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/skillSets/' + $routeParams.id + '/listOfVideo')
+            $http.get('http://lstractorquizapi.azurewebsites.net/listOfVideos')//Whats the new call here??
                 .then(function (response) {
                     $scope.videos = [];
                     response.data._embedded.videos.forEach(function (video) {
@@ -71,12 +72,12 @@
                     });
                     console.log($scope.videoResults);
                 });
-                $http.post('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos', {
+                $http.post('http:/api/Videos?SkillSetId={SkillSetId}&Title={Title}&Author={Author}&Length={Length}&Url={Url}&LengthRequired={LengthRequired}', {
                    
                     "title" : $scope.videoTitle,
                     "author" : $scope.videoAuthor,
                     "url" : $scope.videoUrlData,
-                    "skillSet" : "http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/skillSets/" + $routeParams.id
+                    "skillSet" : "http://lstractorquizapi.azurewebsites.net/" //Do we still need this??
                 })
                     .then(function (response) {
                         console.log(response);
@@ -99,12 +100,13 @@
 
 //EDIT VIDEO
         $scope.updateVideo = function() {
-                $http.put('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos', {
+                $http.put('http://lstractorquizapi.azurewebsites.net/api/Videos?videoId={videoId}&SkillSetId={SkillSetId}&Title={Title}&Author={Author}&Length={Length}&Url={Url}&LengthRequired={LengthRequired}', {
                    
                     "title" : $scope.videoTitle,
                     "author" : $scope.videoAuthor,
                     "url" : $scope.videoUrlData,
-                    "skillSet" : "http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/skillSets/" + $routeParams.id
+                    "skillSet" : "http://lstractorquizapi.azurewebsites.net/"
+                    //Do we still have to give route to the skillset here??
                 })
                     .then(function (response) {
                         console.log(response);
@@ -125,9 +127,9 @@
                 });
             }
 
-//ADD SKILL SET            
+//CREATE NEW SKILL SET            
         $scope.uploadSkillSet = function() {
-                $http.post('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/skillSets/', $scope.skillSet)
+                $http.post('http://lstractorquizapi.azurewebsites.net/api/SkillSets?Name={Name}', $scope.skillSet)
                     .then(function (response) {
                         console.log(response);
                         logger.logSuccess("Well done! You successfully added a Skill Set.");
