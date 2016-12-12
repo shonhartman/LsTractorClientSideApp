@@ -17,12 +17,15 @@
         'ui.tree',
         
         // Custom modules
+        'app.account',
         'app.chart',
         'app.dashboard',
+        'app.dealership',
         'app.modal',
         'app.nav',
         'app.page',
         'app.quiz',
+        'app.skillset',
         'app.table',
         'app.ui',
         'app.ui.form.validation',

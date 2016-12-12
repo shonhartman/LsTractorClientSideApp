@@ -16,7 +16,6 @@
         // Technican - 4
         // Dealership Owner - 5
         // Super Admin - 6
-    }
 
 //CREATE A NEW DEALERSHIP
     $scope.createDealership = function () {
@@ -44,6 +43,7 @@
                     $location.url("/#/dashboard");
                 });
         }
+    }
     
 })();
 
