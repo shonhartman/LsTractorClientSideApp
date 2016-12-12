@@ -2,14 +2,19 @@
     'use strict';
 
     angular.module('app.chart')
-        .controller('chartCtrl', ['$scope', chartCtrl]);
+        .controller('chartCtrl', ['$scope', '$http', chartCtrl]);
 
-    function chartCtrl($scope) {
+    function chartCtrl($scope, $http) {
 
-        //TODO ==> Bind data from video progress
+        //TODO ==> Bind data from Video Results
+
+        $scope.percent = function () {
+            $http.get('http://lstractorquizapi.azurewebsites.net//videoResults');
+        }
+
         console.log("Let's bind the data from the timeWatched variable")
         $scope.easypiechart3 = {
-            percent: 45,
+            percent: $scope.percent, //originally this was a hardcoded integer eg. 45 for 45%
             options: {
                 animate: {
                     duration: 1000,
