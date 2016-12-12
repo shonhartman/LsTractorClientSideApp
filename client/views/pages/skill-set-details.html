@@ -23,7 +23,7 @@
                 <p class="text-info" style="color:#f5f7ff">{{ video.author }}</p>
                 <p class="text-danger">{{ video.time }}</p>
                 <button class="btn btn-gap-v btn-primary" ng-click="open(video.id)">Watch</button>
-                <!--<button class="btn btn-gap-v btn-warning" ng-click="edit(video)">Edit</button>-->
+                <button class="btn btn-gap-v btn-warning" ng-click="edit(video)">Edit</button>
                 <script type="text/ng-template" id="myEditModal.html">
                         <div class="modal-header">
                             <h3>Editing {{ video.title }}</h3>
@@ -51,8 +51,8 @@
 
 <!--Add Video Button-->
 
-    <!--<div ng-if="roleId === 6">-->
-        <!--<button type="submit" ng-controller="ModalDemoCtrl" class="btn btn-primary btn-block btn-lg" ng-click="open()">Add a Video</button>
+    <div ng-if="roleId === 6">
+        <button type="submit" ng-controller="ModalDemoCtrl" class="btn btn-primary btn-block btn-lg" ng-click="open()">Add a Video</button>
         <script type="text/ng-template" id="myModalContent.html">
         <div class="modal-header">
                 <h3>Add a Video</h3>
@@ -71,12 +71,12 @@
                 <button class="btn btn-primary" ng-click="upload()">Upload</button>
                 <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
             </div>
-        </script>-->
-    <!--</div>-->
+        </script>
+    </div>
 
 <!--Delete Video Button-->
 
-    <!--<button type="submit" ng-controller="SkillSetCtrl" class="btn btn-danger btn-block btn-lg" ng-click="deleteSkillSet()">Delete This Skill Set</button>-->
+    <button type="submit" ng-controller="SkillSetCtrl" class="btn btn-danger btn-block btn-lg" ng-click="deleteSkillSet()">Delete This Skill Set</button>
 
 </div> <!--Close Page Div-->
 
