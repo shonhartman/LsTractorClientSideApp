@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('app.account')
-        .controller('accountCtrl', ['$q', '$cookies', '$scope', '$window', '$locations', '$http', '$routeParams', accountCtrl]);
+        .controller('accountCtrl', ['$q', '$cookies', '$scope', '$window', '$location', '$http', '$routeParams', accountCtrl]);
 
         //ACCOUNT CONTROLLER
         function accountCtrl($q, $cookies, $scope, $window, $location, $http, $routeParams) {
