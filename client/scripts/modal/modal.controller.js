@@ -1,143 +1,151 @@
    (function () {
-    'use strict';
+       'use strict';
 
-    angular.module('app.modal')
-        
-        .controller('ModalDemoCtrl', ['$scope', '$modal', '$log', 'logger', ModalDemoCtrl])
-        .controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'titles', 'video', 'logger', '$routeParams', '$http', '$log', ModalInstanceCtrl])
+       angular.module('app.modal')
 
+       .controller('ModalDemoCtrl', ['$scope', '$modal', '$log', 'logger', ModalDemoCtrl])
+           .controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'titles', 'video', 'logger', '$routeParams', '$http', '$log', ModalInstanceCtrl])
 
-    function ModalDemoCtrl($scope, $modal, $log) {
+       function ModalDemoCtrl($scope, $modal, $log) {
 
-        $scope.open = function() {
-            var modalInstance;
-            modalInstance = $modal.open({
-                templateUrl: "myModalContent.html",
-                controller: 'ModalInstanceCtrl',
-                resolve: {
-                    titles: function() {
-                        return $scope.titles;
-                    }
-                }
-            });
-            modalInstance.result.then((function(selectedItem) {
-                $scope.selected = selectedItem;
-            }), function() {
-                $log.info("Modal dismissed at: " + new Date());
-            });
-        };
-        $scope.skillSetModal = function() {
-            console.log("Modalling!");
-            var modalInstance;
-            modalInstance = $modal.open({
-                templateUrl: "skillSetModal.html",
-                controller: 'ModalInstanceCtrl',
-                resolve: {
-                    titles: function() {
-                        return $scope.titles;
-                    }
-                }
-            });
-            modalInstance.result.then((function(selectedItem) {
-                $scope.selected = selectedItem;
-            }), function() {
-                $log.info("Modal dismissed at: " + new Date());
-            });
-        };
+           $scope.open = function () {
+               var modalInstance;
+               modalInstance = $modal.open({
+                   templateUrl: "myModalContent.html",
+                   controller: 'ModalInstanceCtrl',
+                   resolve: {
+                       titles: function () {
+                           return $scope.titles;
+                       }
+                   }
+               });
+               modalInstance.result.then((function (selectedItem) {
+                   $scope.selected = selectedItem;
+               }), function () {
+                   $log.info("Modal dismissed at: " + new Date());
+               });
+           };
+           $scope.skillSetModal = function () {
+               console.log("Modalling!");
+               var modalInstance;
+               modalInstance = $modal.open({
+                   templateUrl: "skillSetModal.html",
+                   controller: 'ModalInstanceCtrl',
+                   resolve: {
+                       titles: function () {
+                           return $scope.titles;
+                       }
+                   }
+               });
+               modalInstance.result.then((function (selectedItem) {
+                   $scope.selected = selectedItem;
+               }), function () {
+                   $log.info("Modal dismissed at: " + new Date());
+               });
+           };
 
-    }
-   
-   function ModalInstanceCtrl($scope, $modalInstance, titles, video, logger, $routeParams, $http, $log) {
-        $scope.titles = titles;
-        $scope.video = video;
+       }
 
-        $scope.ok = function() {
-            $modalInstance.close($scope.selected.title);
-        };
+       function ModalInstanceCtrl($scope, $modalInstance, titles, video, logger, $routeParams, $http, $log) {
+           $scope.titles = titles;
+           $scope.video = video;
 
-        $scope.cancel = function() {
-            $modalInstance.dismiss("cancel");
-        };
+           $scope.ok = function () {
+               $modalInstance.close($scope.selected.title);
+           };
 
-//CREATE NEW VIDEO
-        $scope.upload = function (video) {
+           $scope.cancel = function () {
+               $modalInstance.dismiss("cancel");
+           };
 
-            $http.get('http://lstractorquizapi.azurewebsites.net/listOfVideos')//Whats the new call here??
-                .then(function (response) {
-                    $scope.videos = [];
-                    response.data._embedded.videos.forEach(function (video) {
-                        var splitUrl = video._links.self.href.split("/");
-                        video.id = splitUrl[splitUrl.length - 1];
-                        $scope.videos.push(video);
-                    });
-                    console.log($scope.videoResults);
-                });
-                $http.post('http:/api/Videos?SkillSetId={SkillSetId}&Title={Title}&Author={Author}&Length={Length}&Url={Url}&LengthRequired={LengthRequired}', {
-                   
-                    "title" : $scope.videoTitle,
-                    "author" : $scope.videoAuthor,
-                    "url" : $scope.videoUrlData,
-                    "skillSet" : "http://lstractorquizapi.azurewebsites.net/" //Do we still need this??
-                })
-                    .then(function (response) {
-                        console.log(response);
+           //CREATE NEW VIDEO
+           $scope.upload = function (video) {
 
-                //CLOSE THE Modal
-                $modalInstance.close('success');
-                    //SHOW SUCCESS MESSAGE
-                    switch ('success') {
-                        case 'info':
-                            return logger.log("Heads up! This alert needs your attention, but it's not super important.");
-                        case 'success':
-                            return logger.logSuccess("Well done! You successfully uploaded a video.");
-                        case 'warning':
-                            return logger.logWarning("Warning! Best check yo self, you're not looking too good.");
-                        case 'error':
-                            return logger.logError("Oh snap! Change a few things up and try submitting again.");
-                    }
-                });
-            }
+               // TODO: what is this for??
+               $http.get('http://lstractorquizapi.azurewebsites.net/listOfVideos') //Whats the new call here??
+                   .then(function (response) {
+                       $scope.videos = [];
+                       response.data._embedded.videos.forEach(function (video) {
+                           var splitUrl = video._links.self.href.split("/");
+                           video.id = splitUrl[splitUrl.length - 1];
+                           $scope.videos.push(video);
+                       });
+                       console.log($scope.videoResults);
+                   });
 
-//EDIT VIDEO
-        $scope.updateVideo = function() {
-                $http.put('http://lstractorquizapi.azurewebsites.net/api/Videos?videoId={videoId}&SkillSetId={SkillSetId}&Title={Title}&Author={Author}&Length={Length}&Url={Url}&LengthRequired={LengthRequired}', {
-                   
-                    "title" : $scope.videoTitle,
-                    "author" : $scope.videoAuthor,
-                    "url" : $scope.videoUrlData,
-                    "skillSet" : "http://lstractorquizapi.azurewebsites.net/"
-                    //Do we still have to give route to the skillset here??
-                })
-                    .then(function (response) {
-                        console.log(response);
+               $http.post('http://lstractorquizapi.azurewebsites.net/api/Videos', {
+                       "SkillSetId": 1, // TODO
+                       "Title": $scope.videoTitle,
+                       "Author": $scope.videoAuthor,
+                       "Length": 4, // TODO
+                       "Url": $scope.videoUrlData,
+                       "LengthRequired": 6 // TODO
+                   })
+                   .then(function (response) {
+                       console.log(response);
 
-                //CLOSE THE Modal
-                $modalInstance.close('success');
-                    //SHOW SUCCESS MESSAGE
-                    switch ('success') {
-                        case 'info':
-                            return logger.log("Heads up! This alert needs your attention, but it's not super important.");
-                        case 'success':
-                            return logger.logSuccess("Well done! You successfully edited this video.");
-                        case 'warning':
-                            return logger.logWarning("Warning! Best check yo self, you're not looking too good.");
-                        case 'error':
-                            return logger.logError("Oh snap! Change a few things up and try submitting again.");
-                    }
-                });
-            }
+                       //CLOSE THE Modal
+                       $modalInstance.close('success');
+                       //SHOW SUCCESS MESSAGE
+                       switch ('success') {
+                           case 'info':
+                               return logger.log("Heads up! This alert needs your attention, but it's not super important.");
+                           case 'success':
+                               return logger.logSuccess("Well done! You successfully uploaded a video.");
+                           case 'warning':
+                               return logger.logWarning("Warning! Best check yo self, you're not looking too good.");
+                           case 'error':
+                               return logger.logError("Oh snap! Change a few things up and try submitting again.");
+                       }
+                   });
+           }
 
-//CREATE NEW SKILL SET            
-        $scope.uploadSkillSet = function() {
-                $http.post('http://lstractorquizapi.azurewebsites.net/api/SkillSets?Name={Name}', $scope.skillSet)
-                    .then(function (response) {
-                        console.log(response);
-                        logger.logSuccess("Well done! You successfully added a Skill Set.");
-                        $modalInstance.close(response);
-                    })
-            }
+           //EDIT VIDEO
+           $scope.updateVideo = function () {
 
-        }
+               // TODO: set video id
+               var videoId = -1;
 
-    })(); 
+               $http.put('http://lstractorquizapi.azurewebsites.net/api/Videos?videoId=' + videoId, {
+                       "SkillSetId": 1, // TODO
+                       "Title": $scope.videoTitle,
+                       "Author": $scope.videoAuthor,
+                       "Length": 4, // TODO
+                       "Url": $scope.videoUrlData,
+                       "LengthRequired": 6 // TODO
+                   })
+                   .then(function (response) {
+                       console.log(response);
 
+                       //CLOSE THE Modal
+                       $modalInstance.close('success');
+                       //SHOW SUCCESS MESSAGE
+                       switch ('success') {
+                           case 'info':
+                               return logger.log("Heads up! This alert needs your attention, but it's not super important.");
+                           case 'success':
+                               return logger.logSuccess("Well done! You successfully edited this video.");
+                           case 'warning':
+                               return logger.logWarning("Warning! Best check yo self, you're not looking too good.");
+                           case 'error':
+                               return logger.logError("Oh snap! Change a few things up and try submitting again.");
+                       }
+                   });
+           }
+
+           //CREATE NEW SKILL SET
+           $scope.uploadSkillSet = function () {
+
+               $http.post('http://lstractorquizapi.azurewebsites.net/api/SkillSets', {
+                        "Name": $scope.skillSet // TODO: verify this is correct
+                   })
+                   .then(function (response) {
+                       console.log(response);
+                       logger.logSuccess("Well done! You successfully added a Skill Set.");
+                       $modalInstance.close(response);
+                   })
+           }
+
+       }
+
+   })();
