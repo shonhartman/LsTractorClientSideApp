@@ -23,7 +23,8 @@
                 })
                 .then(function (response) {
 
-                    //Save user to cookie
+                    //Save user to model and cookie
+                    $scope.currentAccount = response.data;
                     $cookies.put('user', angular.toJson(response.data));
                     $location.url('/dashboard');
 
@@ -37,6 +38,10 @@
         //CREATE NEW USER
         $scope.signup = function () {
 
+            if (!$scope.formData) {
+                return;
+            }
+
             $http.put('http://lstractorquizapi.azurewebsites.net/api/Users', {
                     "DealershipId": $scope.formData.Dealership,
                     "Role": parseInt($scope.formData.Role, 10),
@@ -48,6 +53,7 @@
                     "PhoneNumber": $scope.formData.PhoneNumber
                 })
                 .then(function (response) {
+                    $scope.currentAccount = response.data;
                     $cookies.put('user', angular.toJson(response.data));
                     $location.url('/dashboard');
                 }, function (response) {
@@ -59,10 +65,7 @@
         //UPDATE USER BY ID
         $scope.updateAccount = function (currentAccount) {
 
-            // TODO: get this from cookie or formData
-            var userId = -1;
-
-            $http.put('http://lstractorquizapi.azurewebsites.net/api/Users?userId=' + userId, {
+            $http.put('http://lstractorquizapi.azurewebsites.net/api/Users?userId=' + currentAccount.Id, {
                     "DealershipId": 1,
                     "Role": 4,
                     "FirstName": "sample string 3",
@@ -75,6 +78,9 @@
                 .then(function (response) {
                     logger.logSuccess("");
                     $location.url("/profile");
+                }, function (response) {
+                    // update failed
+                    console.log(response.data.Message);
                 });
         }
 
