@@ -1,5 +1,4 @@
 <div class="page-signup" ng-controller="accountCtrl">
-
     <div class="auth-container">
         <div class="signin-header">
             <section class="logo text-center">
@@ -16,11 +15,7 @@
                                     <span class="input-group-addon">
                                         <span class="ti-user"></span>
                                     </span>
-                                    <input  type="text"
-                                            class="form-control input-lg"
-                                            placeholder="First Name"
-                                            ng-model="formData.FirstName"
-                                            >
+                                    <input type="text" class="form-control input-lg" placeholder="First Name" ng-model="formData.FirstName">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -28,11 +23,7 @@
                                     <span class="input-group-addon">
                                         <span class="ti-user"></span>
                                     </span>
-                                    <input  type="text"
-                                            class="form-control input-lg"
-                                            placeholder="Last Name"
-                                            ng-model="formData.LastName"
-                                            >
+                                    <input type="text" class="form-control input-lg" placeholder="Last Name" ng-model="formData.LastName">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -40,11 +31,7 @@
                                     <span class="input-group-addon">
                                         <span class="ti-email"></span>
                                     </span>
-                                    <input type="email"
-                                           class="form-control input-lg"
-                                           placeholder="Email"
-                                           ng-model="formData.Email"
-                                           >
+                                    <input type="email" class="form-control input-lg" placeholder="Email" ng-model="formData.Email">
                                 </div>
                             </div>
                             <div class="form-group form-group-last">
@@ -52,66 +39,51 @@
                                     <span class="input-group-addon">
                                         <span class="ti-lock"></span>
                                     </span>
-                                    <input type="password"
-                                           class="form-control input-lg"
-                                           placeholder="Password"
-                                           ng-model="formData.Password"
-                                           >
+                                    <input type="password" class="form-control input-lg" placeholder="Password" ng-model="formData.Password">
                                 </div>
                                 <div class="form-group" style="margin-top: 20px;">
-                                <div class="input-group input-group-first">
-                                    <span class="input-group-addon">
+                                    <div class="input-group input-group-first">
+                                        <span class="input-group-addon">
                                         <span class="ti-calendar"></span>
-                                    </span>
-                                    <input  type="text"
-                                            class="form-control input-lg"
-                                            placeholder="Date of Birth YYYY-MM-DD"
-                                            ng-model="formData.BirthDate"
-                                            >
+                                        </span>
+                                        <input type="text" class="form-control input-lg" placeholder="Date of Birth YYYY-MM-DD" ng-model="formData.BirthDate">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group" style="margin-top: 20px;">
-                                <div class="input-group input-group-first">
-                                    <span class="input-group-addon">
+                                <div class="form-group" style="margin-top: 20px;">
+                                    <div class="input-group input-group-first">
+                                        <span class="input-group-addon">
                                         <span class="ti-mobile"></span>
-                                    </span>
-                                    <input  type="text"
-                                            class="form-control input-lg"
-                                            placeholder="Phone Number xxx-xxx-xxxx"
-                                            ng-model="formData.PhoneNumber"
-                                            >
+                                        </span>
+                                        <input type="text" class="form-control input-lg" placeholder="Phone Number xxx-xxx-xxxx" ng-model="formData.PhoneNumber">
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- Replace with Select2 -->
-                            <section class="panel panel-default" style="margin-top: 20px;">
+                                <!-- Replace with Select2 -->
+                                <section class="panel panel-default" style="margin-top: 20px;">
                                     <dt style="margin: 10px 0 10px 0;">Dealership</dt>
-                                        <dd>
-                                            <select ng-model="formData.Dealership">
-                                                <option ng-repeat="dealership in dealerships" value="{{ dealership._links.self.href }}">{{ dealership.name }}</option>
-                                            </select>
-                                        </dd>                                    
+                                    <dd ng-controller="dealershipCtrl">
+                                        <select ng-model="dealershipFields.Dealership">
+                                            <option ng-repeat="dealership in dealerships" value="{{ dealership.Id }}">{{ dealership.Name }}</option>
+                                        </select>
+                                    </dd>
                                 </section>
-                            <section class="panel panel-default" style="margin-top: 20px;">
+                                <section class="panel panel-default" style="margin-top: 20px;">
                                     <dt style="margin: 10px 0 10px 0;">Administration Level</dt>
-                                        <dd>
-                                            <label class="ui-radio"><input ng-model="formData.Role" name="radio1" type="radio" value="4"><span>Technician</span></label>
-                                            <label class="ui-radio"><input ng-model="formData.Role" name="radio1" type="radio" value="5" checked=""><span>Dealership Owner</span></label>
-                                            <label class="ui-radio"><input ng-model="formData.Role" name="radio1" type="radio" value="6"><span>Super Administrator</span></label>
-                                        </dd>                                    
+                                    <dd>
+                                        <label class="ui-radio"><input ng-model="formData.Role" name="radio1" type="radio" value="4"><span>Technician</span></label>
+                                        <label class="ui-radio"><input ng-model="formData.Role" name="radio1" type="radio" value="5" checked=""><span>Dealership Owner</span></label>
+                                        <label class="ui-radio"><input ng-model="formData.Role" name="radio1" type="radio" value="6"><span>Super Administrator</span></label>
+                                    </dd>
                                 </section>
                             </div>
-                        </div>              
+                        </div>
                         <div class="form-submit">
                             <div class="form-group">
                                 <p class="text-muted text-small">By clicking on signup, you agree to <a href="javascript:;"><i>terms</i></a> and <a href="javascript:;"><i>privacy policy</i></a></p>
-                                <button type="submit"
-                                        class="btn btn-primary btn-block btn-lg"
-                                        ng-click="signup()">Sign up</button>
+                                <button type="submit" class="btn btn-primary btn-block btn-lg" ng-click="signup()">Sign up</button>
                             </div>
                         </div>
-                        
                     </form>
-                </section>               
+                </section>
                 <div class="divider"></div>
                 <section class="additional-info">
                     <p class="text-right"><a href="#/pages/signin">Log in now</a></p>

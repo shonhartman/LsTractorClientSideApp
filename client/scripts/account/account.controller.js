@@ -10,6 +10,10 @@
         //GET ACCOUNT
         $scope.currentAccount = angular.fromJson($cookies.get('user'));
 
+        $scope.dealershipFields = {
+            'Dealership' : ''
+        };
+
         //SIGN IN
         $scope.login = function () {
 
@@ -38,12 +42,12 @@
         //CREATE NEW USER
         $scope.signup = function () {
 
-            if (!$scope.formData) {
+            if (!$scope.formData || !$scope.dealershipFields) {
                 return;
             }
 
             $http.put('http://lstractorquizapi.azurewebsites.net/api/Users', {
-                    "DealershipId": $scope.formData.Dealership,
+                    "DealershipId": parseInt($scope.dealershipFields.Dealership, 10),
                     "Role": parseInt($scope.formData.Role, 10),
                     "FirstName": $scope.formData.FirstName,
                     "LastName": $scope.formData.LastName,
