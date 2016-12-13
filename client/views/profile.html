@@ -1,4 +1,4 @@
-<div class="page page-profile">
+<div class="page page-profile" ng-controller="accountCtrl">
 
             <!-- Profile Info -->
             <div class="panel panel-default profile-margin">
@@ -20,7 +20,51 @@
                                     {{ email }}
                                 </li>
                                 <li>
+                                    <span class="icon glyphicon glyphicon-lock"></span>
+                                    <label>Password</label>
+                                    {{ password }}
+                                </li>
+                                <li>
+                                    <span class="icon glyphicon glyphicon-earphone"></span>
+                                    <label>Phone Number</label>
+                                    {{(+012) 345 6789}}
+                                </li>
+                                <li>
+                                    <span class="icon glyphicon glyphicon-calendar"></span>
+                                    <label>Date of Birth</label>
+                                    {{  dateOfBirth }}
+                                </li>
+                                <li>
                                     <span class="icon glyphicon glyphicon-home"></span>
+                                    <label>Dealership</label>
+                                    {{ dealership }}
+                                </li>
+                            </ul>
+            </div>
+            <!-- end Profile Info -->
+
+            <!-- Dealership Info -->
+            <div class="panel panel-default profile-margin" ng-controller="dealershipCtrl">
+                
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> {{dealership.name}}</strong></div>
+                            <ul class="list-unstyled list-info">
+                                <li>
+                                    <span class="icon glyphicon glyphicon-home"></span>
+                                    <label>Dealership</label>
+                                    {{dealership.name}}
+                                </li>
+                                <li>
+                                    <span class="icon glyphicon glyphicon-user"></span>
+                                    <label>Last Name</label>
+                                    {{last.name}}
+                                </li>
+                                <li>
+                                    <span class="icon glyphicon glyphicon-envelope"></span>
+                                    <label>Email</label>
+                                    {{ email }}
+                                </li>
+                                <li>
+                                    <span class="icon glyphicon glyphicon-lock"></span>
                                     <label>Password</label>
                                     {{ password }}
                                 </li>
@@ -41,5 +85,5 @@
                                 </li>
                             </ul>
             </div>
-            <!-- end Profile Info -->
+            <!-- end Dealership Info -->
         </div>

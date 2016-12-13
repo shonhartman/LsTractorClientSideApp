@@ -8,6 +8,8 @@
 
     function DashboardCtrl($cookies, $scope, $http) {
 
+        console.log("I am DashboardCtrl");
+
         var user = angular.fromJson($cookies.get('user'));
 
         if (!user || !user.roleId) {

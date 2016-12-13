@@ -2,10 +2,15 @@
     'use strict';
 
     angular.module('app.dealership')
-        .controller('authCtrl', ['$q', '$cookies', '$scope', '$window', '$location', '$http', '$routeParams', authCtrl]);
+        .controller('dealershipCtrl', ['$q', '$cookies', '$scope', '$window', '$location', '$http', '$routeParams', dealershipCtrl]);
 
     //GET A LIST OF ALL DEALERSHIPS
-    function authCtrl($q, $cookies, $scope, $window, $location, $http, $routeParams) {
+    function dealershipCtrl($q, $cookies, $scope, $window, $location, $http, $routeParams) {
+
+        $scope.testing = function() {
+            console.log("Testing!");
+        }
+        console.log("I am dealershipCtrl")
         $scope.dealerships = [];
 
         $http.get('http://lstractorquizapi.azurewebsites.net/api/Dealerships')
