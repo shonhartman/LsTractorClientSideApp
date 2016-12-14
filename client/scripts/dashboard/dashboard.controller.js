@@ -12,11 +12,11 @@
 
         var user = angular.fromJson($cookies.get('user'));
 
-        if (!user || !user.roleId) {
+        if (!user || !user.Role) {
             return;
         }
 
-        $scope.roleId = user.roleId;
+        $scope.roleId = user.Role;
         $scope.dealership = null;
         $scope.dealerships = [];
         $scope.totalVideos = 0;
@@ -33,7 +33,7 @@
                     return (complete / total) * 100;
                 });
         }
-        
+
 
         $scope.populateData = function () {
             // Technican - 4
@@ -72,7 +72,7 @@
             }
 
         }
-        
+
 
         $scope.populateData();
 
