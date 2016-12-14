@@ -84,6 +84,29 @@
                                     {{ dealership }}
                                 </li>
                             </ul>
-            </div>
-            <!-- end Dealership Info -->
+            </div> <!-- end Dealership Info -->
+
+<!--This is an example of 'Double Click to Edit' functionality to use for updating profile -->
+                <section class="task-container" ng-controller="accountCtrl">
+                    <ul class="task-list list-unstyled">
+                        <li data-ng-repeat="item in items | filter:statusFilter track by $index" 
+                            data-ng-class="{completed: item.completed, editing: item == editedItem}">
+                            <span class="view">
+                                <label data-ng-dblclick="edit(item)">{{item.title}}</label>
+                                <span class="glyphicon glyphicon-pencil"
+                                      data-ng-click="edit(item)"></span>
+                            </span>
+                            <form data-ng-submit="doneEditing(item, $index)">
+                                <input type="text"
+                                       class="edit form-control"
+                                       data-ng-trim="false"
+                                       data-ng-model="item.title"
+                                       data-ng-blur="doneEditing(item, $index)"
+                                       data-task-focus="item == editedItem">
+                            </form>
+                        </li>
+                    </ul>
+                </section> <!-- End of example -->
+
         </div>
+
