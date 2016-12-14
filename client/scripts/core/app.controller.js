@@ -10,7 +10,7 @@
         var date = new Date();
         var year = date.getFullYear();
         var user = angular.fromJson($cookies.get('user'));
-        var userName = user ? user.firstName + ' ' + user.lastName : '';
+        var userName = user ? user.FirstName + ' ' + user.LastName : '';
 
         $scope.main = {
             brand: 'LS Tractor',
