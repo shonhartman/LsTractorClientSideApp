@@ -3,13 +3,13 @@
 <h1>Skill Set Details</h1>
 
     <header class="mail-header">
-         <h1>{{ skillSet.name }}</h1>
+         <h1>{{ skillSet.Name }}</h1>
     </header>
-   
+
 
 <!--Repeating Video Box-->
     <div class="row container">
-        <div class="col-lg-5 col-sm-6" ng-repeat="video in videos">
+        <div class="col-lg-5 col-sm-6" ng-repeat="video in skillset.Videos">
             <div class="panel mini-box preview" id="video-box">
     <!--Progress Chart-->
                 <span ng-show="complete" class="btn-icon btn-icon-md btn-icon-lg-alt bg-dark"  style="margin-bottom: 33px;">
