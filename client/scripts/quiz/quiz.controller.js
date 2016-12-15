@@ -73,8 +73,8 @@
                             });
                     });
                 });
-//CREATE A NEW QUIZ
 
+//CREATE A NEW QUIZ
             $scope.createQuiz = function () {
                 $http.post('http//lstractorquizapi.azurewebsites.net/api/Quizzes')
                     .then(function (response) {
@@ -101,7 +101,6 @@
             } 
 
 //DELETE A QUIZ BY ID 
-
     $scope.deleteQuiz = function () {
             $http.delete('http://lstractorquizapi.azurewebsites.net/api/Quizzes?quizId={quizId}')
                 .then(function (response) {

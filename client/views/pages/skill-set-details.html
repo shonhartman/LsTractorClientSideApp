@@ -1,5 +1,6 @@
 <div class="page page-profile" ng-controller="VideoCtrl">
 
+<h1>Skill Set Details</h1>
 
     <header class="mail-header">
          <h1>{{ skillSet.name }}</h1>
@@ -76,7 +77,34 @@
 
 <!--Delete Video Button-->
 
-    <button type="submit" ng-controller="SkillSetCtrl" class="btn btn-danger btn-block btn-lg" ng-click="deleteSkillSet()">Delete This Skill Set</button>
+    <!--<button type="submit" ng-controller="SkillSetCtrl" class="btn btn-danger btn-block btn-lg" ng-click="deleteSkillSet()">Delete This Skill Set</button>-->
+
+<!--Add Quiz Button-->
+
+    <!--<div ng-if="roleId === 6">-->
+        <button type="submit" ng-controller="ModalDemoCtrl" class="btn btn-primary btn-block btn-lg" ng-click="open()">Add a Quiz</button>
+        <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+                <h3>Add a Quiz</h3>
+        </div>
+        <div class="modal-body">
+                <input type="text" class="form-control" ng-model="videoUrlData" value="http://">
+                <span class="help-block">Video URL</span>
+                <input type="text" class="form-control" ng-model="questionData">
+                <span class="help-block">Questions</span>
+                <!--TODO : This needs to be an ng-repeat loop for the questions being added -->
+                <input type="text" class="form-control" ng-model="answerData">
+                <span class="help-block">Answers</span>
+                <!--TODO : This needs to be an ng-repeat loop for the answers being added -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" ng-click="upload()">Upload</button>
+                <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+            </div>
+        </script>
+    <!-- </div> Delete Quiz Button-->
+
+    <button type="submit" ng-controller="SkillSetCtrl" class="btn btn-danger btn-block btn-lg" ng-click="deleteSkillSet()">Delete This Quiz</button>
 
 </div> <!--Close Page Div-->
 
