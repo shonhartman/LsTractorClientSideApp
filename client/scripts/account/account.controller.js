@@ -10,6 +10,9 @@
         //GET ACCOUNT
         $scope.currentAccount = angular.fromJson($cookies.get('user'));
 
+        $scope.editing = ''; //name of property currently being edited
+
+        // used by signup
         $scope.dealershipFields = {
             'Dealership': ''
         };
@@ -67,21 +70,12 @@
         }
 
         //UPDATE USER BY ID
-        $scope.updateAccount = function (currentAccount) {
+        $scope.updateAccount = function (updatedAccount) {
 
-            $http.put('http://lstractorquizapi.azurewebsites.net/api/Users?userId=' + currentAccount.Id, {
-                    "DealershipId": 1,
-                    "Role": 4,
-                    "FirstName": "sample string 3",
-                    "LastName": "sample string 4",
-                    "BirthDate": "sample string 5",
-                    "Email": "sample string 6",
-                    "Password": "sample string 7",
-                    "PhoneNumber": "sample string 8"
-                })
+            return $http.put('http://lstractorquizapi.azurewebsites.net/api/Users?userId=' + updatedAccount.Id, updatedAccount)
                 .then(function (response) {
-                    logger.logSuccess("");
-                    $location.url("/profile");
+                    console.log(response.data);
+                    updateAccountCookieFromScope();
                 }, function (response) {
                     // update failed
                     console.log(response.data.Message);
@@ -101,28 +95,25 @@
                 })
         }
 
-        //GET TOTAL USER RESULTS
-        //??????????????????????
+        //TODO: GET TOTAL USER RESULTS
         //GET api/Users?userId={userId}
 
-        //FUNCTIONALITY FOR EDITING
-        $scope.editedItem = null;
-
-        $scope.edit = function (item) {
-            $scope.editedItem = item;
+        $scope.edit = function (itemName) {
+            console.log("Editing.");
+            $scope.editing = itemName;
         };
 
-        $scope.doneEditing = function (item) {
-            $scope.editedItem = null;
-            item.title = item.title.trim();
-            if (!item.title) {
-                $scope.remove(item);
-            } else {
-                logger.log('Updated');
-            }
-            itemStorage.put(items);
+        $scope.doneEditing = function () {
+            console.log("Done editing.");
+            $scope.updateAccount($scope.currentAccount).then(function () {
+                $scope.editing = '';
+            });
         };
 
+        function updateAccountCookieFromScope()
+        {
+            $cookies.put('user', angular.toJson($scope.currentAccount));
+        }
     }
 
 })();
