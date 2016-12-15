@@ -11,7 +11,7 @@
         $scope.currentAccount = angular.fromJson($cookies.get('user'));
 
         $scope.dealershipFields = {
-            'Dealership' : ''
+            'Dealership': ''
         };
 
         //SIGN IN
@@ -105,14 +105,14 @@
         //??????????????????????
         //GET api/Users?userId={userId}
 
-//FUNCTIONALITY FOR EDITING
+        //FUNCTIONALITY FOR EDITING
         $scope.editedItem = null;
 
-        $scope.edit = function(item) {
+        $scope.edit = function (item) {
             $scope.editedItem = item;
         };
 
-        $scope.doneEditing = function(item) {
+        $scope.doneEditing = function (item) {
             $scope.editedItem = null;
             item.title = item.title.trim();
             if (!item.title) {

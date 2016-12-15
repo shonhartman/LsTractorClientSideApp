@@ -1,112 +1,94 @@
 <div class="page page-profile" ng-controller="accountCtrl">
-
-            <!-- Profile Info -->
-            <div class="panel panel-default profile-margin">
-                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Profile</strong></div>
-                            <ul class="list-unstyled list-info">
-                                <li>
-                                    <span class="icon glyphicon glyphicon-user"></span>
-                                    <label>First Name</label>
-                                    {{first.name}}
-                                </li>
-                                <li>
-                                    <span class="icon glyphicon glyphicon-user"></span>
-                                    <label>Last Name</label>
-                                    {{last.name}}
-                                </li>
-                                <li>
-                                    <span class="icon glyphicon glyphicon-envelope"></span>
-                                    <label>Email</label>
-                                    {{ email }}
-                                </li>
-                                <li>
-                                    <span class="icon glyphicon glyphicon-lock"></span>
-                                    <label>Password</label>
-                                    {{ password }}
-                                </li>
-                                <li>
-                                    <span class="icon glyphicon glyphicon-earphone"></span>
-                                    <label>Phone Number</label>
-                                    {{(+012) 345 6789}}
-                                </li>
-                                <li>
-                                    <span class="icon glyphicon glyphicon-calendar"></span>
-                                    <label>Date of Birth</label>
-                                    {{  dateOfBirth }}
-                                </li>
-                                <li>
-                                    <span class="icon glyphicon glyphicon-home"></span>
-                                    <label>Dealership</label>
-                                    {{ dealership }}
-                                </li>
-                            </ul>
-            </div>
-            <!-- end Profile Info -->
-
-            <!-- Dealership Info -->
-            <div class="panel panel-default profile-margin" ng-controller="dealershipCtrl">
-                
-                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> {{dealership.name}}</strong></div>
-                            <ul class="list-unstyled list-info">
-                                <li>
-                                    <span class="icon glyphicon glyphicon-home"></span>
-                                    <label>Dealership</label>
-                                    {{dealership.name}}
-                                </li>
-                                <li>
-                                    <span class="icon glyphicon glyphicon-user"></span>
-                                    <label>Last Name</label>
-                                    {{last.name}}
-                                </li>
-                                <li>
-                                    <span class="icon glyphicon glyphicon-envelope"></span>
-                                    <label>Email</label>
-                                    {{ email }}
-                                </li>
-                                <li>
-                                    <span class="icon glyphicon glyphicon-lock"></span>
-                                    <label>Password</label>
-                                    {{ password }}
-                                </li>
-                                <li>
-                                    <span class="icon glyphicon glyphicon-earphone"></span>
-                                    <label>Phone Number</label>
-                                    {{(+012) 345 6789}}
-                                </li>
-                                <li>
-                                    <span class="icon glyphicon glyphicon-calendar"></span>
-                                    <label>Date of Birth</label>
-                                    {{  dateOfBirth }}
-                                </li>
-                                <li>
-                                    <span class="icon glyphicon glyphicon-globe"></span>
-                                    <label>Dealership</label>
-                                    {{ dealership }}
-                                </li>
-                            </ul>
-            </div> <!-- end Dealership Info -->
-
-<!--This is an example of 'Double Click to Edit' functionality to use for updating profile -->
-                <section class="task-container" ng-controller="accountCtrl">
-                    <ul class="task-list list-unstyled">
-                        <li data-ng-repeat="item in items | filter:statusFilter track by $index" 
-                            data-ng-class="{completed: item.completed, editing: item == editedItem}">
-                            <span class="view">
-                                <label data-ng-dblclick="edit(item)">{{item.title}}</label>
-                                <span class="glyphicon glyphicon-pencil"
-                                      data-ng-click="edit(item)"></span>
-                            </span>
-                            <form data-ng-submit="doneEditing(item, $index)">
-                                <input type="text"
-                                       class="edit form-control"
-                                       data-ng-trim="false"
-                                       data-ng-model="item.title"
-                                       data-ng-blur="doneEditing(item, $index)"
-                                       data-task-focus="item == editedItem">
-                            </form>
-                        </li>
-                    </ul>
-                </section> <!-- End of example -->
-
-        </div>
-
+    <!-- Profile Info -->
+    <div class="panel panel-default profile-margin">
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Profile</strong></div>
+        <ul class="list-unstyled list-info">
+            <li>
+                <span class="icon glyphicon glyphicon-user"></span>
+                <label>First Name</label> {{currentAccount.FirstName}}
+            </li>
+            <li>
+                <span class="icon glyphicon glyphicon-user"></span>
+                <label>Last Name</label> {{currentAccount.LastName}}
+            </li>
+            <li>
+                <span class="icon glyphicon glyphicon-envelope"></span>
+                <label>Email</label> {{currentAccount.Email}}
+            </li>
+            <li>
+                <span class="icon glyphicon glyphicon-lock"></span>
+                <label>Password</label> Click to change
+            </li>
+            <li>
+                <span class="icon glyphicon glyphicon-earphone"></span>
+                <label>Phone Number</label> {{currentAccount.PhoneNumber}}
+            </li>
+            <li>
+                <span class="icon glyphicon glyphicon-calendar"></span>
+                <label>Date of Birth</label> {{currentAccount.BirthDate | date:'MM/dd/yyyy'}}
+            </li>
+            <!--<li>
+                <span class="icon glyphicon glyphicon-home"></span>
+                <label>Dealership</label> {{ dealership }}
+            </li>-->
+        </ul>
+    </div>
+    <!-- end Profile Info -->
+    <!-- Dealership Info -->
+    <div class="panel panel-default profile-margin" ng-controller="dealershipCtrl">
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> {{dealership.name}}</strong></div>
+        <ul class="list-unstyled list-info">
+            <li>
+                <span class="icon glyphicon glyphicon-home"></span>
+                <label>Dealership</label> {{currentAccount.Dealership.Name}}
+            </li>
+            <li>
+                <span class="icon glyphicon glyphicon-user"></span>
+                <label>Owner Name</label> {{currentAccount.Dealership.Owner}}
+            </li>
+            <li>
+                <span class="icon glyphicon glyphicon-envelope"></span>
+                <label>Email</label> {{currentAccount.Dealership.Email}}
+            </li>
+            <li>
+                <span class="icon glyphicon glyphicon-earphone"></span>
+                <label>Phone Number</label> {{currentAccount.Dealership.Phone}}
+            </li>
+            <li>
+                <span class="icon glyphicon glyphicon-globe"></span>
+                <label>Address</label> {{currentAccount.Dealership.Address}}
+            </li>
+            <li>
+                <span class="icon glyphicon glyphicon-globe"></span>
+                <label>City</label> {{currentAccount.Dealership.City}}
+            </li>
+            <li>
+                <span class="icon glyphicon glyphicon-globe"></span>
+                <label>State</label> {{currentAccount.Dealership.State}}
+            </li>
+            <li>
+                <span class="icon glyphicon glyphicon-globe"></span>
+                <label>Zip Code</label> {{currentAccount.Dealership.ZipCode}}
+            </li>
+        </ul>
+    </div>
+    <!-- end Dealership Info -->
+    <!--This is an example of 'Double Click to Edit' functionality to use for updating profile -->
+    <!--
+    <section class="task-container" ng-controller="accountCtrl">
+        <ul class="task-list list-unstyled">
+            <li data-ng-repeat="item in items | filter:statusFilter track by $index" data-ng-class="{completed: item.completed, editing: item == editedItem}">
+                <span class="view">
+                    <label data-ng-dblclick="edit(item)">{{item.title}}</label>
+                    <span class="glyphicon glyphicon-pencil" data-ng-click="edit(item)"></span>
+                </span>
+                <form data-ng-submit="doneEditing(item, $index)">
+                    <input type="text" class="edit form-control" data-ng-trim="false" data-ng-model="item.title" data-ng-blur="doneEditing(item, $index)"
+                        data-task-focus="item == editedItem">
+                </form>
+            </li>
+        </ul>
+    </section>
+    -->
+    <!-- End of example -->
+</div>
