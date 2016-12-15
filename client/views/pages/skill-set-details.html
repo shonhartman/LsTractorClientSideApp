@@ -26,24 +26,24 @@
                 <button class="btn btn-gap-v btn-primary" ng-click="open(video.id)">Watch</button>
                 <button class="btn btn-gap-v btn-warning" ng-click="edit(video)">Edit</button>
                 <script type="text/ng-template" id="myEditModal.html">
-                        <div class="modal-header">
-                            <h3>Editing {{ video.title }}</h3>
-                        </div>
-                        <div class="modal-body">
-                          <input type="text" class="form-control" ng-model="video.url">
-                          <span class="help-block">Vimeo URL</span>
-                          <input type="text" class="form-control" ng-model="video.title">
-                          <span class="help-block">Title</span>
-                          <input type="text" class="form-control" ng-model="video.author">
-                          <span class="help-block">Instructor</span>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-primary" ng-click="updateVideo()">Save Changes</button>
-                            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
-                        </div>
-                    </script>
+                    <div class="modal-header">
+                        <h3>Editing {{ video.title }}</h3>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" class="form-control" ng-model="video.url">
+                        <span class="help-block">Vimeo URL</span>
+                        <input type="text" class="form-control" ng-model="video.title">
+                        <span class="help-block">Title</span>
+                        <input type="text" class="form-control" ng-model="video.author">
+                        <span class="help-block">Instructor</span>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" ng-click="updateVideo()">Save Changes</button>
+                        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                    </div>
+                </script>
 
-                <!--</div>-->
+                </div>
             </div>
         </div>
     </div>
@@ -73,7 +73,7 @@
                 <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
             </div>
         </script>
-    </div>
+    </div> <!--End Add Video Button -->
 
 <!--Delete Video Button-->
 
@@ -81,7 +81,7 @@
 
 <!--Add Quiz Button-->
 
-    <!--<div ng-if="roleId === 6">-->
+    <div ng-if="roleId === 6">
         <button type="submit" ng-controller="ModalDemoCtrl" class="btn btn-primary btn-block btn-lg" ng-click="open()">Add a Quiz</button>
         <script type="text/ng-template" id="myModalContent.html">
         <div class="modal-header">
@@ -102,7 +102,7 @@
                 <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
             </div>
         </script>
-    <!-- </div> Delete Quiz Button-->
+    </div> <!-- End Delete Quiz Button-->
 
     <button type="submit" ng-controller="SkillSetCtrl" class="btn btn-danger btn-block btn-lg" ng-click="deleteSkillSet()">Delete This Quiz</button>
 
