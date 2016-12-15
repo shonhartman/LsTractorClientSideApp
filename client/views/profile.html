@@ -1,6 +1,6 @@
-<div class="page page-profile">
+<div class="page page-profile" ng-controller="accountCtrl">
     <!-- Profile Info -->
-    <div class="panel panel-default profile-margin" ng-controller="accountCtrl">
+    <div class="panel panel-default profile-margin">
         <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Profile</strong></div>
         <ul class="list-unstyled list-info">
             <li class="editable-field" data-ng-class="{editing: editing == 'FirstName'}">
@@ -91,7 +91,8 @@
     </div>
     <!-- end Profile Info -->
     <!-- Dealership Info -->
-    <div class="panel panel-default profile-margin" ng-controller="dealershipCtrl">
+
+    <div ng-if="currentAccount.Role == 5 || currentAccount.Role == 6" class="panel panel-default profile-margin" ng-controller="dealershipCtrl">
         <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Dealership</strong></div>
         <ul class="list-unstyled list-info">
             <li class="editable-field" data-ng-class="{editing: editing == 'Name'}">
