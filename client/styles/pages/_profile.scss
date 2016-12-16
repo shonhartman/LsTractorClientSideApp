@@ -28,6 +28,27 @@
         width: 100%;
     }
 
+    .editable-field:not(.editing) .field-editor {
+        display: none;
+    }
+
+    .editable-field {
+
+        .field-editor {
+            form {
+                display: inline-block;
+            }
+
+            .form-control {
+                display: inline-block;
+                width: auto;
+            }
+
+            .editing .field-value {
+                display: none;
+            }
+        }
+    }
 
     // .profile-img {
     //     display: inline-block;
