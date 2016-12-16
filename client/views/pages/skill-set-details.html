@@ -8,7 +8,7 @@
 
     <!--Repeating Video Box-->
     <div class="row container">
-        <div class="col-lg-5 col-sm-6" ng-repeat="video in skillSet.Videos">
+        <div class="col-lg-5 col-sm-6" ng-repeat="quiz in skillSet.Quizzes">
 
             <div class="panel mini-box preview" id="video-box">
 
@@ -23,14 +23,14 @@
                 </span>
                 <!--End Progress Chart-->
 
-                <p class="size-h4" style="color:#f5f7ff">{{ video.Title }}</p>
-                <p class="text-info" style="color:#f5f7ff">{{ video.Author }}</p>
-                <p class="text-danger">{{ video.time }}</p>
+                <p class="size-h4" style="color:#f5f7ff">{{ quiz.Video.Title }}</p>
+                <p class="text-info" style="color:#f5f7ff">{{ quiz.Video.Author }}</p>
+                <p class="text-danger">{{ quiz.Video.Length }}</p>
                 <button class="btn btn-gap-v btn-primary" ng-click="open(video.id)">Watch</button>
                 <button class="btn btn-gap-v btn-warning" ng-click="edit(video)">Edit</button>
                 <script type="text/ng-template" id="myEditModal.html">
                     <div class="modal-header">
-                        <h3>Editing {{ video.Title }}</h3>
+                        <h3>Editing {{ quiz.Video.Title }}</h3>
                     </div>
                     <div class="modal-body">
                         <input type="text" class="form-control" ng-model="video.url">
