@@ -2971,7 +2971,28 @@ be a descendant of the grid when it is being dragged.
 .page-profile .profile-line-extension {
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/pages\/_profile\.scss}line{font-family:\0000365}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/pages\/_profile\.scss}line{font-family:\0000331}}
+.page-profile .editable-field:not(.editing) .field-editor {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/pages\/_profile\.scss}line{font-family:\0000337}}
+.page-profile .editable-field:not(.editing) .field-editor {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/pages\/_profile\.scss}line{font-family:\0000341}}
+.page-profile .editable-field.editing.field-value {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/pages\/_profile\.scss}line{font-family:\0000346}}
+.page-profile .editable-field .field-editor form {
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/pages\/_profile\.scss}line{font-family:\0000350}}
+.page-profile .editable-field .field-editor .form-control {
+  display: inline-block;
+  width: auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/pages\/_profile\.scss}line{font-family:\0000390}}
 .page-profile img.media-object {
   border-radius: 4px;
 }
