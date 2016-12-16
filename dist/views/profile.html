@@ -1,0 +1,235 @@
+<div class="page page-profile" ng-controller="accountCtrl">
+    <!-- Profile Info -->
+    <div class="panel panel-default profile-margin">
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Profile</strong></div>
+        <ul class="list-unstyled list-info">
+            <li class="editable-field" data-ng-class="{editing: editing == 'FirstName'}">
+                <span class="icon glyphicon glyphicon-home"></span>
+                <label>First Name</label>
+                <span class="field-value">
+                    {{currentAccount.FirstName}}
+                    <span class="glyphicon glyphicon-pencil" data-ng-click="edit('FirstName')"></span>
+                </span>
+                <span class="field-editor">
+                    <form data-ng-submit="doneEditing()">
+                        <input data-ng-model="currentAccount.FirstName" type="text" class="form-control">
+                        <span class="glyphicon glyphicon-ok" style="color: green;" data-ng-click="doneEditing()"></span>
+                    </form>
+                 </span>
+            </li>
+            <li class="editable-field" data-ng-class="{editing: editing == 'LastName'}">
+                <span class="icon glyphicon glyphicon-home"></span>
+                <label>Last Name</label>
+                <span class="field-value">
+                    {{currentAccount.LastName}}
+                    <span class="glyphicon glyphicon-pencil" data-ng-click="edit('LastName')"></span>
+                </span>
+                <span class="field-editor">
+                    <form data-ng-submit="doneEditing()">
+                        <input data-ng-model="currentAccount.LastName" type="text" class="form-control">
+                        <span class="glyphicon glyphicon-ok" style="color: green;" data-ng-click="doneEditing()"></span>
+                    </form>
+                 </span>
+            </li>
+            <li class="editable-field" data-ng-class="{editing: editing == 'Email'}">
+                <span class="icon glyphicon glyphicon-home"></span>
+                <label>Email</label>
+                <span class="field-value">
+                    {{currentAccount.Email}}
+                    <span class="glyphicon glyphicon-pencil" data-ng-click="edit('Email')"></span>
+                </span>
+                <span class="field-editor">
+                    <form data-ng-submit="doneEditing()">
+                        <input data-ng-model="currentAccount.Email" type="text" class="form-control">
+                        <span class="glyphicon glyphicon-ok" style="color: green;" data-ng-click="doneEditing()"></span>
+                    </form>
+                 </span>
+            </li>
+            <li class="editable-field" data-ng-class="{editing: editing == 'Password'}">
+                <span class="icon glyphicon glyphicon-home"></span>
+                <label>Password</label>
+                <span class="field-value">
+                    Click to change
+                    <span class="glyphicon glyphicon-pencil" data-ng-click="edit('Password')"></span>
+                </span>
+                <span class="field-editor">
+                    <form data-ng-submit="doneEditing()">
+                        <input data-ng-model="currentAccount.Password" type="text" class="form-control">
+                        <span class="glyphicon glyphicon-ok" style="color: green;" data-ng-click="doneEditing()"></span>
+                    </form>
+                 </span>
+            </li>
+            <li class="editable-field" data-ng-class="{editing: editing == 'PhoneNumber'}">
+                <span class="icon glyphicon glyphicon-home"></span>
+                <label>Phone #</label>
+                <span class="field-value">
+                    {{currentAccount.PhoneNumber}}
+                    <span class="glyphicon glyphicon-pencil" data-ng-click="edit('PhoneNumber')"></span>
+                </span>
+                <span class="field-editor">
+                    <form data-ng-submit="doneEditing()">
+                        <input data-ng-model="currentAccount.PhoneNumber" type="text" class="form-control">
+                        <span class="glyphicon glyphicon-ok" style="color: green;" data-ng-click="doneEditing()"></span>
+                    </form>
+                 </span>
+            </li>
+            <li class="editable-field" data-ng-class="{editing: editing == 'BirthDate'}">
+                <span class="icon glyphicon glyphicon-home"></span>
+                <label>Date of Birth</label>
+                <span class="field-value">
+                    {{currentAccount.BirthDate | date:'MM/dd/yyyy'}}
+                    <span class="glyphicon glyphicon-pencil" data-ng-click="edit('BirthDate')"></span>
+                </span>
+                <span class="field-editor">
+                    <form data-ng-submit="doneEditing()">
+                        <input data-ng-model="currentAccount.PhoneNumber" type="text" class="form-control">
+                        <span class="glyphicon glyphicon-ok" style="color: green;" data-ng-click="doneEditing()"></span>
+                    </form>
+                 </span>
+            </li>
+        </ul>
+    </div>
+    <!-- end Profile Info -->
+    <!-- Dealership Info -->
+
+    <div ng-if="currentAccount.Role == 5 || currentAccount.Role == 6" class="panel panel-default profile-margin" ng-controller="dealershipCtrl">
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Dealership</strong></div>
+        <ul class="list-unstyled list-info">
+            <li class="editable-field" data-ng-class="{editing: editing == 'Name'}">
+                <span class="icon glyphicon glyphicon-home"></span>
+                <label>Name</label>
+                <span class="field-value">
+                    {{currentDealership.Name}}
+                    <span class="glyphicon glyphicon-pencil" data-ng-click="edit('Name')"></span>
+                </span>
+                <span class="field-editor">
+                    <form data-ng-submit="doneEditing()">
+                        <input data-ng-model="currentDealership.Name" type="text" class="form-control">
+                        <span class="glyphicon glyphicon-ok" style="color: green;" data-ng-click="doneEditing()"></span>
+                    </form>
+                 </span>
+            </li>
+            <li class="editable-field" data-ng-class="{editing: editing == 'Owner'}">
+                <span class="icon glyphicon glyphicon-user"></span>
+                <label>Owner</label>
+                <span class="field-value">
+                    {{currentDealership.Owner}}
+                    <span class="glyphicon glyphicon-pencil" data-ng-click="edit('Owner')"></span>
+                </span>
+                <span class="field-editor">
+                    <form data-ng-submit="doneEditing()">
+                        <input data-ng-model="currentDealership.Owner" type="text" class="form-control">
+                        <span class="glyphicon glyphicon-ok" style="color: green;" data-ng-click="doneEditing()"></span>
+                    </form>
+                 </span>
+            </li>
+            <li class="editable-field" data-ng-class="{editing: editing == 'Email'}">
+                <span class="icon glyphicon glyphicon-envelope"></span>
+                <label>Email</label>
+                <span class="field-value">
+                    {{currentDealership.Email}}
+                    <span class="glyphicon glyphicon-pencil" data-ng-click="edit('Email')"></span>
+                </span>
+                <span class="field-editor">
+                    <form data-ng-submit="doneEditing()">
+                        <input data-ng-model="currentDealership.Email" type="text" class="form-control">
+                        <span class="glyphicon glyphicon-ok" style="color: green;" data-ng-click="doneEditing()"></span>
+                    </form>
+                 </span>
+            </li>
+            <li class="editable-field" data-ng-class="{editing: editing == 'Phone'}">
+                <span class="icon glyphicon glyphicon-earphone"></span>
+                <label>Phone #</label>
+                <span class="field-value">
+                    {{currentDealership.Phone}}
+                    <span class="glyphicon glyphicon-pencil" data-ng-click="edit('Phone')"></span>
+                </span>
+                <span class="field-editor">
+                    <form data-ng-submit="doneEditing()">
+                        <input data-ng-model="currentDealership.Phone" type="text" class="form-control">
+                        <span class="glyphicon glyphicon-ok" style="color: green;" data-ng-click="doneEditing()"></span>
+                    </form>
+                 </span>
+            </li>
+            <li class="editable-field" data-ng-class="{editing: editing == 'Address'}">
+                <span class="icon glyphicon glyphicon-globe"></span>
+                <label>Address</label>
+                <span class="field-value">
+                    {{currentDealership.Address}}
+                    <span class="glyphicon glyphicon-pencil" data-ng-click="edit('Address')"></span>
+                </span>
+                <span class="field-editor">
+                    <form data-ng-submit="doneEditing()">
+                        <input data-ng-model="currentDealership.Address" type="text" class="form-control">
+                        <span class="glyphicon glyphicon-ok" style="color: green;" data-ng-click="doneEditing()"></span>
+                    </form>
+                 </span>
+            </li>
+            <li class="editable-field" data-ng-class="{editing: editing == 'City'}">
+                <span class="icon glyphicon glyphicon-globe"></span>
+                <label>City</label>
+                <span class="field-value">
+                    {{currentDealership.City}}
+                    <span class="glyphicon glyphicon-pencil" data-ng-click="edit('City')"></span>
+                </span>
+                <span class="field-editor">
+                    <form data-ng-submit="doneEditing()">
+                        <input data-ng-model="currentDealership.City" type="text" class="form-control">
+                        <span class="glyphicon glyphicon-ok" style="color: green;" data-ng-click="doneEditing()"></span>
+                    </form>
+                 </span>
+            </li>
+            <li class="editable-field" data-ng-class="{editing: editing == 'State'}">
+                <span class="icon glyphicon glyphicon-globe"></span>
+                <label>State</label>
+                <span class="field-value">
+                    {{currentDealership.State}}
+                    <span class="glyphicon glyphicon-pencil" data-ng-click="edit('State')"></span>
+                </span>
+                <span class="field-editor">
+                    <form data-ng-submit="doneEditing()">
+                        <input data-ng-model="currentDealership.State" type="text" class="form-control">
+                        <span class="glyphicon glyphicon-ok" style="color: green;" data-ng-click="doneEditing()"></span>
+                    </form>
+                 </span>
+            </li>
+            <li class="editable-field" data-ng-class="{editing: editing == 'ZipCode'}">
+                <span class="icon glyphicon glyphicon-globe"></span>
+                <label>Zip Code</label>
+                <span class="field-value">
+                    {{currentDealership.ZipCode}}
+                    <span class="glyphicon glyphicon-pencil" data-ng-click="edit('ZipCode')"></span>
+                </span>
+                <span class="field-editor">
+                    <form data-ng-submit="doneEditing()">
+                        <input data-ng-model="currentDealership.ZipCode" type="text" class="form-control">
+                        <span class="glyphicon glyphicon-ok" style="color: green;" data-ng-click="doneEditing()"></span>
+                    </form>
+                 </span>
+            </li>
+        </ul>
+    </div>
+    <!-- end Dealership Info -->
+</div>
+<style>
+
+    /* TODO: move this to SASS */
+
+    /*.editable-field .field-editor form {
+        display: inline-block;
+    }
+
+    .editable-field .field-editor .form-control {
+        display: inline-block;
+        width: auto;
+    }
+
+    .editable-field.editing .field-value {
+        display: none;
+    }
+
+    .editable-field:not(.editing) .field-editor {
+        display: none;
+    }*/
+    
+</style>

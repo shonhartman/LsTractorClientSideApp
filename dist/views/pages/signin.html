@@ -1,4 +1,4 @@
-<div class="page-signin" ng-controller="authCtrl">
+<div class="page-signin" ng-controller="accountCtrl">
 
 
     <div class="auth-container">
@@ -21,7 +21,8 @@
                                     </span>
                                     <input type="email"
                                            class="form-control input-lg"
-                                           placeholder="Username"
+                                           placeholder="Email"
+                                           ng-model="formData.Username"
                                            >
                                 </div>
                             </div>
@@ -33,6 +34,7 @@
                                     <input type="password"
                                            class="form-control input-lg"
                                            placeholder="Password"
+                                           ng-model="formData.Password"
                                            >
                                 </div>
                             </div>

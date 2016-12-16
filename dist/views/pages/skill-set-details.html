@@ -1,0 +1,111 @@
+<div class="page page-profile" ng-controller="VideoCtrl">
+
+<h1>Skill Set Details</h1>
+
+    <header class="mail-header">
+         <h1>{{ skillSet.Name }}</h1>
+    </header>
+
+    <!--Repeating Video Box-->
+    <div class="row container">
+        <div class="col-lg-5 col-sm-6" ng-repeat="video in skillSet.Videos">
+
+            <div class="panel mini-box preview" id="video-box">
+
+                <!--Progress Chart-->
+                <span ng-show="complete" class="btn-icon btn-icon-md btn-icon-lg-alt bg-dark"  style="margin-bottom: 33px;">
+                    <i class="fa fa-check-circle"></i>
+                </span>
+                <span ng-show="!complete" data-ng-controller="chartCtrl" class="btn-icon btn-icon-md btn-icon-lg-alt bg-dark">
+                    <div easypiechart options="easypiechart3.options" percent="easypiechart3.percent" class="easypiechart">
+                        <span class="pie-percent" ng-bind="easypiechart3.percent"></span>
+                    </div>
+                </span>
+                <!--End Progress Chart-->
+
+                <p class="size-h4" style="color:#f5f7ff">{{ video.Title }}</p>
+                <p class="text-info" style="color:#f5f7ff">{{ video.Author }}</p>
+                <p class="text-danger">{{ video.time }}</p>
+                <button class="btn btn-gap-v btn-primary" ng-click="open(video.id)">Watch</button>
+                <button class="btn btn-gap-v btn-warning" ng-click="edit(video)">Edit</button>
+                <script type="text/ng-template" id="myEditModal.html">
+                    <div class="modal-header">
+                        <h3>Editing {{ video.Title }}</h3>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" class="form-control" ng-model="video.url">
+                        <span class="help-block">Vimeo URL</span>
+                        <input type="text" class="form-control" ng-model="video.title">
+                        <span class="help-block">Title</span>
+                        <input type="text" class="form-control" ng-model="video.author">
+                        <span class="help-block">Instructor</span>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" ng-click="updateVideo()">Save Changes</button>
+                        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                    </div>
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <p><button ng-click="complete = !complete">Toggle Complete</button></p>
+
+    <!--Add Video Button-->
+
+    <div ng-if="roleId === 6">
+        <button type="submit" ng-controller="ModalDemoCtrl" class="btn btn-primary btn-block btn-lg" ng-click="open()">Add a Video</button>
+        <script type="text/ng-template" id="myModalContent.html">
+            <div class="modal-header">
+                <h3>Add a Video</h3>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="form-control" ng-model="videoUrlData" value="http://">
+                <span class="help-block">Vimeo URL</span>
+                <input type="text" class="form-control" ng-model="videoTitle">
+                <span class="help-block">Title</span>
+                <input type="text" class="form-control" ng-model="videoAuthor">
+                <span class="help-block">Instructor</span>
+                <input type="text" class="form-control" ng-model="skillSet">
+                <span class="help-block">Skill Set</span>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" ng-click="upload()">Upload</button>
+                <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+            </div>
+        </script>
+    </div>
+    <!--End Add Video Button -->
+
+    <!--Delete Video Button-->
+
+    <!--<button type="submit" ng-controller="SkillSetCtrl" class="btn btn-danger btn-block btn-lg" ng-click="deleteSkillSet()">Delete This Skill Set</button>-->
+
+    <!--Add Quiz Button-->
+
+    <div ng-if="roleId === 6">
+        <button type="submit" ng-controller="ModalDemoCtrl" class="btn btn-primary btn-block btn-lg" ng-click="open()">Add a Quiz</button>
+        <script type="text/ng-template" id="myModalContent.html">
+            <div class="modal-header">
+                <h3>Add a Quiz</h3>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="form-control" ng-model="videoUrlData" value="http://">
+                <span class="help-block">Video URL</span>
+                <input type="text" class="form-control" ng-model="questionData">
+                <span class="help-block">Questions</span>
+                <!--TODO : This needs to be an ng-repeat loop for the questions being added -->
+                <input type="text" class="form-control" ng-model="answerData">
+                <span class="help-block">Answers</span>
+                <!--TODO : This needs to be an ng-repeat loop for the answers being added -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" ng-click="upload()">Upload</button>
+                <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+            </div>
+        </script>
+    </div> <!-- End Delete Quiz Button-->
+
+    <button type="submit" ng-controller="SkillSetCtrl" class="btn btn-danger btn-block btn-lg" ng-click="deleteSkillSet()">Delete This Quiz</button>
+
+</div> <!--Close Page Div-->

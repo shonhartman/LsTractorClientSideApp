@@ -1,8 +1,10 @@
 
 <div class="page page-table" data-ng-controller="tableCtrl">
 
+    <button class="btn btn-danger" ng-controller="dealershipCtrl" ng-click="testing()">TEST BUTTON</button>
+
     <section class="panel panel-default table-dynamic">
-        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Bordered table</strong></div>
+        <div class="panel-heading"><strong>Dealerships</strong></div>
 
         <div class="table-filters">
             <div class="row">
@@ -27,7 +29,7 @@
             <thead>
                 <tr>
                     <th><div class="th">
-                        Store Name
+                        Dealership
                         <span class="fa fa-angle-up"
                               data-ng-click=" order('name') "
                               data-ng-class="{active: row == 'name'}"></span>
@@ -36,40 +38,20 @@
                               data-ng-class="{active: row == '-name'}"></span>
                     </div></th>
                     <th><div class="th">
-                        Price
+                        State
                         <span class="fa fa-angle-up"
-                              data-ng-click=" order('price') "
-                              data-ng-class="{active: row == 'price'}"></span>
+                              data-ng-click=" order('state') "
+                              data-ng-class="{active: row == 'state'}"></span>
                         <span class="fa fa-angle-down"
-                              data-ng-click=" order('-price') "
-                              data-ng-class="{active: row == '-price'}"></span>
-                    </div></th>
-                    <th><div class="th">
-                        Sales (in 7 days)
-                        <span class="fa fa-angle-up"
-                              data-ng-click=" order('sales') "
-                              data-ng-class="{active: row == 'sales'}"></span>
-                        <span class="fa fa-angle-down"
-                              data-ng-click=" order('-sales') "
-                              data-ng-class="{active: row == '-sales'}"></span>
-                    </div></th>
-                    <th><div class="th">
-                        Rating
-                        <span class="fa fa-angle-up"
-                              data-ng-click=" order('rating') "
-                              data-ng-class="{active: row == 'rating'}"></span>
-                        <span class="fa fa-angle-down"
-                              data-ng-click=" order('-rating') "
-                              data-ng-class="{active: row == '-rating'}"></span>
+                              data-ng-click=" order('-state') "
+                              data-ng-class="{active: row == '-state'}"></span>
                     </div></th>
                 </tr>
             </thead>
             <tbody>
                 <tr data-ng-repeat="store in currentPageStores">
                     <td>{{store.name}}</td>
-                    <td>{{store.price}}</td>
-                    <td>{{store.sales}}</td>
-                    <td>{{store.rating}}</td>
+                    <td>{{store.state}}</td>
                 </tr>
             </tbody>
         </table>

@@ -1,0 +1,132 @@
+
+<div class="page page-profile">
+
+<!--Employee View-->
+    <section class="panel panel-default profile-margin">
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-remove"></span> Request Closure</strong></div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-1 control-label">Email</label>
+                            <div class="col-sm-11">
+                                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-1 control-label">Password</label>
+                            <div class="col-sm-11">
+                                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-1 col-sm-11">
+                                <button type="submit" class="btn btn-primary btn-w-md">Submit Request</button>
+                            </div>
+                        </div>
+                    </form>  
+
+                </div>
+            </div>
+        </div>
+    </section> <!--End Employee View-->
+
+    <!--Dealership View-->
+        <!--Approve Pending Closures-->
+            <!--Table Similar to super admin Transfer View -->
+
+<!--Dealership Approval of Employee Closure-->
+    <section class="panel panel-default profile-margin">
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-remove"></span> Closure Reequests</strong></div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+
+    <!--<div ng-if="roleId == 5">-->
+        <div class="panel panel-default">
+            <div class="panel-body table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Employee</th>
+                            <th popover="Here, you can approve or deny a transfer request." popover-trigger="mouseenter">Approve/Deny</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="employee in employees">
+                            <td><a href="#/employees/{{ employee.id }}">{{ employee.firstName }} {{ employee.lastName }}</a></td>
+                            <td>
+                                <!-- Buttons : Approve/Deny Toggle & Submit -->
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    <!-- </div> /Dealership/Employee Table -->
+
+                </div>
+            </div>
+        </div>
+    </section> <!--End Super Admin View-->
+
+<!--Dealership Closure Request-->
+            <section class="panel panel-default profile-margin" data-ng-controller="formConstraintsCtrl">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-remove"></span> Request Closure</strong></div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+                                <div class="form-group">
+                                    <label for="">Dealership</label>
+                                    <input type="text" class="form-control" required data-ng-model="form.required">
+                                    <br>
+                                    <label for="">Message</label>
+                                    <textarea class="form-control" rows="10" required data-ng-model="form.required_textarea"></textarea>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section> <!--End Dealership Closure Request-->
+
+            
+                        
+
+
+<!--Super Admin Dealership Closure Approval Table-->
+    <section class="panel panel-default profile-margin">
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-remove"></span> Closure Reequests</strong></div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+
+    <!--<div ng-if="roleId == 6">-->
+        <div class="panel panel-default">
+            <div class="panel-body table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Dealership</th>
+                            <th popover="Here, you can approve or deny a request for closure." popover-trigger="mouseenter">Approve/Deny</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="dealership in dealerships">
+                            <td><a href="#/dealership/{{ dealership.id }}">{{ dealership }}</a></td>
+                            <td>
+                                <!-- Buttons : Approve/Deny Toggle & Submit -->
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    <!-- </div> End Super Admin Dealership Closure Approval Table -->
+
+</div> <!--End Page-->
+
+
+

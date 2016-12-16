@@ -1,151 +1,141 @@
-<div class="page page-dashboard">
+<div class="page page-dashboard" ng-controller="DashboardCtrl">
 
+    <!-- Popover -->
+    <!-- <button popover="On mouse enter!" popover-trigger="mouseenter" class="btn btn-w-lg btn-primary btn-gap">Popover on Mouseenter</button> -->
 
-    <div class="row">
-       <!-- Stats -->
-        <div class="col-lg-3 col-xsm-6">
-            <div class="panel panel-box">
-                <div class="panel-top">
-                    <span class="ti-stats-up color-success"></span>
-                </div>
-                <div class="panel-info">
-                    <span data-translate="GROWTH"></span>
-                </div>
-                <div class="panel-bottom bg-light">
-                    <span>36 <span class="size-h4">%</span></span>
-                </div>
+    <!--Super Admin Table-->
+    <div ng-if="roleId == 6">
+        <div class="panel panel-default">
+            <div class="panel-body table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Dealership</th>
+                            <th popover="How far along is each dealership" popover-trigger="mouseenter">Progress</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="dealership in dealerships">
+                            <td>{{ dealership.name }}</td>
+                            <!--TODO ==> BIND PROGRESS BAR TO DATA-->
+                            <td>
+                                <progressbar class="progressbar-xs no-margin" value="55"></progressbar>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-        <div class="col-lg-3 col-xsm-6">
-            <div class="panel panel-box">
-                <div class="panel-top">
-                    <i class="ti-user color-info"></i>
-                </div>
-                <div class="panel-info">
-                    <span data-translate="NEW_USERS"></span>
-                </div>
-                <div class="panel-bottom bg-light">
-                    <span>22 <span class="size-h4">%</span></span>
-                </div>
+    </div><!-- Super Admin Table Table -->
+
+<!--Dealership Owner/Employee Table-->
+    <div ng-if="roleId == 5">
+        <div class="panel panel-default">
+            <div class="panel-body table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Employee</th>
+                            <th popover="How are my employees doing" popover-trigger="mouseenter">Progress</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- TODO How do we account for dealership number? -->
+                        <tr ng-repeat="employee in employees">
+                            <td><a href="#/employees/{{ employee.id }}">{{ employee.firstName }} {{ employee.lastName }}</a></td>
+                            <td>
+                                <progressbar class="progressbar-xs no-margin" value="employee.progress"></progressbar>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-        <div class="col-lg-3 col-xsm-6">
-            <div class="panel panel-box">
-                <div class="panel-top">
-                    <i class="ti-money color-warning"></i>
-                </div>
-                <div class="panel-info">
-                    <span data-translate="PROFIT"></span>
-                </div>
-                <div class="panel-bottom bg-light">
-                    <span>37 <span class="size-h4">k</span></span>
-                </div>
+    </div><!-- /Dealership/Employee Table -->
+
+    <!--Employee View-->
+    <div ng-if="roleId == 4">
+        <!--DYNAMIC DATA-->
+        <h1>Skillsets</h1>
+        <div class="row" ng-controller="SkillSetCtrl">
+            <div class="col-lg-3 col-xsm-6" ng-repeat="skillset in skillsets">
+                <a style="text-decoration: none;" href="#/pages/skill-set-details/{{ skillset.Id }}">
+                    <div class="panel panel-box" style="margin-top:20%;" ng-click="goToSkillSet()">
+                        <div class="panel-top">
+                            <span ng-show="skillset.status == 1" class="ti-key" style="color:#7992BF"></span>
+                            <span ng-show="skillset.status == 2" class="ti-stats-up color-info"></span>
+                            <span ng-show="skillset.status == 3" class="ti-star color-success"></span>
+                        </div>
+                        <div class="panel-info">
+                            <span>{{ skillset.Name }}</span>
+                        </div>
+                        <div class="panel-bottom bg-light">
+                            <span ></span>
+                            <span ng-show="skillset.status == 1" class="ti-medall" style="color:#7992BF"></span>
+                            <span ng-show="skillset.status == 2" class="ti-stats-up color-info"></span>
+                            <span ng-show="skillset.status == 3" class="ti-cup color-warning"></span>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
-        <div class="col-lg-3 col-xsm-6">
-            <div class="panel panel-box">
-                <div class="panel-top">
-                    <i class="ti-shopping-cart color-danger"></i>
-                </div>
-                <div class="panel-info">
-                    <span data-translate="SALES"></span>
-                </div>
-                <div class="panel-bottom bg-light">
-                    <span>21 <span class="size-h4">k</span></span>
+        <!-- End DYNAMIC DATA -->
+        <!--<div class="row" ng-controller="BadgeCtrl">-->
+        <!-- Skill Sets -->
+        <!--<div class="col-lg-3 col-xsm-6" popover="You completed this one!" popover-trigger="mouseenter">
+                <div class="panel panel-box" ng-click="goToSkillSet()">
+                    <div class="panel-top">
+                        <span class="ti-star color-success"></span>
+                    </div>
+                    <div class="panel-info">
+                        <span>PHASE 1 DIAGNOSTICS</span>
+                    </div>
+                    <div class="panel-bottom bg-light">
+                        <span class="ti-cup color-warning"></span>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- end stats -->          
-    </div>
-
-
-    <div class="row">
-        <div class="col-lg-6">
-            <div class="panel panel-default">
-                <div class="panel-body" data-ng-controller="flotChartCtrl">
-                    <div data-flot-chart
-                         data-data="barChart1.data"
-                         data-options="barChart1.options"
-                         style="width: 100%; height: 350px;"
-                         ></div>
+            <div class="col-lg-3 col-xsm-6" popover="Click to continue" popover-trigger="mouseenter">
+                <div class="panel panel-box">
+                    <div class="panel-top">
+                        <i class="ti-stats-up color-info"></i>
+                    </div>
+                    <div class="panel-info">
+                        <span>PHASE 2 DIAGNOSTICS</span>
+                    </div>
+                    <div class="panel-bottom bg-light">
+                        <span>22 <span class="size-h4">%</span></span>
+                    </div>
                 </div>
-            </div>                
-        </div>
-        <div class="col-lg-6">
-            <div class="panel panel-default">
-                <div class="panel-body" data-ng-controller="flotChartCtrl">
-                    <div data-flot-chart
-                         data-data="donutChart2.data"
-                         data-options="donutChart2.options"
-                         style="width: 100%; height: 350px;"
-                         ></div>
+            </div>
+            <div class="col-lg-3 col-xsm-6">
+                <div class="panel panel-box">
+                    <div class="panel-top">
+                        <i class="ti-stats-up color-info"></i>
+                    </div>
+                    <div class="panel-info">
+                        <span>PHASE 3 DIAGNOSTICS</span>
+                    </div>
+                    <div class="panel-bottom bg-light">
+                        <span>37 <span class="size-h4">%</span></span>
+                    </div>
                 </div>
-            </div>             
-        </div>
-    </div>
+            </div>
+            <div class="col-lg-3 col-xsm-6" popover="Click to begin" popover-trigger="mouseenter">
+                <div class="panel panel-box">
+                    <div class="panel-top">
+                        <i class="ti-key" style="color:#7992BF"></i>
+                    </div>
+                    <div class="panel-info">
+                        <span>PHASE 4 DIAGNOSTICS</span>
+                    </div>
+                    <div class="panel-bottom bg-light">
+                        <span class="ti-medall" style="color:#7992BF"></span>
+                    </div>
+                </div>
+            </div>
+        </div>-->
 
-    <div class="panel panel-default">
-        <div class="panel-body table-responsive">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Project</th>
-                        <th>Status</th>
-                        <th>Manager</th>
-                        <th>Progress</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td><span class="color-success"><i class="fa fa-level-up"></i></span> TWLT</td>
-                        <td><span class="label label-info">Pending</span></td>
-                        <td>Amery Lee</td>
-                        <td><progressbar class="progressbar-xs no-margin" value="55"></progressbar></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td><span class="color-success"><i class="fa fa-level-up"></i></span> A16Z</td>
-                        <td><span class="label label-primary">Due</span></td>
-                        <td>Romayne Carlyn</td>
-                        <td><progressbar class="progressbar-xs no-margin" value="34" type="success"></progressbar></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td><span class="color-warning"><i class="fa fa-level-down"></i></span> DARK</td>
-                        <td><span class="label label-success">Due</span></td>
-                        <td>Marybeth Joanna</td>
-                        <td><progressbar class="progressbar-xs no-margin" value="68" type="info"></progressbar></td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td><span class="color-info"><i class="fa fa-level-up"></i></span> Q300</td>
-                        <td><span class="label label-danger">Blocked</span></td>
-                        <td>Jonah Benny</td>
-                        <td><progressbar class="progressbar-xs no-margin" value="52" type="warning"></progressbar></td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td><span class="color-danger"><i class="fa fa-level-down"></i></span> RVNG</td>
-                        <td><span class="label label-warning">Suspended</span></td>
-                        <td>Daly Royle</td>
-                        <td><progressbar class="progressbar-xs no-margin" value="77" type="danger"></progressbar></td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td><span class="color-info"><i class="fa fa-level-down"></i></span> FDSA</td>
-                        <td><span class="label label-info">Suspended</span></td>
-                        <td>Jane Swift</td>
-                        <td><progressbar class="progressbar-xs no-margin" value="55" type="success"></progressbar></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-
-
+    </div><!-- end of Employee View -->
 
 </div>
-  
