@@ -38,6 +38,10 @@
             display: none;
         }
 
+        &.editing.field-value {
+            display: none;
+        }
+
         .field-editor {
             form {
                 display: inline-block;
@@ -46,10 +50,6 @@
             .form-control {
                 display: inline-block;
                 width: auto;
-            }
-
-            .editing .field-value {
-                display: none;
             }
         }
     }
