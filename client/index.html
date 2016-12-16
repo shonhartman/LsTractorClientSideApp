@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="bower_components/weather-icons/css/weather-icons.min.css">
         <!-- end Needs images -->
-            
+
             <!-- build:css({.tmp,client}) styles/main.css -->
             <link rel="stylesheet" href="styles/bootstrap.css">
             <link rel="stylesheet" href="styles/ui.css">
@@ -26,10 +26,10 @@
     <body data-ng-app="app"
           id="app"
           class="app"
-          data-custom-page 
+          data-custom-page
           data-off-canvas-nav
           data-ng-controller="AppCtrl"
-          data-ng-class=" { 'layout-boxed': admin.layout === 'boxed', 
+          data-ng-class=" { 'layout-boxed': admin.layout === 'boxed',
                             'nav-collapsed-min': admin.menu === 'collapsed'
           } ">
         <!--[if lt IE 9]>
@@ -56,7 +56,7 @@
              data-ng-class="{ 'app-nav-horizontal': admin.menu === 'horizontal' }">
             <aside data-ng-include=" 'views/sidebar.html' "
                    id="nav-container"
-                   class="nav-container"  
+                   class="nav-container"
                    data-ng-class="{ 'nav-fixed': admin.fixedSidebar,
                                     'nav-horizontal': admin.menu === 'horizontal',
                                     'nav-vertical': admin.menu === 'vertical',
@@ -106,7 +106,7 @@
         <!--<script src="bower_components/ngmap/build/scripts/ng-map.min.js"></script>-->
         <script src="scripts/vendors/jquery-jvectormap-1.2.2.min.js"></script>
         <script src="scripts/vendors/jquery-jvectormap-world-mill-en.js"></script>
-        
+
         <script src="bower_components/textAngular/dist/textAngular-rangy.min.js"></script>
         <script src="bower_components/textAngular/dist/textAngular.min.js"></script>
         <script src="bower_components/textAngular/dist/textAngular-sanitize.min.js"></script>
@@ -118,18 +118,17 @@
         <script src="bower_components/vimeo-player-js/dist/player.min.js"></script>
 
         <script src="bower_components/angular-translate/angular-translate.min.js"></script>
-        <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>  
+        <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
 
         <script src="bower_components/ng-tags-input/ng-tags-input.min.js"></script>
         <script src="bower_components/angular-ui-tree/dist/angular-ui-tree.min.js"></script>
         <script src="bower_components/jquery-spinner/dist/jquery.spinner.min.js"></script>
         <script src="bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
         <script src="bower_components/jquery-steps/build/jquery.steps.min.js"></script>
-        <script src="bower_components/bootstrap-file-input/bootstrap.file-input.js"></script>        
+        <script src="bower_components/bootstrap-file-input/bootstrap.file-input.js"></script>
         <!-- endbuild -->
 
-         build:js({.tmp,client}) scripts/app.js 
-
+         <!-- build:js({.tmp,client}) scripts/app.js -->
         <script src="scripts/account/account.module.js"></script>
         <script src="scripts/account/account.controller.js"></script>
 
@@ -172,11 +171,12 @@
 
         <script src="scripts/video/video.module.js"></script>
         <script src="scripts/video/video.controller.js"></script>
-        <!-- endbuild -->
 
         <script src="scripts/app.module.js"></script>
         <script src="scripts/core/config.route.js"></script>
         <script src="scripts/core/app.controller.js"></script>
+
+        <!-- endbuild -->
 
     </body>
 </html>
