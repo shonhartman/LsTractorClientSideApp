@@ -6,15 +6,12 @@
 
     function chartCtrl($scope, $http) {
 
-        //TODO ==> Bind data from Video Results
-
-        $scope.percent = function () {
-            $http.get('http://lstractorquizapi.azurewebsites.net//videoResults');
-        }
+        // TODO: Bind data from Video Results
+        $scope.percent = 45;
 
         console.log("Let's bind the data from the timeWatched variable")
         $scope.easypiechart3 = {
-            percent: $scope.percent, //originally this was a hardcoded integer eg. 45 for 45%
+            percent: $scope.percent,
             options: {
                 animate: {
                     duration: 1000,
@@ -28,4 +25,4 @@
             }
         };
     }
-})(); 
+})();
