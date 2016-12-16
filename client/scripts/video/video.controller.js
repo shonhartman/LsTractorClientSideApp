@@ -30,25 +30,14 @@
     }
 
     function VideoCtrl($cookies, $scope, $routeParams, $location, $http, $modal) {
-        var skillSet = $routeParams.id;
+        var skillSetId = $routeParams.id;
         $scope.videos = [];
         $scope.skillSet = null;
         $scope.user = angular.fromJson($cookies.get('user'));
 
-        $http.get('http://lstractorquizapi.azurewebsites.net/SkillSets{id}') //???
+        $http.get('http://lstractorquizapi.azurewebsites.net/api/SkillSets/' + skillSetId)
             .then(function (response) {
                 $scope.skillSet = response.data;
-            });
-
-        $http.get('http://lstractorquizapi.azurewebsites.net/SkillSets{id}/listOfVideos')//What's this call??
-            .then(function (response) {
-                $scope.videos = [];
-                response.data._embedded.videos.forEach(function (video) {
-                    var splitUrl = video._links.self.href.split("/");
-                    video.id = splitUrl[splitUrl.length - 1];
-                    $scope.videos.push(video);
-                });
-                console.log($scope.videoResults);
             });
 
         $scope.open = function (id) {
@@ -78,14 +67,12 @@
 
         //DELETE VIDEO BY ID
         $scope.deleteVideos = function (video) {
-            $http.delete('http://lstractorquizapi.azurewebsites.net/api/Videos?videoId={videoId}') 
-                .then(function(response) {
-                    logger.logSuccess("You deleted {{video.name}} ");
+            $http.delete('http://lstractorquizapi.azurewebsites.net/api/Videos?videoId={videoId}')
+                .then(function (response) {
+                    logger.logSuccess("You deleted {{video.Name}}");
                     $location.url("/#/skill-set");
                 })
 
-            }
         }
-
-
+    }
 })();
