@@ -71,8 +71,7 @@
                 .then(function (response) {
                     logger.logSuccess("You deleted {{video.Name}}");
                     $location.url("/#/skill-set");
-                })
-
+                });
         }
     }
 })();

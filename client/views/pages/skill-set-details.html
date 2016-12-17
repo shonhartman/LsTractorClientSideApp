@@ -26,18 +26,18 @@
                 <p class="size-h4" style="color:#f5f7ff">{{ quiz.Video.Title }}</p>
                 <p class="text-info" style="color:#f5f7ff">{{ quiz.Video.Author }}</p>
                 <p class="text-danger">{{ quiz.Video.Length }}</p>
-                <button class="btn btn-gap-v btn-primary" ng-click="open(video.id)">Watch</button>
-                <button class="btn btn-gap-v btn-warning" ng-click="edit(video)">Edit</button>
+                <button class="btn btn-gap-v btn-primary" ng-click="open(quiz.Id)">Watch</button>
+                <button class="btn btn-gap-v btn-warning" ng-click="edit(quiz.Video)">Edit</button>
                 <script type="text/ng-template" id="myEditModal.html">
                     <div class="modal-header">
                         <h3>Editing {{ quiz.Video.Title }}</h3>
                     </div>
                     <div class="modal-body">
-                        <input type="text" class="form-control" ng-model="video.url">
+                        <input type="text" class="form-control" ng-model="quiz.Video.Url">
                         <span class="help-block">Vimeo URL</span>
-                        <input type="text" class="form-control" ng-model="video.title">
+                        <input type="text" class="form-control" ng-model="quiz.Video.Title">
                         <span class="help-block">Title</span>
-                        <input type="text" class="form-control" ng-model="video.author">
+                        <input type="text" class="form-control" ng-model="quiz.Video.Author">
                         <span class="help-block">Instructor</span>
                     </div>
                     <div class="modal-footer">
