@@ -16,8 +16,9 @@
             brand: 'LS Tractor',
             name: userName,
             year: year,
-            apiUrl: 'http://lstractorquizapi.azurewebsites.net/api/'
-            // apiUrl: 'http://localhost:50516/api/'
+            apiUrl: 'http://lstractorquizapi.azurewebsites.net/api/',
+            // apiUrl: 'http://localhost:50516/api/',
+            user: user
         };
 
         $scope.pageTransitionOpts = [

@@ -14,13 +14,12 @@
             <div class="divider divider-md"></div>
             <div collapse="isCollapsed" class="collapse" aria-expanded="false" aria-hidden="true" style="height: 0px;">
                 <!--A Question Object should be pulled in here with an id that relates to a video-->
-                <div ng-repeat="question in questions" ng-if="$index === activeQuestion">
+                <div ng-repeat="question in quiz.Questions" ng-if="$index === activeQuestion">
                     <section class="panel panel-default" id="callout-quiz">
                         <div class="panel-heading"><strong><span class="glyphicon glyphicon-list-alt" style="margin-right: 10px;"></span>Quiz</strong></div>
                         <div class="panel-body">
-                            <h4>Question {{ activeQuestion + 1 }} out of {{ questions.length }}</h4>
-                            <h4>{{ question.questionText }}</h4>
-                            <!--<h4>{{ question }}</h4>-->
+                            <h4>Question {{ activeQuestion + 1 }} out of {{ quiz.Questions.length }}</h4>
+                            <h4>{{ question.QuestionText }}</h4>
                         </div>
                     </section>
                     <div class="callout callout-info" id="callout-quiz">
@@ -28,11 +27,11 @@
                     </div>
                     <!-- Answers -->
                     <div id="repeating-array">
-                        <section class="panel panel-default" id="callout-quiz" ng-repeat="answer in question.answers">
+                        <section class="panel panel-default" id="callout-quiz" ng-repeat="answer in question.Answers">
                             <div class="panel-body">
-                                <button ng-click="setAnswer(answer)" class="btn-icon-lined btn-icon-round" ng-class="{'active':answers[activeQuestion] == answer}"
+                                <button ng-click="setAnswer(question.Id, answer.Id)" class="btn-icon-lined btn-icon-round" ng-class="{'active':answers[activeQuestion].Answer.Id == answer.Id}"
                                     style="float: left;"><h3 style="margin-top: 1.5px;">{{ letterForIndex($index) }}</h3></button>
-                                <p style="margin: 20px 0 0 60px;">{{ answer.answerText }}</p>
+                                <p style="margin: 20px 0 0 60px;">{{ answer.AnswerText }}</p>
                             </div>
                         </section>
                         <button ng-if="!lastQuestion()" type="button" class="btn btn-w-md btn-gap-v btn-primary" ng-click="nextQuestion()">Next Question<span class="ti-arrow-right" style="float: right; margin: 5px 10px;"></span></button>

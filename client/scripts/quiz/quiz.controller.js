@@ -6,12 +6,13 @@
 
     function QuizCtrl($cookies, $scope, $http, $routeParams, $sce, $location) {
 
+        $scope.answers = [];
         $scope.quiz = null;
         $scope.videoUrl = null;
         $scope.timeWatched = 0;
         $scope.disableQuiz = true;
-        $scope.user = angular.fromJson($cookies.get('user'));
-        $scope.videoResult = null;
+        $scope.videoResult = null; // do we need this var? I don't see it used anywhere.
+        $scope.activeQuestion = 0;
 
         // Get Title & Progress off of a Video
         window.vimeoPlayerLoaded = function () {
@@ -31,7 +32,7 @@
 
             if (data.seconds > $scope.timeWatched + 10) {
                 $http.put($scope.main.apiUrl + 'Videos', {
-                    UserId: $scope.user.Id,
+                    UserId: $scope.main.user.Id,
                     VideoId: $scope.quiz.Video.Id,
                     ViewedAmount: parseInt(data.seconds, 10)
                 });
@@ -91,14 +92,17 @@
             return String.fromCharCode(97 + index);
         }
 
-        $scope.activeQuestion = 0;
-
         $scope.lastQuestion = function () {
-            return $scope.questions.length === $scope.activeQuestion + 1;
+            return $scope.quiz.Questions.length === $scope.activeQuestion + 1;
         }
 
-        $scope.setAnswer = function (answer) {
-            $scope.answers[$scope.activeQuestion] = answer;
+        $scope.setAnswer = function (questionId, answerId) {
+            $scope.answers[$scope.activeQuestion] = {
+                "Id": questionId,
+                "Answer": {
+                    "Id": answerId
+                }
+            }
         }
 
         $scope.nextQuestion = function () {
@@ -108,45 +112,26 @@
             } else {
                 alert("You must choose an answer.");
             }
-
         }
 
         $scope.finishQuiz = function () {
-            var correct = 0;
 
-            $scope.answers.forEach(function (answer) {
-                if (answer.isCorrect) {
-                    correct += 1;
-                }
-            });
-
-            var score = (correct / $scope.questions.length) * 100;
-
-            if (score > 99) {
-                // TODO - When we have $scope.videoResult
-                // $http.put($scope.videoResult._links.self.href, {
-                //     appUser: $scope.user._links.self.href,
-                //     video: "http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos/" + $routeParams.id,
-                //     viewAmount: $scope.videoResult.viewAmount,
-                //     isComplete: true
-                // });
-                var data = {
-                    appUser: $scope.user._links.self.href,
-                    video: $scope.main.apiUrl + "Videos{id}",
-                    viewAmount: $scope.videoResult.viewAmount,
-                    isComplete: true
-                };
-                console.log(data);
-                $http.put($scope.videoResult._links.self.href, data)
-            }
             //SUBMIT QUIZ RESULTS FOR GRADING
-            $http.post($scope.main.apiUrl + 'Quizzes?userId={userId}', {
-                    quiz: $scope.quiz._links.self.href,
-                    appUser: $scope.user._links.self.href,
-                    score: score //I imagine this will all change to new endpoints??
+            $http.put($scope.main.apiUrl + 'Quizzes?userId=' + $scope.main.user.Id, {
+                    Id: $scope.quiz.Id,
+                    Questions: $scope.answers
                 })
                 .then(function (response) {
-                    alert("You scored " + score + "%!");
+
+                    var passed = response.data.Passed;
+                    var score = response.data.Score;
+
+                    if (passed) {
+                        alert("You passed with score " + score + "%!");
+                    } else {
+                        alert("You scored " + score + ". Try again!");
+                    }
+
                     $location.url('/dashboard');
                 });
         }
