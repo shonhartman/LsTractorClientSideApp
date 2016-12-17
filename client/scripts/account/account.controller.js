@@ -24,7 +24,7 @@
                 return;
             }
 
-            $http.post('http://lstractorquizapi.azurewebsites.net/api/Users', {
+            $http.post($scope.main.apiUrl + 'Users', {
                     "Email": $scope.formData.Username,
                     "Password": $scope.formData.Password
                 })
@@ -49,7 +49,7 @@
                 return;
             }
 
-            $http.put('http://lstractorquizapi.azurewebsites.net/api/Users', {
+            $http.put($scope.main.apiUrl + 'Users', {
                     "DealershipId": parseInt($scope.dealershipFields.Dealership, 10),
                     "Role": parseInt($scope.formData.Role, 10),
                     "FirstName": $scope.formData.FirstName,
@@ -72,7 +72,7 @@
         //UPDATE USER BY ID
         $scope.updateAccount = function (updatedAccount) {
 
-            return $http.put('http://lstractorquizapi.azurewebsites.net/api/Users?userId=' + updatedAccount.Id, updatedAccount)
+            return $http.put($scope.main.apiUrl + 'Users?userId=' + updatedAccount.Id, updatedAccount)
                 .then(function (response) {
                     console.log(response.data);
                     updateAccountCookieFromScope();
@@ -88,7 +88,7 @@
             // TODO: get this from formData
             var userId = -1;
 
-            $http.delete('http://lstractorquizapi.azurewebsites.net/api/Users/' + userId)
+            $http.delete($scope.main.apiUrl + 'Users/' + userId)
                 .then(function (response) {
                     logger.logSuccess("You successfully deleted {{account.name}}");
                     $location.url("/#/dashboard");

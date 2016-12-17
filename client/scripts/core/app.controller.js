@@ -15,7 +15,9 @@
         $scope.main = {
             brand: 'LS Tractor',
             name: userName,
-            year: year
+            year: year,
+            apiUrl: 'http://lstractorquizapi.azurewebsites.net/api/'
+            // apiUrl: 'http://localhost:50516/api/'
         };
 
         $scope.pageTransitionOpts = [

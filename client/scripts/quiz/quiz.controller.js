@@ -15,7 +15,8 @@
 
         // Get Title & Progress off of a Video
         window.vimeoPlayerLoaded = function () {
-            var iframe = document.querySelector('.vid iframe');
+
+            var iframe = document.getElementById('vimeo-player');
             var player = new Vimeo.Player(iframe);
 
             player.getVideoTitle().then(function (title) {
@@ -29,10 +30,10 @@
         window.vimeoPlayProgressEvent = function (data) {
 
             if (data.seconds > $scope.timeWatched + 10) {
-                $http.post('http://lstractorquizapi.azurewebsites.net//videoResults', {
-                    appUser: $scope.user._links.self.href, //??
-                    video: "http://lstractorquizapi.azurewebsites.net/Videos?", //??
-                    viewAmount: data.seconds
+                $http.put($scope.main.apiUrl + 'Videos', {
+                    UserId: $scope.user.Id,
+                    VideoId: $scope.quiz.Video.Id,
+                    ViewedAmount: parseInt(data.seconds, 10)
                 });
 
                 $scope.timeWatched = data.seconds;
@@ -41,20 +42,18 @@
             if (data.percent >= .8) {
                 $scope.disableQuiz = false;
             }
-            // console.log($scope.timeWatched);
         }
 
         // Quiz and video
-        $http.get("http://lstractorquizapi.azurewebsites.net/api/Quizzes?quizId=" + $routeParams.id)
+        $http.get($scope.main.apiUrl + "Quizzes?quizId=" + $routeParams.id)
             .then(function (response) {
                 $scope.videoUrl = $sce.trustAsResourceUrl(response.data.Video.Url);
                 $scope.quiz = response.data;
-                vimeoPlayerLoaded();
             });
 
         //CREATE A NEW QUIZ
         $scope.createQuiz = function () {
-            $http.post('http//lstractorquizapi.azurewebsites.net/api/Quizzes')
+            $http.post($scope.main.apiUrl + 'Quizzes')
                 .then(function (response) {
                     response.data._embedded.questions.forEach(function (question) {
                         var splitUrl = question._links.self.href.split("/");
@@ -64,7 +63,7 @@
                     });
 
                     $scope.questions.forEach(function (question) {
-                        $http.get('http://lstractorquizapi.azurewebsites.net/Questions/')
+                        $http.get($scope.main.apiUrl + 'Questions/')
                             .then(function (response) {
                                 question.answers = response.data._embedded.answers;
                             })
@@ -72,7 +71,7 @@
 
                                 // TODO - This should filter by quiz_id
                                 var quiz_id = 13; // should be $scope.video.quiz_id
-                                return $http.get('http://lstractorquizapi.azurewebsites.net/Quizzes{id}');
+                                return $http.get($scope.main.apiUrl + 'Quizzes{id}');
                             })
                     });
                 });
@@ -80,7 +79,7 @@
 
         //DELETE A QUIZ BY ID
         $scope.deleteQuiz = function () {
-            $http.delete('http://lstractorquizapi.azurewebsites.net/api/Quizzes?quizId={quizId}')
+            $http.delete($scope.main.apiUrl + 'Quizzes?quizId={quizId}')
                 .then(function (response) {
                     logger.logSuccess("Well done! You successfully deleted{{quiz.name}}.");
                     $location.url("/#/skill-set.id");
@@ -133,7 +132,7 @@
                 // });
                 var data = {
                     appUser: $scope.user._links.self.href,
-                    video: "http://lstractorquizapi.azurewebsites.net/Videos{id}",
+                    video: $scope.main.apiUrl + "Videos{id}",
                     viewAmount: $scope.videoResult.viewAmount,
                     isComplete: true
                 };
@@ -141,7 +140,7 @@
                 $http.put($scope.videoResult._links.self.href, data)
             }
             //SUBMIT QUIZ RESULTS FOR GRADING
-            $http.post('http://lstractorquizapi.azurewebsites.net/api/Quizzes?userId={userId}', {
+            $http.post($scope.main.apiUrl + 'Quizzes?userId={userId}', {
                     quiz: $scope.quiz._links.self.href,
                     appUser: $scope.user._links.self.href,
                     score: score //I imagine this will all change to new endpoints??
