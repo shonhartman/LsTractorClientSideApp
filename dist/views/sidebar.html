@@ -1,35 +1,111 @@
-<div class="nav-wrapper">
-    <ul id="nav"
-        class="nav"
-        data-slim-scroll
-        data-collapse-nav
-        data-highlight-active>
-        <li class="nav-title">
-            <span>NAVIGATION</span>
-        </li>
-        <li><a href="#/dashboard"> <i class="ti-stats-up"></i><span>Progress</span></a></li>
-        <li><a href="#/dealerships"> <i class="ti-list"></i><span ng-if="main.user.Role == 6">Dealerships</span></a></li>
-        <li>
-          <a href="#/profile"><i class="ti-user"></i><span>Profile</span></a>
-          <ul>
-            <li><a href="#/closure"><i class="ti-close"></i><span>Request Closure</span></a></li>
-            <li><a href="#/certificates"><i class="ti-check-box"></i><span>View Certificates</span></a></li>
-            <li><a href="#/transfer"><i class="ti-arrow-left"></i><span>Request Transfer</span></a></li>
-          </ul>
-        </li>
-        <li>
-            <a href="#/pages"><i class="ti-lock"></i><span>Login</span></a>
+<!--  NAVIGATION FOR ADMINS -->
+<div ng-if="main.user.Role == 6">
+  <div class="nav-wrapper">
+      <ul id="nav"
+          class="nav"
+          data-slim-scroll
+          data-collapse-nav
+          data-highlight-active>
+
+          <li class="nav-title">
+              <span>NAVIGATION</span>
+          </li>
+
+          <!-- BEGIN NAVIGATION -->
+          <li><a href="#/dashboard"> <i class="ti-stats-up"></i>
+            <span>Progress</span></a></li>
+          <li><a href="#/dealership-list"><i class="fa fa-building-o" aria-hidden="true"></i>
+            <span>Dealerships</span></a></li>
+          <li>
+          <li><a href="#/skill-sets"><i class="fa fa-certificate" aria-hidden="true"></i>
+            <span>Skill Sets</span></a></li>
+          <li>
+            <a href="#/profile"><i class="ti-settings"></i>
+              <span>Options</span></a>
             <ul>
-                <li><a href="#/pages/signin"><i class="ti-angle-right"></i><span>Sign In</span></a></li>
-                <li><a href="#/pages/signup"><i class="ti-angle-right"></i><span>Sign Up</span></a></li>
-                <li><a href="#/pages/forgot-password"><i class="ti-angle-right"></i><span>Forgot Password</span></a></li>
+              <li><a href="#/closure"><i class="ti-close"></i>
+                <span>Request Closure</span></a></li>
+              <li><a href="#/certificates"><i class="ti-check-box"></i>
+                <span>View Certificates</span></a></li>
+              <li><a href="#/transfer"><i class="ti-arrow-left"></i>
+                <span>Request Transfer</span></a></li>
             </ul>
-        </li>
-        <li>
-          
-        </li>
+          </li>
+          <li>
+              <a href="#/pages"><i class="ti-lock"></i>
+                <span>Login</span></a>
+              <ul>
+                  <li><a href="#/pages/signin"><i class="ti-angle-right"></i>
+                    <span>Sign In</span></a></li>
+                  <li><a href="#/pages/signup"><i class="ti-angle-right"></i>
+                    <span>Sign Up</span></a></li>
+                  <li><a href="#/pages/forgot-password"><i class="ti-angle-right">
+                  </i><span>Forgot Password</span></a></li>
+              </ul>
+          </li>
+  </div>
 </div>
-<div data-collapse-nav class="nav-collapse">
-  <a href="#/" data-toggle-nav-collapsed-min toggle-off-canvas class="menu-button">
-      <span style="margin-right:15px;"><i class="ti-arrow-left"></i></span><span>Collapse Menu</span>
+
+<!--  NAVIGATION FOR DEALERSHIP OWNERS -->
+<div ng-if="main.user.Role == 5">
+  <div class="nav-wrapper">
+      <ul id="nav"
+          class="nav"
+          data-slim-scroll
+          data-collapse-nav
+          data-highlight-active>
+          <li class="nav-title">
+              <span>NAVIGATION</span>
+          </li>
+          <li><a href="#/dashboard"> <i class="ti-stats-up"></i><span>Progress</span></a></li>
+          <li><a href="#/dealerships"> <i class="ti-list"></i><span ng-if="main.user.Role == 6">Dealerships</span></a></li>
+          <li>
+            <a href="#/profile"><i class="ti-settings"></i><span>Options</span></a>
+            <ul>
+              <li><a href="#/closure"><i class="ti-close"></i><span>Request Closure</span></a></li>
+              <li><a href="#/certificates"><i class="ti-check-box"></i><span>View Certificates</span></a></li>
+              <li><a href="#/transfer"><i class="ti-arrow-left"></i><span>Request Transfer</span></a></li>
+            </ul>
+          </li>
+          <li>
+              <a href="#/pages"><i class="ti-lock"></i><span>Login</span></a>
+              <ul>
+                  <li><a href="#/pages/signin"><i class="ti-angle-right"></i><span>Sign In</span></a></li>
+                  <li><a href="#/pages/signup"><i class="ti-angle-right"></i><span>Sign Up</span></a></li>
+                  <li><a href="#/pages/forgot-password"><i class="ti-angle-right"></i><span>Forgot Password</span></a></li>
+              </ul>
+          </li>
+  </div>
+</div>
+
+<!--  NAVIGATION FOR TECHNICIANS -->
+<div ng-if="main.user.Role == 4">
+  <div class="nav-wrapper">
+      <ul id="nav"
+          class="nav"
+          data-slim-scroll
+          data-collapse-nav
+          data-highlight-active>
+          <li class="nav-title">
+              <span>NAVIGATION</span>
+          </li>
+          <li><a href="#/dashboard"> <i class="ti-stats-up"></i><span>Progress</span></a></li>
+          <li><a href="#/dealerships"> <i class="ti-list"></i><span ng-if="main.user.Role == 6">Dealerships</span></a></li>
+          <li>
+            <a href="#/profile"><i class="ti-settings"></i><span>Options</span></a>
+            <ul>
+              <li><a href="#/closure"><i class="ti-close"></i><span>Request Closure</span></a></li>
+              <li><a href="#/certificates"><i class="ti-check-box"></i><span>View Certificates</span></a></li>
+              <li><a href="#/transfer"><i class="ti-arrow-left"></i><span>Request Transfer</span></a></li>
+            </ul>
+          </li>
+          <li>
+              <a href="#/pages"><i class="ti-lock"></i><span>Login</span></a>
+              <ul>
+                  <li><a href="#/pages/signin"><i class="ti-angle-right"></i><span>Sign In</span></a></li>
+                  <li><a href="#/pages/signup"><i class="ti-angle-right"></i><span>Sign Up</span></a></li>
+                  <li><a href="#/pages/forgot-password"><i class="ti-angle-right"></i><span>Forgot Password</span></a></li>
+              </ul>
+          </li>
+  </div>
 </div>

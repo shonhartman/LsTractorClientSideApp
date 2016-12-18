@@ -84,6 +84,7 @@
 
         //
         .menu-button {
+            background-color: #8C989E;
             display: block;
             position: absolute;
             top:  ( $header_height/2 - 17px);
@@ -93,7 +94,7 @@
             border-radius: 4px;
             &:hover {
                 cursor: pointer;
-                background-color: darken($brand-primary, 10%);
+                background-color: $brand-primary;
             }
 
             .icon-bar {

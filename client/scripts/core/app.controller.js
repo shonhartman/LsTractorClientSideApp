@@ -39,7 +39,7 @@
 
         $scope.admin = {
             layout: 'wide',                                 // 'boxed', 'wide'
-            menu: 'vertical',                               // 'horizontal', 'vertical', 'collapsed'
+            menu: 'horizontal',                               // 'horizontal', 'vertical', 'collapsed'
             fixedHeader: true,                              // true, false
             fixedSidebar: true,                             // true, false
             pageTransition: $scope.pageTransitionOpts[0],   // unlimited
