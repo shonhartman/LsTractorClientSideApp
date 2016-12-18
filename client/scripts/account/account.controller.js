@@ -24,7 +24,7 @@
                 return;
             }
 
-            $http.post($scope.main.apiUrl + 'Users', {
+            $http.post($scope.main.apiUrl + 'Users/SignIn', {
                     "Email": $scope.formData.Username,
                     "Password": $scope.formData.Password
                 })
@@ -72,7 +72,7 @@
         //UPDATE USER BY ID
         $scope.updateAccount = function (updatedAccount) {
 
-            return $http.put($scope.main.apiUrl + 'Users?userId=' + updatedAccount.Id, updatedAccount)
+            return $http.put($scope.main.apiUrl + 'Users/UpdateUser/' + updatedAccount.Id, updatedAccount)
                 .then(function (response) {
                     console.log(response.data);
                     updateAccountCookieFromScope();
@@ -88,7 +88,7 @@
             // TODO: get this from formData
             var userId = -1;
 
-            $http.delete($scope.main.apiUrl + 'Users/' + userId)
+            $http.delete($scope.main.apiUrl + 'Users/DeleteUser/' + userId)
                 .then(function (response) {
                     logger.logSuccess("You successfully deleted {{account.name}}");
                     $location.url("/#/dashboard");

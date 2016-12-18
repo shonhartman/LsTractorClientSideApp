@@ -34,7 +34,7 @@
         $scope.skillSet = null;
         $scope.user = angular.fromJson($cookies.get('user'));
 
-        $http.get($scope.main.apiUrl + 'SkillSets/' + skillSetId)
+        $http.get($scope.main.apiUrl + 'SkillSets/GetSkillSet/' + skillSetId)
             .then(function (response) {
                 $scope.skillSet = response.data;
                 setVideoAndQuizProgress();
@@ -67,7 +67,7 @@
 
         //DELETE VIDEO BY ID
         $scope.deleteVideos = function (video) {
-            $http.delete('http://lstractorquizapi.azurewebsites.net/api/Videos?videoId={videoId}')
+            $http.delete($scope.main.apiUrl + 'Videos/DeleteVideo/{videoId}')
                 .then(function (response) {
                     logger.logSuccess("You deleted {{video.Name}}");
                     $location.url("/#/skill-set");
@@ -76,10 +76,10 @@
 
         function setVideoAndQuizProgress() {
 
-            $http.get($scope.main.apiUrl + 'SkillSets/', {
+            $http.get($scope.main.apiUrl + 'SkillSets/GetSkillSetResults', {
                 params: {
-                    "userId": $scope.main.user.Id,
-                    "skillSetId": skillSetId
+                    "skillSetId": skillSetId,
+                    "userId": $scope.main.user.Id
                 }
             }).then(function (response) {
 

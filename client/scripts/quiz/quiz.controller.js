@@ -31,7 +31,7 @@
         window.vimeoPlayProgressEvent = function (data) {
 
             if (data.seconds > $scope.timeWatched + 10) {
-                $http.put($scope.main.apiUrl + 'Videos', {
+                $http.put($scope.main.apiUrl + 'Videos/UpdateVideoResult', {
                     UserId: $scope.main.user.Id,
                     VideoId: $scope.quiz.Video.Id,
                     ViewedAmount: parseInt(data.seconds, 10)
@@ -46,7 +46,7 @@
         }
 
         // Quiz and video
-        $http.get($scope.main.apiUrl + "Quizzes?quizId=" + $routeParams.id)
+        $http.get($scope.main.apiUrl + "Quizzes/GetQuiz/" + $routeParams.id)
             .then(function (response) {
                 $scope.videoUrl = $sce.trustAsResourceUrl(response.data.Video.Url);
                 $scope.quiz = response.data;
@@ -54,7 +54,7 @@
 
         //CREATE A NEW QUIZ
         $scope.createQuiz = function () {
-            $http.post($scope.main.apiUrl + 'Quizzes')
+            $http.post($scope.main.apiUrl + 'Quizzes/CreateNewQuiz')
                 .then(function (response) {
                     response.data._embedded.questions.forEach(function (question) {
                         var splitUrl = question._links.self.href.split("/");
@@ -80,7 +80,7 @@
 
         //DELETE A QUIZ BY ID
         $scope.deleteQuiz = function () {
-            $http.delete($scope.main.apiUrl + 'Quizzes?quizId={quizId}')
+            $http.delete($scope.main.apiUrl + 'Quizzes/DeleteQuiz/{quizId}')
                 .then(function (response) {
                     logger.logSuccess("Well done! You successfully deleted{{quiz.name}}.");
                     $location.url("/#/skill-set.id");
@@ -117,7 +117,7 @@
         $scope.finishQuiz = function () {
 
             //SUBMIT QUIZ RESULTS FOR GRADING
-            $http.put($scope.main.apiUrl + 'Quizzes?userId=' + $scope.main.user.Id, {
+            $http.put($scope.main.apiUrl + 'Quizzes/CheckQuiz/?userId=' + $scope.main.user.Id, {
                     Id: $scope.quiz.Id,
                     Questions: $scope.answers
                 })

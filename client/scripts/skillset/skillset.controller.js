@@ -12,7 +12,7 @@
 
         var user = angular.fromJson($cookies.get('user'));
 
-        $http.get('http://lstractorquizapi.azurewebsites.net/api/SkillSets')
+        $http.get($scope.main.apiUrl + 'SkillSets/GetAllSkillSets')
             .then(function (response) {
 
                 $scope.skillsets = response.data;
@@ -112,7 +112,9 @@
 
         //UPDATE SKILL SET NAME BY ID
         $scope.updateSkillset = function () {
-            $http.put('http://lstractorquizapi.azurewebsites.net/api/SkillSets?skillSetId={skillSetId}&name={name}')
+            $http.put($scope.main.apiUrl + 'SkillSets/UpdateSkillSet/{skillSetId}', {
+                    "Name": "{name}"
+                })
                 .then(function (response) {
                     logger.logSuccess("Your Edit was successful");
                     $location.url("/#/skill-set");
@@ -121,7 +123,7 @@
 
         //DELETE SKILLSET BY ID
         $scope.deleteSkillSet = function () {
-            $http.delete('http://lstractorquizapi.azurewebsites.net/api/SkillSets?skillSetId={skillSetId}')
+            $http.delete($scope.main.apiUrl + 'SkillSets/DeleteSkillSet/{skillSetId}')
                 .then(function (response) {
                     logger.logSuccess("Well done! You successfully deleted{{skillset.name}}.");
                     $location.url("/#/skill-set");

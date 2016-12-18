@@ -16,7 +16,7 @@
             $scope.currentDealership = currentUser.Dealership;
         }
 
-        $http.get('http://lstractorquizapi.azurewebsites.net/api/Dealerships')
+        $http.get($scope.main.apiUrl + 'Dealerships/GetAllDealerships')
             .then(function (response) {
                 $scope.dealerships = response.data;
             });
@@ -27,7 +27,7 @@
 
         //CREATE A NEW DEALERSHIP
         $scope.createDealership = function () {
-            $http.post('http://lstractorquizapi.azurewebsites.net/api/Dealerships', [{
+            $http.post($scope.main.apiUrl + 'Dealerships/CreateNewDealership', [{
                     "Name": "sample string 1",
                     "Number": 2,
                     "Address": "sample string 3",
@@ -46,7 +46,7 @@
 
         //UPDATE A DEALERSHIP BY ID
         $scope.updateDealership = function (updatedDealership) {
-            return $http.put('http://lstractorquizapi.azurewebsites.net/api/Dealerships?dealershipId=' + updatedDealership.Id, updatedDealership)
+            return $http.put($scope.main.apiUrl + 'Dealerships/UpdateDealership/' + updatedDealership.Id, updatedDealership)
                 .then(function (response) {
                     console.log(response.data);
                     updateDealershipCookieFromScope();
@@ -58,7 +58,7 @@
 
         //DELETE DEALERSHIP BY ID
         $scope.deleteDealership = function (currentDealership) {
-            $http.delete('http://lstractorquizapi.azurewebsites.net/api/Dealerships?dealershipId=' + currentDealership.Id)
+            $http.delete($scope.main.apiUrl + 'Dealerships/DeleteDealership/' + currentDealership.Id)
                 .then(function (response) {
                     logger.logSuccess("You successfully deleted {{dealership.name}}.");
                     $location.url("/#/dashboard");

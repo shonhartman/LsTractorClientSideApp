@@ -62,7 +62,7 @@
            $scope.upload = function (video) {
 
                // TODO: what is this for??
-               $http.get('http://lstractorquizapi.azurewebsites.net/listOfVideos') //Whats the new call here??
+               $http.get($scope.main.apiUrl + '/Videos/listOfVideos') //Whats the new call here??
                    .then(function (response) {
                        $scope.videos = [];
                        response.data._embedded.videos.forEach(function (video) {
@@ -73,7 +73,7 @@
                        console.log($scope.videoResults);
                    });
 
-               $http.post('http://lstractorquizapi.azurewebsites.net/api/Videos', {
+               $http.post($scope.main.apiUrl + 'Videos/CreateNewVideo', {
                        "SkillSetId": 1, // TODO
                        "Title": $scope.videoTitle,
                        "Author": $scope.videoAuthor,
@@ -106,7 +106,7 @@
                // TODO: set video id
                var videoId = -1;
 
-               $http.put('http://lstractorquizapi.azurewebsites.net/api/Videos?videoId=' + videoId, {
+               $http.put($scope.main.apiUrl + 'Videos/UpdateVideo/' + videoId, {
                        "SkillSetId": 1, // TODO
                        "Title": $scope.videoTitle,
                        "Author": $scope.videoAuthor,
@@ -136,7 +136,7 @@
            //CREATE NEW SKILL SET
            $scope.uploadSkillSet = function () {
 
-               $http.post('http://lstractorquizapi.azurewebsites.net/api/SkillSets', {
+               $http.post($scope.main.apiUrl + 'SkillSets/CreateNewSkillSet', {
                         "Name": $scope.skillSet // TODO: verify this is correct
                    })
                    .then(function (response) {
