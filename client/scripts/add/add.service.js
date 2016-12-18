@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('app.task')
+    angular.module('app.add')
         .factory('taskStorage', taskStorage);
 
 
