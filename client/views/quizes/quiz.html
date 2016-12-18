@@ -31,7 +31,10 @@
                             <div class="panel-body">
                                 <button ng-click="setAnswer(question.Id, answer.Id)" class="btn-icon-lined btn-icon-round" ng-class="{'active':answers[activeQuestion].Answer.Id == answer.Id}"
                                     style="float: left;"><h3 style="margin-top: 1.5px;">{{ letterForIndex($index) }}</h3></button>
-                                <p style="margin: 20px 0 0 60px;">{{ answer.AnswerText }}</p>
+                                <p style="margin: 20px 0 0 60px;">
+                                    {{ answer.AnswerText }}
+                                    <img ng-src="{{answer.AnswerImage}}" alt="">
+                                </p>
                             </div>
                         </section>
                         <button ng-if="!lastQuestion()" type="button" class="btn btn-w-md btn-gap-v btn-primary" ng-click="nextQuestion()">Next Question<span class="ti-arrow-right" style="float: right; margin: 5px 10px;"></span></button>
