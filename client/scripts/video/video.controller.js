@@ -31,13 +31,13 @@
 
     function VideoCtrl($cookies, $scope, $routeParams, $location, $http, $modal) {
         var skillSetId = $routeParams.id;
-        $scope.videos = [];
         $scope.skillSet = null;
         $scope.user = angular.fromJson($cookies.get('user'));
 
-        $http.get('http://lstractorquizapi.azurewebsites.net/api/SkillSets/' + skillSetId)
+        $http.get($scope.main.apiUrl + 'SkillSets/' + skillSetId)
             .then(function (response) {
                 $scope.skillSet = response.data;
+                setVideoAndQuizProgress();
             });
 
         $scope.open = function (id) {
@@ -72,6 +72,49 @@
                     logger.logSuccess("You deleted {{video.Name}}");
                     $location.url("/#/skill-set");
                 });
+        }
+
+        function setVideoAndQuizProgress() {
+
+            $http.get($scope.main.apiUrl + 'SkillSets/', {
+                params: {
+                    "userId": $scope.main.user.Id,
+                    "skillSetId": skillSetId
+                }
+            }).then(function (response) {
+
+                var videoResults = response.data.VideoResults;
+                var quizResults = response.data.QuizResults;
+
+                angular.forEach(videoResults, function (result) {
+
+                    var videoId = result.VideoId;
+
+                    // find a quiz within this skillset that has this video, and set the progress
+                    var quizWithVideo = $scope.skillSet.Quizzes.find(function (quiz) {
+                        return quiz.Video.Id == videoId;
+                    });
+
+                    if (quizWithVideo) {
+                        var videoLength = quizWithVideo.Video.Length;
+                        quizWithVideo.Video["Progress"] = parseInt((result.ViewedAmount / quizWithVideo.Video.Length) * 100, 10);
+                    }
+                });
+
+                angular.forEach(quizResults, function (result) {
+
+                    var quizId = result.QuizId;
+
+                    // find the quiz within this skillset, and mark it as complete
+                    var quiz = $scope.skillSet.Quizzes.find(function (quiz) {
+                        return quiz.Id == quizId;
+                    });
+
+                    if (quiz) {
+                        quiz.IsComplete = true;
+                    }
+                });
+            });
         }
     }
 })();
