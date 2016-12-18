@@ -20,20 +20,20 @@
             completed: false
         };
 
-        $scope.filter = function(filter) {
-            switch (filter) {
-                case 'all':
-                    return $scope.statusFilter = '';
-                case 'active':
-                    return $scope.statusFilter = {
-                        completed: false
-                    };
-                case 'completed':
-                    return $scope.statusFilter = {
-                        completed: true
-                    };
-            }
-        };
+        // $scope.filter = function(filter) {
+        //     switch (filter) {
+        //         case 'all':
+        //             return $scope.statusFilter = '';
+        //         case 'active':
+        //             return $scope.statusFilter = {
+        //                 completed: false
+        //             };
+        //         case 'completed':
+        //             return $scope.statusFilter = {
+        //                 completed: true
+        //             };
+        //     }
+        // };
 
         $scope.add = function() {
             var newTask;

@@ -1,11 +1,11 @@
-<div class="page page-tasks">
+<div class="page page-tasks"> <!-- Task List -->
     <div class="row">
         <div class="col-md-12">
             <section class="task-container" data-ng-controller="addCtrl">
 
                 <form data-ng-submit="add()" class="add-task">
                     <input type="text"
-                           placeholder="What needs to be done?"
+                           placeholder="Question"
                            class="form-control"
                            data-ng-model="newTask"
                            autofocus>
@@ -14,19 +14,13 @@
                     </a>
                 </form>
 
-                <section>
+                <!--<section>
                     <ul class="filters list-inline nav nav-tabs">
                         <li data-ng-class="{active: statusFilter == ''}">
                             <a href="" 
                                data-toggle="tab"
                                data-ng-click="filter('all')"
                                >All</a>
-                        </li>
-                        <li data-ng-class="{active: statusFilter.completed == false }">
-                            <a href=""
-                               data-toggle="tab"
-                               data-ng-click="filter('active')"
-                               >Active</a>
                         </li>
                         <li data-ng-class="{active: statusFilter.completed == true }">
                             <a href=""
@@ -35,7 +29,7 @@
                                >Completed</a>
                         </li>
                     </ul>
-                </section>
+                </section>-->
 
                 <section  data-ng-cloak>
                     <ul class="task-list list-unstyled">
@@ -102,6 +96,7 @@
     </div>
 </div>
 
+<!-- Tree -->
 <div class="page" data-ng-controller="TreeDemoCtrl">
 
 
@@ -155,3 +150,27 @@
     </script>
 
 </div>
+
+
+<!-- Ryan's Form -->
+<form>
+	<div class="form-group">
+		<label class="col-sm-2" for="">Video Name</label>
+		<div class="col-sm-10">
+			<input class="form-control" type="text">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2" for="">Video Link</label>
+		<div class="col-sm-10">
+			<input class="form-control" type="text">
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-sm-10">Does this video have a quiz?</div>
+		<div class="col-sm-2">
+			<label class="ui-switch"><input checked="" type="checkbox">
+			<i></i> 		
+			</label>
+		</div>
+	</div>
