@@ -60,12 +60,12 @@ a:focus {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_scaffolding\.scss}line{font-family:\0000363}}
 a.bg-primary {
-  background-color: #FFFFFF;
+  background-color: #011E45;
   color: #fff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_scaffolding\.scss}line{font-family:\0000316}}
 a.bg-primary:hover {
-  background-color: #FFFFFF;
+  background-color: #011E45;
   color: #fff;
 }
 
@@ -210,7 +210,7 @@ a.bg-orange:hover {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_scaffolding\.scss}line{font-family:\0000377}}
 .bg-primary {
-  background-color: #FFFFFF;
+  background-color: #011E45;
   color: #fff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_scaffolding\.scss}line{font-family:\000035}}
@@ -426,11 +426,11 @@ a.bg-orange:hover {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_type\.scss}line{font-family:\000035}}
 .blockquote-colored {
-  border-left: 5px solid #FFFFFF;
+  border-left: 5px solid #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_type\.scss}line{font-family:\000037}}
 .blockquote-colored.pull-right {
-  border-right: 5px solid #FFFFFF;
+  border-right: 5px solid #011E45;
   border-left: 0;
 }
 
@@ -438,7 +438,7 @@ a.bg-orange:hover {
 .gradient-text {
   font-size: 150px;
   font-weight: 300;
-  color: #FFFFFF;
+  color: #011E45;
   background: -webkit-linear-gradient(92deg, #fb83fa, #00aced);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -496,7 +496,7 @@ a.bg-orange:hover {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_type\.scss}line{font-family:\0000335}}
 .color-primary {
-  color: #FFFFFF;
+  color: #011E45;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_type\.scss}line{font-family:\0000336}}
@@ -599,13 +599,13 @@ a.bg-orange:hover {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_type\.scss}line{font-family:\0000384}}
 .dropcap.colored {
-  color: #FFFFFF;
+  color: #011E45;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_type\.scss}line{font-family:\0000388}}
 .dropcap-square.colored,
 .dropcap-circle.colored {
-  background-color: #FFFFFF;
+  background-color: #011E45;
   color: #fff;
 }
 
@@ -618,7 +618,7 @@ a.bg-orange:hover {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_type\.scss}line{font-family:\00003101}}
 .highlight.colored {
-  background-color: #FFFFFF;
+  background-color: #011E45;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_type\.scss}line{font-family:\00003107}}
@@ -682,7 +682,7 @@ a.bg-orange:hover {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_type\.scss}line{font-family:\00003148}}
 .hr-colored {
-  border-color: #FFFFFF;
+  border-color: #011E45;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_tables\.scss}line{font-family:\000033}}
@@ -718,13 +718,13 @@ a.bg-orange:hover {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_tables\.scss}line{font-family:\0000330}}
 .table-dynamic .table-bordered thead th .glyphicon-chevron-up:hover,
 .table-dynamic .table-bordered thead th .glyphicon-chevron-down:hover {
-  color: #FFFFFF;
+  color: #011E45;
   cursor: pointer;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_tables\.scss}line{font-family:\0000334}}
 .table-dynamic .table-bordered thead th .glyphicon-chevron-up.active,
 .table-dynamic .table-bordered thead th .glyphicon-chevron-down.active {
-  color: #FFFFFF;
+  color: #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_tables\.scss}line{font-family:\0000339}}
 .table-dynamic .table-bordered thead th .fa-angle-up,
@@ -737,13 +737,13 @@ a.bg-orange:hover {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_tables\.scss}line{font-family:\0000346}}
 .table-dynamic .table-bordered thead th .fa-angle-up:hover,
 .table-dynamic .table-bordered thead th .fa-angle-down:hover {
-  color: #FFFFFF;
+  color: #011E45;
   cursor: pointer;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_tables\.scss}line{font-family:\0000350}}
 .table-dynamic .table-bordered thead th .fa-angle-up.active,
 .table-dynamic .table-bordered thead th .fa-angle-down.active {
-  color: #FFFFFF;
+  color: #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_tables\.scss}line{font-family:\0000356}}
 .table-dynamic .table-bordered thead th .glyphicon-chevron-up,
@@ -895,7 +895,7 @@ a.bg-orange:hover {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_form-checkbox-radio\.scss}line{font-family:\0000312}}
 .ui-radio input[type="radio"] + span:hover:before {
-  border-color: #FFFFFF;
+  border-color: #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_form-checkbox-radio\.scss}line{font-family:\0000316}}
 .ui-radio input[type="radio"]:disabled + span:hover {
@@ -939,7 +939,7 @@ a.bg-orange:hover {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_form-checkbox-radio\.scss}line{font-family:\0000356}}
 .ui-radio input[type="radio"]:checked + span:before {
-  border-color: #FFFFFF;
+  border-color: #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_form-checkbox-radio\.scss}line{font-family:\0000359}}
 .ui-radio input[type="radio"]:checked + span:after {
@@ -949,7 +949,7 @@ a.bg-orange:hover {
   position: absolute;
   top: 6px;
   left: -14px;
-  background-color: #FFFFFF;
+  background-color: #011E45;
   border-radius: 50%;
   display: block;
 }
@@ -976,7 +976,7 @@ a.bg-orange:hover {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_form-checkbox-radio\.scss}line{font-family:\0000388}}
 .ui-checkbox input[type="checkbox"] + span:hover:before {
-  border-color: #FFFFFF;
+  border-color: #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_form-checkbox-radio\.scss}line{font-family:\0000392}}
 .ui-checkbox input[type="checkbox"]:disabled + span:hover {
@@ -1018,7 +1018,7 @@ a.bg-orange:hover {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_form-checkbox-radio\.scss}line{font-family:\00003128}}
 .ui-checkbox input[type="checkbox"]:checked + span:before {
-  border: 1px solid #FFFFFF;
+  border: 1px solid #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_form-checkbox-radio\.scss}line{font-family:\00003131}}
 .ui-checkbox input[type="checkbox"]:checked + span:after {
@@ -1028,7 +1028,7 @@ a.bg-orange:hover {
   position: absolute;
   top: 7px;
   left: -15px;
-  background-color: #FFFFFF;
+  background-color: #011E45;
   display: block;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_form-checkbox-radio\.scss}line{font-family:\00003142}}
@@ -1288,7 +1288,7 @@ body > input.ta-hidden-input {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_form-elements\.scss}line{font-family:\0000338}}
 .ui-rating .glyphicon-star {
-  color: #FFFFFF;
+  color: #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_form-elements\.scss}line{font-family:\0000342}}
 .ui-rating.ui-rating-success .glyphicon-star {
@@ -1315,7 +1315,7 @@ body > input.ta-hidden-input {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_form-input\.scss}line{font-family:\000038}}
 .form-control:focus {
-  border-color: #FFFFFF;
+  border-color: #011E45;
   box-shadow: none;
 }
 
@@ -1337,11 +1337,11 @@ body > input.ta-hidden-input {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_form-input\.scss}line{font-family:\0000329}}
 input.input-primary {
-  border-color: #FFFFFF;
+  border-color: #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_form-input\.scss}line{font-family:\0000331}}
 input.input-primary:focus {
-  border-color: #FFFFFF;
+  border-color: #011E45;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_form-input\.scss}line{font-family:\0000335}}
@@ -1518,7 +1518,7 @@ input.input-danger:focus {
 .ui-switch :checked + i {
   padding-right: 0;
   padding-left: 20px;
-  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5), inset 0 0 40px #FFFFFF;
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5), inset 0 0 40px #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_form-switch\.scss}line{font-family:\0000310}}
 .ui-switch.ui-switch-success :checked + i {
@@ -1551,7 +1551,7 @@ input.input-danger:focus {
 .ui-switch.ui-switch-sm :checked + i {
   padding-right: 0;
   padding-left: 16px;
-  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5), inset 0 0 32px #FFFFFF;
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5), inset 0 0 32px #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_form-switch\.scss}line{font-family:\0000310}}
 .ui-switch.ui-switch-sm.ui-switch-success :checked + i {
@@ -1584,7 +1584,7 @@ input.input-danger:focus {
 .ui-switch.ui-switch-lg :checked + i {
   padding-right: 0;
   padding-left: 25px;
-  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5), inset 0 0 50px #FFFFFF;
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5), inset 0 0 50px #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_form-switch\.scss}line{font-family:\0000310}}
 .ui-switch.ui-switch-lg.ui-switch-success :checked + i {
@@ -1687,17 +1687,17 @@ input.input-danger:focus {
 .btn-line-primary {
   color: #626262;
   background-color: transparent;
-  border-color: #f2f2f2;
+  border-color: #01132c;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\000038}}
 .btn-line-primary:hover, .btn-line-primary:focus, .btn-line-primary:active, .btn-line-primary.active {
   color: #fff;
-  background-color: #FFFFFF;
+  background-color: #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\0000316}}
 .open .btn-line-primary.dropdown-toggle {
   color: #fff;
-  background-color: #FFFFFF;
+  background-color: #011E45;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\0000366}}
@@ -1813,11 +1813,11 @@ input.input-danger:focus {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003107}}
 .btn-left.btn-primary:before {
-  border-right: 10px solid #FFFFFF;
+  border-right: 10px solid #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003111}}
 .btn-left.btn-primary:hover:before {
-  border-right: 10px solid #e6e6e6;
+  border-right: 10px solid #000813;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003117}}
 .btn-left.btn-success:before {
@@ -1873,11 +1873,11 @@ input.input-danger:focus {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003176}}
 .btn-right.btn-primary:before {
-  border-left: 10px solid #FFFFFF;
+  border-left: 10px solid #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003180}}
 .btn-right.btn-primary:hover:before {
-  border-left: 10px solid #e6e6e6;
+  border-left: 10px solid #000813;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003186}}
 .btn-right.btn-success:before {
@@ -1929,11 +1929,11 @@ input.input-danger:focus {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003247}}
 .btn-up.btn-primary:before {
-  border-bottom: 8px solid #FFFFFF;
+  border-bottom: 8px solid #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003251}}
 .btn-up.btn-primary:hover:before {
-  border-bottom: 8px solid #e6e6e6;
+  border-bottom: 8px solid #000813;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003257}}
 .btn-up.btn-success:before {
@@ -1985,11 +1985,11 @@ input.input-danger:focus {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003316}}
 .btn-down.btn-primary:before {
-  border-top: 8px solid #FFFFFF;
+  border-top: 8px solid #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003320}}
 .btn-down.btn-primary:hover:before {
-  border-top: 8px solid #e6e6e6;
+  border-top: 8px solid #000813;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003326}}
 .btn-down.btn-success:before {
@@ -2140,14 +2140,14 @@ input.input-danger:focus {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003403}}
 .btn-icon-lined:hover {
   background-color: #eeeeee;
-  color: #FFFFFF;
-  border-color: #FFFFFF;
+  color: #011E45;
+  border-color: #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003408}}
 .btn-icon-lined:focus, .btn-icon-lined.active {
-  background-color: #FFFFFF;
+  background-color: #011E45;
   color: #fff;
-  border-color: #FFFFFF;
+  border-color: #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003415}}
 .btn-icon-lined.btn-default-light {
@@ -2171,8 +2171,8 @@ input.input-danger:focus {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003433}}
 .btn-icon-lined.btn-primary {
-  color: #FFFFFF;
-  border-color: #FFFFFF;
+  color: #011E45;
+  border-color: #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_buttons\.scss}line{font-family:\00003437}}
 .btn-icon-lined.btn-success {
@@ -3163,7 +3163,7 @@ input.input-danger:focus {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_badges\.scss}line{font-family:\000035}}
 .badge-primary {
-  background-color: #FFFFFF;
+  background-color: #011E45;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_badges\.scss}line{font-family:\000039}}
@@ -3242,16 +3242,16 @@ input.input-danger:focus {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_breadcrumbs\.scss}line{font-family:\0000348}}
 .breadcrumb-alt > li > a:hover, .breadcrumb-alt > li > a.active {
   text-decoration: none;
-  background-color: #FFFFFF;
+  background-color: #011E45;
   color: #fff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_breadcrumbs\.scss}line{font-family:\0000353}}
 .breadcrumb-alt > li > a:hover:before, .breadcrumb-alt > li > a.active:before {
-  border-color: #FFFFFF #FFFFFF #FFFFFF transparent;
+  border-color: #011E45 #011E45 #011E45 transparent;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_breadcrumbs\.scss}line{font-family:\0000356}}
 .breadcrumb-alt > li > a:hover:after, .breadcrumb-alt > li > a.active:after {
-  border-left: 1em solid #FFFFFF;
+  border-left: 1em solid #011E45;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_boxes\.scss}line{font-family:\000035}}
@@ -3264,7 +3264,7 @@ input.input-danger:focus {
   text-align: center;
   font-size: 50px;
   line-height: 110px;
-  color: #FFFFFF;
+  color: #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_boxes\.scss}line{font-family:\0000317}}
 .icon-box h4 {
@@ -3618,11 +3618,11 @@ input.input-danger:focus {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_dropdowns\.scss}line{font-family:\0000375}}
 .dropdown-menu.with-arrow.panel-primary:before {
-  border-bottom: 8px solid #FFFFFF;
+  border-bottom: 8px solid #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_dropdowns\.scss}line{font-family:\0000378}}
 .dropdown-menu.with-arrow.panel-primary:after {
-  border-bottom: 7px solid #FFFFFF;
+  border-bottom: 7px solid #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_dropdowns\.scss}line{font-family:\0000383}}
 .dropdown-menu.with-arrow.panel-success:before {
@@ -3701,7 +3701,7 @@ img.img80_80 {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_list-group\.scss}line{font-family:\0000316}}
 .list-info li .icon {
   margin-right: 10px;
-  color: #FFFFFF;
+  color: #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_list-group\.scss}line{font-family:\0000321}}
 .list-info li label {
@@ -3761,7 +3761,7 @@ img.img80_80 {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_mail\.scss}line{font-family:\0000361}}
 .mail-categories .list-group .list-group-item.active > a {
-  color: #FFFFFF;
+  color: #011E45;
   background-color: #fff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_mail\.scss}line{font-family:\0000367}}
@@ -3772,7 +3772,7 @@ img.img80_80 {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_mail\.scss}line{font-family:\0000371}}
 .mail-categories .list-group .list-group-item > a:hover {
-  color: #FFFFFF;
+  color: #011E45;
   background-color: #fafafa;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_mail\.scss}line{font-family:\0000376}}
@@ -4281,13 +4281,13 @@ img.img80_80 {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_pricing-tables\.scss}line{font-family:\0000384}}
 .pricing-table.pricing-table-primary header {
-  background-color: #FFFFFF;
-  border-bottom: 10px solid #f2f2f2;
+  background-color: #011E45;
+  border-bottom: 10px solid #01132c;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_pricing-tables\.scss}line{font-family:\0000388}}
 .pricing-table.pricing-table-primary:after {
-  border-top: 6px solid #FFFFFF;
-  border-left: 6px solid #FFFFFF;
+  border-top: 6px solid #011E45;
+  border-left: 6px solid #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_pricing-tables\.scss}line{font-family:\0000394}}
 .pricing-table.pricing-table-info header {
@@ -4385,11 +4385,11 @@ img.img80_80 {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_ribbons\.scss}line{font-family:\0000348}}
 .ui-ribbon-container.ui-ribbon-primary .ui-ribbon {
-  background-color: #FFFFFF;
+  background-color: #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_ribbons\.scss}line{font-family:\0000350}}
 .ui-ribbon-container.ui-ribbon-primary .ui-ribbon:before, .ui-ribbon-container.ui-ribbon-primary .ui-ribbon:after {
-  border-top: 2px solid #FFFFFF;
+  border-top: 2px solid #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_ribbons\.scss}line{font-family:\0000357}}
 .ui-ribbon-container.ui-ribbon-success .ui-ribbon {
@@ -4808,7 +4808,7 @@ img.img80_80 {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_tab\.scss}line{font-family:\0000365}}
 .ui-tab-container .nav-tabs > li.active > a {
-  color: #FFFFFF;
+  color: #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/ui\/components\/_tab\.scss}line{font-family:\0000373}}
 .ui-tab-container .nav-tabs > li:hover > a, .ui-tab-container .nav-tabs > li:active > a, .ui-tab-container .nav-tabs > li:focus > a {

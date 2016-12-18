@@ -122,7 +122,7 @@
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/plugins\/_bootstrap-slider\.scss}line{font-family:\00003101}}
 .slider-selection {
   position: absolute;
-  background-color: #FFFFFF;
+  background-color: #011E45;
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -632,7 +632,7 @@ button.toast-close-button {
 .wizard > .steps .current a,
 .wizard > .steps .current a:hover,
 .wizard > .steps .current a:active {
-  background: #FFFFFF;
+  background: #011E45;
   color: #fff;
   cursor: default;
 }
@@ -641,7 +641,7 @@ button.toast-close-button {
 .wizard > .steps .done a,
 .wizard > .steps .done a:hover,
 .wizard > .steps .done a:active {
-  background: #FFFFFF;
+  background: #011E45;
   color: #fff;
   opacity: .6;
 }
@@ -761,7 +761,7 @@ button.toast-close-button {
 .wizard > .actions a,
 .wizard > .actions a:hover,
 .wizard > .actions a:active {
-  background: #FFFFFF;
+  background: #011E45;
   color: #fff;
   display: block;
   padding: 0.5em 1em;
@@ -1102,7 +1102,7 @@ button.toast-close-button {
   margin: 2px;
   padding: 6px 8px;
   border-radius: 4px;
-  background-color: #FFFFFF;
+  background-color: #011E45;
   color: #fff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/plugins\/_ng-tags-input\.scss}line{font-family:\0000346}}
@@ -1220,7 +1220,7 @@ button.toast-close-button {
   -moz-transition: width 350ms;
   -o-transition: width 350ms;
   transition: width 350ms;
-  background-color: #FFFFFF;
+  background-color: #011E45;
   position: fixed;
   z-index: 10002;
   top: 0;
@@ -1240,7 +1240,7 @@ button.toast-close-button {
   top: 0;
   height: 2px;
   opacity: .45;
-  box-shadow: #FFFFFF 1px 0 6px 1px;
+  box-shadow: #011E45 1px 0 6px 1px;
   -moz-border-radius: 100%;
   -webkit-border-radius: 100%;
   border-radius: 100%;
@@ -1260,8 +1260,8 @@ button.toast-close-button {
   width: 14px;
   height: 14px;
   border: solid 2px transparent;
-  border-top-color: #FFFFFF;
-  border-left-color: #FFFFFF;
+  border-top-color: #011E45;
+  border-left-color: #011E45;
   border-radius: 10px;
   -webkit-animation: loading-bar-spinner 400ms linear infinite;
   -moz-animation: loading-bar-spinner 400ms linear infinite;
@@ -2437,7 +2437,7 @@ be a descendant of the grid when it is being dragged.
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/pages\/_dashboard\.scss}line{font-family:\0000340}}
 .page-dashboard .panel-box .panel-info span:hover {
-  color: #FFFFFF;
+  color: #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/pages\/_dashboard\.scss}line{font-family:\0000347}}
 .page-dashboard .table > tbody > tr > td {
@@ -2510,8 +2510,8 @@ be a descendant of the grid when it is being dragged.
 .page-err .err-container {
   width: 100%;
   height: 75%;
-  background-color: #FFFFFF;
-  border-bottom: 1px solid #f2f2f2;
+  background-color: #011E45;
+  border-bottom: 1px solid #01132c;
   padding: 45px 0 0;
 }
 @media (min-width: 768px) {
@@ -2535,7 +2535,7 @@ be a descendant of the grid when it is being dragged.
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/pages\/_error\.scss}line{font-family:\0000342}}
 .page-err .err-message {
-  background-color: #FFFFFF;
+  background-color: #011E45;
   padding: 24px;
   text-transform: uppercase;
 }
@@ -2565,12 +2565,12 @@ be a descendant of the grid when it is being dragged.
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/pages\/_error\.scss}line{font-family:\0000367}}
 .page-err .btn-goback:hover, .page-err .btn-goback:focus, .page-err .btn-goback:active, .page-err .btn-goback.active {
-  color: #FFFFFF;
+  color: #011E45;
   background-color: #fff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/pages\/_error\.scss}line{font-family:\0000375}}
 .open .page-err .btn-goback.dropdown-toggle {
-  color: #FFFFFF;
+  color: #011E45;
   background-color: #fff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/pages\/_error\.scss}line{font-family:\0000382}}
@@ -2630,7 +2630,7 @@ be a descendant of the grid when it is being dragged.
   padding: 0 20px;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
-  color: #FFFFFF;
+  color: #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/pages\/_lock-screen\.scss}line{font-family:\0000368}}
 .page-lock .lock-box .lock-img img {
@@ -2662,7 +2662,7 @@ be a descendant of the grid when it is being dragged.
   margin-top: 50px;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
-  color: #FFFFFF;
+  color: #011E45;
 }
 @media screen and (min-width: 768px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/pages\/_lock-screen\.scss}line{font-family:\0000385}}
@@ -3507,6 +3507,16 @@ html {
   right: 8px;
   top: 12px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/layout\/_nav\.scss}line{font-family:\00003130}}
+.nav-container .nav-collapse {
+  width: 100%;
+  height: auto;
+  padding: 25px 30px;
+  position: absolute;
+  bottom: 0px;
+  font-size: 14px;
+  background-color: #388cfc;
+}
 
 @media (max-width: 767px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-off-canvas\.scss}line{font-family:\000035}}
@@ -3631,11 +3641,11 @@ html {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-horizontal\.scss}line{font-family:\0000397}}
   .nav-horizontal .nav > li.active > a {
     background-color: transparent;
-    color: #FFFFFF;
+    color: #011E45;
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-horizontal\.scss}line{font-family:\00003101}}
   .nav-horizontal .nav > li.active > .icon-has-ul-h {
-    color: #FFFFFF;
+    color: #011E45;
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-horizontal\.scss}line{font-family:\00003104}}
   .nav-horizontal .nav > li > a {
@@ -3693,7 +3703,7 @@ html {
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-horizontal\.scss}line{font-family:\00003161}}
   .nav-horizontal .nav > li > ul li:hover > a, .nav-horizontal .nav > li > ul li.active > a {
-    color: #FFFFFF;
+    color: #011E45;
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-horizontal\.scss}line{font-family:\00003171}}
   .nav-horizontal .nav > li > ul li > a {
@@ -3814,20 +3824,20 @@ html {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-color\.scss}line{font-family:\0000333}}
 .nav-container.bg-white .nav > li:hover > a {
   background-color: transparent;
-  color: #FFFFFF;
+  color: #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-color\.scss}line{font-family:\0000337}}
 .nav-container.bg-white .nav > li:hover > .icon-has-ul,
 .nav-container.bg-white .nav > li:hover > .icon-has-ul-h {
-  color: #FFFFFF;
+  color: #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-color\.scss}line{font-family:\0000341}}
 .nav-container.bg-white .nav > li.active > a {
-  color: #FFFFFF;
+  color: #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-color\.scss}line{font-family:\0000345}}
 .nav-container.bg-white .nav > li.active > .icon-has-ul {
-  color: #FFFFFF;
+  color: #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-color\.scss}line{font-family:\0000349}}
 .nav-container.bg-white .nav > li > a:focus {
@@ -3839,17 +3849,17 @@ html {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-color\.scss}line{font-family:\0000361}}
 .nav-container.bg-white .nav ul > li:hover > a, .nav-container.bg-white .nav ul > li.active > a {
-  color: #FFFFFF;
+  color: #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-color\.scss}line{font-family:\0000380}}
 .nav-container.bg-white.nav-vertical .nav > li.open > a {
   background-color: #f6f6f6;
-  color: #FFFFFF;
+  color: #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-color\.scss}line{font-family:\0000384}}
 .nav-container.bg-white.nav-vertical .nav > li.open > .icon-has-ul,
 .nav-container.bg-white.nav-vertical .nav > li.open > .icon-has-ul-h {
-  color: #FFFFFF;
+  color: #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-color\.scss}line{font-family:\0000392}}
 .nav-container.bg-dark {
@@ -3916,11 +3926,11 @@ html {
 @media (max-width: 991px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-color\.scss}line{font-family:\00003180}}
   .nav-horizontal .nav > li.open > a {
-    color: #FFFFFF;
+    color: #011E45;
   }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/layout\/_nav-color\.scss}line{font-family:\00003184}}
   .nav-horizontal .nav > li.open > i {
-    color: #FFFFFF;
+    color: #011E45;
   }
 }
 @media (min-width: 768px) {
@@ -4012,7 +4022,7 @@ html {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/layout\/_header\.scss}line{font-family:\0000394}}
 .header-container > .top-header .menu-button:hover {
   cursor: pointer;
-  background-color: #e6e6e6;
+  background-color: #000813;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/layout\/_header\.scss}line{font-family:\0000399}}
 .header-container > .top-header .menu-button .icon-bar {
@@ -4167,7 +4177,7 @@ html {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/layout\/_header\.scss}line{font-family:\00003224}}
 .header-container > .top-header .top-nav .nav-left > li ul.dropdown-menu a:hover,
 .header-container > .top-header .top-nav .nav-right > li ul.dropdown-menu a:hover {
-  background-color: #FFFFFF;
+  background-color: #011E45;
   color: #fff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/layout\/_header\.scss}line{font-family:\00003229}}

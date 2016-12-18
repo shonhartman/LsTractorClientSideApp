@@ -12,7 +12,7 @@
     }
 }
 
-// 
+//
 .nav-container {
     .nav {
         margin: 0;
@@ -76,7 +76,7 @@
             }
 
             > .icon-has-ul-h { // icon for horizontal nav
-                display: none; 
+                display: none;
             }
 
             > .icon-has-ul { // icon for default vertical nav
@@ -127,7 +127,13 @@
             }
         }
     }
+    .nav-collapse {
+      width: 100%;
+      height: auto;
+      padding: 25px 30px;
+      position: absolute;
+      bottom: 0px;
+      font-size: $font-size-h5;
+      background-color: $skin-lighter;
+    }
 }
-
-
-

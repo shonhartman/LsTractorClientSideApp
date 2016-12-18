@@ -1441,12 +1441,12 @@ textarea {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_scaffolding\.scss}line{font-family:\0000348}}
 a {
-  color: #FFFFFF;
+  color: #011E45;
   text-decoration: none;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_scaffolding\.scss}line{font-family:\0000352}}
 a:hover, a:focus {
-  color: #d9d9d9;
+  color: black;
   text-decoration: underline;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_scaffolding\.scss}line{font-family:\0000358}}
@@ -1705,12 +1705,12 @@ mark,
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_text-emphasis\.scss}line{font-family:\000035}}
 .text-primary {
-  color: #FFFFFF;
+  color: #011E45;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_text-emphasis\.scss}line{font-family:\000038}}
 a.text-primary:hover {
-  color: #e6e6e6;
+  color: #000813;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_text-emphasis\.scss}line{font-family:\000035}}
@@ -1760,12 +1760,12 @@ a.text-danger:hover {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_background-variant\.scss}line{font-family:\000035}}
 .bg-primary {
-  background-color: #FFFFFF;
+  background-color: #011E45;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_background-variant\.scss}line{font-family:\000038}}
 a.bg-primary:hover {
-  background-color: #e6e6e6;
+  background-color: #000813;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_background-variant\.scss}line{font-family:\000035}}
@@ -4432,14 +4432,14 @@ select[multiple].input-lg,
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_buttons\.scss}line{font-family:\0000363}}
 .btn-primary {
   color: #fff;
-  background-color: #FFFFFF;
-  border-color: #f2f2f2;
+  background-color: #011E45;
+  border-color: #01132c;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000311}}
 .btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: #e6e6e6;
-  border-color: #d4d4d4;
+  background-color: #000813;
+  border-color: black;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000321}}
 .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
@@ -4447,12 +4447,12 @@ select[multiple].input-lg,
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000329}}
 .btn-primary.disabled, .btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled.focus, .btn-primary.disabled:active, .btn-primary.disabled.active, .btn-primary[disabled], .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled].focus, .btn-primary[disabled]:active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary.focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary.active {
-  background-color: #FFFFFF;
-  border-color: #f2f2f2;
+  background-color: #011E45;
+  border-color: #01132c;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_buttons\.scss}line{font-family:\0000340}}
 .btn-primary .badge {
-  color: #FFFFFF;
+  color: #011E45;
   background-color: #fff;
 }
 
@@ -4566,7 +4566,7 @@ select[multiple].input-lg,
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_buttons\.scss}line{font-family:\0000388}}
 .btn-link {
-  color: #FFFFFF;
+  color: #011E45;
   font-weight: normal;
   border-radius: 0;
 }
@@ -4582,7 +4582,7 @@ select[multiple].input-lg,
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_buttons\.scss}line{font-family:\00003107}}
 .btn-link:hover, .btn-link:focus {
-  color: #d9d9d9;
+  color: black;
   text-decoration: underline;
   background-color: transparent;
 }
@@ -4751,7 +4751,7 @@ tbody.collapse.in {
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
   text-decoration: none;
   color: #fff;
-  background-color: #FFFFFF;
+  background-color: #011E45;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_dropdowns\.scss}line{font-family:\0000386}}
@@ -4759,7 +4759,7 @@ tbody.collapse.in {
   color: #fff;
   text-decoration: none;
   outline: 0;
-  background-color: #FFFFFF;
+  background-color: #011E45;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_dropdowns\.scss}line{font-family:\00003101}}
@@ -5282,7 +5282,7 @@ tbody.collapse.in {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_navs\.scss}line{font-family:\0000346}}
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
   background-color: #eeeeee;
-  border-color: #FFFFFF;
+  border-color: #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_navs\.scss}line{font-family:\0000359}}
 .nav .nav-divider {
@@ -5340,7 +5340,7 @@ tbody.collapse.in {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_navs\.scss}line{font-family:\00003131}}
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
   color: #fff;
-  background-color: #FFFFFF;
+  background-color: #011E45;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_navs\.scss}line{font-family:\00003144}}
@@ -6145,8 +6145,8 @@ tbody.collapse.in {
 .pagination > .active > span:focus {
   z-index: 2;
   color: #fff;
-  background-color: #FFFFFF;
-  border-color: #FFFFFF;
+  background-color: #011E45;
+  border-color: #011E45;
   cursor: default;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_pagination\.scss}line{font-family:\0000363}}
@@ -6296,11 +6296,11 @@ a.label:hover, a.label:focus {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_labels\.scss}line{font-family:\0000348}}
 .label-primary {
-  background-color: #FFFFFF;
+  background-color: #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_labels\.scss}line{font-family:\000037}}
 .label-primary[href]:hover, .label-primary[href]:focus {
-  background-color: #e6e6e6;
+  background-color: #000813;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_labels\.scss}line{font-family:\0000352}}
@@ -6370,7 +6370,7 @@ a.label:hover, a.label:focus {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_badges\.scss}line{font-family:\0000339}}
 a.list-group-item.active > .badge, .nav-pills > .active > a > .badge {
-  color: #FFFFFF;
+  color: #011E45;
   background-color: #fff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_badges\.scss}line{font-family:\0000344}}
@@ -6464,7 +6464,7 @@ a.badge:hover, a.badge:focus {
 a.thumbnail:hover,
 a.thumbnail:focus,
 a.thumbnail.active {
-  border-color: #FFFFFF;
+  border-color: #011E45;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_alerts\.scss}line{font-family:\000039}}
@@ -6603,7 +6603,7 @@ a.thumbnail.active {
   line-height: 21px;
   color: #fff;
   text-align: center;
-  background-color: #FFFFFF;
+  background-color: #011E45;
   -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   -webkit-transition: width 0.6s ease;
@@ -6791,8 +6791,8 @@ a.list-group-item:hover, a.list-group-item:focus {
 .list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
   z-index: 2;
   color: #fff;
-  background-color: #FFFFFF;
-  border-color: #FFFFFF;
+  background-color: #011E45;
+  border-color: #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_list-group\.scss}line{font-family:\0000398}}
 .list-group-item.active .list-group-item-heading,
@@ -6806,7 +6806,7 @@ a.list-group-item:hover, a.list-group-item:focus {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_list-group\.scss}line{font-family:\00003103}}
 .list-group-item.active .list-group-item-text, .list-group-item.active:hover .list-group-item-text, .list-group-item.active:focus .list-group-item-text {
-  color: white;
+  color: #1678fc;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_list-group\.scss}line{font-family:\000034}}
@@ -7235,26 +7235,26 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_panels\.scss}line{font-family:\00003247}}
 .panel-primary {
-  border-color: #FFFFFF;
+  border-color: #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_panels\.scss}line{font-family:\000036}}
 .panel-primary > .panel-heading {
   color: #fff;
-  background-color: #FFFFFF;
-  border-color: #FFFFFF;
+  background-color: #011E45;
+  border-color: #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_panels\.scss}line{font-family:\0000311}}
 .panel-primary > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: #FFFFFF;
+  border-top-color: #011E45;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_panels\.scss}line{font-family:\0000314}}
 .panel-primary > .panel-heading .badge {
-  color: #FFFFFF;
+  color: #011E45;
   background-color: #fff;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/mixins\/_panels\.scss}line{font-family:\0000320}}
 .panel-primary > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: #FFFFFF;
+  border-bottom-color: #011E45;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/ryan\/Desktop\/LsTractorClientSideApp\/client\/styles\/bootstrap\/bootstrap\/_panels\.scss}line{font-family:\00003250}}
