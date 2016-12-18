@@ -18,6 +18,7 @@
         
         // Custom modules
         'app.account',
+        'app.add',
         'app.chart',
         'app.dashboard',
         'app.dealership',
