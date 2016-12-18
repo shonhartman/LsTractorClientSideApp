@@ -13,12 +13,12 @@
             <div class="panel mini-box preview" id="video-box">
 
                 <!--Progress Chart-->
-                <span ng-show="complete" class="btn-icon btn-icon-md btn-icon-lg-alt bg-dark"  style="margin-bottom: 33px;">
+                <span ng-show="quiz.IsComplete" class="btn-icon btn-icon-md btn-icon-lg-alt bg-dark"  style="margin-bottom: 33px;">
                     <i class="fa fa-check-circle"></i>
                 </span>
-                <span ng-show="!complete" data-ng-controller="chartCtrl" class="btn-icon btn-icon-md btn-icon-lg-alt bg-dark">
-                    <div easypiechart options="easypiechart3.options" percent="easypiechart3.percent" class="easypiechart">
-                        <span class="pie-percent" ng-bind="easypiechart3.percent"></span>
+                <span ng-show="!quiz.IsComplete" data-ng-controller="chartCtrl" class="btn-icon btn-icon-md btn-icon-lg-alt bg-dark">
+                    <div easypiechart options="easypiechart3.options" percent="quiz.Video.Progress" class="easypiechart">
+                        <span class="pie-percent" ng-bind="quiz.Video.Progress"></span>
                     </div>
                 </span>
                 <!--End Progress Chart-->
