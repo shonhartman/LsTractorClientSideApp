@@ -33,7 +33,7 @@ $brand-info-alt:        #A085E4 !default;
 /*$brand-warning:         #ECD48B !default;*/
 /*$brand-danger:          #ED848F !default;*/
 
-$brand-primary:         #45B3FF!default;
+$brand-primary:         #FFFFFF !default;
 /*$brand-success:         #A9DC8E !default;*/
 $brand-info:            #17edb9 !default;
 /*$brand-info-alt:        #da84f5!default;*/
@@ -56,8 +56,8 @@ $bright:                #f5f7ff;
 $reverse:               #fff;
 
 $state-default-bg:              #f6f6f6; // also: pagination bg
-$state-default-border:          darken(adjust-hue($state-default-bg, -10), 5%); 
-$state-default-border-light:    #f3f3f3; 
+$state-default-border:          darken(adjust-hue($state-default-bg, -10), 5%);
+$state-default-border-light:    #f3f3f3;
 
 
 //== Scaffolding

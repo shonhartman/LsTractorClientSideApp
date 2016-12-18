@@ -5,11 +5,11 @@
         .logo {
             @media (min-width: $screen-sm) {
                 width: $collapsed_nav_width; // X9 + 1 (border)
-            } 
+            }
 
             .logo-text {
                 display: none;
-            }           
+            }
         }
 
         .top-nav {
@@ -18,7 +18,7 @@
     }
 }
 
-// 
+//
 .header-container {
     // height:( $header_height * 2);
     // @media (min-width:$screen-sm) {
@@ -82,7 +82,7 @@
             }
         }
 
-        // 
+        //
         .menu-button {
             display: block;
             position: absolute;
@@ -112,7 +112,7 @@
             }
         }
 
-        // 
+        //
         .admin-options {
             z-index: 20;
             line-height: 20px;
@@ -125,11 +125,11 @@
             }
         }
 
-        // 
+        //
         .dropdown-menu.panel {
             padding: 0;
             white-space: nowrap;
-            
+
             .panel-heading,
             .panel-footer {
                 padding: 10px 15px;
@@ -150,7 +150,7 @@
         }
 
 
-        // 
+        //
         .top-nav {
             width: 100%;
             height: $header_height;
@@ -163,7 +163,7 @@
                 margin-bottom: 0;
             }
 
-            // 
+            //
             .nav-left,
             .nav-right {
                 font-size: 16px;
@@ -173,7 +173,7 @@
                     float: left;
                     &.nav-profile {
                         > a {
-                            padding: ( $header_height/2 - 15px ) 15px;
+                            padding: 30px 15px;
                         }
                         .hidden-xs {
                             padding-right: 8px;
@@ -182,7 +182,7 @@
                             width: 18px;
                             font-size: 16px;
                             margin-right: 5px;
-                        } 
+                        }
                     }
 
                     > .toggle-min {
@@ -252,7 +252,7 @@
                 }
             }
 
-            // 
+            //
             .nav-left {
                 float: left;
                 padding: 0;
@@ -261,7 +261,7 @@
                 }
             }
 
-            // 
+            //
             .nav-right {
                 padding: 0;
                 > li {
@@ -279,7 +279,7 @@
             }
         }
 
-        // 
+        //
         .langs {
             .active-flag {
                 .flag {
@@ -309,7 +309,7 @@
 
 
 
-// 
+//
 .skin-check {
     position: relative;
     display: block;
@@ -320,7 +320,7 @@
     input[type="radio"] + span:hover {
         cursor: pointer;
     }
-    
+
     input[type="radio"] + span {
         position: relative;
         > .overlay {
@@ -334,8 +334,8 @@
             height: 100%;
             background-color: rgba(0,0,0,.3);
             text-align: center;
-            line-height: 30px; 
-            color: #fff;           
+            line-height: 30px;
+            color: #fff;
         }
     }
 
@@ -376,7 +376,7 @@
             &:hover {
                 color: $text-color;
             }
-        }        
+        }
     }
 
     &.bg-white {
@@ -414,19 +414,19 @@
                 color: $bright;
             }
         }
-        
+
         .input-group-addon { color: $gray-lighter; }
         ::-webkit-input-placeholder { color: #eaeaea; }
         :-moz-placeholder { color: #eaeaea; } // Firefox 18-
         ::-moz-placeholder {  color: #eaeaea; } // Firefox 19+
-        :-ms-input-placeholder {color: #eaeaea; }   
+        :-ms-input-placeholder {color: #eaeaea; }
 
         .top-nav .nav-left > li > a .badge {
             color: #eaeaea;
         }
     }
 
-    // 
+    //
     > .top-header {
         .logo {
             border: 1px solid rgba(0,0,0,.1);
@@ -450,7 +450,7 @@
                     &:hover {
                         .icon-bar {
                             background-color: $reverse;
-                        }                        
+                        }
                     }
                 }
             }
@@ -469,9 +469,8 @@
                         color: $bright;
                     }
                 }
-            }        
+            }
         }
 
     }
 }
-

@@ -27,7 +27,7 @@
                 <p class="text-info" style="color:#f5f7ff">{{ quiz.Video.Author }}</p>
                 <p class="text-danger">{{ quiz.Video.Length }}</p>
                 <button class="btn btn-gap-v btn-primary" ng-click="open(quiz.Id)">Watch</button>
-                <button class="btn btn-gap-v btn-warning" ng-click="edit(quiz.Video)">Edit</button>
+                <button class="btn btn-gap-v btn-warning" ng-click="edit(quiz.Video)" ng-if="main.user.Role == 6">Edit</button>
                 <script type="text/ng-template" id="myEditModal.html">
                     <div class="modal-header">
                         <h3>Editing {{ quiz.Video.Title }}</h3>
@@ -49,7 +49,7 @@
         </div>
     </div>
 
-    <p><button ng-click="complete = !complete">Toggle Complete</button></p>
+    <!-- <p><button ng-click="complete = !complete">Toggle Complete</button></p> -->
 
     <!--Add Video Button-->
 
@@ -106,6 +106,6 @@
         </script>
     </div> <!-- End Delete Quiz Button-->
 
-    <button type="submit" ng-controller="SkillSetCtrl" class="btn btn-danger btn-block btn-lg" ng-click="deleteSkillSet()">Delete This Quiz</button>
+    <button type="submit" ng-controller="SkillSetCtrl" class="btn btn-danger btn-block btn-lg" ng-click="deleteSkillSet()" ng-if="main.user.Role == 6">Delete This Quiz</button>
 
 </div> <!--Close Page Div-->

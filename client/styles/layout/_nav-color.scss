@@ -41,11 +41,11 @@
                     > a {
                         // background-color: $light_bg_link_active_bg;
                         color: $light_bg_link_active_color;
-                    }                        
+                    }
                     > .icon-has-ul { color: $light_bg_link_active_color; }
                 }
 
-                // overrides Bootstrap 
+                // overrides Bootstrap
                 > a:focus {
                     background-color: $light_bg_link_hover_bg;
                 }
@@ -66,7 +66,7 @@
                     //     > a {
                     //         background-color: darken($sub_nav_bg, 5%);
                     //     }
-                    // }           
+                    // }
                 }
             }
         }
@@ -82,15 +82,15 @@
                             color: $light_bg_link_open_color;
                         }
                         > .icon-has-ul,
-                        > .icon-has-ul-h { color: $light_bg_link_open_color; }               
+                        > .icon-has-ul-h { color: $light_bg_link_open_color; }
                     }
                 }
             }
-        }        
+        }
     }
 
     &.bg-dark {
-        background-color: $dark;
+        background-color: $dark-light;
         &:before {
             box-shadow: inset -1px 0 1px rgba(0, 0, 0, 0.3);
         }
@@ -102,7 +102,7 @@
             }
 
             .nav-title {
-                color: #666;
+                color: #45b3ff;
             }
 
             .divider {
@@ -123,10 +123,10 @@
                     > a {
                         // background-color: $dark_bg_link_active_bg;
                         color: $dark_bg_link_active_color;
-                    }                        
+                    }
                     > .icon-has-ul { color: $dark_bg_link_active_color; }
                 }
-                // overrides Bootstrap 
+                // overrides Bootstrap
                 > a:focus {
                     background-color: $dark_bg_link_hover_bg;
                 }
@@ -159,11 +159,11 @@
                             color: $dark_bg_link_open_color;
                         }
                         > .icon-has-ul,
-                        > .icon-has-ul-h { color: $dark_bg_link_open_color; }               
+                        > .icon-has-ul-h { color: $dark_bg_link_open_color; }
                     }
                 }
             }
-        }  
+        }
 
     }
 
@@ -172,7 +172,7 @@
 
 
 // make '.open' class effective mobile only
-@media (max-width: $screen-sm-max ) { 
+@media (max-width: $screen-sm-max ) {
     .nav-horizontal {
         .nav {
             > li {
@@ -181,7 +181,7 @@
                         // background-color: $link_active_bg;
                         color: $brand-primary;
                     }
-                    > i { color: $brand-primary; }                
+                    > i { color: $brand-primary; }
                 }
 
             }

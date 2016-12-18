@@ -1,4 +1,4 @@
-        
+
 <div class="nav-wrapper">
     <ul id="nav"
         class="nav"
@@ -9,12 +9,15 @@
             <span>NAVIGATION</span>
         </li>
         <li><a href="#/dashboard"> <i class="ti-stats-up"></i><span>Progress</span></a></li>
-        <li><a href="#/profile"><i class="ti-user"></i><span>Profile</span></a></li>
-        <li><a href="#/closure"><i class="ti-close"></i><span>Request Closure</span></a></li>
-        <li><a href="#/certificates"><i class="ti-check-box"></i><span>View Certificates</span></a></li>
-        <li><a href="#/transfer"><i class="ti-arrow-left"></i><span>Request Transfer</span></a></li>
-
-
+        <li><a href="#/dealerships"> <i class="ti-list"></i><span ng-if="main.user.Role == 6">Dealerships</span></a></li>
+        <li>
+          <a href="#/profile"><i class="ti-user"></i><span>Profile</span></a>
+          <ul>
+            <li><a href="#/closure"><i class="ti-close"></i><span>Request Closure</span></a></li>
+            <li><a href="#/certificates"><i class="ti-check-box"></i><span>View Certificates</span></a></li>
+            <li><a href="#/transfer"><i class="ti-arrow-left"></i><span>Request Transfer</span></a></li>
+          </ul>
+        </li>
 
         <li>
             <!--<a href="#pages/skill-set"><i class="ti-medall"></i><span>Skill Sets</span></a>-->
@@ -29,8 +32,6 @@
                 <li><a href="#/pages/signup"><i class="ti-angle-right"></i><span>Sign Up</span></a></li>
                 <li><a href="#/pages/forgot-password"><i class="ti-angle-right"></i><span>Forgot Password</span></a></li>
             </ul>
-                            <ul class="dropdown-menu with-arrow pull-right">
-                </ul>
         </li>
     </ul>
 </div>

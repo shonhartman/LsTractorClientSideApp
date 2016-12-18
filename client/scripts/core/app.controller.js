@@ -13,7 +13,7 @@
         var userName = user ? user.FirstName + ' ' + user.LastName : '';
 
         $scope.main = {
-            brand: 'LS Tractor',
+            brand: "LS Tractor",
             name: userName,
             year: year,
             apiUrl: 'http://lstractorquizapi.azurewebsites.net/api/',

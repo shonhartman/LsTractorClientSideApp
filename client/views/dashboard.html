@@ -4,29 +4,89 @@
     <!-- <button popover="On mouse enter!" popover-trigger="mouseenter" class="btn btn-w-lg btn-primary btn-gap">Popover on Mouseenter</button> -->
 
     <!--Super Admin Table-->
-    <div ng-if="roleId == 6">
-        <div class="panel panel-default">
-            <div class="panel-body table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Dealership</th>
-                            <th popover="How far along is each dealership" popover-trigger="mouseenter">Progress</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="dealership in dealerships">
-                            <td>{{ dealership.Name }}</td>
-                            <!--TODO ==> BIND PROGRESS BAR TO DATA-->
-                            <td>
-                                <progressbar class="progressbar-xs no-margin" value="55"></progressbar>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div><!-- Super Admin Table Table -->
+    <div ng-if="roleId == 6" data-ng-controller="tableCtrl">
+      <h1>Dealership Progress</h1>
+      <section class="panel panel-default table-dynamic">
+          <div class="panel-heading"><strong>Dealerships</strong></div>
+
+          <div class="table-filters">
+              <div class="row">
+                  <div class="col-sm-4 col-xs-6">
+                      <form>
+                          <input type="text"
+                                 placeholder="Search..."
+                                 class="form-control"
+                                 data-ng-model="searchKeywords"
+                                 data-ng-keyup="search()">
+                      </form>
+                  </div>
+                  <div class="col-sm-3 col-xs-6 filter-result-info">
+                      <span>
+                          Showing {{filteredStores.length}}/{{stores.length}} entries
+                      </span>
+                  </div>
+              </div>
+          </div>
+
+          <table class="table table-bordered table-striped table-responsive">
+              <thead>
+                  <tr>
+                      <th><div class="th">
+                          Dealership
+                          <span class="fa fa-angle-up"
+                                data-ng-click=" order('name') "
+                                data-ng-class="{active: row == 'name'}"></span>
+                          <span class="fa fa-angle-down"
+                                data-ng-click=" order('-name') "
+                                data-ng-class="{active: row == '-name'}"></span>
+                      </div></th>
+                      <th><div class="th">
+                          State
+                          <span class="fa fa-angle-up"
+                                data-ng-click=" order('state') "
+                                data-ng-class="{active: row == 'state'}"></span>
+                          <span class="fa fa-angle-down"
+                                data-ng-click=" order('-state') "
+                                data-ng-class="{active: row == '-state'}"></span>
+                      </div></th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr data-ng-repeat="store in currentPageStores">
+                      <td>{{store.name}}</td>
+                      <td>{{store.state}}</td>
+                  </tr>
+              </tbody>
+          </table>
+
+          <footer class="table-footer">
+              <div class="row">
+                  <div class="col-md-6 page-num-info">
+                      <span>
+                          Show
+                          <select data-ng-model="numPerPage"
+                                  data-ng-options="num for num in numPerPageOpt"
+                                  data-ng-change="onNumPerPageChange()">
+                          </select>
+                          entries per page
+                      </span>
+                  </div>
+                  <div class="col-md-6 text-right pagination-container">
+                      <pagination class="pagination-sm"
+                                  ng-model="currentPage"
+                                  total-items="filteredStores.length"
+                                  max-size="4"
+                                  ng-change="select(currentPage)"
+                                  items-per-page="numPerPage"
+                                  rotate="false"
+                                  previous-text="&lsaquo;" next-text="&rsaquo;"
+                                  boundary-links="true"></pagination>
+                  </div>
+              </div>
+          </footer>
+      </section>
+    </div>
+    <!-- End Super Admin Table -->
 
 <!--Dealership Owner/Employee Table-->
     <div ng-if="roleId == 5">
@@ -54,7 +114,7 @@
     </div><!-- /Dealership/Employee Table -->
 
     <!--Employee View-->
-    <div ng-if="roleId == 4">
+    <div>
         <!--DYNAMIC DATA-->
         <h1>Skillsets</h1>
         <div class="row" ng-controller="SkillSetCtrl">
