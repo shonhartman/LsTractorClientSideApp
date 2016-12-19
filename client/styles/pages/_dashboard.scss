@@ -48,4 +48,11 @@
             vertical-align: middle;
         }
     }
+
+    #admin-edit {
+
+            &:hover {
+                cursor: pointer;
+            }
+    }
 }

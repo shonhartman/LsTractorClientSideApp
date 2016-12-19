@@ -4,7 +4,7 @@
        angular.module('app.modal')
 
        .controller('ModalDemoCtrl', ['$scope', '$modal', '$log', 'logger', ModalDemoCtrl])
-           .controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'titles', 'video', 'logger', '$routeParams', '$http', '$log', ModalInstanceCtrl])
+           .controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'titles', 'video', '$log', 'logger', '$routeParams', '$http', '$log', ModalInstanceCtrl])
 
        function ModalDemoCtrl($scope, $modal, $log) {
 

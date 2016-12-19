@@ -15,35 +15,40 @@
     <div class="col-lg-6 col-md-6 col-xs-12 col-xsm-12" ng-repeat="skillset in skillsets">
 
           <section class="panel panel-box">
-              <div class="panel-top bg-primary">
-                  <a style="text-decoration: none;" href="#/pages/skill-set-details/{{ skillset.Id }}">
+              <div class="panel-top bg-primary" data-ng-class="{editing: editing == 'SkillSetName', editable-field: editing}">
+                  <a style="text-decoration: none;" href="#/pages/skill-set-details/{{ skillset.Id }}" ng-disabled="editing">
                     <div class="text-left h2"> {{ skillset.Name }}</div>
+                    <span class="field-editor" ng-show="editing">
+                        <form data-ng-submit="doneEditing()">
+                            <input data-ng-model="currentAccount.LastName" type="text" class="form-control">
+                        </form>
+                    </span>
                   </a>
               </div>
               <!-- <div class="panel-icon bg-success">
                   <i class="wi wi-day-cloudy"></i>
               </div> -->
               <div class="panel-bottom bg-reverse" style="border-top: none !important;">
-                  <ul class="list-justified text-center v-center">
+                  <ul id="admin-edit" class="list-justified text-center v-center">
                       <li>
                           <p class="color-primary h3">
                             <i class="fa fa-video-camera" aria-hidden="true"></i>
                           </p>
                           <p class="text-muted h5" style="margin-top: 10px;">Add Video</p>
                       </li>
-                      <li>
+                      <li ng-click="updateSkillSet()">
                           <p class="color-warning h3">
                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                           </p>
-                          <p class="text-muted h5" style="margin-top: 10px;">Edit Details</p>
+                          <p class="text-muted h5" style="margin-top: 10px;" ng-click="edit('SkillSetName')">Edit Details</p>
                       </li>
-                      <li>
+                      <li ng-click="goToCertificates()">
                           <p class="color-success h3">
                             <i class="fa fa-trophy" aria-hidden="true"></i>
                           </p>
                           <p class="text-muted h5" style="margin-top: 10px;">Certificates</p>
                       </li>
-                      <li>
+                      <li ng-click="deleteSkillSet(skillset.Id)">
                           <p class="color-danger h3">
                             <i class="fa fa-trash-o" aria-hidden="true"></i>
                           </p>
@@ -54,5 +59,23 @@
           </section>
   </div>
 
+  <button type="submit" class="btn btn-success btn-block btn-lg" ng-click="addSkillSet()">Add a Skill Set</button>
+    <script type="text/ng-template" id="skillSetModal.html">
+            <div class="modal-header">
+                <h3>Add a Skill Set</h3>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="form-control" ng-model="skillSet.name">
+                <span class="help-block">Skill Set Title</span>
+            </div>
+            <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="uploadSkillSet()">Upload</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+
 
 </div>
+
+</div>
+

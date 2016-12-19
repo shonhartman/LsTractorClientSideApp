@@ -2443,6 +2443,10 @@ be a descendant of the grid when it is being dragged.
 .page-dashboard .table > tbody > tr > td {
   vertical-align: middle;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/pages\/_dashboard\.scss}line{font-family:\0000354}}
+.page-dashboard #admin-edit:hover {
+  cursor: pointer;
+}
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/shaunhartman\/Development\/LsTractorClientSideApp\/client\/styles\/pages\/_pages\.scss}line{font-family:\000033}}
 .lt-ie9-bg {

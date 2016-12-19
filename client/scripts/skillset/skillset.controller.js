@@ -12,6 +12,8 @@
 
         var user = angular.fromJson($cookies.get('user'));
 
+        var skillSetId = $routeParams.id;
+
         $http.get($scope.main.apiUrl + 'SkillSets/GetAllSkillSets')
             .then(function (response) {
 
@@ -106,12 +108,19 @@
                 // });
             });
 
+        
+
         $scope.goToSkillSet = function () {
             location.href = '#/pages/skill-set-details/{{ skillset.id }}';
         }
 
+        $scope.goToCertificates = function () {
+            location.href = '#/certificates';
+        }
+
         //UPDATE SKILL SET NAME BY ID
-        $scope.updateSkillset = function () {
+        $scope.updateSkillSet = function () {
+            console.log("updating skillset");
             $http.put($scope.main.apiUrl + 'SkillSets/UpdateSkillSet/{skillSetId}', {
                     "Name": "{name}"
                 })
@@ -122,12 +131,14 @@
         }
 
         //DELETE SKILLSET BY ID
-        $scope.deleteSkillSet = function () {
-            $http.delete($scope.main.apiUrl + 'SkillSets/DeleteSkillSet/{skillSetId}')
+        $scope.deleteSkillSet = function (skillSetId) {
+            $http.delete($scope.main.apiUrl + 'SkillSets/DeleteSkillSet/' + skillSetId)
                 .then(function (response) {
                     logger.logSuccess("Well done! You successfully deleted{{skillset.name}}.");
-                    $location.url("/#/skill-set");
+                    $location.url("/#/skill-sets");
                 });
+            console.log("deleting skillSet");
+
         }
 
         //Add Skill Set Modal
@@ -151,6 +162,9 @@
                 $log.info("Modal dismissed at: " + new Date());
             });
         }
+
+        
+        
     }
 
 })();
