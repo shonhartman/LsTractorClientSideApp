@@ -1,7 +1,7 @@
 <div class="page page-dashboard" ng-controller="DashboardCtrl">
 
     <!-- ADMIN TABLE -->
-    <div ng-if="roleId == 6" data-ng-controller="tableCtrl">
+    <div ng-if="main.user.Role == 6" data-ng-controller="tableCtrl">
       <section class="panel panel-default table-dynamic">
           <div class="panel-heading"><strong><i class="fa fa-building-o" aria-hidden="true"></i>
             Dealerships</strong></div>
@@ -108,10 +108,16 @@
                 </table>
             </div>
         </div>
-    </div><!-- /Dealership/Employee Table -->
+    </div>
+    <!-- /Dealership/Employee Table -->
+
+    <!-- Testing ng-if -->
+    <div ng-if="main.user.Role == 5">
+      Show me something
+    </div>
 
     <!--Employee View-->
-    <div ng-if="main.user.Role == 4">
+    <div ng-if="main.user.Role == 4 || main.user.Role == 5">
 
         <!--DYNAMIC DATA-->
         <div class="row" ng-controller="SkillSetCtrl">
