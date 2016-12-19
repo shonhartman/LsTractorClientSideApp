@@ -108,7 +108,7 @@
                 // });
             });
 
-        
+
 
         $scope.goToSkillSet = function () {
             location.href = '#/pages/skill-set-details/{{ skillset.id }}';
@@ -163,8 +163,8 @@
             });
         }
 
-        
-        
+
+
     }
 
 })();

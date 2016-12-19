@@ -1,17 +1,40 @@
 <div class="page page-dashboard">
-  <!-- <div class="row" ng-controller="SkillSetCtrl">
-      <div class="col-lg-3 col-xsm-6" ng-repeat="skillset in skillsets">
-          <a style="text-decoration: none;" href="#/pages/skill-set-details/{{ skillset.Id }}">
-              <div class="panel panel-box" style="margin-top:20%;" ng-click="goToSkillSet()">
-                  <div class="panel-info">
-                      <span>{{ skillset.Name }}</span>
-                  </div>
-              </div>
-          </a>
-      </div>
+  <!-- <div class="row">
+    <div class="col-lg-12 col-md-12 col-xs-12 col-xsm-12">
+      <button type="submit" class="btn btn-success btn-lg pull-right" ng-click="addSkillSet()">Add a Skill Set</button>
+        <script type="text/ng-template" id="skillSetModal.html">
+                <div class="modal-header">
+                    <h3>Add a Skill Set</h3>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="form-control" ng-model="skillSet.name">
+                    <span class="help-block">Skill Set Title</span>
+                </div>
+                <div class="modal-footer">
+                <button class="btn btn-primary" ng-click="uploadSkillSet()">Upload</button>
+                <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+            </div>
+        </script>
+    </div>
   </div> -->
-
   <div class="row" ng-controller="SkillSetCtrl">
+    <div class="col-lg-12">
+      <button type="submit" class="btn btn-success btn-lg" ng-click="addSkillSet()">Add a Skill Set</button>
+        <script type="text/ng-template" id="skillSetModal.html">
+                <div class="modal-header">
+                    <h3>Add a Skill Set</h3>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="form-control" ng-model="skillSet.name">
+                    <span class="help-block">Skill Set Title</span>
+                </div>
+                <div class="modal-footer">
+                <button class="btn btn-primary" ng-click="uploadSkillSet()">Upload</button>
+                <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+            </div>
+          </script>
+    </div>
+    <div class="col-lg-12" style="height:20px;"></div>
     <div class="col-lg-6 col-md-6 col-xs-12 col-xsm-12" ng-repeat="skillset in skillsets">
 
           <section class="panel panel-box" ng-if="main.user.Role == 6">
@@ -58,21 +81,6 @@
               </div>
           </section>
 
-  <button type="submit" class="btn btn-success btn-block btn-lg" ng-click="addSkillSet()">Add a Skill Set</button>
-    <script type="text/ng-template" id="skillSetModal.html">
-            <div class="modal-header">
-                <h3>Add a Skill Set</h3>
-            </div>
-            <div class="modal-body">
-                <input type="text" class="form-control" ng-model="skillSet.name">
-                <span class="help-block">Skill Set Title</span>
-            </div>
-            <div class="modal-footer">
-            <button class="btn btn-primary" ng-click="uploadSkillSet()">Upload</button>
-            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
-        </div>
-    </script>
-
 
           <!-- DEALERSHIP AND TECHNICIAN VIEW FOR SKILLSETS -->
           <section class="panel panel-box" ng-if="main.user.Role == 4 || main.user.Role == 5">
@@ -109,10 +117,6 @@
               </ul>
             </div>
           </section>
-
+    </div>
   </div>
-
 </div>
-
-</div>
-

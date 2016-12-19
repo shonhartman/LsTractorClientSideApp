@@ -1,7 +1,7 @@
 
 <div class="page page-table" data-ng-controller="tableCtrl">
 
-    <button class="btn btn-danger" ng-controller="dealershipCtrl" ng-click="testing()">TEST BUTTON</button>
+    <!-- <button class="btn btn-danger" ng-controller="dealershipCtrl" ng-click="testing()">TEST BUTTON</button> -->
 
     <section class="panel panel-default table-dynamic">
         <div class="panel-heading"><strong>Dealerships</strong></div>
@@ -20,7 +20,7 @@
                 <div class="col-sm-3 col-xs-6 filter-result-info">
                     <span>
                         Showing {{filteredStores.length}}/{{stores.length}} entries
-                    </span>              
+                    </span>
                 </div>
             </div>
         </div>
@@ -60,11 +60,11 @@
             <div class="row">
                 <div class="col-md-6 page-num-info">
                     <span>
-                        Show 
+                        Show
                         <select data-ng-model="numPerPage"
                                 data-ng-options="num for num in numPerPageOpt"
                                 data-ng-change="onNumPerPageChange()">
-                        </select> 
+                        </select>
                         entries per page
                     </span>
                 </div>

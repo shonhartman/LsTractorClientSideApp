@@ -4,7 +4,7 @@
        angular.module('app.modal')
 
        .controller('ModalDemoCtrl', ['$scope', '$modal', '$log', 'logger', ModalDemoCtrl])
-           .controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'titles', 'video', '$log', 'logger', '$routeParams', '$http', '$log', ModalInstanceCtrl])
+           .controller('ModalInstanceCtrl', ['$scope', '$http', '$modalInstance', 'titles', 'video', '$log', 'logger', '$routeParams', '$log', ModalInstanceCtrl])
 
        function ModalDemoCtrl($scope, $modal, $log) {
 
@@ -136,13 +136,14 @@
            //CREATE NEW SKILL SET
            $scope.uploadSkillSet = function () {
 
-               $http.post($scope.main.apiUrl + 'SkillSets/CreateNewSkillSet', {
+               $http.post('http://lstractorquizapi.azurewebsites.net/api/' + 'SkillSets/CreateNewSkillSet', {
                         "Name": $scope.skillSet // TODO: verify this is correct
                    })
                    .then(function (response) {
                        console.log(response);
                        logger.logSuccess("Well done! You successfully added a Skill Set.");
                        $modalInstance.close(response);
+                       $location.url('/skill-sets');
                    })
            }
 
