@@ -131,11 +131,13 @@
         }
 
         //DELETE SKILLSET BY ID
-        $scope.deleteSkillSet = function (skillSetId) {
-            $http.delete($scope.main.apiUrl + 'SkillSets/DeleteSkillSet/' + skillSetId)
+        $scope.deleteSkillSet = function (skillSetId, $index) {
+            $http.delete('http://lstractorquizapi.azurewebsites.net/api/SkillSets/DeleteSkillSet/' + skillSetId)
                 .then(function (response) {
                     logger.logSuccess("Well done! You successfully deleted{{skillset.name}}.");
-                    $location.url("/#/skill-sets");
+                    // $location.url("/#/skill-sets");
+                    $scope.skillSets.splice($index, 1);
+                    
                 });
             console.log("deleting skillSet");
 

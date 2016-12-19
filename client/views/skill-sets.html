@@ -48,7 +48,7 @@
                           </p>
                           <p class="text-muted h5" style="margin-top: 10px;">Certificates</p>
                       </li>
-                      <li ng-click="deleteSkillSet(skillset.Id)">
+                      <li ng-click="deleteSkillSet(skillset.Id,$index)">
                           <p class="color-danger h3">
                             <i class="fa fa-trash-o" aria-hidden="true"></i>
                           </p>
@@ -58,20 +58,7 @@
               </div>
           </section>
 
-  <button type="submit" class="btn btn-success btn-block btn-lg" ng-click="addSkillSet()">Add a Skill Set</button>
-    <script type="text/ng-template" id="skillSetModal.html">
-            <div class="modal-header">
-                <h3>Add a Skill Set</h3>
-            </div>
-            <div class="modal-body">
-                <input type="text" class="form-control" ng-model="skillSet.name">
-                <span class="help-block">Skill Set Title</span>
-            </div>
-            <div class="modal-footer">
-            <button class="btn btn-primary" ng-click="uploadSkillSet()">Upload</button>
-            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
-        </div>
-    </script>
+  
 
 
           <!-- DEALERSHIP AND TECHNICIAN VIEW FOR SKILLSETS -->
@@ -111,6 +98,22 @@
           </section>
 
   </div>
+
+      <button type="submit" class="btn btn-success btn-block btn-lg" ng-click="addSkillSet()">Add a Skill Set</button>
+    <script type="text/ng-template" id="skillSetModal.html">
+            <div class="modal-header">
+                <h3>Add a Skill Set</h3>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="form-control" ng-model="skillSet.name">
+                <span class="help-block">Skill Set Title</span>
+            </div>
+            <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="uploadSkillSet()">Upload</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+
 
 </div>
 
