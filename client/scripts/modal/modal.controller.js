@@ -4,7 +4,11 @@
        angular.module('app.modal')
 
        .controller('ModalDemoCtrl', ['$scope', '$modal', '$log', 'logger', ModalDemoCtrl])
+<<<<<<< HEAD
            .controller('ModalInstanceCtrl', ['$scope', '$http', '$modalInstance', 'titles', 'video', '$log', 'logger', '$routeParams', '$log', ModalInstanceCtrl])
+=======
+           .controller('ModalInstanceCtrl', ['$scope', '$http', '$modalInstance', 'titles', 'video', '$log', 'logger', '$routeParams', ModalInstanceCtrl])
+>>>>>>> e6b9841db182dea5b2dd3c101f298e5c50773459
 
        function ModalDemoCtrl($scope, $modal, $log) {
 
@@ -46,7 +50,7 @@
 
        }
 
-       function ModalInstanceCtrl($scope, $modalInstance, titles, video, logger, $routeParams, $http, $log) {
+       function ModalInstanceCtrl($scope, $http, $modalInstance, $log, titles, video, logger, $routeParams) {
            $scope.titles = titles;
            $scope.video = video;
 
@@ -136,7 +140,11 @@
            //CREATE NEW SKILL SET
            $scope.uploadSkillSet = function () {
 
+<<<<<<< HEAD
                $http.post('http://lstractorquizapi.azurewebsites.net/api/' + 'SkillSets/CreateNewSkillSet', {
+=======
+               $http.post('http://lstractorquizapi.azurewebsites.net/api/SkillSets/CreateNewSkillSet', {
+>>>>>>> e6b9841db182dea5b2dd3c101f298e5c50773459
                         "Name": $scope.skillSet // TODO: verify this is correct
                    })
                    .then(function (response) {

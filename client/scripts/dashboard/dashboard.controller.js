@@ -45,26 +45,12 @@
             }
 
             if ($scope.roleId === 5) {
-                $http.get(user._links.dealership.href)// This is the check to see which dealership an owner belongs to
+
+                $http.get($scope.main.apiUrl + 'Dealerships/GetEmployeesReport/' + $scope.main.user.Dealership.Id)
                     .then(function (response) {
-                        $scope.dealership = response.data;
-                        return $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos');
-                    })
-                    .then(function (response) {
-                        $scope.totalVideos = response.data._embedded.videos.length;
-                        return $http.get($scope.dealership._links.listOfAppUser.href);
-                    })
-                    .then(function (response) {
-                        $scope.employees = response.data._embedded.appUsers;
-                        $scope.employees.forEach(function (employee) {
-                            employee.id = employee._links.self.href.split('/').pop();
-                            $scope.employeeProgress($scope.totalVideos, employee)
-                                .then(function (progress) {
-                                    employee.progress = progress;
-                                });
-                        });
-                        console.log($scope.employees);
+                        $scope.employees = response.data;
                     });
+
             }
 
             if ($scope.roleId === 6) {
@@ -82,38 +68,38 @@
         $scope.results = [];
 
         // TODO - Modify call to new location for backend endpoint that returns user's status'
-        $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos/')
-            .then(function (response) {
-                $scope.videos = [];
-                response.data._embedded.videos.forEach(function (video) {
-                    var splitUrl = video._links.self.href.split("/");
-                    video.id = splitUrl[splitUrl.length - 1];
-                    $scope.videos.push(video);
-                });
-            });
+        // $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos/')
+        //     .then(function (response) {
+        //         $scope.videos = [];
+        //         response.data._embedded.videos.forEach(function (video) {
+        //             var splitUrl = video._links.self.href.split("/");
+        //             video.id = splitUrl[splitUrl.length - 1];
+        //             $scope.videos.push(video);
+        //         });
+        //     });
 
-        $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/appUsers/' + $routeParams.id)
-            .then(function (response) {
-                $scope.employee = response.data;
-                console.log($scope.employee);
-                return $http.get($scope.employee._links.listOfVideoResult.href);
-            });
+        // $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/appUsers/' + $routeParams.id)
+        //     .then(function (response) {
+        //         $scope.employee = response.data;
+        //         console.log($scope.employee);
+        //         return $http.get($scope.employee._links.listOfVideoResult.href);
+        //     });
 
-        $scope.videoProgress = function (progress) {
-            if (progress) {
-                return progress;
-            }
+        // $scope.videoProgress = function (progress) {
+        //     if (progress) {
+        //         return progress;
+        //     }
 
-            return 0;
-        }
+        //     return 0;
+        // }
 
-        $scope.videoComplete = function (complete) {
-            if (complete) {
-                return "Yes";
-            }
+        // $scope.videoComplete = function (complete) {
+        //     if (complete) {
+        //         return "Yes";
+        //     }
 
-            return "No";
-        }
+        //     return "No";
+        // }
     }
 
 })();
