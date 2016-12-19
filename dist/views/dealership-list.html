@@ -20,7 +20,7 @@
                 <div class="col-sm-3 col-xs-6 filter-result-info">
                     <span>
                         Showing {{filteredStores.length}}/{{stores.length}} entries
-                    </span>              
+                    </span>
                 </div>
             </div>
         </div>
@@ -50,8 +50,8 @@
             </thead>
             <tbody>
                 <tr data-ng-repeat="store in currentPageStores">
-                    <td>{{store.name}}</td>
-                    <td>{{store.state}}</td>
+                    <td>{{store.Name}}</td>
+                    <td>{{store.State}}</td>
                 </tr>
             </tbody>
         </table>
@@ -60,11 +60,11 @@
             <div class="row">
                 <div class="col-md-6 page-num-info">
                     <span>
-                        Show 
+                        Show
                         <select data-ng-model="numPerPage"
                                 data-ng-options="num for num in numPerPageOpt"
                                 data-ng-change="onNumPerPageChange()">
-                        </select> 
+                        </select>
                         entries per page
                     </span>
                 </div>
