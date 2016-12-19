@@ -49,7 +49,7 @@
                 return;
             }
 
-            $http.put($scope.main.apiUrl + 'Users', {
+            $http.put($scope.main.apiUrl + 'Users/CreateNewUser', {
                     "DealershipId": parseInt($scope.dealershipFields.Dealership, 10),
                     "Role": parseInt($scope.formData.Role, 10),
                     "FirstName": $scope.formData.FirstName,
