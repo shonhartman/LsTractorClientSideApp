@@ -19,7 +19,7 @@
                         <div class="panel-heading"><strong><span class="glyphicon glyphicon-list-alt" style="margin-right: 10px;"></span>Quiz</strong></div>
                         <div class="panel-body">
                             <h4>Question {{ activeQuestion + 1 }} out of {{ quiz.Questions.length }}</h4>
-                            <h4>{{ question.QuestionText }}</h4>
+                            <h4 ng-bind-html="question.QuestionText">{{ question.QuestionText }}</h4>
                         </div>
                     </section>
                     <div class="callout callout-info" id="callout-quiz">
