@@ -108,7 +108,7 @@
                 // });
             });
 
-        
+
 
         $scope.goToSkillSet = function () {
             location.href = '#/pages/skill-set-details/{{ skillset.id }}';
@@ -136,8 +136,8 @@
                 .then(function (response) {
                     logger.logSuccess("Well done! You successfully deleted{{skillset.name}}.");
                     // $location.url("/#/skill-sets");
-                    $scope.skillSets.splice($index, 1);
-                    
+                    $scope.skillsets.splice($index, 1);
+
                 });
             console.log("deleting skillSet");
 
@@ -165,8 +165,8 @@
             });
         }
 
-        
-        
+
+
     }
 
 })();

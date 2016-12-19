@@ -137,7 +137,7 @@
            $scope.uploadSkillSet = function () {
 
                $http.post('http://lstractorquizapi.azurewebsites.net/api/SkillSets/CreateNewSkillSet', {
-                        "Name": $scope.skillSet // TODO: verify this is correct
+                        "Name": $scope.skillSet.name
                    })
                    .then(function (response) {
                        console.log(response);
