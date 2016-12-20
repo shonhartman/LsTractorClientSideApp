@@ -119,9 +119,9 @@
         }
 
         //UPDATE SKILL SET NAME BY ID
-        $scope.updateSkillSet = function () {
+        $scope.updateSkillSet = function (skillSetId) {
             console.log("updating skillset");
-            $http.put($scope.main.apiUrl + 'SkillSets/UpdateSkillSet/{skillSetId}', {
+            $http.put('http://lstractorquizapi.azurewebsites.net/api/SkillSets/UpdateSkillSet/' + skillsetId, {
                     "Name": "{name}"
                 })
                 .then(function (response) {
@@ -135,9 +135,7 @@
             $http.delete('http://lstractorquizapi.azurewebsites.net/api/SkillSets/DeleteSkillSet/' + skillSetId)
                 .then(function (response) {
                     logger.logSuccess("Well done! You successfully deleted{{skillset.name}}.");
-                    // $location.url("/#/skill-sets");
                     $scope.skillsets.splice($index, 1);
-
                 });
             console.log("deleting skillSet");
 

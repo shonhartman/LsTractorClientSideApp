@@ -5,7 +5,6 @@
         .controller('DashboardCtrl', ['$cookies', '$scope', '$http', DashboardCtrl])
         .controller('EmployeeCtrl', ['$scope', '$http', '$routeParams', EmployeeCtrl]);
 
-
     function DashboardCtrl($cookies, $scope, $http) {
 
         console.log("I am DashboardCtrl");

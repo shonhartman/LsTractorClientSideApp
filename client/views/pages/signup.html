@@ -2,7 +2,7 @@
     <div class="auth-container">
         <div class="signin-header">
             <section class="logo text-center">
-                <h1><a href="#/">{{main.brand}}</a></h1>
+                <a href="#/"><img src="http://novotempoconsorcio.com.br/assets/img/lstractor.png" style="height: 50px; width: auto;" /></a>
             </section>
         </div>
         <div class="signup-body">
@@ -61,7 +61,7 @@
                                 <section class="panel panel-default" style="margin-top: 20px;">
                                     <dt style="margin: 10px 0 10px 0;">Dealership</dt>
                                     <dd ng-controller="dealershipCtrl">
-                                        <select ng-model="dealershipFields.Dealership">
+                                        <select ng-model="dealershipFields.Dealership" style="width: 95%;">
                                             <option ng-repeat="dealership in dealerships" value="{{ dealership.Id }}">{{ dealership.Name }}</option>
                                         </select>
                                     </dd>
@@ -79,7 +79,7 @@
                         <div class="form-submit">
                             <div class="form-group">
                                 <p class="text-muted text-small">By clicking on signup, you agree to <a href="javascript:;"><i>terms</i></a> and <a href="javascript:;"><i>privacy policy</i></a></p>
-                                <button type="submit" class="btn btn-info btn-block btn-lg" ng-click="signup()">Sign up</button>
+                                <button type="submit" class="btn btn-success btn-block btn-lg" ng-click="signup()">Sign up</button>
                             </div>
                         </div>
                     </form>
