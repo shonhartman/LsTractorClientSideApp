@@ -7,12 +7,12 @@
                 <span class="icon glyphicon glyphicon-home"></span>
                 <label>First Name</label>
                 <span class="field-value">
-                    {{currentAccount.FirstName}}
+                    {{main.user.FirstName}}
                     <span class="glyphicon glyphicon-pencil" data-ng-click="edit('FirstName')"></span>
                 </span>
                 <span class="field-editor">
                     <form data-ng-submit="doneEditing()">
-                        <input data-ng-model="currentAccount.FirstName" type="text" class="form-control">
+                        <input data-ng-model="main.user.FirstName" type="text" class="form-control">
                         <span class="glyphicon glyphicon-ok" style="color: green;" data-ng-click="doneEditing()"></span>
                     </form>
                  </span>
@@ -21,12 +21,12 @@
                 <span class="icon glyphicon glyphicon-home"></span>
                 <label>Last Name</label>
                 <span class="field-value">
-                    {{currentAccount.LastName}}
+                    {{main.user.LastName}}
                     <span class="glyphicon glyphicon-pencil" data-ng-click="edit('LastName')"></span>
                 </span>
                 <span class="field-editor">
                     <form data-ng-submit="doneEditing()">
-                        <input data-ng-model="currentAccount.LastName" type="text" class="form-control">
+                        <input data-ng-model="main.user.LastName" type="text" class="form-control">
                         <span class="glyphicon glyphicon-ok" style="color: green;" data-ng-click="doneEditing()"></span>
                     </form>
                  </span>
@@ -35,12 +35,12 @@
                 <span class="icon glyphicon glyphicon-home"></span>
                 <label>Email</label>
                 <span class="field-value">
-                    {{currentAccount.Email}}
+                    {{main.user.Email}}
                     <span class="glyphicon glyphicon-pencil" data-ng-click="edit('Email')"></span>
                 </span>
                 <span class="field-editor">
                     <form data-ng-submit="doneEditing()">
-                        <input data-ng-model="currentAccount.Email" type="text" class="form-control">
+                        <input data-ng-model="main.user.Email" type="text" class="form-control">
                         <span class="glyphicon glyphicon-ok" style="color: green;" data-ng-click="doneEditing()"></span>
                     </form>
                  </span>
@@ -54,7 +54,7 @@
                 </span>
                 <span class="field-editor">
                     <form data-ng-submit="doneEditing()">
-                        <input data-ng-model="currentAccount.Password" type="text" class="form-control">
+                        <input data-ng-model="main.user.Password" type="text" class="form-control">
                         <span class="glyphicon glyphicon-ok" style="color: green;" data-ng-click="doneEditing()"></span>
                     </form>
                  </span>
@@ -63,12 +63,12 @@
                 <span class="icon glyphicon glyphicon-home"></span>
                 <label>Phone #</label>
                 <span class="field-value">
-                    {{currentAccount.PhoneNumber}}
+                    {{main.user.PhoneNumber}}
                     <span class="glyphicon glyphicon-pencil" data-ng-click="edit('PhoneNumber')"></span>
                 </span>
                 <span class="field-editor">
                     <form data-ng-submit="doneEditing()">
-                        <input data-ng-model="currentAccount.PhoneNumber" type="text" class="form-control">
+                        <input data-ng-model="main.user.PhoneNumber" type="text" class="form-control">
                         <span class="glyphicon glyphicon-ok" style="color: green;" data-ng-click="doneEditing()"></span>
                     </form>
                  </span>
@@ -77,12 +77,12 @@
                 <span class="icon glyphicon glyphicon-home"></span>
                 <label>Date of Birth</label>
                 <span class="field-value">
-                    {{currentAccount.BirthDate | date:'MM/dd/yyyy'}}
+                    {{main.user.BirthDate | date:'MM/dd/yyyy'}}
                     <span class="glyphicon glyphicon-pencil" data-ng-click="edit('BirthDate')"></span>
                 </span>
                 <span class="field-editor">
                     <form data-ng-submit="doneEditing()">
-                        <input data-ng-model="currentAccount.PhoneNumber" type="text" class="form-control">
+                        <input data-ng-model="main.user.PhoneNumber" type="text" class="form-control">
                         <span class="glyphicon glyphicon-ok" style="color: green;" data-ng-click="doneEditing()"></span>
                     </form>
                  </span>
@@ -92,7 +92,7 @@
     <!-- end Profile Info -->
     <!-- Dealership Info -->
 
-    <div ng-if="currentAccount.Role == 5 || currentAccount.Role == 6" class="panel panel-default profile-margin" ng-controller="dealershipCtrl">
+    <div ng-if="main.user.Role == 5 || main.user.Role == 6" class="panel panel-default profile-margin" ng-controller="dealershipCtrl">
         <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Dealership</strong></div>
         <ul class="list-unstyled list-info">
             <li class="editable-field" data-ng-class="{editing: editing == 'Name'}">
@@ -211,25 +211,3 @@
     </div>
     <!-- end Dealership Info -->
 </div>
-<style>
-
-    /* TODO: move this to SASS */
-
-    /*.editable-field .field-editor form {
-        display: inline-block;
-    }
-
-    .editable-field .field-editor .form-control {
-        display: inline-block;
-        width: auto;
-    }
-
-    .editable-field.editing .field-value {
-        display: none;
-    }
-
-    .editable-field:not(.editing) .field-editor {
-        display: none;
-    }*/
-    
-</style>

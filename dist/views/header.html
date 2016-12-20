@@ -1,42 +1,37 @@
 <header class="top-header clearfix" ng-controller="headerCtrl">
-
     <!-- Logo -->
     <div class="logo bg-white">
         <a href="#/dashboard">
             <span class="logo-text"><img src="http://novotempoconsorcio.com.br/assets/img/lstractor.png" height="50%" width="auto" /></span>
-
         </a>
     </div>
-
     <div class="menu-button" toggle-off-canvas>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
     </div>
-
     <div class="top-nav">
         <ul class="nav-right pull-right list-unstyled">
-          <li>
-            <div class="menu-button" toggle-off-canvas>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </div>
-            <a href="#/" data-toggle-nav-collapsed-min class="toggle-min"><i class="ti-menu"></i>   Menu</a>
-          </li>
-          <li class="dropdown text-normal nav-profile" dropdown is-open="status.isopenProfile">
-            <a href="#/profile">
-                  <span class="text-normal">
-                      <span data-translate="{{main.name}}">Hello, {{main.name}}</span>
-                  </span>
-            </a>
-          </li>
-          <li class="dropdown langs text-normal">
-              <a href="/#/pages/signin" ng-click="logout()" class="active-flag" dropdown-toggle>
-                  <p>Log Out</p>
-              </a>
-          </li>
+            <li>
+                <div class="menu-button" toggle-off-canvas>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </div>
+                <a href="#/" data-toggle-nav-collapsed-min class="toggle-min"><i class="ti-menu"></i>   Menu</a>
+            </li>
+            <li class="dropdown text-normal nav-profile" dropdown is-open="status.isopenProfile">
+                <a href="#/profile">
+                    <span data-translate="{{main.user.FirstName}} {{main.user.LastName}}">
+                        Hello, {{main.user.FirstName}} {{main.user.LastName}}
+                    </span>
+                </a>
+            </li>
+            <li class="dropdown langs text-normal">
+                <a href="/#/pages/signin" ng-click="logout()" class="active-flag" dropdown-toggle>
+                    <p>Log Out</p>
+                </a>
+            </li>
         </ul>
     </div>
-
 </header>
