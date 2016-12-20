@@ -10,11 +10,9 @@
         var date = new Date();
         var year = date.getFullYear();
         var user = angular.fromJson($cookies.get('user'));
-        var userName = user ? user.FirstName + ' ' + user.LastName : '';
 
         $scope.main = {
             brand: "LS Tractor",
-            name: userName,
             year: year,
             apiUrl: 'http://lstractorquizapi.azurewebsites.net/api/',
             // apiUrl: 'http://localhost:50516/api/',

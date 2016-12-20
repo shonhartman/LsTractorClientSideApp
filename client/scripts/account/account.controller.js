@@ -7,9 +7,6 @@
     //ACCOUNT CONTROLLER
     function accountCtrl($q, $cookies, $scope, $window, $location, $http, $routeParams) {
 
-        //GET ACCOUNT
-        $scope.currentAccount = angular.fromJson($cookies.get('user'));
-
         $scope.editing = ''; //name of property currently being edited
 
         // used by signup
@@ -31,7 +28,7 @@
                 .then(function (response) {
 
                     //Save user to model and cookie
-                    $scope.currentAccount = response.data;
+                    $scope.main.user = response.data;
                     $cookies.put('user', angular.toJson(response.data));
                     $location.url('/dashboard');
 
@@ -60,7 +57,7 @@
                     "PhoneNumber": $scope.formData.PhoneNumber
                 })
                 .then(function (response) {
-                    $scope.currentAccount = response.data;
+                    $scope.main.user = response.data;
                     $cookies.put('user', angular.toJson(response.data));
                     $location.url('/dashboard');
                 }, function (response) {
@@ -105,14 +102,14 @@
 
         $scope.doneEditing = function () {
             console.log("Done editing.");
-            $scope.updateAccount($scope.currentAccount).then(function () {
+            $scope.updateAccount($scope.main.user).then(function () {
                 $scope.editing = '';
             });
         };
 
         function updateAccountCookieFromScope()
         {
-            $cookies.put('user', angular.toJson($scope.currentAccount));
+            $cookies.put('user', angular.toJson($scope.main.user));
         }
     }
 
