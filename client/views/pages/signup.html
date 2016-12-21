@@ -41,22 +41,34 @@
                                     </span>
                                     <input type="password" class="form-control input-lg" placeholder="Password" ng-model="formData.Password">
                                 </div>
-                                <div class="form-group" style="margin-top: 20px;">
+                                <!--<div class="form-group" style="margin-top: 20px;">
                                     <div class="input-group input-group-first">
                                         <span class="input-group-addon">
                                         <span class="ti-calendar"></span>
                                         </span>
                                         <input type="text" class="form-control input-lg" placeholder="Date of Birth YYYY-MM-DD" ng-model="formData.BirthDate">
                                     </div>
-                                </div>
+                                </div>-->
                                 <div class="form-group" style="margin-top: 20px;">
                                     <div class="input-group input-group-first">
                                         <span class="input-group-addon">
                                         <span class="ti-mobile"></span>
                                         </span>
-                                        <input type="text" class="form-control input-lg" placeholder="Phone Number xxx-xxx-xxxx" ng-model="formData.PhoneNumber">
+                                        <input type="text" class="form-control input-lg" placeholder="Phone Number (xxx)xxx-xxxx" ng-model="formData.PhoneNumber">
                                     </div>
                                 </div>
+                        <!--Date Picker-->
+                            <div class="form-group" style="margin-top: 20px;" data-ng-controller="DatepickerDemoCtrl">
+                                <div class="input-group input-group-first">
+                                    <span class="input-group-addon" ng-click="open($event)"><i class="ti-calendar"></i></span>
+                                    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min="minDate" max="'2015-06-22'"
+                                        datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" ng-model="formData.BirthDate">
+                                </div>
+                            </div>
+                        <!-- end Date Picker-->
+
+
+
                                 <!-- Replace with Select2 -->
                                 <section class="panel panel-default" style="margin-top: 20px;">
                                     <dt style="margin: 10px 0 10px 0;">Dealership</dt>
@@ -92,3 +104,18 @@
         </div>
     </div>
 </div>
+
+
+<section class="page-form-ele page">
+
+<!-- Datepicker -->
+    <section class="panel panel-default">
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Datepicker</strong></div>
+
+    </section>
+    <!-- end Datepicker -->
+    
+
+</section>
+<!-- end form elements Page -->
+
