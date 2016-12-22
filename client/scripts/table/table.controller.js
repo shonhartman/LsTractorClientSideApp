@@ -15,6 +15,13 @@
       init();
     });
 
+    $scope.dealershipProgress = [];
+
+    $http.get($scope.main.apiUrl + "Dealerships/GetAllDealerships/DealershipResults").then(function(response) {
+      $scope.dealershipProgress = response.data;
+      init();
+    });
+
     ///END OF DEALERSHIP DATA
     $scope.searchKeywords = '';
 

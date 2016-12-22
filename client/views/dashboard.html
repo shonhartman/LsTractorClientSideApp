@@ -37,6 +37,15 @@
                                 data-ng-click=" order('-name') "
                                 data-ng-class="{active: row == '-name'}"></span>
                       </div></th>
+                      <th><div class="th">Progress
+                          <span class="fa fa-angle-up"
+                                data-ng-click=" order('progress') "
+                                data-ng-class="{active: row == 'progress'}"></span>
+                          <span class="fa fa-angle-up"
+                                data-ng-click=" order('progress') "
+                                data-ng-class="{active: row == '-progress'}"></span>
+                          
+                      </div></th>
                       <th><div class="th">
                           State
                           <span class="fa fa-angle-up"
@@ -51,6 +60,7 @@
               <tbody>
                   <tr data-ng-repeat="store in currentPageStores">
                       <td>{{store.Name}}</td>
+                      <td><progressbar class="progressbar-xs no-margin" value="DealershipProgress"></progressbar></td>
                       <td>{{store.State}}</td>
                   </tr>
               </tbody>
