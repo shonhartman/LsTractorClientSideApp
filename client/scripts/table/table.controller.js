@@ -10,15 +10,8 @@
 
     $scope.stores = [];
 
-    $http.get($scope.main.apiUrl + "Dealerships/GetAllDealerships").then(function(response) {
+    $http.get($scope.main.apiUrl + "Dealerships/GetDealershipsReport").then(function(response) {
       $scope.stores = response.data;
-      init();
-    });
-
-    $scope.dealershipProgress = [];
-
-    $http.get($scope.main.apiUrl + "Dealerships/GetAllDealerships/DealershipResults").then(function(response) {
-      $scope.dealershipProgress = response.data;
       init();
     });
 

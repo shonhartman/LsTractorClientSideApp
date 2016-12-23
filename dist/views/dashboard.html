@@ -1,75 +1,66 @@
 <div class="page page-dashboard" ng-controller="DashboardCtrl">
-
     <!-- ADMIN TABLE -->
     <div ng-if="main.user.Role == 6" data-ng-controller="tableCtrl">
-      <section class="panel panel-default table-dynamic">
-          <div class="panel-heading"><strong><i class="fa fa-building-o" aria-hidden="true"></i>
+        <section class="panel panel-default table-dynamic">
+            <div class="panel-heading"><strong><i class="fa fa-building-o" aria-hidden="true"></i>
             Dealerships</strong></div>
-
-          <div class="table-filters">
-              <div class="row">
-                  <div class="col-sm-4 col-xs-6">
-                      <form>
-                          <input type="text"
-                                 placeholder="Search..."
-                                 class="form-control"
-                                 data-ng-model="searchKeywords"
-                                 data-ng-keyup="search()">
-                      </form>
-                  </div>
-                  <div class="col-sm-3 col-xs-6 filter-result-info pull-right">
-                      <span>
+            <div class="table-filters">
+                <div class="row">
+                    <div class="col-sm-4 col-xs-6">
+                        <form>
+                            <input type="text" placeholder="Search..." class="form-control" data-ng-model="searchKeywords" data-ng-keyup="search()">
+                        </form>
+                    </div>
+                    <div class="col-sm-3 col-xs-6 filter-result-info pull-right">
+                        <span>
                           Showing {{filteredStores.length}}/{{stores.length}} dealerships
                       </span>
-                  </div>
-              </div>
-          </div>
-
-          <table class="table table-bordered table-striped table-responsive">
-              <thead>
-                  <tr>
-                      <th><div class="th">
-                          Dealership
-                          <span class="fa fa-angle-up"
-                                data-ng-click=" order('name') "
-                                data-ng-class="{active: row == 'name'}"></span>
-                          <span class="fa fa-angle-down"
-                                data-ng-click=" order('-name') "
-                                data-ng-class="{active: row == '-name'}"></span>
-                      </div></th>
-                      <th><div class="th">Progress
-                          <span class="fa fa-angle-up"
-                                data-ng-click=" order('progress') "
-                                data-ng-class="{active: row == 'progress'}"></span>
-                          <span class="fa fa-angle-up"
-                                data-ng-click=" order('progress') "
-                                data-ng-class="{active: row == '-progress'}"></span>
-                          
-                      </div></th>
-                      <th><div class="th">
-                          State
-                          <span class="fa fa-angle-up"
-                                data-ng-click=" order('state') "
-                                data-ng-class="{active: row == 'state'}"></span>
-                          <span class="fa fa-angle-down"
-                                data-ng-click=" order('-state') "
-                                data-ng-class="{active: row == '-state'}"></span>
-                      </div></th>
-                  </tr>
-              </thead>
-              <tbody ng-controller="dealershipCtrl" id="admin-edit" ng-click="goToDetail(dealership.Id)">
-                  <tr data-ng-repeat="store in currentPageStores">
-                      <td>{{store.Name}}</td>
-                      <td><progressbar class="progressbar-xs no-margin" value="DealershipProgress"></progressbar></td>
-                      <td>{{store.State}}</td>
-                  </tr>
-              </tbody>
-          </table>
-
-          <footer class="table-footer">
-              <div class="row">
-                  <div class="col-md-6 page-num-info">
-                      <span>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-bordered table-striped table-responsive">
+                <thead>
+                    <tr>
+                        <th>
+                            <div class="th">
+                                Dealership
+                                <span class="fa fa-angle-up" data-ng-click=" order('Name') " data-ng-class="{active: row == 'name'}"></span>
+                                <span class="fa fa-angle-down" data-ng-click=" order('-Name') " data-ng-class="{active: row == '-name'}"></span>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="th">Progress
+                                <span class="fa fa-angle-up" data-ng-click=" order('QuizzesProgress') " data-ng-class="{active: row == 'progress'}"></span>
+                                <span class="fa fa-angle-down" data-ng-click=" order('-QuizzesProgress') " data-ng-class="{active: row == '-progress'}"></span>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="th">
+                                State
+                                <span class="fa fa-angle-up" data-ng-click=" order('State') " data-ng-class="{active: row == 'state'}"></span>
+                                <span class="fa fa-angle-down" data-ng-click=" order('-State') " data-ng-class="{active: row == '-state'}"></span>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody ng-controller="dealershipCtrl" id="admin-edit" ng-click="goToDetail(dealership.Id)">
+                    <tr data-ng-repeat="store in currentPageStores">
+                        <td>{{store.Name}}</td>
+                        <td>
+                            <div class="progressbar-sm progress-rounded progress ng-isolate-scope" value="{{store.QuizzesProgress}}" type="success">
+                                <span class="progress-bar" ng-class="type && 'progress-bar-' + type" role="progressbar" aria-valuenow="{{store.QuizzesProgress}}"
+                                    aria-valuemin="0" aria-valuemax="100" ng-style="{width: store.QuizzesProgress  + '%'}" aria-valuetext="{{store.QuizzesProgress}}%"
+                                    style="min-width: 0px;" ng-transclude=""></span>
+                            </div>
+                        </td>
+                        <td>{{store.State}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <footer class="table-footer">
+                <div class="row">
+                    <div class="col-md-6 page-num-info">
+                        <span>
                           Show
                           <select data-ng-model="numPerPage"
                                   data-ng-options="num for num in numPerPageOpt"
@@ -77,24 +68,16 @@
                           </select>
                           entries per page
                       </span>
-                  </div>
-                  <div class="col-md-6 text-right pagination-container">
-                      <pagination class="pagination-sm"
-                                  ng-model="currentPage"
-                                  total-items="filteredStores.length"
-                                  max-size="4"
-                                  ng-change="select(currentPage)"
-                                  items-per-page="numPerPage"
-                                  rotate="false"
-                                  previous-text="&lsaquo;" next-text="&rsaquo;"
-                                  boundary-links="true"></pagination>
-                  </div>
-              </div>
-          </footer>
-      </section>
+                    </div>
+                    <div class="col-md-6 text-right pagination-container">
+                        <pagination class="pagination-sm" ng-model="currentPage" total-items="filteredStores.length" max-size="4" ng-change="select(currentPage)"
+                            items-per-page="numPerPage" rotate="false" previous-text="&lsaquo;" next-text="&rsaquo;" boundary-links="true"></pagination>
+                    </div>
+                </div>
+            </footer>
+        </section>
     </div>
     <!-- END ADMIN TABLE -->
-
     <!-- DEALERSHIP TABLE -->
     <div ng-if="main.user.Role == 5">
         <div class="panel panel-default">
@@ -120,49 +103,45 @@
         </div>
     </div>
     <!-- END DEALERSHIP TABLE -->
-
     <!--EMPLOYEE VIEW -->
-
     <!--
     * This is the new
     * style we created for
     * skill sets
     -->
-
     <div class="row" ng-controller="SkillSetCtrl">
-      <div ng-if="main.user.Role == 4">
-        <div class="col-lg-4 col-md-4 col-xs-12 col-xsm-12" ng-repeat="skillset in skillsets">
-          <section class="panel panel-box" ng-if="main.user.Role == 4 || main.user.Role == 5">
-            <div class="panel panel-profile text-left">
-              <div class="panel-heading bg-primary clearfix">
-                <div style="height:20px;"></div>
-                <span class="ng-binding h3">{{ skillset.Name }}</span>
-                <span class="pull-right"><a class="btn btn-default btn-md btn-w-md" style="background-color: #011E45; border-color:#011E45; color: #FFFFFF;" type="button" href="#/pages/skill-set-details/{{ skillset.Id }}">Open</a></span>
-                <div style="height:20px;"></div>
-              </div>
-              <ul class="list-group">
-                <li class="list-group-item">
-                    <i class="ti-stats-up"></i>
-                      Your Progress
-                      <div class="progressbar-sm progress-rounded progress ng-isolate-scope" value="{{skillset.Progress}}" type="success" style="width: 50%;float: right;">
-                        <span class="progress-bar progress-bar-success" ng-class="type && 'progress-bar-' + type" role="progressbar" aria-valuenow="{{skillset.Progress}}" aria-valuemin="0" aria-valuemax="100" ng-style="{width: (skillset.Progress < 6 ? 6 : skillset.Progress)  + '%'}" aria-valuetext="{{skillset.Progress}}%" style="min-width: 0px;" ng-transclude=""></span>
-                      </div>
-                </li>
-              </ul>
-              <ul class="list-group" ng-repeat="quiz in skillset.Quizzes">
-                <li class="list-group-item">
-                  <span ng-show="quiz.Status == 1" class="badge badge-danger">Not Started</span>
-                  <span ng-show="quiz.Status == 2" class="badge badge-warning">In Progress</span>
-                  <span ng-show="quiz.Status == 3" class="badge badge-success">Complete</span>
-                  <i class="glyphicon glyphicon-facetime-video"></i>
-                  {{quiz.Video.Title}}
-                </li>
-              </ul>
+        <div ng-if="main.user.Role == 4">
+            <div class="col-lg-4 col-md-4 col-xs-12 col-xsm-12" ng-repeat="skillset in skillsets">
+                <section class="panel panel-box" ng-if="main.user.Role == 4 || main.user.Role == 5">
+                    <div class="panel panel-profile text-left">
+                        <div class="panel-heading bg-primary clearfix">
+                            <div style="height:20px;"></div>
+                            <span class="ng-binding h3">{{ skillset.Name }}</span>
+                            <span class="pull-right"><a class="btn btn-default btn-md btn-w-md" style="background-color: #011E45; border-color:#011E45; color: #FFFFFF;" type="button" href="#/pages/skill-set-details/{{ skillset.Id }}">Open</a></span>
+                            <div style="height:20px;"></div>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <i class="ti-stats-up"></i> Your Progress
+                                <div class="progressbar-sm progress-rounded progress ng-isolate-scope" value="{{skillset.Progress}}" type="success" style="width: 50%;float: right;">
+                                    <span class="progress-bar progress-bar-success" ng-class="type && 'progress-bar-' + type" role="progressbar" aria-valuenow="{{skillset.Progress}}"
+                                        aria-valuemin="0" aria-valuemax="100" ng-style="{width: (skillset.Progress < 6 ? 6 : skillset.Progress)  + '%'}"
+                                        aria-valuetext="{{skillset.Progress}}%" style="min-width: 0px;" ng-transclude=""></span>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="list-group" ng-repeat="quiz in skillset.Quizzes">
+                            <li class="list-group-item">
+                                <span ng-show="quiz.Status == 1" class="badge badge-danger">Not Started</span>
+                                <span ng-show="quiz.Status == 2" class="badge badge-warning">In Progress</span>
+                                <span ng-show="quiz.Status == 3" class="badge badge-success">Complete</span>
+                                <i class="glyphicon glyphicon-facetime-video"></i> {{quiz.Video.Title}}
+                            </li>
+                        </ul>
+                    </div>
+                </section>
             </div>
-          </section>
         </div>
-      </div>
     </div>
-
-      <!-- END EMPLOYEE VIEW -->
+    <!-- END EMPLOYEE VIEW -->
 </div>
