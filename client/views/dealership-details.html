@@ -1,0 +1,23 @@
+<div class="page page-dashboard" ng-controller="DashboardCtrl">
+      <div class="panel panel-default">
+          <div class="panel-body table-responsive">
+              <table class="table">
+                  <thead>
+                      <tr>
+                          <th>Employee</th>
+                          <th popover="How are my employees doing" popover-trigger="mouseenter">Progress</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <!-- TODO How do we account for dealership number? -->
+                      <tr ng-repeat="employee in employees">
+                          <td><a href="#/employees/{{ employee.Id }}">{{ employee.FirstName }} {{ employee.LastName }}</a></td>
+                          <td>
+                              <progressbar class="progressbar-xs no-margin" value="employee.QuizzesProgress"></progressbar>
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+</div>

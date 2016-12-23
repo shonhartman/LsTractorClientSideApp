@@ -57,7 +57,7 @@
                       </div></th>
                   </tr>
               </thead>
-              <tbody>
+              <tbody ng-controller="dealershipCtrl" id="admin-edit" ng-click="goToDetail(dealership.Id)">
                   <tr data-ng-repeat="store in currentPageStores">
                       <td>{{store.Name}}</td>
                       <td><progressbar class="progressbar-xs no-margin" value="DealershipProgress"></progressbar></td>
@@ -163,94 +163,6 @@
         </div>
       </div>
     </div>
-
-      <!--
-      * This is the old
-      * style we created for
-      * skill sets
-      * Status: deprecated
-      -->
-
-      <!--DYNAMIC DATA-->
-          <!-- <div class="row" ng-controller="SkillSetCtrl">
-              <div class="col-lg-3 col-xsm-6" ng-repeat="skillset in skillsets">
-                  <a style="text-decoration: none;" href="#/pages/skill-set-details/{{ skillset.Id }}">
-                      <div class="panel panel-box" style="margin-top:20%;" ng-click="goToSkillSet()">
-                          <div class="panel-top">
-                              <span ng-show="skillset.status == 1" class="ti-key" style="color:#7992BF"></span>
-                              <span ng-show="skillset.status == 2" class="ti-stats-up color-info"></span>
-                              <span ng-show="skillset.status == 3" class="ti-star color-success"></span>
-                          </div>
-                          <div class="panel-info">
-                              <span>{{ skillset.Name }}</span>
-                          </div>
-                          <div class="panel-bottom bg-light">
-                              <span ></span>
-                              <span ng-show="skillset.status == 1" class="ti-medall" style="color:#7992BF"></span>
-                              <span ng-show="skillset.status == 2" class="ti-stats-up color-info"></span>
-                              <span ng-show="skillset.status == 3" class="ti-cup color-warning"></span>
-                          </div>
-                      </div>
-                  </a>
-              </div>
-          </div> -->
-          <!-- End DYNAMIC DATA -->
-      <!--<div class="row" ng-controller="BadgeCtrl">-->
-          <!-- Skill Sets -->
-          <!--<div class="col-lg-3 col-xsm-6" popover="You completed this one!" popover-trigger="mouseenter">
-                  <div class="panel panel-box" ng-click="goToSkillSet()">
-                      <div class="panel-top">
-                          <span class="ti-star color-success"></span>
-                      </div>
-                      <div class="panel-info">
-                          <span>PHASE 1 DIAGNOSTICS</span>
-                      </div>
-                      <div class="panel-bottom bg-light">
-                          <span class="ti-cup color-warning"></span>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-lg-3 col-xsm-6" popover="Click to continue" popover-trigger="mouseenter">
-                  <div class="panel panel-box">
-                      <div class="panel-top">
-                          <i class="ti-stats-up color-info"></i>
-                      </div>
-                      <div class="panel-info">
-                          <span>PHASE 2 DIAGNOSTICS</span>
-                      </div>
-                      <div class="panel-bottom bg-light">
-                          <span>22 <span class="size-h4">%</span></span>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-lg-3 col-xsm-6">
-                  <div class="panel panel-box">
-                      <div class="panel-top">
-                          <i class="ti-stats-up color-info"></i>
-                      </div>
-                      <div class="panel-info">
-                          <span>PHASE 3 DIAGNOSTICS</span>
-                      </div>
-                      <div class="panel-bottom bg-light">
-                          <span>37 <span class="size-h4">%</span></span>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-lg-3 col-xsm-6" popover="Click to begin" popover-trigger="mouseenter">
-                  <div class="panel panel-box">
-                      <div class="panel-top">
-                          <i class="ti-key" style="color:#7992BF"></i>
-                      </div>
-                      <div class="panel-info">
-                          <span>PHASE 4 DIAGNOSTICS</span>
-                      </div>
-                      <div class="panel-bottom bg-light">
-                          <span class="ti-medall" style="color:#7992BF"></span>
-                      </div>
-                  </div>
-              </div>
-          </div>-->
-
 
       <!-- END EMPLOYEE VIEW -->
 </div>

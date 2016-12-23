@@ -2,10 +2,10 @@
   'use strict';
 
   angular.module('app.table')
-    .controller('tableCtrl', ['$scope', '$http', '$filter', tableCtrl]);
+    .controller('tableCtrl', ['$scope', '$http', '$filter', '$location', tableCtrl]);
 
   //TODO : Get Dealerships
-  function tableCtrl($scope, $http, $filter) {
+  function tableCtrl($scope, $http, $filter, $location) {
     var init;
 
     $scope.stores = [];

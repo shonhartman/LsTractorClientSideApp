@@ -21,6 +21,14 @@
                 $scope.dealerships = response.data;
             });
 
+        $scope.goToDetail = function(dealershipId) {
+            console.log("trying to go");
+            $location.url("#/pages/dealership-details/" + dealershipId);   
+        } 
+
+            
+        
+
         // Technican - 4
         // Dealership Owner - 5
         // Super Admin - 6
@@ -83,6 +91,7 @@
             userCookie.Dealership = $scope.currentDealership;
             $cookies.put('user', angular.toJson(userCookie));
         }
+
     }
 
 })();
