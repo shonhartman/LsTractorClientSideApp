@@ -47,11 +47,7 @@
                     <tr data-ng-repeat="store in currentPageStores">
                         <td>{{store.Name}}</td>
                         <td>
-                            <div class="progressbar-sm progress-rounded progress ng-isolate-scope" value="{{store.QuizzesProgress}}" type="success">
-                                <span class="progress-bar" ng-class="type && 'progress-bar-' + type" role="progressbar" aria-valuenow="{{store.QuizzesProgress}}"
-                                    aria-valuemin="0" aria-valuemax="100" ng-style="{width: store.QuizzesProgress  + '%'}" aria-valuetext="{{store.QuizzesProgress}}%"
-                                    style="min-width: 0px;" ng-transclude=""></span>
-                            </div>
+                            <progressbar class="progressbar-xs no-margin" value="store.QuizzesProgress"></progressbar>
                         </td>
                         <td>{{store.State}}</td>
                     </tr>
