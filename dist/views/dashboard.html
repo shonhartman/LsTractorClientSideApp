@@ -43,8 +43,8 @@
                         </th>
                     </tr>
                 </thead>
-                <tbody ng-controller="dealershipCtrl" id="admin-edit" ng-click="goToDetail(dealership.Id)">
-                    <tr data-ng-repeat="store in currentPageStores">
+                <tbody ng-controller="dealershipCtrl" id="admin-edit">
+                    <tr data-ng-repeat="store in currentPageStores" ng-click="goToDetail(store.Id)">
                         <td>{{store.Name}}</td>
                         <td>
                             <progressbar class="progressbar-xs no-margin" value="store.QuizzesProgress"></progressbar>

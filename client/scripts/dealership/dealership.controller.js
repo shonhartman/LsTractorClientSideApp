@@ -22,12 +22,8 @@
             });
 
         $scope.goToDetail = function(dealershipId) {
-            console.log("trying to go");
-            $location.url("#/pages/dealership-details/" + dealershipId);   
-        } 
-
-            
-        
+            $location.url("dealership-details/" + dealershipId);
+        }
 
         // Technican - 4
         // Dealership Owner - 5
