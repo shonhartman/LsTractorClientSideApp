@@ -45,7 +45,7 @@
                 </thead>
                 <tbody ng-controller="dealershipCtrl" id="admin-edit">
                     <tr data-ng-repeat="store in currentPageStores" ng-click="goToDetail(store.Id)">
-                        <td>{{store.Name}} <span class="pull-right"><a href="#/dealership-details/{{ dealership.Id }}"><em>Click For Detail</em></a></span>
+                        <td>{{store.Name}} <span class="pull-right"><a href="#/dealership-details/{{ store.Id }}"><em>Click For Detail</em></a></span>
 </td>
                         <td>
                             <progressbar class="progressbar-xs no-margin" value="store.QuizzesProgress"></progressbar>
