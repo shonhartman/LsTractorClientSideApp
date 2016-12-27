@@ -10,10 +10,17 @@
         var currentUser = angular.fromJson($cookies.get('user'));
         $scope.editing = ''; //name of property currently being edited
         $scope.dealerships = [];
+        $scope.detailPageEmployees = [];
 
-        if(currentUser)
-        {
+        if (currentUser) {
             $scope.currentDealership = currentUser.Dealership;
+        }
+
+        // check for detail page
+        var uriDealershipId = $routeParams.id;
+
+        if (uriDealershipId) {
+            setDealershipEmployees(uriDealershipId);
         }
 
         $http.get($scope.main.apiUrl + 'Dealerships/GetAllDealerships')
@@ -21,7 +28,7 @@
                 $scope.dealerships = response.data;
             });
 
-        $scope.goToDetail = function(dealershipId) {
+        $scope.goToDetail = function (dealershipId) {
             $location.url('/dealership-details/' + dealershipId);
         }
 
@@ -54,7 +61,7 @@
                 .then(function (response) {
                     console.log(response.data);
                     updateDealershipCookieFromScope();
-                }, function(response) {
+                }, function (response) {
                     // update failed
                     console.log(response.data.Message);
                 });
@@ -81,8 +88,14 @@
             });
         };
 
-        function updateDealershipCookieFromScope()
-        {
+        function setDealershipEmployees(dealershipId) {
+            $http.get($scope.main.apiUrl + 'Dealerships/GetEmployeesReport/' + dealershipId)
+                .then(function (response) {
+                    $scope.detailPageEmployees = response.data;
+                });
+        }
+
+        function updateDealershipCookieFromScope() {
             var userCookie = angular.fromJson($cookies.get('user'));
             userCookie.Dealership = $scope.currentDealership;
             $cookies.put('user', angular.toJson(userCookie));
