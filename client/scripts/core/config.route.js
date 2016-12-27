@@ -32,6 +32,7 @@
                 .when('/employees/:id', { templateUrl: 'views/employee.html' })
                 .when('/quizes/quiz/:id', { templateUrl: 'views/quizes/quiz.html' })
                 .when('/pages/skill-set-details/:id', { templateUrl: 'views/pages/skill-set-details.html' })
+                .when('/dealership-details/:id', {templateUrl: 'views/dealership-details.html'}) 
                 .when('/', {redirectTo: 'pages/signin'})
                 .when('/404', {templateUrl: 'views/pages/404.html'})
                 .otherwise({ redirectTo: '/404'});
