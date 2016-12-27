@@ -2,8 +2,7 @@
     'use strict';
 
     angular.module('app.account')
-        .controller('accountCtrl', ['$q', '$cookies', '$scope', '$window', '$location', '$http', '$routeParams', 'logger', accountCtrl])
-        .controller('DatepickerDemoCtrl', ['$scope', DatepickerDemoCtrl]);
+        .controller('accountCtrl', ['$q', '$cookies', '$scope', '$window', '$location', '$http', '$routeParams', 'logger', accountCtrl]);
 
 
     //ACCOUNT CONTROLLER
@@ -54,7 +53,7 @@
                     "Role": parseInt($scope.formData.Role, 10),
                     "FirstName": $scope.formData.FirstName,
                     "LastName": $scope.formData.LastName,
-                    "BirthDate": $scope.formData.BirthDate,
+                    "BirthDate": $scope.dt,
                     "Email": $scope.formData.Email,
                     "Password": $scope.formData.Password,
                     "PhoneNumber": $scope.formData.PhoneNumber
@@ -113,34 +112,42 @@
             });
         };
 
-        function updateAccountCookieFromScope()
-        {
+        function updateAccountCookieFromScope() {
             $cookies.put('user', angular.toJson($scope.main.user));
         }
-    }
 
-      function DatepickerDemoCtrl($scope) {
-        $scope.today = function() {
-            return $scope.dt = new Date();
-        };
-
-        $scope.today();
+        // DOB datepicker settings
 
         $scope.showWeeks = true;
+        $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'shortDate'];
+        $scope.format = $scope.formats[0];
 
-        $scope.toggleWeeks = function() {
+        $scope.dt = new Date();
+
+        $scope.dateOptions = {
+            'year-format': "'yy'",
+            'starting-day': 1
+        };
+
+        $scope.toggleWeeks = function () {
             $scope.showWeeks = !$scope.showWeeks;
         };
 
-        $scope.clear = function() {
+        $scope.clear = function () {
             $scope.dt = null;
         };
 
-        $scope.disabled = function(date, mode) {
+        $scope.disabled = function (date, mode) {
             mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
         };
 
-        $scope.toggleMin = function() {
+        $scope.open = function ($event) {
+            $event.preventDefault();
+            $event.stopPropagation();
+            $scope.opened = true;
+        };
+
+        $scope.toggleMin = function () {
             var _ref;
             $scope.minDate = (_ref = $scope.minDate) != null ? _ref : {
                 "null": new Date()
@@ -148,21 +155,5 @@
         };
 
         $scope.toggleMin();
-
-        $scope.open = function($event) {
-            $event.preventDefault();
-            $event.stopPropagation();
-            $scope.opened = true;
-        };
-
-        $scope.dateOptions = {
-            'year-format': "'yy'",
-            'starting-day': 1
-        };
-
-        $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'shortDate'];
-
-        $scope.format = $scope.formats[0];
     }
-
 })();
