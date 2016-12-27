@@ -22,8 +22,7 @@
             });
 
         $scope.goToDetail = function(dealershipId) {
-            console.log("trying to go");
-            $location.url("#/dealership-details/" + dealershipId);
+            $location.url('/dealership-details/' + dealershipId);
         }
 
         // Technican - 4
