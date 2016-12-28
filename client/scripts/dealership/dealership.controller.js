@@ -12,7 +12,11 @@
         $scope.dealerships = [];
         $scope.detailPageEmployees = [];
 
-        if (currentUser) {
+        if (currentUser.role == 6) {
+            $scope.currentDealership = currentDealership;
+        }
+
+        else if (currentUser) {
             $scope.currentDealership = currentUser.Dealership;
         }
 
