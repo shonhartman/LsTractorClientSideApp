@@ -6,7 +6,7 @@
             var routes, setRoutes;
 
             routes = [
-                'add', 'charts/charts', 'charts/flot', 'closure', 'certificates', 'dealership-details',
+                'add-dealership', 'charts/charts', 'charts/flot', 'closure', 'certificates', 'dealership-details',
                 'dashboard', 'dealership-list', 'failing-view', 'passing-view', 'profile', 'transfer', 'skill-sets', 'employee', 'employee-list',
                 'pages/404', 'pages/500', 'pages/blank', 'pages/forgot-password', 'pages/lock-screen', 'pages/signin', 'pages/signup', 'pages/skill-set', 'pages/videos',
                 'quizes/quiz-logic-test',

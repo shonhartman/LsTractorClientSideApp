@@ -32,20 +32,27 @@
 
         //CREATE A NEW DEALERSHIP
         $scope.createDealership = function () {
-            $http.post($scope.main.apiUrl + 'Dealerships/CreateNewDealership', [{
-                    "Name": "sample string 1",
-                    "Number": 2,
-                    "Address": "sample string 3",
-                    "Owner": "sample string 4",
-                    "City": "sample string 5",
-                    "State": "sample string 6",
-                    "ZipCode": 7,
-                    "Phone": "sample string 8",
-                    "Fax": "sample string 9",
-                    "Email": "sample string 10"
+
+            if (!$scope.dealershipData) {
+                return;
+            }
+
+            $http.put($scope.main.apiUrl + 'Dealerships/CreateNewDealership', [{
+                    "Name": $scope.dealershipData.Name,
+                    // "Number": 1, //not sure how the number is set : somehow needs to add to the current number
+                    "Address": $scope.dealershipData.Address,
+                    "Owner": $scope.dealershipData.Owner,
+                    "City": $scope.dealershipData.City,
+                    "State": $scope.dealershipData.State,
+                    "ZipCode": $scope.dealershipData.ZipCode,
+                    "Phone": $scope.dealershipData.Phone,
+                    "Fax": $scope.dealershipData.Fax,
+                    "Email": $scope.dealershipData.Email
                 }])
                 .then(function (response) {
+                    console.log(response);
                     $scope.dealerships.push(dealership);
+                    $location.url("/#/dashboard");
                 })
         }
 
