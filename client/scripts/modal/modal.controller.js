@@ -3,14 +3,14 @@
 
        angular.module('app.modal')
 
-       .controller('ModalDemoCtrl', ['$scope', '$modal', '$log', 'logger', ModalDemoCtrl])
+        .controller('ModalCtrl', ['$scope', '$modal', '$log', 'logger', ModalCtrl])
 
-           .controller('ModalInstanceCtrl', ['$scope', '$http', '$modalInstance', 'titles', 'video', '$log', 'logger', '$routeParams', '$log', ModalInstanceCtrl])
-
-           .controller('ModalInstanceCtrl', ['$scope', '$http', '$modalInstance', 'titles', 'video', '$log', 'logger', '$routeParams', ModalInstanceCtrl])
+        .controller('ModalInstanceCtrl', ['$scope', '$http', '$modalInstance', 'titles', 'video', '$log', 'logger', '$routeParams', '$log', ModalInstanceCtrl])
 
 
-       function ModalDemoCtrl($scope, $modal, $log) {
+       function ModalCtrl($scope, $modal, $log) {
+
+           console.log("Modal Control");
 
            $scope.open = function () {
                var modalInstance;

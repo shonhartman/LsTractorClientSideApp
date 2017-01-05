@@ -68,6 +68,18 @@
             });
         }
 
+        $scope.open = function () {
+            console.log("Open");
+            var modalInstance;
+            modalInstance = $modal.open({
+                templateUrl: "addVideo.html"
+            });
+        }
+
+        $scope.cancel = function () {
+               $modalInstance.dismiss("cancel");
+           };
+
         function setSkillsetsProgress() {
 
             angular.forEach($scope.skillsets, function (skillset) {
@@ -107,6 +119,8 @@
                 });
             });
         }
+
+        
     }
 
 })();
