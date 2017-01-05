@@ -7,7 +7,7 @@
 
             routes = [
                 'add-dealership', 'charts/charts', 'charts/flot', 'closure', 'certificates', 'dealership-details',
-                'dashboard', 'dealership-list', 'failing-view', 'passing-view', 'profile', 'transfer', 'skill-sets', 'employee', 'employee-list',
+                'dashboard', 'dealership-list', 'failing-view', 'passing-view', 'profile', 'transfer', 'skill-sets', 'employee', 'employee-list', 'support',
                 'pages/404', 'pages/500', 'pages/blank', 'pages/forgot-password', 'pages/lock-screen', 'pages/signin', 'pages/signup', 'pages/skill-set', 'pages/videos',
                 'quizes/quiz-logic-test',
                 'pages/skill-set-details',
@@ -32,7 +32,7 @@
                 .when('/employees/:id', { templateUrl: 'views/employee.html' })
                 .when('/quizes/quiz/:id', { templateUrl: 'views/quizes/quiz.html' })
                 .when('/pages/skill-set-details/:id', { templateUrl: 'views/pages/skill-set-details.html' })
-                .when('/dealership-details/:id', {templateUrl: 'views/dealership-details.html'}) 
+                .when('/dealership-details/:id', {templateUrl: 'views/dealership-details.html'})
                 .when('/', {redirectTo: 'pages/signin'})
                 .when('/404', {templateUrl: 'views/pages/404.html'})
                 .otherwise({ redirectTo: '/404'});

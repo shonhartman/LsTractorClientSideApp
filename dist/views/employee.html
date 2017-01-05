@@ -1,30 +1,123 @@
-<div class="page page-dashboard" ng-controller="EmployeeCtrl">
+<section class="page page-profile" ng-controller="EmployeeCtrl">
+    <!-- Profile Info -->
+      <div class="col-lg-6 col-md-6 col-s-12 col-xs-12">
+        <div class="panel panel-default profile-margin">
+            <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Profile</strong></div>
+            <ul class="list-unstyled list-info">
+                <li class="editable-field" data-ng-class="{editing: editing == 'FirstName'}">
+                    <span class="icon glyphicon glyphicon-home"></span>
+                    <label>First Name</label>
+                    <span class="field-value">
+                        {{main.user.FirstName}}
+                        <span class="glyphicon glyphicon-pencil" style="cursor:pointer;" data-ng-click="edit('FirstName')"></span>
+                    </span>
+                    <span class="field-editor">
+                        <form data-ng-submit="doneEditing()">
+                            <input data-ng-model="main.user.FirstName" type="text" class="form-control">
+                            <span class="glyphicon glyphicon-ok" style="color: green;cursor:pointer;" data-ng-click="doneEditing()"></span>
+                        </form>
+                     </span>
+                </li>
+                <li class="editable-field" data-ng-class="{editing: editing == 'LastName'}">
+                    <span class="icon glyphicon glyphicon-home"></span>
+                    <label>Last Name</label>
+                    <span class="field-value">
+                        {{main.user.LastName}}
+                        <span class="glyphicon glyphicon-pencil" style="cursor:pointer;" data-ng-click="edit('LastName')"></span>
+                    </span>
+                    <span class="field-editor">
+                        <form data-ng-submit="doneEditing()">
+                            <input data-ng-model="main.user.LastName" type="text" class="form-control">
+                            <span class="glyphicon glyphicon-ok" style="color: green;cursor:pointer;" data-ng-click="doneEditing()"></span>
+                        </form>
+                     </span>
+                </li>
+                <li class="editable-field" data-ng-class="{editing: editing == 'Email'}">
+                    <span class="icon glyphicon glyphicon-home"></span>
+                    <label>Email</label>
+                    <span class="field-value">
+                        {{main.user.Email}}
+                        <span class="glyphicon glyphicon-pencil" style="cursor:pointer;" data-ng-click="edit('Email')"></span>
+                    </span>
+                    <span class="field-editor">
+                        <form data-ng-submit="doneEditing()">
+                            <input data-ng-model="main.user.Email" type="text" class="form-control">
+                            <span class="glyphicon glyphicon-ok" style="color: green;cursor:pointer;" data-ng-click="doneEditing()"></span>
+                        </form>
+                     </span>
+                </li>
+                <li class="editable-field" data-ng-class="{editing: editing == 'Password'}">
+                    <span class="icon glyphicon glyphicon-home"></span>
+                    <label>Password</label>
+                    <span class="field-value">
+                        Click to change
+                        <span class="glyphicon glyphicon-pencil" style="cursor:pointer;" data-ng-click="edit('Password')"></span>
+                    </span>
+                    <span class="field-editor">
+                        <form data-ng-submit="doneEditing()">
+                            <input data-ng-model="main.user.Password" type="text" class="form-control">
+                            <span class="glyphicon glyphicon-ok" style="color: green;cursor:pointer;" data-ng-click="doneEditing()"></span>
+                        </form>
+                     </span>
+                </li>
+                <li class="editable-field" data-ng-class="{editing: editing == 'PhoneNumber'}">
+                    <span class="icon glyphicon glyphicon-home"></span>
+                    <label>Phone #</label>
+                    <span class="field-value">
+                        {{main.user.PhoneNumber}}
+                        <span class="glyphicon glyphicon-pencil" style="cursor:pointer;" data-ng-click="edit('PhoneNumber')"></span>
+                    </span>
+                    <span class="field-editor">
+                        <form data-ng-submit="doneEditing()">
+                            <input data-ng-model="main.user.PhoneNumber" type="text" class="form-control">
+                            <span class="glyphicon glyphicon-ok" style="color: green;cursor:pointer;" data-ng-click="doneEditing()"></span>
+                        </form>
+                     </span>
+                </li>
+                <li class="editable-field" data-ng-class="{editing: editing == 'BirthDate'}">
+                    <span class="icon glyphicon glyphicon-home"></span>
+                    <label>Date of Birth</label>
+                    <span class="field-value">
+                        {{main.user.BirthDate | date:'MM/dd/yyyy'}}
+                        <span class="glyphicon glyphicon-pencil" style="cursor:pointer;" data-ng-click="edit('BirthDate')"></span>
+                    </span>
+                    <span class="field-editor">
+                        <form data-ng-submit="doneEditing()">
+                            <input data-ng-model="main.user.BirthDate | date:'MM/dd/yyyy'" type="text" class="form-control">
+                            <span class="glyphicon glyphicon-ok" style="color: green;cursor:pointer;" data-ng-click="doneEditing()"></span>
+                        </form>
+                     </span>
+                </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+</section>
+<section class="page page-dashboard" ng-controller="SkillSetCtrl">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-s-12 col-xs-12">
+      <div class="panel panel-box">
+        <ul class="list-group" ng-repeat="quiz in skillSet.Quizzes">
+          <li class="list-group-item">
+            <span ng-show="quiz.Status == 1" class="badge badge-danger">Not Started</span>
+            <span ng-show="quiz.Status == 2" class="badge badge-warning">In Progress</span>
+            <span ng-show="quiz.Status == 3" class="badge badge-success">Complete</span>
+            <i class="glyphicon glyphicon-facetime-video"></i>
+            {{quiz.Video.Title}}
+          </li>
+        </ul>
+      </div>
+    </div>
+</section>
 
-<p>{{ employee.firstName }} {{ employee.lastName }}</p>
+
+<!-- <div class="page page-dashboard" ng-controller="EmployeeCtrl">
+
+<p>{{ employee.firstName }} {{ employee.lastName }}</p> -->
 
 <!--Dealership/Employee Table-->
-<!--<div class="panel panel-default">
-    <div class="panel-body table-responsive">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Video</th>
-                    <th>Progress</th>
-                    <th>Complete</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="video in videos">
-                    <td>{{ video.title }}</td>
-                    <td>{{ videoProgress(video.progress) }}</td>
-                    <td>{{ videoComplete(video.isComplete) }}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>-->
-<!-- </div>  /Dealership/Employee Table --> 
 
-<div class="panel panel-default" style="width:49%;">
+<!-- <div class="panel panel-default" style="width:49%;">
     <div class="panel-body table-responsive">
         <table class="table">
             <thead>
@@ -78,12 +171,12 @@
             </tbody>
         </table>
     </div>
-</div>
+</div> -->
 
 <!--Badges-->
-        <div class="row" ng-controller="BadgeCtrl">
+        <!-- <div class="row" ng-controller="BadgeCtrl"> -->
        <!-- Stats -->
-        <div class="col-lg-3 col-xsm-6">
+        <!-- <div class="col-lg-3 col-xsm-6">
             <div class="panel panel-box" ng-click="goToSkillSet()">
                 <div class="panel-top">
                     <span class="ti-star color-success"></span>
@@ -131,18 +224,12 @@
                 <div class="panel-info">
                     <span>GENERAL</span>
                 </div>
-                <div class="panel-bottom bg-light">
+                <div class="panel-bottom bg-light"> -->
                     <!--<span>21 <span class="size-h4">%</span></span>-->
-                    <span class="ti-medall" style="color:#7992BF"></span>
+                    <!-- <span class="ti-medall" style="color:#7992BF"></span>
                 </div>
             </div>
-        </div>
-        <!-- end stats -->          
-    </div>
-
-
-
-
-</div>
-  
-  
+        </div> -->
+        <!-- end stats -->
+    <!-- </div> -->
+<!-- </div> -->
