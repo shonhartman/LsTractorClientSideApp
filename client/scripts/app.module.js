@@ -27,6 +27,7 @@
         'app.quiz',
         'app.skillset',
         'app.table',
+        'app.task',
         'app.ui',
         'app.ui.form.validation',
         'app.video'

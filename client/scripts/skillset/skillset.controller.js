@@ -77,8 +77,13 @@
         }
 
         $scope.cancel = function () {
+                console.log("Cancel");
                $modalInstance.dismiss("cancel");
            };
+        
+        $scope.test = function () {
+            console.log("Test");
+        }
 
         function setSkillsetsProgress() {
 

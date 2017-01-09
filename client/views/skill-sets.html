@@ -134,19 +134,52 @@
         </div>
     </script> 
     <script type="text/ng-template" id="addVideo.html">
-            <div class="modal-header">
-                <h3>Add a Video</h3>
-            </div>
-            <div class="modal-body">
-                <input type="text" class="form-control" ng-model="video.name">
-                <span class="help-block">Video Title</span>
-            </div>
-            <div class="modal-footer">
-            <button class="btn btn-primary" ng-click="uploadSkillSet()">Upload</button>
-            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        <div class="modal-header">
+            <h3>Add a Video</h3>
+        </div>
+        <div class="modal-body page-tasks">
+            <input type="text" class="form-control" ng-model="video.name">
+            <span class="help-block">Video Title</span>
+            <input type="text" class="form-control" ng-model="video.author">
+            <span class="help-block">Author</span>
+            <input type="text" class="form-control" ng-model="video.url">
+            <span class="help-block">URL</span>
+            <hr>
+            <span class="help-block">Does this Video Have a Quiz?</span><label class="ui-switch"><input type="checkbox" ng-model="quiz"><i></i></label>
+            <div ng-show="quiz">
+                <div ng-controller="taskCtrl">
+                    <form data-ng-submit="add()" class="add-task">
+                    <input type="text" placeholder="Add a Question" class="form-control" data-ng-model="newTask" autofocus>
+                    <a type="submit" class="submit-button" data-ng-click="add()">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </a>
+                </form>
+                <section data-ng-cloak>
+                    <ul class="task-list list-unstyled">
+                        <li data-ng-repeat="task in tasks | filter:statusFilter track by $index" data-ng-class="{completed: task.completed, editing: task == editedTask}">
+                            <span class="view">
+                                        <!--<input type="checkbox"
+                                            class="toggle-task"
+                                            data-ng-model="task.completed"
+                                            data-ng-change="completed(task)">-->
+                                        <label data-ng-dblclick="edit(task)">{{task.title}}</label>
+                                        <span class="glyphicon glyphicon-pencil"
+                                            data-ng-click="edit(task)"></span>
+                            <span class="glyphicon glyphicon-remove" data-ng-click="remove(task, $index)"></span>
+                            </span>
+                            <form data-ng-submit="doneEditing(task, $index)">
+                                <input type="text" class="edit form-control" data-ng-trim="false" data-ng-model="task.title" data-ng-blur="doneEditing(task, $index)"
+                                    data-task-focus="task == editedTask">
+                            </form>
+                        </li>
+                    </ul>
+                </section>
+                </div>
+                
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="uploadVideo()">Upload</button>
+            <button class="btn btn-warning" ng-click="test()">Cancel</button>
         </div>
     </script> 
-
-
-</div>
 </div>
