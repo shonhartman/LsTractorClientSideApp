@@ -149,31 +149,37 @@
             <div ng-show="quiz">
                 <div ng-controller="taskCtrl">
                     <form data-ng-submit="add()" class="add-task">
-                    <input type="text" placeholder="Add a Question" class="form-control" data-ng-model="newTask" autofocus>
-                    <a type="submit" class="submit-button" data-ng-click="add()">
-                        <span class="glyphicon glyphicon-plus"></span>
-                    </a>
-                </form>
-                <section data-ng-cloak>
-                    <ul class="task-list list-unstyled">
-                        <li data-ng-repeat="task in tasks | filter:statusFilter track by $index" data-ng-class="{completed: task.completed, editing: task == editedTask}">
-                            <span class="view">
-                                        <!--<input type="checkbox"
-                                            class="toggle-task"
-                                            data-ng-model="task.completed"
-                                            data-ng-change="completed(task)">-->
-                                        <label data-ng-dblclick="edit(task)">{{task.title}}</label>
-                                        <span class="glyphicon glyphicon-pencil"
-                                            data-ng-click="edit(task)"></span>
-                            <span class="glyphicon glyphicon-remove" data-ng-click="remove(task, $index)"></span>
-                            </span>
-                            <form data-ng-submit="doneEditing(task, $index)">
-                                <input type="text" class="edit form-control" data-ng-trim="false" data-ng-model="task.title" data-ng-blur="doneEditing(task, $index)"
-                                    data-task-focus="task == editedTask">
-                            </form>
-                        </li>
-                    </ul>
-                </section>
+                        <input type="text" placeholder="Add a Question" class="form-control" data-ng-model="newTask" autofocus>
+                        <a type="submit" class="submit-button" data-ng-click="add()">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </a>
+                    </form>
+                    <section data-ng-cloak>
+                        <ul class="task-list list-unstyled">
+                            <li data-ng-repeat="task in tasks | filter:statusFilter track by $index" data-ng-class="{completed: task.completed, editing: task == editedTask}">
+                                <span class="view">
+                                            <!--<input type="checkbox"
+                                                class="toggle-task"
+                                                data-ng-model="task.completed"
+                                                data-ng-change="completed(task)">-->
+                                            <label data-ng-dblclick="edit(task)">{{task.title}}</label>
+                                            <span class="glyphicon glyphicon-pencil"
+                                                data-ng-click="edit(task)"></span>
+                                            <form data-ng-submit="addAnswer()" class="add-task">
+                                                <input type="text" placeholder="Add an Answer" class="form-control" data-ng-model="newAnswer" autofocus>
+                                                <a type="submit" class="submit-button" data-ng-click="addAnswer()">
+                                                    <span class="glyphicon glyphicon-plus"></span>
+                                                </a>
+                                            </form>
+                                <span class="glyphicon glyphicon-remove" data-ng-click="remove(task, $index)"></span>
+                                </span>
+                                <form data-ng-submit="doneEditing(task, $index)">
+                                    <input type="text" class="edit form-control" data-ng-trim="false" data-ng-model="task.title" data-ng-blur="doneEditing(task, $index)"
+                                        data-task-focus="task == editedTask">
+                                </form>
+                            </li>
+                        </ul>
+                    </section>
                 </div>
                 
         </div>

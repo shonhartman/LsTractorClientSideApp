@@ -11,6 +11,8 @@
 
         $scope.newTask = '';
 
+        $scope.newAnswer = '';
+
         $scope.remainingCount = filterFilter(tasks, {completed: false}).length;
 
         $scope.editedTask = null;
@@ -47,6 +49,23 @@
             logger.logSuccess('New question: "' + newTask + '" added');
             taskStorage.put(tasks);
             $scope.newTask = '';
+            $scope.remainingCount++;
+        };
+
+        $scope.addAnswer = function() {
+            console.log("add answer");
+            var newAnswer;
+            newAnswer = $scope.newAnswer.trim();
+            if (newAnswer.length === 0) {
+                return;
+            }
+            tasks.push({
+                title: newAnswer,
+                completed: false
+            });
+            logger.logSuccess('New question: "' + newAnswer + '" added');
+            taskStorage.put(answers);
+            $scope.newAnswer = '';
             $scope.remainingCount++;
         };
 

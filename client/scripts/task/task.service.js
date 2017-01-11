@@ -6,9 +6,10 @@
 
 
     function taskStorage() {
-        var STORAGE_ID, DEMO_TASKS;
+        var STORAGE_ID, DEMO_TASKS, ANSWERS;
 
         STORAGE_ID = 'tasks';
+        ANSWERS = 'answers';
         // DEMO_TASKS = '[ {"title": "Upgrade to Yosemite", "completed": true},' +
         //     '{"title": "Finish homework", "completed": false},' +
         //     '{"title": "Try Google glass", "completed": false},' +
@@ -19,12 +20,15 @@
 
         return {
             get: function() {
-                return JSON.parse(localStorage.getItem(STORAGE_ID) || DEMO_TASKS );
+                return JSON.parse(localStorage.getItem(STORAGE_ID) || DEMO_TASKS || ANSWERS );
             },
 
             put: function(tasks) {
+                return localStorage.setItem(ANSWERS, JSON.stringify(answers));
                 return localStorage.setItem(STORAGE_ID, JSON.stringify(tasks));
+                
             }
+
         }
     }
 })(); 
