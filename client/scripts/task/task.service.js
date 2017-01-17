@@ -24,11 +24,11 @@
             },
 
             put: function(tasks) {
-                return localStorage.setItem(ANSWERS, JSON.stringify(answers));
                 return localStorage.setItem(STORAGE_ID, JSON.stringify(tasks));
-                
+                return localStorage.setItem(ANSWERS, JSON.stringify(answers));
             }
 
         }
     }
 })(); 
+

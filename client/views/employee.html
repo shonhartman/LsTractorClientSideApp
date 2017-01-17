@@ -8,7 +8,7 @@
                     <span class="icon glyphicon glyphicon-home"></span>
                     <label>First Name</label>
                     <span class="field-value">
-                        {{main.user.FirstName}}
+                        {{employee.FirstName}}
                         <span class="glyphicon glyphicon-pencil" style="cursor:pointer;" data-ng-click="edit('FirstName')"></span>
                     </span>
                     <span class="field-editor">
@@ -88,6 +88,23 @@
                         </form>
                      </span>
                 </li>
+                <li style="border-bottom: none;">
+                    <span class="icon glyphicon glyphicon-home"></span>
+                    <label>User Role</label>
+                    <span class="field-value">{{main.user.Role}}</span>
+                </li>
+                <label class="ui-radio">
+                            <input type="radio" ng-model="main.user.Role" value="4" checked="">
+                            <span>Technician</span>
+                        </label>
+                        <label class="ui-radio">
+                            <input type="radio" ng-model="main.user.Role" value="5" checked="">
+                            <span>Dealership Owner</span>
+                        </label>
+                        <label class="ui-radio">
+                            <input type="radio" ng-model="main.user.Role" value="6" checked="">
+                            <span>Administrator</span>
+                </label>
             </ul>
         </div>
       </div>

@@ -66,7 +66,11 @@
     function EmployeeCtrl($scope, $http, $routeParams) {
         $scope.results = [];
 
-        // TODO - Modify call to new location for backend endpoint that returns user's status'
+        //TODO : $http.get(employee information)
+        //TODO : $http.put(employee changes
+        //TODO : Edit function
+
+        // STATUS - DEPRICATED
         // $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos/')
         //     .then(function (response) {
         //         $scope.videos = [];
