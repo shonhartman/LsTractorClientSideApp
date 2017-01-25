@@ -67,6 +67,10 @@
         $scope.results = [];
 
         //TODO : $http.get(employee information)
+        $http.put($scope.main.apiUrl + 'UpdateUser' + $scope.employee.Id)
+            .then(function (response) {
+                $scope.employee = response.data;
+            })
         //TODO : $http.put(employee changes
         //TODO : Edit function
 

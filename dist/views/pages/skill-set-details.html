@@ -53,7 +53,7 @@
 
     <!--Add Video Button-->
 
-    <div ng-if="roleId === 6">
+    <!--<div ng-if="main.user.Role == 6">
         <button type="submit" ng-controller="ModalDemoCtrl" class="btn btn-primary btn-block btn-lg" ng-click="open()">Add a Video</button>
         <script type="text/ng-template" id="myModalContent.html">
             <div class="modal-header">
@@ -74,7 +74,7 @@
                 <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
             </div>
         </script>
-    </div>
+    </div>-->
     <!--End Add Video Button -->
 
     <!--Delete Video Button-->
@@ -83,7 +83,7 @@
 
     <!--Add Quiz Button-->
 
-    <div ng-if="roleId === 6">
+    <!--<div ng-if="main.user.Role == 6">
         <button type="submit" ng-controller="ModalDemoCtrl" class="btn btn-primary btn-block btn-lg" ng-click="open()">Add a Quiz</button>
         <script type="text/ng-template" id="myModalContent.html">
             <div class="modal-header">
@@ -94,17 +94,15 @@
                 <span class="help-block">Video URL</span>
                 <input type="text" class="form-control" ng-model="questionData">
                 <span class="help-block">Questions</span>
-                <!--TODO : This needs to be an ng-repeat loop for the questions being added -->
                 <input type="text" class="form-control" ng-model="answerData">
                 <span class="help-block">Answers</span>
-                <!--TODO : This needs to be an ng-repeat loop for the answers being added -->
             </div>
             <div class="modal-footer">
                 <button class="btn btn-primary" ng-click="upload()">Upload</button>
                 <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
             </div>
-        </script>
-    </div> <!-- End Delete Quiz Button-->
+        </script>-->
+     <!-- </div> End Delete Quiz Button-->
 
 
 </div> <!--Close Page Div-->
