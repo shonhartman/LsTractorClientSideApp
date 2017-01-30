@@ -12,6 +12,7 @@
         $http.get($scope.main.apiUrl + 'SkillSets/GetAllSkillSets')
             .then(function (response) {
                 $scope.skillsets = response.data;
+                console.log(response.data);
                 setSkillsetsProgress();
             });
 

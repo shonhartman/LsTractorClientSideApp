@@ -1,4 +1,4 @@
-<div class="page">
+<div class="page" ng-controller="SkillSetCtrl">
 
     <div class="ui-timline-container">
         <section class="ui-timeline">
@@ -12,64 +12,15 @@
                 </div>
             </article>
 
-            <article class="tl-item">
+            <article ng-class="$even ? 'tl-item' : 'tl-item alt'" ng-repeat="skillset in skillsets">
                 <div class="tl-body">
                     <div class="tl-entry">
-                        <div class="tl-time">{{date.completed}}</div>
-                        <div class="tl-icon btn-icon-round btn-icon btn-icon-md btn-info"><a href="/images/04_HelloWorld.pdf"><i class="ti-check"></i></a></div>
-                        <div class="tl-content">
-                            <h4 class="tl-tile text-primary">Engine Tier 4 System</h4>
-                            <ul class="list-unstyled">
-                                <li>Engine Test</li>
-                                <li>Engine Data</li>
-                                <li>Diagnostic Program</li>
-                                 <!--<div class="btn btn-primary" style="margin-top:20px;">Print Certificate</div> -->
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </article>
+                        <a href="/images/04_HelloWorld.pdf"><div ng-show="skillset.Progress == 100" class="tl-icon btn-icon-round btn-icon btn-icon-md btn-info"><i class="ti-check"></i></div></a>
+                        <div ng-show="skillset.Progress < 100" class="tl-icon btn-icon-round btn-icon btn-icon-md btn-success" style="background-color:#7992BF;"><i class="ti-medall"></i></div>
 
-            <article class="tl-item alt">
-                <div class="tl-body">
-                    <div class="tl-entry">
-                        <div class="tl-time">{{date.completed}}</div>
-                        <div class="tl-icon btn-icon-round btn-icon btn-icon-md btn-info"><i class="ti-check"></i></div>
                         <div class="tl-content">
-                            <h4 class="tl-tile text-primary">ISM Indirect Injection Diesels</h4>
-                            <ul class="list-unstyled">
-                                <li>Diagnostic Program</li>
-                                <li>Diagnostics</li>
-                                <li>Forcing Regeneration</li>
-                                <!-- <div class="btn btn-primary" style="margin-top:20px;">Print Certificate</div> -->
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <article class="tl-item">
-                <div class="tl-body">
-                    <div class="tl-entry">
-                        <!--<div class="tl-time">3 hours ago</div>-->
-                        <div class="tl-icon btn-icon-round btn-icon btn-icon-md btn-success" style="background-color:#7992BF;"><i class="ti-medall"></i></div>
-                        <div class="tl-content">
-                            <h4 class="tl-tile text-warning">XR Shibauru Engine</h4>
-                            <p>Walkaround</p>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <article class="tl-item alt">
-                <div class="tl-body">
-                    <div class="tl-entry">
-                        <!--<div class="tl-time">7 hours ago</div>-->
-                        <div class="tl-icon btn-icon-round btn-icon btn-icon-md btn-danger" style="background-color:#7992BF;"><i class="ti-medall"></i></div>
-                        <div class="tl-content">
-                            <h4 class="tl-tile text-warning">General</h4>
-                            <p>Electronic Service Tool D</p>
-                            <p>Transmission Diagnostics</p>
+                            <h4 class="tl-tile text-primary">{{ skillset.Name }}</h4>
+                            <a href="/images/04_HelloWorld.pdf"><div class="btn btn-primary" style="margin-top:20px;" ng-if="skillset.Progress == 100">Print Certificate</div></a>
                         </div>
                     </div>
                 </div>
