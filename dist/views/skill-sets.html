@@ -18,23 +18,6 @@
     </div>
   </div> -->
   <div class="row" ng-controller="SkillSetCtrl">
-    <!-- <div class="col-lg-12">
-      <button type="submit" class="btn btn-success btn-lg" ng-click="addSkillSet()">Add a Skill Set</button>
-        <script type="text/ng-template" id="skillSetModal.html">
-                <div class="modal-header">
-                    <h3>Add a Skill Set</h3>
-                </div>
-                <div class="modal-body">
-                    <input type="text" class="form-control" ng-model="skillSet.name">
-                    <span class="help-block">Skill Set Title</span>
-                </div>
-                <div class="modal-footer">
-                <button class="btn btn-primary" ng-click="uploadSkillSet()">Upload</button>
-                <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
-            </div>
-          </script>
-    </div>
-    <div class="col-lg-12" style="height:20px;"></div> -->
     <div class="col-lg-4 col-md-4 col-xs-12 col-xsm-12" ng-repeat="skillset in skillsets">
 
           <!-- ADMIN VIEW FOR SKILLSETS -->
@@ -118,21 +101,32 @@
             </div>
           </section>
     </div>
-  </div>
-      <!-- <button type="submit" class="btn btn-success btn-block btn-lg" ng-click="addSkillSet()">Add a Skill Set</button> -->
-    <script type="text/ng-template" id="skillSetModal.html">
-            <div class="modal-header">
-                <h3>Add a Skill Set</h3>
+
+    <!-- Add Skill Set  -->
+    <div class="col-lg-12">
+      <button type="submit" class="btn btn-primary btn-block btn-lg" ng-click="addSkillSet()">Add a Skill Set</button>
+        <script type="text/ng-template" id="skillSetModal.html">
+                <div class="modal-header">
+                    <h3>Add a Skill Set</h3>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="form-control" ng-model="skillSet.name">
+                    <span class="help-block">Skill Set Title</span>
+                    <section class="panel panel-default">
+                        <div class="panel-body">
+                            <input type="file" title="Choose File" data-ui-file-upload>
+                        </div>
+                    </section>
+                    <span class="help-block">Upload Certificate PDF</span>
+                </div>
+                <div class="modal-footer">
+                <button class="btn btn-primary" ng-click="uploadSkillSet()">Upload</button>
+                <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
             </div>
-            <div class="modal-body">
-                <input type="text" class="form-control" ng-model="skillSet.name">
-                <span class="help-block">Skill Set Title</span>
-            </div>
-            <div class="modal-footer">
-            <button class="btn btn-primary" ng-click="uploadSkillSet()">Upload</button>
-            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
-        </div>
-    </script> 
+          </script>
+    </div>
+    <div class="col-lg-12" style="height:20px;"></div>  
+
     <script type="text/ng-template" id="addVideo.html">
         <div class="modal-header">
             <h3>Add a Video</h3>
@@ -158,10 +152,10 @@
                         <ul class="task-list list-unstyled">
                             <li data-ng-repeat="task in tasks | filter:statusFilter track by $index" data-ng-class="{completed: task.completed, editing: task == editedTask}">
                                 <span class="view">
-                                            <!--<input type="checkbox"
+                                            <input type="checkbox"
                                                 class="toggle-task"
                                                 data-ng-model="task.completed"
-                                                data-ng-change="completed(task)">-->
+                                                data-ng-change="completed(task)">
                                             <label data-ng-dblclick="edit(task)">{{task.title}}</label>
                                             <span class="glyphicon glyphicon-pencil"
                                                 data-ng-click="edit(task)"></span>
