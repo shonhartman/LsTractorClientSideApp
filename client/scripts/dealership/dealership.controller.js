@@ -37,21 +37,20 @@
                 return;
             }
 
-            $http.put($scope.main.apiUrl + 'Dealerships/CreateNewDealership', [{
+            $http.post($scope.main.apiUrl + 'Dealerships/CreateNewDealerships', [{
                     "Name": $scope.dealershipData.Name,
-                    // "Number": 1, //not sure how the number is set : somehow needs to add to the current number
+                    "Number": parseInt($scope.dealershipData.Number, 10),
                     "Address": $scope.dealershipData.Address,
                     "Owner": $scope.dealershipData.Owner,
                     "City": $scope.dealershipData.City,
                     "State": $scope.dealershipData.State,
-                    "ZipCode": $scope.dealershipData.ZipCode,
+                    "ZipCode": parseInt($scope.dealershipData.ZipCode, 10),
                     "Phone": $scope.dealershipData.Phone,
                     "Fax": $scope.dealershipData.Fax,
                     "Email": $scope.dealershipData.Email
                 }])
                 .then(function (response) {
                     console.log(response);
-                    $scope.dealerships.push(dealership);
                     $location.url("/#/dashboard");
                 })
         }
