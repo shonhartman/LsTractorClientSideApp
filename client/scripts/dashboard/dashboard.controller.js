@@ -58,21 +58,39 @@
 
         }
 
-
         $scope.populateData();
-
     }
 
     function EmployeeCtrl($scope, $http, $routeParams) {
         $scope.results = [];
 
-        //TODO : $http.get(employee information)
-        $http.put($scope.main.apiUrl + 'UpdateUser' + $scope.employee.Id)
-            .then(function (response) {
-                $scope.employee = response.data;
-            })
-        //TODO : $http.put(employee changes
-        //TODO : Edit function
+        $scope.employee = {};
+        $scope.editing = ''; //name of property currently being edited
+
+        // get employee information if on detail page
+        var uriEmployeeId = $routeParams.id;
+
+        if (uriEmployeeId) {
+            $http.get($scope.main.apiUrl + 'Users/GetUserById/' + uriEmployeeId)
+                .then(function (employee) {
+                    $scope.employee = employee.data;
+                });
+        }
+
+        $scope.edit = function (itemName) {
+            console.log("Editing.");
+            $scope.editing = itemName;
+        };
+
+        $scope.doneEditing = function () {
+            console.log("Done editing.");
+            if (uriEmployeeId) {
+                $http.put($scope.main.apiUrl + 'Users/UpdateUser/' + uriEmployeeId, $scope.employee)
+                    .then(function (response) {
+                        $scope.editing = '';
+                    });
+            }
+        };
 
         // STATUS - DEPRICATED
         // $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos/')

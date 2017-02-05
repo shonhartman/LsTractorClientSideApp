@@ -13,7 +13,7 @@
                     </span>
                     <span class="field-editor">
                         <form data-ng-submit="doneEditing()">
-                            <input data-ng-model="main.user.FirstName" type="text" class="form-control">
+                            <input data-ng-model="employee.FirstName" type="text" class="form-control">
                             <span class="glyphicon glyphicon-ok" style="color: green;cursor:pointer;" data-ng-click="doneEditing()"></span>
                         </form>
                      </span>
@@ -22,12 +22,12 @@
                     <span class="icon glyphicon glyphicon-home"></span>
                     <label>Last Name</label>
                     <span class="field-value">
-                        {{main.user.LastName}}
+                        {{employee.LastName}}
                         <span class="glyphicon glyphicon-pencil" style="cursor:pointer;" data-ng-click="edit('LastName')"></span>
                     </span>
                     <span class="field-editor">
                         <form data-ng-submit="doneEditing()">
-                            <input data-ng-model="main.user.LastName" type="text" class="form-control">
+                            <input data-ng-model="employee.LastName" type="text" class="form-control">
                             <span class="glyphicon glyphicon-ok" style="color: green;cursor:pointer;" data-ng-click="doneEditing()"></span>
                         </form>
                      </span>
@@ -36,12 +36,12 @@
                     <span class="icon glyphicon glyphicon-home"></span>
                     <label>Email</label>
                     <span class="field-value">
-                        {{main.user.Email}}
+                        {{employee.Email}}
                         <span class="glyphicon glyphicon-pencil" style="cursor:pointer;" data-ng-click="edit('Email')"></span>
                     </span>
                     <span class="field-editor">
                         <form data-ng-submit="doneEditing()">
-                            <input data-ng-model="main.user.Email" type="text" class="form-control">
+                            <input data-ng-model="employee.Email" type="text" class="form-control">
                             <span class="glyphicon glyphicon-ok" style="color: green;cursor:pointer;" data-ng-click="doneEditing()"></span>
                         </form>
                      </span>
@@ -55,7 +55,7 @@
                     </span>
                     <span class="field-editor">
                         <form data-ng-submit="doneEditing()">
-                            <input data-ng-model="main.user.Password" type="text" class="form-control">
+                            <input data-ng-model="employee.Password" type="text" class="form-control">
                             <span class="glyphicon glyphicon-ok" style="color: green;cursor:pointer;" data-ng-click="doneEditing()"></span>
                         </form>
                      </span>
@@ -64,12 +64,12 @@
                     <span class="icon glyphicon glyphicon-home"></span>
                     <label>Phone #</label>
                     <span class="field-value">
-                        {{main.user.PhoneNumber}}
+                        {{employee.PhoneNumber}}
                         <span class="glyphicon glyphicon-pencil" style="cursor:pointer;" data-ng-click="edit('PhoneNumber')"></span>
                     </span>
                     <span class="field-editor">
                         <form data-ng-submit="doneEditing()">
-                            <input data-ng-model="main.user.PhoneNumber" type="text" class="form-control">
+                            <input data-ng-model="employee.PhoneNumber" type="text" class="form-control">
                             <span class="glyphicon glyphicon-ok" style="color: green;cursor:pointer;" data-ng-click="doneEditing()"></span>
                         </form>
                      </span>
@@ -78,12 +78,12 @@
                     <span class="icon glyphicon glyphicon-home"></span>
                     <label>Date of Birth</label>
                     <span class="field-value">
-                        {{main.user.BirthDate | date:'MM/dd/yyyy'}}
+                        {{employee.BirthDate | date:'MM/dd/yyyy'}}
                         <span class="glyphicon glyphicon-pencil" style="cursor:pointer;" data-ng-click="edit('BirthDate')"></span>
                     </span>
                     <span class="field-editor">
                         <form data-ng-submit="doneEditing()">
-                            <input data-ng-model="main.user.BirthDate | date:'MM/dd/yyyy'" type="text" class="form-control">
+                            <input data-ng-model="employee.BirthDate | date:'MM/dd/yyyy'" type="text" class="form-control">
                             <span class="glyphicon glyphicon-ok" style="color: green;cursor:pointer;" data-ng-click="doneEditing()"></span>
                         </form>
                      </span>
@@ -91,18 +91,18 @@
                 <li style="border-bottom: none;">
                     <span class="icon glyphicon glyphicon-home"></span>
                     <label>User Role</label>
-                    <span class="field-value">{{main.user.Role}}</span>
+                    <span class="field-value">{{employee.Role}}</span>
                 </li>
                 <label class="ui-radio">
-                            <input type="radio" ng-model="main.user.Role" value="4" checked="">
+                            <input type="radio" ng-model="employee.Role" value="4" checked="">
                             <span>Technician</span>
                         </label>
                         <label class="ui-radio">
-                            <input type="radio" ng-model="main.user.Role" value="5" checked="">
+                            <input type="radio" ng-model="employee.Role" value="5" checked="">
                             <span>Dealership Owner</span>
                         </label>
                         <label class="ui-radio">
-                            <input type="radio" ng-model="main.user.Role" value="6" checked="">
+                            <input type="radio" ng-model="employee.Role" value="6" checked="">
                             <span>Administrator</span>
                 </label>
             </ul>
