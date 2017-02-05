@@ -51,7 +51,7 @@
                 }])
                 .then(function (response) {
                     console.log(response);
-                    $location.url("/#/dashboard");
+                    $location.url("/dashboard");
                 })
         }
 
@@ -72,7 +72,7 @@
             $http.delete($scope.main.apiUrl + 'Dealerships/DeleteDealership/' + currentDealership.Id)
                 .then(function (response) {
                     logger.logSuccess("You successfully deleted {{dealership.name}}.");
-                    $location.url("/#/dashboard");
+                    $location.url("/dashboard");
                 });
         }
 
