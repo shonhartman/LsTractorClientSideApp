@@ -94,15 +94,15 @@
                     <span class="field-value">{{employee.Role}}</span>
                 </li>
                 <label class="ui-radio">
-                            <input type="radio" ng-model="employee.Role" value="4" checked="">
+                            <input type="radio" ng-model="employee.Role" value="4" checked="" data-ng-change="doneEditing()">
                             <span>Technician</span>
                         </label>
                         <label class="ui-radio">
-                            <input type="radio" ng-model="employee.Role" value="5" checked="">
+                            <input type="radio" ng-model="employee.Role" value="5" checked="" data-ng-change="doneEditing()">
                             <span>Dealership Owner</span>
                         </label>
                         <label class="ui-radio">
-                            <input type="radio" ng-model="employee.Role" value="6" checked="">
+                            <input type="radio" ng-model="employee.Role" value="6" checked="" data-ng-change="doneEditing()">
                             <span>Administrator</span>
                 </label>
             </ul>
