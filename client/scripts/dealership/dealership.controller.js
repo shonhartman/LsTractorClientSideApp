@@ -68,8 +68,8 @@
         }
 
         // DELETE DEALERSHIP BY ID
-        $scope.deleteDealership = function (currentDealership) {
-            $http.delete($scope.main.apiUrl + 'Dealerships/DeleteDealership/' + currentDealership.Id)
+        $scope.deleteDealership = function (dealershipId) {
+            $http.delete($scope.main.apiUrl + 'Dealerships/DeleteDealership/' + dealershipId)
                 .then(function (response) {
                     logger.logSuccess("You successfully deleted {{dealership.name}}.");
                     $location.url("/dashboard");

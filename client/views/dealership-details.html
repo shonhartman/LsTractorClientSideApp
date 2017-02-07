@@ -10,7 +10,6 @@
                       </tr>
                   </thead>
                   <tbody>
-                      <!-- TODO How do we account for dealership number? -->
                       <tr ng-repeat="employee in detailPageEmployees">
                           <td><a href="#/employees/{{ employee.Id }}">{{ employee.FirstName }} {{ employee.LastName }}</a></td>
                           <td>
@@ -21,4 +20,6 @@
               </table>
           </div>
       </div>
+      <button type="button" ng-click="deleteDealership()" class="btn btn-danger btn-block" style="max-width:800px; margin:0 auto;">Delete this Dealership</button>
+
 </div>
