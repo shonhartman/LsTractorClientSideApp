@@ -1,5 +1,5 @@
 
-<div class="page page-profile">
+<div class="page page-profile" ng-controller="accountCtrl">
 
 <!--Employee View-->
     <section ng-if="main.user.Role == 4" class="panel panel-default profile-margin">
@@ -12,21 +12,23 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-1 control-label">Email</label>
                             <div class="col-sm-11">
-                                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                <input type="email" class="form-control" id="inputEmail3" placeholder="Email" ng-model="closureRequest.Email">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputPassword3" class="col-sm-1 control-label">Password</label>
                             <div class="col-sm-11">
-                                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                <input type="password" class="form-control" id="inputPassword3" placeholder="Password" ng-model="closureRequest.Password">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-1 col-sm-11">
-                                <button type="submit" class="btn btn-primary btn-w-md">Submit Request</button>
+                                <button type="submit" class="btn btn-primary btn-w-md" ng-click="requestClosure()">Submit Request</button>
                             </div>
                         </div>
                     </form>  
+                    <p>{{ closureRequest.Email }}</p>
+                    <p>{{ closureRequest.Password }}</p>
 
                 </div>
             </div>

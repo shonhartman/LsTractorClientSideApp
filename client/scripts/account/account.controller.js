@@ -97,6 +97,15 @@
                 })
         }
 
+        //CLOSURE REQUEST
+        $scope.requestClosure = function () {
+            console.log("Requesting Closure");
+            // if (!$scope.closureRequest.Email || !$scope.closureRequest.Password) {
+            //     return;
+            // }
+            console.log($scope.closureRequest.Email);
+        }
+
         //TODO: GET TOTAL USER RESULTS
         //GET api/Users?userId={userId}
 
