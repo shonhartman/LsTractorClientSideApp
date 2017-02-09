@@ -5,7 +5,7 @@
         .controller('dealershipCtrl', ['$q', '$cookies', '$scope', '$window', '$location', '$http', '$routeParams', dealershipCtrl]);
 
     //GET A LIST OF ALL DEALERSHIPS
-    function dealershipCtrl($q, $cookies, $scope, $window, $location, $http, $routeParams) {
+    function dealershipCtrl($q, $cookies, $scope, $window, $location, $http, $routeParams, logger) {
 
         var currentUser = angular.fromJson($cookies.get('user'));
         $scope.currentDealership = {};
@@ -69,7 +69,8 @@
 
         // DELETE DEALERSHIP BY ID
         $scope.deleteDealership = function (dealershipId) {
-            $http.delete($scope.main.apiUrl + 'Dealerships/DeleteDealership/' + dealershipId)
+            console.log($scope.currentDealership.Id);
+            $http.delete($scope.main.apiUrl + 'Dealerships/DeleteDealership/' + $scope.currentDealership.Id)
                 .then(function (response) {
                     logger.logSuccess("You successfully deleted {{dealership.name}}.");
                     $location.url("/dashboard");
