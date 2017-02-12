@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('app.dealership')
-        .controller('dealershipCtrl', ['$q', '$cookies', '$scope', '$window', '$location', '$http', '$routeParams', dealershipCtrl]);
+        .controller('dealershipCtrl', ['$q', '$cookies', '$scope', '$window', '$location', '$http', '$routeParams', 'logger', dealershipCtrl]);
 
     //GET A LIST OF ALL DEALERSHIPS
     function dealershipCtrl($q, $cookies, $scope, $window, $location, $http, $routeParams, logger) {
@@ -68,11 +68,10 @@
         }
 
         // DELETE DEALERSHIP BY ID
-        $scope.deleteDealership = function (dealershipId) {
-            console.log($scope.currentDealership.Id);
-            $http.delete($scope.main.apiUrl + 'Dealerships/DeleteDealership/' + $scope.currentDealership.Id)
+        $scope.deleteDealership = function (dealershipToDelete) {
+            $http.delete($scope.main.apiUrl + 'Dealerships/DeleteDealership/' + dealershipToDelete.Id)
                 .then(function (response) {
-                    logger.logSuccess("You successfully deleted {{dealership.name}}.");
+                    logger.logSuccess("You successfully deleted " + dealershipToDelete.Name);
                     $location.url("/dashboard");
                 });
         }
