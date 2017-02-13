@@ -2,10 +2,11 @@
     'use strict';
 
     angular.module('app.dealership')
-        .controller('dealershipCtrl', ['$q', '$cookies', '$scope', '$window', '$location', '$http', '$routeParams', 'logger', dealershipCtrl]);
+        .controller('dealershipCtrl', ['$q', '$cookies', '$scope', '$window', '$location', '$http', '$routeParams', '$modal', 'logger', dealershipCtrl])
+        .controller('dealershipModalInstanceCtrl', ['$scope', '$modalInstance', dealershipModalInstanceCtrl]);
 
     //GET A LIST OF ALL DEALERSHIPS
-    function dealershipCtrl($q, $cookies, $scope, $window, $location, $http, $routeParams, logger) {
+    function dealershipCtrl($q, $cookies, $scope, $window, $location, $http, $routeParams, $modal, logger) {
 
         var currentUser = angular.fromJson($cookies.get('user'));
         $scope.currentDealership = {};
@@ -19,6 +20,16 @@
 
         $scope.goToDetail = function (dealershipId) {
             $location.url('/dealership-details/' + dealershipId);
+        }
+
+        $scope.open = function () {
+            console.log("Opening");
+            var modalInstance;
+            modalInstance = $modal.open({
+                templateUrl : "confirmation.html",
+                controller : dealershipModalInstanceCtrl,
+                scope : $scope
+            });
         }
 
         // Technican - 4
@@ -117,6 +128,12 @@
                 $scope.detailPageEmployees = response.data;
             });
         }
+    }
+
+    function dealershipModalInstanceCtrl($scope, $modalInstance) {
+        $scope.cancel = function () {
+               $modalInstance.dismiss("cancel");
+           };
     }
 
 })();
