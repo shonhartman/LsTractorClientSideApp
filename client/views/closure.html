@@ -2,7 +2,7 @@
 <div class="page page-profile" ng-controller="accountCtrl">
 
 <!--Employee View-->
-    <section ng-if="main.user.Role == 4" class="panel panel-default profile-margin">
+    <section ng-if="main.user.Role == 4 || 6" class="panel panel-default profile-margin">
         <div class="panel-heading"><strong><span class="glyphicon glyphicon-remove"></span> Request Closure</strong></div>
         <div class="panel-body">
             <div class="row">
@@ -27,16 +27,13 @@
                             </div>
                         </div>
                     </form>  
-                    <p>{{ closureRequest.Email }}</p>
-                    <p>{{ closureRequest.Password }}</p>
-
                 </div>
             </div>
         </div>
     </section> <!--End Employee View-->
 
 <!--Dealership Closure Request-->
-    <section ng-if="main.user.Role == 5" class="panel panel-default profile-margin" data-ng-controller="formConstraintsCtrl">
+    <section ng-if="main.user.Role == 5 || 6" class="panel panel-default profile-margin" data-ng-controller="formConstraintsCtrl">
         <div class="panel-heading"><strong><span class="glyphicon glyphicon-remove"></span> Request Closure</strong></div>
         <div class="panel-body">
             <div class="row">
@@ -66,15 +63,16 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>Dealership</th>
+                                        <th>Dealership or Employee</th>
                                         <th popover="Here, you can approve or deny a request for closure." popover-trigger="mouseenter">Approve/Deny</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr ng-repeat="dealership in dealerships">
-                                        <td><a href="#/dealership/{{ dealership.id }}">{{ dealership }}</a></td>
+                                    <tr>
+                                        <td>Dealership or Employee</td>
                                         <td>
                                             <!-- Buttons : Approve/Deny Toggle & Submit -->
+                                             <i class="fa fa-check-circle" style="font-size:2.5em; margin-top:-5px;" ng-click="approve()"></i><i class="fa fa-times-circle" style="font-size:2.5em; margin-top:-5px; margin-left:20px; color:red;" ng-click="deny()"></i>
                                         </td>
                                     </tr>
                                 </tbody>

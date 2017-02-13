@@ -12,7 +12,7 @@
 
         // used by signup
         $scope.dealershipFields = {
-            'Dealership': ''
+            'Dealership': '',
         };
 
         //SIGN IN

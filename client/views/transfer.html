@@ -1,7 +1,7 @@
 <div class="page page-profile" ng-controller="accountCtrl">
 
 <!--Employee View-->
-    <section class="panel panel-default profile-margin">
+    <section class="panel panel-default profile-margin" ng-if="main.user.Role == 4 || 6">
         <div class="panel-heading"><strong><span class="glyphicon glyphicon-arrow-left"></span> Request Transfer</strong></div>
         <div class="panel-body">
             <div class="row">
@@ -29,7 +29,7 @@
                         <div class="form-group">
                             <label for="inputPassword3" class="col-sm-3 control-label">Requested Dealership</label>
                             <div class="col-sm-9" ng-controller="dealershipCtrl">
-                                <select ng-model="dealershhipFields.Dealership" style="width: 100%;">
+                                <select ng-model="dealershipFields.Dealership" style="width: 100%;">
                                     <option  ng-repeat="dealership in dealerships" class="form-control" value="{{ dealership.Id }}">{{ dealership.Name }}</option>
                                 </select>
                             </div>
@@ -47,42 +47,31 @@
     </section> <!--Employee View-->
 
 <!--Super Admin View-->
-<div ng-if="roleId == 6">
+<div ng-if="main.user.Role == 6">
     <section class="panel panel-default profile-margin">
         <div class="panel-heading"><strong><span class="glyphicon glyphicon-arrow-left"></span> Requested Transfers</strong></div>
         <div class="panel-body">
             <div class="row">
-                <div class="col-md-8 col-md-offset-2"></div>
+                <div class="col-md-8 col-md-offset-2">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Current Dealership</label>
+                            <div class="col-sm-3">
+                                <p style="padding-top: 7px;">{{ main.user.Dealership.Name }}</p>    <!-- THIS NEEDS TO BE THE EMPLOYEE DEALERSHIP -->
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Requested Dealership</label>
+                            <p style="padding-top: 7px;">{{ dealershipFields.Dealership }}</p>    
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Approve or Deny</label>
+                            <p style="padding-top: 7px;"><i class="fa fa-check-circle" style="font-size:2.5em; margin-top:-5px;" ng-click="approve()"></i><i class="fa fa-times-circle" style="font-size:2.5em; margin-top:-5px; margin-left:20px; color:red;" ng-click="deny()"></i></p>  
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 </div><!--End Super Admin View-->
-    
-
-                      <!--Dealership Owner/Employee Table-->
-    <div ng-if="roleId == 5">
-        <div class="panel panel-default">
-            <div class="panel-body table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Employee</th>
-                            <th popover="Here, you can approve or deny a transfer request." popover-trigger="mouseenter">Approve/Deny</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="employee in employees">
-                            <td><a href="#/employees/{{ employee.id }}">{{ employee.firstName }} {{ employee.lastName }}</a></td>
-                            <td>
-                                <!-- Buttons : Approve/Deny Toggle & Submit -->
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>  <!-- /Dealership/Employee Table -->
-
- 
-
 </div>
