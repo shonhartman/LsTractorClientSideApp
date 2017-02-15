@@ -3,6 +3,7 @@
 
     angular.module('app.skillset')
         .controller('SkillSetCtrl', ['$cookies', '$modal', '$scope', '$http', '$routeParams', 'logger', '$location', SkillSetCtrl])
+        .controller('skillSetModalInstanceCtrl', ['$scope', '$modalInstance', skillSetModalInstanceCtrl]);
 
 
     function SkillSetCtrl($cookies, $modal, $scope, $http, $routeParams, logger, $location) {
@@ -22,6 +23,16 @@
 
         $scope.goToCertificates = function () {
             location.href = '#/certificates';
+        }
+
+        $scope.editSkillSet = function () {
+            console.log("Open Skill Set Details");
+            var modalInstance;
+            modalInstance = $modal.open({
+                templateUrl: "editSkillSet.html",
+                controller : skillSetModalInstanceCtrl,
+                scope : $scope
+            });
         }
 
         //UPDATE SKILL SET NAME BY ID
@@ -73,7 +84,9 @@
             console.log("Open");
             var modalInstance;
             modalInstance = $modal.open({
-                templateUrl: "addVideo.html"
+                templateUrl: "addVideo.html",
+                controller: skillSetModalInstanceCtrl,
+                scope : $scope
             });
         }
 
@@ -127,6 +140,13 @@
         }
 
         
+    }
+
+    //skillSetModalInstanceCtrl
+    function skillSetModalInstanceCtrl($scope, $modalInstance) {
+        $scope.cancel = function () {
+               $modalInstance.dismiss("cancel");
+           };
     }
 
 })();

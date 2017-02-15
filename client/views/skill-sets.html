@@ -17,6 +17,8 @@
         </script>
     </div>
   </div> -->
+
+  
   <div class="row" ng-controller="SkillSetCtrl">
     <div class="col-lg-4 col-md-4 col-xs-12 col-xsm-12" ng-repeat="skillset in skillsets">
 
@@ -53,7 +55,7 @@
                           <p class="color-warning h3">
                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                           </p>
-                          <p class="text-muted h5" style="margin-top: 10px;" ng-click="edit('SkillSetName')">Edit Details</p>
+                          <p class="text-muted h5" style="margin-top: 10px;" ng-click="editSkillSet()">Edit Details</p>
                       </li>
                       <li ng-click="goToCertificates()">
                           <p class="color-success h3">
@@ -102,7 +104,7 @@
           </section>
     </div>
 
-    <!-- Add Skill Set  -->
+    <!-- Add Skill Set Modal  -->
     <div class="col-lg-12">
       <button type="submit" class="btn btn-primary btn-block btn-lg" ng-click="addSkillSet()">Add a Skill Set</button>
         <script type="text/ng-template" id="skillSetModal.html">
@@ -127,6 +129,7 @@
     </div>
     <div class="col-lg-12" style="height:20px;"></div>  
 
+    <!-- Add Video Modal -->
     <script type="text/ng-template" id="addVideo.html">
         <div class="modal-header">
             <h3>Add a Video</h3>
@@ -179,7 +182,22 @@
         </div>
         <div class="modal-footer">
             <button class="btn btn-primary" ng-click="uploadVideo()">Upload</button>
-            <button class="btn btn-warning" ng-click="test()">Cancel</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
         </div>
     </script> 
+
+    <!-- Edit Skill Set Modal -->
+    <script type="text/ng-template" id="editSkillSet.html">
+        <div class="modal-header">
+            <h3>Edit SkillSet</h3>
+        </div>
+        <div class="modal-body">
+            <input type="text" class="form-control" ng-model="skillset.name">
+            <span class="help-block">Skill Set Title</span>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="updateSkillSet()">Update</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
 </div>
