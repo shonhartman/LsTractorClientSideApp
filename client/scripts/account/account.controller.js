@@ -15,6 +15,11 @@
             'Dealership': '',
         };
 
+        // Closure Requesting
+        $scope.closureRequest = {
+            'Email' : ''
+        }
+
         //SIGN IN
         $scope.login = function () {
 
@@ -103,7 +108,8 @@
             // if (!$scope.closureRequest.Email || !$scope.closureRequest.Password) {
             //     return;
             // }
-            console.log($scope.closureRequest.Email);
+            console.log($scope.closureRequest);
+            console.log($scope.dealershipFields);
         }
 
         //TODO: GET TOTAL USER RESULTS
