@@ -104,12 +104,26 @@
 
         //CLOSURE REQUEST
         $scope.requestClosure = function () {
-            console.log("Requesting Closure");
-            // if (!$scope.closureRequest.Email || !$scope.closureRequest.Password) {
-            //     return;
-            // }
+            console.log("Requesting closure");
+
+            if (!$scope.closureRequest.Email || !$scope.closureRequest.Password) {
+                return;
+            }
             console.log($scope.closureRequest);
             console.log($scope.dealershipFields);
+
+            // validate the user's credentials
+            $http.post($scope.main.apiUrl + 'Users/SignIn', {
+                'Email': $scope.closureRequest.Email,
+                'Password': $scope.closureRequest.Password,
+            }).then(function(response) {
+                var userId = response.data.Id;
+                console.log("User validated");
+                console.log("User id: " + userId);
+
+                // proceed with user closure request?
+                    // send email or log to database
+            });
         }
 
         //TODO: GET TOTAL USER RESULTS
