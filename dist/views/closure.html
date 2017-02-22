@@ -41,10 +41,13 @@
                     <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
                         <div class="form-group">
                             <label for="">Dealership</label>
-                            <input type="text" class="form-control" required data-ng-model="form.required">
+                            <input type="text" class="form-control" ng-model="closureRequest.Dealership">
                             <br>
                             <label for="">Message</label>
                             <textarea class="form-control" rows="10" required data-ng-model="form.required_textarea"></textarea>
+                        </div>
+                        <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-w-md" ng-click="requestClosure()">Submit Request</button>
                         </div>
                     </form>
                 </div>
