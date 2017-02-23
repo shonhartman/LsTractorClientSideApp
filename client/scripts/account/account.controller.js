@@ -123,8 +123,13 @@
                 console.log("User validated");
                 console.log("User id: " + userId);
 
-                // proceed with user closure request?
-                    // send email or log to database
+                // email administrators the request
+                $http.post($scope.main.apiUrl + 'Users/EmailAdministrators', {
+                    'Subject': 'Employee Account Closure Request',
+                    'Body': response.data.FirstName + ' ' + response.data.LastName + ' has requested that their account be closed. Please visit http://lstractortraining.com/#/employees/' + userId + ' to delete the account.'
+                }).then(function() {
+                    console.log('Request complete!');
+                });
             });
         }
 
