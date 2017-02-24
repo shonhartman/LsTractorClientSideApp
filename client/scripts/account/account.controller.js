@@ -33,10 +33,12 @@
                 })
                 .then(function (response) {
 
+                    var landingPage = $routeParams.redirect_uri ? $routeParams.redirect_uri : '/dashboard';
+
                     //Save user to model and cookie
                     $scope.main.user = response.data;
                     $cookies.put('user', angular.toJson(response.data));
-                    $location.url('/dashboard');
+                    $location.url(landingPage);
 
                 }, function (response) {
 

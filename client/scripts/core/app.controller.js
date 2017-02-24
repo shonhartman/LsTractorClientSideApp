@@ -2,10 +2,9 @@
     'use strict';
 
     angular.module('app')
-        .controller('AppCtrl', [ '$cookies', '$scope', '$rootScope', '$route', '$document', AppCtrl]); // overall control
+        .controller('AppCtrl', [ '$cookies', '$scope', '$rootScope', '$route', '$document', '$location', AppCtrl]); // overall control
 
-
-    function AppCtrl($cookies, $scope, $rootScope, $route, $document) {
+    function AppCtrl($cookies, $scope, $rootScope, $route, $document, $location) {
 
         var date = new Date();
         var year = date.getFullYear();
@@ -18,6 +17,14 @@
             // apiUrl: 'http://localhost:50516/api/',
             user: user
         };
+
+        // redirect to login page if user not logged in
+        $scope.$on('$locationChangeStart', function(event) {
+            user = angular.fromJson($cookies.get('user'));
+            if (!user && ['', '/', '/pages/signin'].indexOf($location.path()) == -1) {
+                $location.url('/pages/signin?redirect_uri=' + $location.path());
+            }
+        });
 
         $scope.pageTransitionOpts = [
             {
