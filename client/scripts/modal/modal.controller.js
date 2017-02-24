@@ -3,9 +3,9 @@
 
        angular.module('app.modal')
 
-        .controller('ModalCtrl', ['$scope', '$modal', '$log', 'logger', ModalCtrl])
+        .controller('ModalCtrl', ['$scope', '$modal', '$log', ModalCtrl])
 
-        .controller('ModalInstanceCtrl', ['$scope', '$http', '$modalInstance', 'titles', 'video', '$log', 'logger', '$routeParams', '$log', ModalInstanceCtrl])
+        .controller('ModalInstanceCtrl', ['$scope', '$http', '$modalInstance', 'titles', 'video', '$log', 'logger', '$routeParams', ModalInstanceCtrl])
 
 
        function ModalCtrl($scope, $modal, $log) {
@@ -50,7 +50,7 @@
 
        }
 
-       function ModalInstanceCtrl($scope, $http, $modalInstance, $log, titles, video, logger, $routeParams) {
+       function ModalInstanceCtrl($scope, $http, $modalInstance, titles, video, $log, logger, $routeParams) {
            $scope.titles = titles;
            $scope.video = video;
 
