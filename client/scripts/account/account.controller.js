@@ -92,17 +92,15 @@
         }
 
         //DELETE USER BY ID
-        $scope.deleteAccount = function (currentAccount) {
+        $scope.deleteAccount = function (accountToDelete) {
 
             console.log("Deleting Employee");
-            console.log(currentAccount);
-            // TODO: get this from formData
-            var userId = -1;
+            console.log(accountToDelete);
 
-            $http.delete($scope.main.apiUrl + 'Users/DeleteUser/' + userId)
+            $http.delete($scope.main.apiUrl + 'Users/DeleteUser/' + accountToDelete.Id)
                 .then(function (response) {
-                    logger.logSuccess("You successfully deleted" + DeleteUser.Name);
-                    $location.url("/#/dashboard");
+                    logger.logSuccess("You successfully deleted" + accountToDelete.FirstName + " " + accountToDelete.LastName);
+                    $location.url("/dashboard");
                 })
         }
 
