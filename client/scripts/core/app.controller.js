@@ -21,7 +21,7 @@
         // redirect to login page if user not logged in
         $scope.$on('$locationChangeStart', function(event) {
             user = angular.fromJson($cookies.get('user'));
-            if (!user && ['', '/', '/pages/signin'].indexOf($location.path()) == -1) {
+            if (!user && ['', '/', '/pages/signin', '/pages/signup', '/pages/forgot-password'].indexOf($location.path()) == -1) {
                 $location.url('/pages/signin?redirect_uri=' + $location.path());
             }
         });
