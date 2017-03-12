@@ -3,7 +3,7 @@
 
     angular.module('app.dashboard')
         .controller('DashboardCtrl', ['$cookies', '$scope', '$http', DashboardCtrl])
-        .controller('EmployeeCtrl', ['$scope', '$http', '$routeParams', EmployeeCtrl]);
+        .controller('EmployeeCtrl', ['$scope', '$http', '$routeParams', '$filter', EmployeeCtrl]);
 
     function DashboardCtrl($cookies, $scope, $http) {
 
@@ -61,7 +61,7 @@
         $scope.populateData();
     }
 
-    function EmployeeCtrl($scope, $http, $routeParams) {
+    function EmployeeCtrl($scope, $http, $routeParams, $filter) {
         $scope.results = [];
 
         $scope.employee = {};
@@ -76,6 +76,11 @@
                     $scope.employee = employee.data;
                 });
         }
+
+        // format birthdate input field value
+        $scope.$watch('employee.BirthDate', function (dateValue) {
+            $scope.employee.BirthDate = $filter('date')(dateValue, 'MM/dd/yyyy');
+        });
 
         $scope.edit = function (itemName) {
             console.log("Editing.");
@@ -92,7 +97,7 @@
             }
         };
 
-        // STATUS - DEPRICATED
+        // STATUS - DEPRECATED
         // $http.get('http://lstractor.southcentralus.cloudapp.azure.com:8080/tractor-quiz-api/videos/')
         //     .then(function (response) {
         //         $scope.videos = [];
