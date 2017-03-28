@@ -33,12 +33,18 @@
 
         $scope.addAnswer = function (questionIndex) {
 
+            var answer = "";
+            var answerImage = "";
             var question = $scope.questions[questionIndex];
-            var answer = question.newAnswer.trim();
-            var answerImage = question.newAnswerImage.trim();
 
-            if (answer.length === 0) {
+            if (question.newAnswer.length === 0) {
                 return;
+            }
+
+            answer = question.newAnswer.trim();
+
+            if (question.newAnswerImage) {
+                answerImage = question.newAnswerImage.trim();
             }
 
             question.answers.push({
@@ -111,7 +117,7 @@
 
         };
 
-        $scope.doneEditing = function() {
+        $scope.doneEditing = function () {
 
         }
     }
