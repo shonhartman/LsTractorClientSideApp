@@ -15,7 +15,7 @@
         'textAngular',
         'ui.bootstrap',
         'ui.tree',
-        
+
         // Custom modules
         'app.account',
         'app.chart',
@@ -25,13 +25,14 @@
         'app.nav',
         'app.page',
         'app.quiz',
+        'app.quiz-manager',
         'app.skillset',
         'app.table',
         'app.task',
         'app.ui',
         'app.ui.form.validation',
         'app.video'
-        
+
     ]);
 
 })();
@@ -41,5 +42,5 @@
 
 
 
-    
+
 

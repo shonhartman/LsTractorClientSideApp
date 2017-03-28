@@ -3,7 +3,7 @@
 
     angular.module('app.task')
         .controller('taskCtrl', [ '$scope', 'taskStorage', 'filterFilter', '$rootScope', 'logger', taskCtrl]);
-        
+
     function taskCtrl($scope, taskStorage, filterFilter, $rootScope, logger) {
         var tasks;
 
@@ -136,4 +136,4 @@
         });
 
     }
-})(); 
+})();

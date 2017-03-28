@@ -18,10 +18,10 @@
     </div>
   </div> -->
 
-  
+
   <div class="row" ng-controller="SkillSetCtrl">
 
-      
+
     <div class="col-lg-4 col-md-4 col-xs-12 col-xsm-12" ng-repeat="skillset in skillsets">
 
           <!-- ADMIN VIEW FOR SKILLSETS -->
@@ -129,7 +129,7 @@
             </div>
           </script>
     </div>
-    <div class="col-lg-12" style="height:20px;"></div>  
+    <div class="col-lg-12" style="height:20px;"></div>
 
     <!-- Add Video Modal -->
     <script type="text/ng-template" id="addVideo.html">
@@ -146,47 +146,66 @@
             <hr>
             <span class="help-block">Does this Video Have a Quiz?</span><label class="ui-switch"><input type="checkbox" ng-model="quiz"><i></i></label>
             <div ng-show="quiz">
-                <div ng-controller="taskCtrl">
-                    <form data-ng-submit="add()" class="add-task">
-                        <input type="text" placeholder="Add a Question" class="form-control" data-ng-model="newTask" autofocus>
-                        <a type="submit" class="submit-button" data-ng-click="add()">
+                <div ng-controller="QuizManagerCtrl">
+
+                    <!-- add question form -->
+                    <form data-ng-submit="addQuestion()" class="add-task">
+                        <input type="text" placeholder="Add a Question" class="form-control" data-ng-model="newQuestion" autofocus>
+                        <a type="submit" class="submit-button" data-ng-click="addQuestion()">
                             <span class="glyphicon glyphicon-plus"></span>
                         </a>
                     </form>
+
                     <section data-ng-cloak>
                         <ul class="task-list list-unstyled">
-                            <li data-ng-repeat="task in tasks | filter:statusFilter track by $index" data-ng-class="{completed: task.completed, editing: task == editedTask}">
+
+                            <!-- repeat questions -->
+
+                            <li data-ng-repeat="question in questions track by $index" data-ng-class="{editing: question == editedQuestion}">
                                 <span class="view">
-                                            <input type="checkbox"
-                                                class="toggle-task"
-                                                data-ng-model="task.completed"
-                                                data-ng-change="completed(task)">
-                                            <label data-ng-dblclick="edit(task)">{{task.title}}</label>
-                                            <span class="glyphicon glyphicon-pencil"
-                                                data-ng-click="edit(task)"></span>
-                                            <form data-ng-submit="addAnswer()" class="add-task">
-                                                <input type="text" placeholder="Add an Answer" class="form-control" data-ng-model="newAnswer" autofocus>
-                                                <a type="submit" class="submit-button" data-ng-click="addAnswer()">
-                                                    <span class="glyphicon glyphicon-plus"></span>
-                                                </a>
-                                            </form>
-                                <span class="glyphicon glyphicon-remove" data-ng-click="remove(task, $index)"></span>
+                                    <label data-ng-dblclick="editQuestion(question)">{{question.title}}</label>
+                                    <span class="glyphicon glyphicon-pencil" data-ng-click="editQuestion($index)"></span>
+
+                                    <!-- repeat answers -->
+                                    <ul>
+                                        <li data-ng-repeat="answer in question.answers">
+                                            <label data-ng-dblclick="editAnswer(answer)">{{answer.title}} {{answer.image}}</label>
+                                            <span class="glyphicon glyphicon-pencil" data-ng-click="editAnswer($index)"></span>
+                                        </li>
+                                    </ul>
+
+                                    <!-- add answer form -->
+                                    <form data-ng-submit="addAnswer($index)" class="add-task">
+                                        <input type="text" placeholder="Add an Answer" class="form-control" data-ng-model="question.newAnswer" autofocus>
+                                        <!--<a type="submit" class="submit-button" data-ng-click="addAnswer($index)">
+                                            <span class="glyphicon glyphicon-plus"></span>
+                                        </a>-->
+                                        <input type="text" placeholder="Add an Answer Image" class="form-control" data-ng-model="question.newAnswerImage" autofocus>
+                                        <a type="submit" class="submit-button" data-ng-click="addAnswer($index)"<span class="glyphicon glyphicon-plus"></span></a>
+                                        <input type="submit" class="btn btn-primary" name="go" value="Go!" />
+                                    </form>
+
+                                    <span class="glyphicon glyphicon-remove" data-ng-click="removeQuestion($index)"></span>
+
                                 </span>
                                 <form data-ng-submit="doneEditing(task, $index)">
-                                    <input type="text" class="edit form-control" data-ng-trim="false" data-ng-model="task.title" data-ng-blur="doneEditing(task, $index)"
-                                        data-task-focus="task == editedTask">
+                                    <input type="text" class="edit form-control" data-ng-trim="false" data-ng-model="question.title" data-ng-blur="doneEditing(question, $index)"
+                                        data-task-focus="question == editedQuestion">
                                 </form>
                             </li>
+
+                            <!-- end repeat questions -->
+
                         </ul>
                     </section>
                 </div>
-                
+            </div>
         </div>
         <div class="modal-footer">
             <button class="btn btn-primary" ng-click="uploadVideo()">Upload</button>
             <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
         </div>
-    </script> 
+    </script>
 
     <!-- Edit Skill Set Modal -->
     <script type="text/ng-template" id="editSkillSet.html">
