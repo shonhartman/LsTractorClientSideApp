@@ -21,8 +21,8 @@
             }
 
             $scope.questions.push({
-                "title": question,
-                "answers": []
+                "QuestionText": question,
+                "Answers": []
             });
 
             // TODO: save changes
@@ -47,9 +47,9 @@
                 answerImage = question.newAnswerImage.trim();
             }
 
-            question.answers.push({
-                "title": answer,
-                "image": answerImage
+            question.Answers.push({
+                "AnswerText": answer,
+                "AnswerImage": answerImage
             });
 
             // TODO: save changes
@@ -67,7 +67,7 @@
                 return;
             }
 
-            $scope.questions[index].title = question;
+            $scope.questions[index].QuestionText = question;
 
             // TODO: save changes
 
@@ -85,10 +85,10 @@
                 return;
             }
 
-            var answer = question.answers[answerIndex];
+            var answer = question.Answers[answerIndex];
 
-            answer.title = newAnswer;
-            answer.image = newAnswerImage;
+            answer.AnswerText = newAnswer;
+            answer.AnswerImage = newAnswerImage;
 
             // TODO: save changes
 
@@ -115,11 +115,22 @@
         // TODO
         $scope.loadQuiz = function () {
 
+            // openedSkillset comes from skillset controller
+                // only accessible when quiz manager is a sub-controller of it
+            var openedSkillset = $scope.openedSkillset;
+
+            if (openedSkillset) {
+                $http.get($scope.main.apiUrl + 'Quizzes/GetQuiz/' + openedSkillset).then(function (result) {
+                    $scope.questions = result.data.Questions;
+                });
+            }
         };
 
         $scope.doneEditing = function () {
 
         }
+
+        $scope.loadQuiz();
     }
 
 })();

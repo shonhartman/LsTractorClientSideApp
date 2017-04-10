@@ -47,7 +47,7 @@
               </div> -->
               <div class="panel-bottom bg-reverse" style="border-top: none !important;">
                   <ul id="admin-edit" class="list-justified text-center v-center">
-                      <li ng-click="open()">
+                      <li ng-click="open(skillset.Id)">
                           <p class="color-primary h3">
                             <i class="fa fa-video-camera" aria-hidden="true"></i>
                           </p>
@@ -163,13 +163,14 @@
 
                             <li data-ng-repeat="question in questions track by $index" data-ng-class="{editing: question == editedQuestion}">
                                 <span class="view">
-                                    <label data-ng-dblclick="editQuestion(question)">{{question.title}}</label>
+                                    <label data-ng-dblclick="editQuestion(question)">{{question.QuestionText}}</label>
                                     <span class="glyphicon glyphicon-pencil" data-ng-click="editQuestion($index)"></span>
 
                                     <!-- repeat answers -->
                                     <ul>
-                                        <li data-ng-repeat="answer in question.answers">
-                                            <label data-ng-dblclick="editAnswer(answer)">{{answer.title}} {{answer.image}}</label>
+                                        <li data-ng-repeat="answer in question.Answers">
+                                            <label data-ng-dblclick="editAnswer(answer)">{{answer.AnswerText}}</label>
+                                            <img ng-src="{{answer.AnswerImage}}" alt="Answer Image">
                                             <span class="glyphicon glyphicon-pencil" data-ng-click="editAnswer($index)"></span>
                                         </li>
                                     </ul>
@@ -182,7 +183,7 @@
                                         </a>-->
                                         <input type="text" placeholder="Add an Answer Image" class="form-control" data-ng-model="question.newAnswerImage" autofocus>
                                         <a type="submit" class="submit-button" data-ng-click="addAnswer($index)"<span class="glyphicon glyphicon-plus"></span></a>
-                                        <input type="submit" class="btn btn-primary" name="go" value="Go!" />
+                                        <input type="submit" class="btn btn-primary" name="go" value="Add Answer" />
                                     </form>
 
                                     <span class="glyphicon glyphicon-remove" data-ng-click="removeQuestion($index)"></span>

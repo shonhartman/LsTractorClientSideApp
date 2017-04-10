@@ -9,6 +9,7 @@
     function SkillSetCtrl($cookies, $modal, $scope, $http, $routeParams, logger, $location) {
 
         $scope.skillsets = [];
+        $scope.openedSkillset = null;
 
         $http.get($scope.main.apiUrl + 'SkillSets/GetAllSkillSets')
             .then(function (response) {
@@ -80,9 +81,10 @@
             });
         }
 
-        $scope.open = function () {
+        $scope.open = function (skillsetId) {
             console.log("Open");
             var modalInstance;
+            $scope.openedSkillset = skillsetId;
             modalInstance = $modal.open({
                 templateUrl: "addVideo.html",
                 controller: skillSetModalInstanceCtrl,
@@ -94,7 +96,7 @@
                 console.log("Cancel");
                $modalInstance.dismiss("cancel");
            };
-        
+
         $scope.test = function () {
             console.log("Test");
         }
@@ -139,7 +141,7 @@
             });
         }
 
-        
+
     }
 
     //skillSetModalInstanceCtrl
