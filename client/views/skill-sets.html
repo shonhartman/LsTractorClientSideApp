@@ -170,7 +170,7 @@
                                     <ul>
                                         <li data-ng-repeat="answer in question.Answers">
                                             <label data-ng-dblclick="editAnswer(answer)">{{answer.AnswerText}}</label>
-                                            <img ng-src="{{answer.AnswerImage}}" alt="Answer Image">
+                                            <img ng-hide="answer.AnswerImage == ''" ng-src="{{answer.AnswerImage}}" alt="Answer Image">
                                             <span class="glyphicon glyphicon-pencil" data-ng-click="editAnswer($index)"></span>
                                         </li>
                                     </ul>
