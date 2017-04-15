@@ -120,7 +120,7 @@
             var openedSkillset = $scope.openedSkillset;
 
             if (openedSkillset) {
-                $http.get($scope.main.apiUrl + 'Quizzes/GetQuiz/' + openedSkillset).then(function (result) {
+                $http.get($scope.main.apiUrl + 'Quizzes/GetSkillsetQuiz/' + openedSkillset).then(function (result) {
                     $scope.questions = result.data.Questions;
                 });
             }
