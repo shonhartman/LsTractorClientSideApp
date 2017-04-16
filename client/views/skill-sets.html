@@ -150,7 +150,7 @@
 
                     <!-- add question form -->
                     <form data-ng-submit="addQuestion()" class="add-task">
-                        <input type="text" placeholder="Add a Question" class="form-control" data-ng-model="newQuestion" autofocus>
+                        <input type="text" placeholder="Add a Question" class="form-control" data-ng-model="newQuestionText" autofocus>
                         <a type="submit" class="submit-button" data-ng-click="addQuestion()">
                             <span class="glyphicon glyphicon-plus"></span>
                         </a>
@@ -177,12 +177,16 @@
 
                                     <!-- add answer form -->
                                     <form data-ng-submit="addAnswer($index)" class="add-task">
-                                        <input type="text" placeholder="Add an Answer" class="form-control" data-ng-model="question.newAnswer" autofocus>
+                                        <input type="text" placeholder="Add an Answer" class="form-control" data-ng-model="question.newAnswerText" autofocus>
                                         <!--<a type="submit" class="submit-button" data-ng-click="addAnswer($index)">
                                             <span class="glyphicon glyphicon-plus"></span>
                                         </a>-->
                                         <input type="text" placeholder="Add an Answer Image" class="form-control" data-ng-model="question.newAnswerImage" autofocus>
                                         <a type="submit" class="submit-button" data-ng-click="addAnswer($index)"<span class="glyphicon glyphicon-plus"></span></a>
+                                        <div>
+                                            <input style="position: inherit; height: auto; padding: 0;" type="checkbox" id="is-correct-answer-{{$index}}" data-ng-model="question.newAnswerIsCorrect">
+                                            <label style="width: auto;" for="is-correct-answer-{{$index}}">Is correct answer?</label>
+                                        </div>
                                         <input type="submit" class="btn btn-primary" name="go" value="Add Answer" />
                                     </form>
 

@@ -6,57 +6,60 @@
 
     function QuizManagerCtrl($cookies, $scope, $http, $routeParams, $location, logger) {
 
+        $scope.loadedQuizId = null;
         $scope.questions = [];
-        $scope.newQuestion = '';
-        $scope.newAnswer = '';
-        $scope.newAnswerImage = '';
+        $scope.newQuestionText = '';
         $scope.editedQuestion = null;
 
         $scope.addQuestion = function () {
 
-            var question = $scope.newQuestion.trim();
+            var questionText = $scope.newQuestionText.trim();
 
-            if (question.length === 0) {
+            if (questionText.length === 0) {
                 return;
             }
 
-            $scope.questions.push({
-                "QuestionText": question,
+            var newQuestion = {
+                "QuestionText": questionText,
                 "Answers": []
+            };
+
+            $scope.newQuestionText = '';
+
+            // save changes
+            $http.post($scope.main.apiUrl + 'Quizzes/AddQuizQuestion/' + $scope.loadedQuizId, newQuestion).then(function () {
+                $scope.questions.push(newQuestion);
+                logger.logSuccess('New question: "' + questionText + '" added');
             });
-
-            // TODO: save changes
-
-            $scope.newQuestion = '';
-            logger.logSuccess('New question: "' + question + '" added');
         };
 
         $scope.addAnswer = function (questionIndex) {
 
-            var answer = "";
-            var answerImage = "";
             var question = $scope.questions[questionIndex];
 
-            if (question.newAnswer.length === 0) {
+            if (question.newAnswerText.length === 0) {
                 return;
             }
 
-            answer = question.newAnswer.trim();
-
-            if (question.newAnswerImage) {
-                answerImage = question.newAnswerImage.trim();
+            var newAnswer = {
+                'AnswerText': question.newAnswerText.trim(),
+                'AnswerImage': '',
+                'IsCorrect': !!question.newAnswerIsCorrect // !! forces boolean value
             }
 
-            question.Answers.push({
-                "AnswerText": answer,
-                "AnswerImage": answerImage
-            });
+            if (question.newAnswerImage) {
+                newAnswer.AnswerImage = question.newAnswerImage.trim();
+            }
 
-            // TODO: save changes
-
-            question.newAnswer = '';
+            question.newAnswerText = '';
             question.newAnswerImage = '';
-            logger.logSuccess('New answer: "' + answer + '" added');
+            question.newAnswerIsCorrect = false;
+
+            // save changes
+            $http.post($scope.main.apiUrl + 'Quizzes/AddQuizAnswer/' + $scope.loadedQuizId + '?questionId=' + question.Id, newAnswer).then(function () {
+                question.Answers.push(newAnswer);
+                logger.logSuccess('New answer: "' + newAnswer.AnswerText + '" added');
+            });
         };
 
         $scope.editQuestion = function (index) {
@@ -71,28 +74,28 @@
 
             // TODO: save changes
 
-            $model.newQuestion = '';
+            $model.newQuestionText = '';
             logger.logSuccess('Question edited!');
         };
 
         $scope.editAnswer = function (questionIndex, answerIndex) {
 
             var question = $scope.questions[questionIndex];
-            var newAnswer = question.newAnswer.trim();
+            var newAnswerText = question.newAnswerText.trim();
             var newAnswerImage = question.newAnswerImage.trim();
 
-            if (newAnswer.length === 0) {
+            if (newAnswerText.length === 0) {
                 return;
             }
 
             var answer = question.Answers[answerIndex];
 
-            answer.AnswerText = newAnswer;
+            answer.AnswerText = newAnswerText;
             answer.AnswerImage = newAnswerImage;
 
             // TODO: save changes
 
-            question.newAnswer = '';
+            question.newAnswerText = '';
             question.newAnswerImage = '';
             logger.logSuccess('Answer edited!');
         };
@@ -112,15 +115,18 @@
 
         };
 
-        // TODO
         $scope.loadQuiz = function () {
 
+            // TODO: only load this if "has quiz" radio is true
+            // TODO: create new quiz if HTTP get request fails
+
             // openedSkillset comes from skillset controller
-                // only accessible when quiz manager is a sub-controller of it
+            // only accessible when quiz manager is a sub-controller of it
             var openedSkillset = $scope.openedSkillset;
 
             if (openedSkillset) {
                 $http.get($scope.main.apiUrl + 'Quizzes/GetSkillsetQuiz/' + openedSkillset).then(function (result) {
+                    $scope.loadedQuizId = result.data.Id;
                     $scope.questions = result.data.Questions;
                 });
             }
