@@ -72,10 +72,15 @@
 
             $scope.questions[index].QuestionText = question;
 
-            // TODO: save changes
+            // save changes?
+            $http.put($scope.main.apiUrl + 'Quizzes/AddQuizQuestion/' + $scope.loadedQuizId, newQuestion)
+            .then(function () {
+                $scope.questions.push(newQuestion);
+                logger.logSuccess('Edited question: "' + questionText + '" and updated!');
+            });
 
-            $model.newQuestionText = '';
-            logger.logSuccess('Question edited!');
+            // $model.newQuestionText = '';
+            // logger.logSuccess('Question edited!');
         };
 
         $scope.editAnswer = function (questionIndex, answerIndex) {
