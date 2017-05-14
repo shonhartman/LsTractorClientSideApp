@@ -28,12 +28,13 @@
 
         $scope.editSkillSet = function () {
             console.log("Open Skill Set Details");
-            var modalInstance;
-            modalInstance = $modal.open({
-                templateUrl: "editSkillSet.html",
-                controller : skillSetModalInstanceCtrl,
-                scope : $scope
-            });
+            $location.url("/#/skill-set");
+            // var modalInstance;
+            // modalInstance = $modal.open({
+            //     templateUrl: "editSkillSet.html",
+            //     controller : skillSetModalInstanceCtrl,
+            //     scope : $scope
+            // });
         }
 
         //UPDATE SKILL SET NAME BY ID

@@ -54,10 +54,12 @@
                           <p class="text-muted h5" style="margin-top: 10px;">Add Video</p>
                       </li>
                       <li>
-                          <p class="color-warning h3">
-                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                          </p>
-                          <p class="text-muted h5" style="margin-top: 10px;" ng-click="editSkillSet()">Edit Details</p>
+                          <a  style="text-decoration: none;" href="/#/pages/skill-set-details/{{skillset.Id}}">
+                            <p class="color-warning h3">
+                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                            </p>
+                            <p class="text-muted h5" style="margin-top: 10px;">Edit Details</p>
+                          </a>
                       </li>
                       <li ng-click="goToCertificates()">
                           <p class="color-success h3">

@@ -26,6 +26,7 @@
                 <!--<p class="text-danger">{{ quiz.Video.Length }}</p>-->
                 <button class="btn btn-gap-v btn-primary" ng-click="open(quiz.Id)">Watch</button>
                 <button class="btn btn-gap-v btn-warning" ng-click="edit(quiz.Video)" ng-if="main.user.Role == 6">Edit</button>
+                <button class="btn btn-gap-v btn-danger">Delete</button>
                 <script type="text/ng-template" id="myEditModal.html">
                     <div class="modal-header">
                         <h3>Editing {{ quiz.Video.Title }}</h3>
