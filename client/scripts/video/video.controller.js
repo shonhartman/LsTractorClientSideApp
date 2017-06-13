@@ -32,6 +32,7 @@
     function VideoCtrl($cookies, $scope, $routeParams, $location, $http, $modal) {
         var skillSetId = $routeParams.id;
         $scope.skillSet = null;
+        $scope.openedQuiz = null;
         $scope.user = angular.fromJson($cookies.get('user'));
 
         $http.get($scope.main.apiUrl + 'SkillSets/GetSkillSet/' + skillSetId)
@@ -44,19 +45,22 @@
             location.href = '/#/quizes/quiz/' + id;
         }
 
-        $scope.edit = function (video) {
+        $scope.edit = function (quiz) {
             var modalInstance;
+            $scope.openedQuiz = quiz;
+
             modalInstance = $modal.open({
                 templateUrl: "myEditModal.html",
                 controller: 'ModalInstanceCtrl',
                 resolve: {
                     video: function () {
-                        return video;
+                        return quiz.Video;
                     },
                     titles: function () {
                         return $scope.titles;
                     }
-                }
+                },
+                scope : $scope
             });
             modalInstance.result.then((function (selectedItem) {
                 $scope.selected = selectedItem;

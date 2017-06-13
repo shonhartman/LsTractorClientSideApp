@@ -129,6 +129,7 @@
             // only accessible when quiz manager is a sub-controller of it
             var openedSkillset = $scope.openedSkillset;
 
+            // TODO: this may not be the best method to get a quiz - a skillset can have multiple quizzes
             if (openedSkillset) {
                 $http.get($scope.main.apiUrl + 'Quizzes/GetSkillsetQuiz/' + openedSkillset).then(function (result) {
                     $scope.loadedQuizId = result.data.Id;
